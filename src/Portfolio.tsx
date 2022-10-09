@@ -14,7 +14,17 @@ function Portfolio() {
 				</nav>
 			</header>
 			<main>
-				<section id="welcome"></section>
+				<section id="welcome">
+					<h1>
+						Greetings!
+					</h1>
+					<h2>
+						My name is Akos Varga.
+					</h2>
+					<h3>
+						Welcome to my portfolio page.
+					</h3>
+				</section>
 				<section id="bio"></section>
 				<section id="skills"></section>
 				<section id="works"></section>
