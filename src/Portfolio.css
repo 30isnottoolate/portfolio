@@ -1,54 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
 * {
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	user-select: none;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
 	margin: 0;
 	padding: 0;
 }
 
-header {
-	background-color: aquamarine;
-	position: fixed;
+header, section, footer {
 	width: 100vw;
+}
+
+header, footer {
+	background-color: aquamarine;
 	height: 10vh;
 	min-height: 80px;
 }
 
+header {
+	display: grid;
+	grid-template-columns: auto 20%;
+    align-content: center;
+    justify-content: space-between;
+	position: fixed;
+	padding-left: 1.5em;
+	padding-right: 2.2em;
+}
+
+nav {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+    justify-content: end;
+	gap: 15%;
+}
+
+a {
+	font-size: 1.3em;
+	font-weight:500;
+	text-decoration: none;
+}
+
+#logo {
+	font-family: "Roboto Condensed";
+	font-size: 1.8em;
+	font-weight: 700;
+}
+
+a:visited {
+	color: #000000;
+}
+
 #welcome {
 	background-color: aqua;
-	width: 100vw;
 	height: 100vh;
 }
 
 #bio {
-	background-color:darkseagreen;
-	width: 100vw;
+	background-color: darkseagreen;
 	height: 100vh;
 }
 
 #skills {
 	background-color: azure;
-	width: 100vw;
 	height: 100vh;
 }
 
 #works {
 	background-color: bisque;
-	width: 100vw;
 	height: 100vh;
 }
 
 #contact {
 	background-color: antiquewhite;
-	width: 100vw;
 	height: 100vh;
-}
-
-footer {
-	background-color: darkgray;
-	width: 100vw;
-	height: 10vh;
-	min-height: 80px;
 }
