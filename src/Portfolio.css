@@ -22,6 +22,12 @@ header {
 	height: 100vh;
 }
 
+#bio {
+	background-color:darkseagreen;
+	width: 100vw;
+	height: 100vh;
+}
+
 #skills {
 	background-color: azure;
 	width: 100vw;
