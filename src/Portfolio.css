@@ -12,6 +12,7 @@ html {
 body {
 	user-select: none;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
+	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
 }
@@ -21,9 +22,10 @@ header, section, footer {
 }
 
 header, footer {
-	background-color: aquamarine;
-	height: 10vh;
-	min-height: 80px;
+	background-color: #000f20;
+	box-shadow: 0 0 10vh 2vh #0073ff;
+	height: 6vh;
+	min-height: 50px;
 }
 
 header {
@@ -40,7 +42,7 @@ nav {
 	display: grid;
 	grid-template-columns: auto auto auto auto;
     justify-content: end;
-	gap: 15%;
+	gap: min(15%, 2.5em);
 }
 
 nav > a {
@@ -49,16 +51,21 @@ nav > a {
 }
 
 nav > a:hover {
-	text-shadow: 0 0 5px rgba(255, 0, 0, 0.75);
+	text-shadow: 0 0 3vh #0073ff;
 	transition-property: text-shadow;
 	transition-duration: 0.5s;
 }
 
 a {
+	color: #80b9ff;
 	font-size: 1.3em;
 	font-weight:500;
-	text-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+	text-shadow: 0 0 10px #0073ff;
 	text-decoration: none;
+}
+
+a:visited {
+	color: #80b9ff;
 }
 
 #logo {
@@ -67,31 +74,13 @@ a {
 	font-weight: 700;
 }
 
-a:visited {
-	color: #000000;
-}
-
-#welcome {
-	background-color: aqua;
+#welcome, #skills, #contact {
+	background-image: linear-gradient(45deg, #005dc0, #2600ad, #6200ff, #00438b);
 	height: 100vh;
 }
 
-#bio {
-	background-color: darkseagreen;
-	height: 100vh;
-}
-
-#skills {
-	background-color: azure;
-	height: 100vh;
-}
-
-#works {
-	background-color: bisque;
-	height: 100vh;
-}
-
-#contact {
-	background-color: antiquewhite;
+#bio, #works {
+	background-color: #000f20;
+	box-shadow: 0 0 10vh 2vh #0073ff;
 	height: 100vh;
 }
