@@ -30,7 +30,7 @@ header, footer {
 
 header {
 	display: grid;
-	grid-template-columns: auto 20%;
+	grid-template-columns: auto auto;
     align-content: center;
     justify-content: space-between;
 	position: fixed;
@@ -43,7 +43,7 @@ nav {
 	grid-template-columns: auto auto auto auto;
     justify-content: end;
     align-items: center;
-	gap: min(15%, 2.5em);
+	gap: min(4vw, 3em);
 	font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
@@ -53,9 +53,9 @@ nav > a {
 }
 
 nav > a:hover {
-	text-shadow: 0 0 3vh #0073ff;
+	text-shadow: 0 0 3vh #a2ccff;
 	transition-property: text-shadow;
-	transition-duration: 0.5s;
+	transition-duration: 0.4s;
 }
 
 a {
