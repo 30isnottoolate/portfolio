@@ -22,6 +22,7 @@ header, section, footer {
 
 header, footer {
 	background-color: #000f20;
+	color: #80b9ff;
 	box-shadow: 0 0 10vh 2vh #80b9ff;
 	height: 6vh;
 	min-height: 50px;
@@ -58,7 +59,6 @@ nav > a:hover {
 }
 
 a {
-	color: #80b9ff;
 	font-size: 1.3em;
 	font-weight:500;
 	text-shadow: 0 0 10px #6200ff;
@@ -111,4 +111,10 @@ span {
 	background-color: #000f20;
 	box-shadow: 0 0 10vh 2vh #0073ff;
 	height: 100vh;
+}
+
+footer {
+	display: grid;
+    align-content: center;
+    justify-content: center;
 }
