@@ -30,7 +30,7 @@ function Portfolio() {
 				<section id="works"></section>
 				<section id="contact"></section>
 			</main>
-			<footer id="bottom"></footer>
+			<footer id="bottom">© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate</footer>
 		</div>
 	);
 }
