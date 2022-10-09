@@ -5,4 +5,44 @@
 body {
 	user-select: none;
 	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: aquamarine;
+	position: fixed;
+	width: 100vw;
+	height: 10vh;
+	min-height: 80px;
+}
+
+#welcome {
+	background-color: aqua;
+	width: 100vw;
+	height: 100vh;
+}
+
+#skills {
+	background-color: azure;
+	width: 100vw;
+	height: 100vh;
+}
+
+#works {
+	background-color: bisque;
+	width: 100vw;
+	height: 100vh;
+}
+
+#contact {
+	background-color: antiquewhite;
+	width: 100vw;
+	height: 100vh;
+}
+
+footer {
+	background-color: darkgray;
+	width: 100vw;
+	height: 10vh;
+	min-height: 80px;
 }
