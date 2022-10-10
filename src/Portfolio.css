@@ -78,11 +78,10 @@ a:visited {
 
 h1 {
 	font-size: 3em;
-	font-weight:700;
+	font-weight:500;
 }
 
 h2 {
-	font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
 	font-size: 2em;
 	font-weight:500;
 }

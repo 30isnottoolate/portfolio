@@ -16,13 +16,13 @@ function Portfolio() {
 			<main>
 				<section id="welcome">
 					<h1>
-					Welcome to my portfolio page!
+						Hi! My name is <span>Akos Varga</span>.
 					</h1>
 					<h2>
-						My name is <span>Akos Varga</span>.
+						Welcome to my <span>portfolio page</span>!
 					</h2>
 					<h2>
-						I'm an aspiring front-end developer, constantly improving.
+						I'm an aspiring <span>front-end developer</span>, constantly improving.
 					</h2>
 				</section>
 				<section id="bio"></section>
