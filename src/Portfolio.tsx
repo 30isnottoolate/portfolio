@@ -9,7 +9,7 @@ function Portfolio() {
 				<nav>
 					<a href="#bio">Bio</a>
 					<a href="#skills">Skills</a>
-					<a href="#works">Portfolio</a>
+					<a href="#projects">Projects</a>
 					<a href="#contact">Contact</a>
 				</nav>
 			</header>
@@ -81,7 +81,7 @@ function Portfolio() {
 						</a>
 					</div>
 				</section>
-				<section id="works"></section>
+				<section id="projects"></section>
 				<section id="contact">
 					<a href="">
 						<img src="./mail.svg" style={{width: "40px"}} />
