@@ -29,7 +29,7 @@ function Portfolio() {
 				<section id="skills">
 					<h1>My Skills</h1>
 					<h2>Languages</h2>
-					<div id="langs">
+					<div id="langs" style={{ paddingBottom: "15px" }} >
 						<a href="https://html.spec.whatwg.org/" target="_blank">
 							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" style={{ height: "40px", width: "40px", padding: "5px" }} />
 						</a>
@@ -44,7 +44,7 @@ function Portfolio() {
 						</a>
 					</div>
 					<h2>Technologies and frameworks</h2>
-					<div id="techs">
+					<div id="techs" style={{ paddingBottom: "15px" }} >
 						<a href="https://reactjs.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" style={{ height: "40px", width: "40px", padding: "5px" }} />
 						</a>
 						<a href="https://nodejs.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" style={{ height: "40px", width: "40px", padding: "5px" }} />
@@ -54,7 +54,7 @@ function Portfolio() {
 						<a href="https://www.mongodb.com/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" style={{ height: "40px", width: "40px", padding: "5px" }} />
 						</a>
 					</div>
-					<h2>Tools</h2>
+					<h2>Tools and applications</h2>
 					<div id="tools">
 						<a href="https://git-scm.com/" target="_blank">
 							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" style={{ height: "40px", width: "40px", padding: "5px" }} />
