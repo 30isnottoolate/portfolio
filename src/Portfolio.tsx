@@ -25,7 +25,18 @@ function Portfolio() {
 						I'm an aspiring <span>front-end developer</span>, constantly improving.
 					</h2>
 				</section>
-				<section id="bio"></section>
+				<section id="bio">
+				<h1>About me</h1>
+				<ul>
+					<li>born and living in Serbia</li>
+					<li>self-taught front-end developer, designer</li>
+					<li>possessor of a barely used electronics technician degree</li>
+					<li>technology enthusiast</li>
+					<li>problem solver</li>
+					<li>heavy music enjoyer</li>
+					<li>bedroom guitar player</li>
+				</ul>
+				</section>
 				<section id="skills">
 					<h1>My Skills</h1>
 					<h2>Languages</h2>
