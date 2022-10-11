@@ -142,7 +142,7 @@ ul > span {
 	text-shadow: 0 0 0.75vh #000f20;
 }
 
-#bio, #works {
+#bio, #projects {
 	background-color: #000f20;
 	box-shadow: 0 0 10vh 2vh #0073ff;
 	height: 100vh;
