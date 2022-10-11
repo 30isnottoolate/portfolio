@@ -107,6 +107,15 @@ span {
 	padding: 0 40px 0 20px;
 }
 
+#skills {
+	display: grid;
+	align-content: center;
+    justify-items: center;
+	gap: 3vh;
+	color: #a2ccff;
+	text-shadow: 0 0 0.75vh #000f20;
+}
+
 #bio, #works {
 	background-color: #000f20;
 	box-shadow: 0 0 10vh 2vh #0073ff;
