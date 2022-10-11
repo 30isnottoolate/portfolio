@@ -26,16 +26,16 @@ function Portfolio() {
 					</h2>
 				</section>
 				<section id="bio">
-				<h1>About me</h1>
-				<ul>
-					<li>born and living in Serbia</li>
-					<li>self-taught <span>front-end developer</span>, designer</li>
-					<li>possessor of a barely used electronics technician degree</li>
-					<li><span>technology enthusiast</span></li>
-					<li><span>problem solver</span></li>
-					<li>heavy music enjoyer</li>
-					<li>bedroom guitar player</li>
-				</ul>
+					<h1>About me</h1>
+					<ul>
+						<li>born and living in Serbia</li>
+						<li>self-taught <span>front-end developer</span>, designer</li>
+						<li>possessor of a barely used electronics technician degree</li>
+						<li><span>technology enthusiast</span></li>
+						<li><span>problem solver</span></li>
+						<li>heavy music enjoyer</li>
+						<li>bedroom guitar player</li>
+					</ul>
 				</section>
 				<section id="skills">
 					<h1>My Skills</h1>
@@ -83,7 +83,15 @@ function Portfolio() {
 				</section>
 				<section id="works"></section>
 				<section id="contact">
-					
+					<a href="">
+						<img src="./mail.svg" style={{width: "40px"}} />
+					</a>
+					<a href="">
+						<img src="./github.svg" style={{width: "40px"}} />
+					</a>
+					<a href="">
+						<img src="./linkedin.svg" style={{width: "40px"}} />
+					</a>
 				</section>
 			</main>
 			<footer id="bottom">© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate</footer>
