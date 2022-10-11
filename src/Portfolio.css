@@ -111,7 +111,7 @@ span {
 	display: grid;
 	align-content: center;
     justify-items: center;
-	gap: 3vh;
+	gap: 2vh;
 	color: #a2ccff;
 	text-shadow: 0 0 0.75vh #000f20;
 }
