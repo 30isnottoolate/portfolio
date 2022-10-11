@@ -29,10 +29,10 @@ function Portfolio() {
 				<h1>About me</h1>
 				<ul>
 					<li>born and living in Serbia</li>
-					<li>self-taught front-end developer, designer</li>
+					<li>self-taught <span>front-end developer</span>, designer</li>
 					<li>possessor of a barely used electronics technician degree</li>
-					<li>technology enthusiast</li>
-					<li>problem solver</li>
+					<li><span>technology enthusiast</span></li>
+					<li><span>problem solver</span></li>
 					<li>heavy music enjoyer</li>
 					<li>bedroom guitar player</li>
 				</ul>
@@ -82,7 +82,9 @@ function Portfolio() {
 					</div>
 				</section>
 				<section id="works"></section>
-				<section id="contact"></section>
+				<section id="contact">
+					
+				</section>
 			</main>
 			<footer id="bottom">© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate</footer>
 		</div>
