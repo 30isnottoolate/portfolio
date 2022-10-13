@@ -148,6 +148,29 @@ ul > span {
 	height: 100vh;
 }
 
+#contact {
+	display: grid;
+	align-content: center;
+    justify-items: center;
+	gap: 3vh;
+	color: #a2ccff;
+	text-shadow: 0 0 0.75vh #000f20;
+}
+
+#contacts {
+	display: grid;
+	gap: 2vh;
+}
+
+#contacts > div > a > img {
+	vertical-align: middle;
+}
+
+#contacts > div > a > span {
+	vertical-align: middle;
+	padding-left: 10px;
+}
+
 footer {
 	display: grid;
     align-content: center;
