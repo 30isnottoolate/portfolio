@@ -44,6 +44,8 @@ section {
 	display: grid;
 	align-content: center;
     justify-items: center;
+	background-color: #000f20;
+	text-shadow: 0 0 10px #6200ff;
 	height: 100vh;
 	padding: 0 40px 0 20px;
 }
@@ -108,11 +110,6 @@ span {
 	font-weight:500;
 }
 
-#welcome, #skills, #contact {
-	background-image: linear-gradient(45deg, #005dc0, #2600ad, #6200ff, #00438b);
-	text-shadow: 0 0 0.75vh #000f20;
-}
-
 #welcome {
 	gap: 3vh;
 	text-align: center;
@@ -129,11 +126,6 @@ ul > li {
 #skills {
 	gap: 2vh;
 	text-align: center;
-}
-
-#bio, #projects {
-	background-color: #000f20;
-	text-shadow: 0 0 10px #6200ff;
 }
 
 #contact {
