@@ -44,6 +44,7 @@ section {
 	display: grid;
 	align-content: center;
     justify-items: center;
+	gap: 3vh;
 	background-color: #000f20;
 	text-shadow: 0 0 10px #6200ff;
 	height: 100vh;
@@ -116,10 +117,6 @@ span {
 	text-align: center;
 }
 
-#bio {
-	gap: 2vh;
-}
-
 ul > li {
 	padding-bottom: 10px;
 }
@@ -129,7 +126,7 @@ ul > li {
 	text-align: center;
 }
 
-#skills > div > a > img {
+#skills > div > div > a > img {
 	height: 40px; 
 	width: 40px; 
 	padding: 5px;
@@ -183,12 +180,12 @@ ul > li {
 	margin: 0 3px 0 3px;
 }
 
-#contact {
-	gap: 3vh;
-}
-
 #contacts > div {
 	margin-bottom: 2vh;
+}
+
+#contacts > div > a > img {
+	width: 40px;
 }
 
 #contacts > div > a > span {
