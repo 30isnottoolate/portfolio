@@ -86,6 +86,7 @@ footer {
 }
 
 h1 {
+	text-align: center;
 	font-family: "Poppins", Arial, Helvetica, sans-serif;
 	font-size: 40px;
 	font-weight: 500;
@@ -128,6 +129,12 @@ ul > li {
 	text-align: center;
 }
 
+#skills > div > a > img {
+	height: 40px; 
+	width: 40px; 
+	padding: 5px;
+}
+
 .project-box {
 	display: grid;
 	grid-template-rows: 60px 30px 140px 230px 30px;
@@ -140,17 +147,27 @@ ul > li {
 	padding: 6px 12px;
 }
 
-.project-description {
-	font-size: 16px;
-	padding: 5px 10px;
-}
-
 .project-techs {
 	display: grid;
 	grid-template-columns: repeat(3, auto);
 	gap: 5px;
     align-content: center;
     justify-content: center;
+}
+
+.project-techs > img {
+	width: 20px;
+	height: 20px;
+}
+
+.project-img {
+	width: 250px;
+	height: 140px;
+}
+
+.project-description {
+	font-size: 16px;
+	padding: 5px 10px;
 }
 
 .project-buttons {
