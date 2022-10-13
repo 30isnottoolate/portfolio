@@ -15,11 +15,11 @@ function Portfolio() {
 			</header>
 			<main>
 				<section id="welcome">
-					<h1>
+					<h1 id="topH">
 						Hi! My name is <span>Akos Varga</span>.
 					</h1>
-					<h2>
-						Welcome to my <span>portfolio page</span>!
+					<h2 id="middleH">
+					Welcome to my portfolio page!
 					</h2>
 					<h2>
 						I'm an aspiring <span>front-end developer</span>, constantly improving.
