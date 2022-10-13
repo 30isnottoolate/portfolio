@@ -83,15 +83,24 @@ function Portfolio() {
 				</section>
 				<section id="projects"></section>
 				<section id="contact">
-					<a href="">
-						<img src="./mail.svg" style={{width: "40px"}} />
-					</a>
-					<a href="">
-						<img src="./github.svg" style={{width: "40px"}} />
-					</a>
-					<a href="">
-						<img src="./linkedin.svg" style={{width: "40px"}} />
-					</a>
+					<h1>Get in touch</h1>
+					<div id="contacts">
+						<div id="linkedid">
+							<a href="https://www.linkedin.com/in/akos-varga-236497239">
+								<img src="./linkedin.svg" style={{ width: "40px" }} /> <span>linkedin.com/in/akos-varga-236497239</span>
+							</a>
+						</div>
+						<div id="mail">
+							<a href="mailto:akos.varga.92@gmail.com?subject=Regarding a job opportunity">
+								<img src="./mail.svg" style={{ width: "40px" }} /> <span>akos.varga.92@gmail.com</span>
+							</a>
+						</div>
+						<div id="github">
+							<a href="https://github.com/30isnottoolate">
+								<img src="./github.svg" style={{ width: "40px" }} /> <span>github.com/30isnottoolate</span>
+							</a>
+						</div>
+					</div>
 				</section>
 			</main>
 			<footer id="bottom">© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate</footer>
