@@ -42,42 +42,42 @@ function Portfolio() {
 					<h2>Languages</h2>
 					<div id="langs" style={{ paddingBottom: "15px" }} >
 						<a href="https://html.spec.whatwg.org/" target="_blank" rel="noreferrer">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" style={{ height: "40px", width: "40px", padding: "5px" }} />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
 						</a>
 						<a href="https://www.w3.org/TR/CSS/" target="_blank" rel="noreferrer">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" style={{ height: "40px", width: "40px", padding: "5px" }} />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
 						</a>
 						<a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/" target="_blank" rel="noreferrer">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style={{ height: "40px", width: "40px", padding: "5px" }} />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
 						</a>
 						<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" style={{ height: "40px", width: "40px", padding: "5px" }} />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
 						</a>
 					</div>
 					<h2>Technologies and frameworks</h2>
 					<div id="techs" style={{ paddingBottom: "15px" }} >
-						<a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" style={{ height: "40px", width: "40px", padding: "5px" }} />
+						<a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
 						</a>
-						<a href="https://nodejs.org/" target="_blank" rel="noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" style={{ height: "40px", width: "40px", padding: "5px" }} />
+						<a href="https://nodejs.org/" target="_blank" rel="noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" />
 						</a>
-						<a href="https://expressjs.com/" target="_blank" rel="noreferrer"><img src="https://expressjs.com/images/favicon.png" alt="ExpressJS" style={{ height: "40px", width: "40px", padding: "5px" }} />
+						<a href="https://expressjs.com/" target="_blank" rel="noreferrer"><img src="https://expressjs.com/images/favicon.png" alt="ExpressJS" />
 						</a>
-						<a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" style={{ height: "40px", width: "40px", padding: "5px" }} />
+						<a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
 						</a>
 					</div>
 					<h2>Tools and applications</h2>
 					<div id="tools">
 						<a href="https://git-scm.com/" target="_blank" rel="noreferrer">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" style={{ height: "40px", width: "40px", padding: "5px" }} />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
 						</a>
 						<a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" style={{ height: "40px", width: "40px", padding: "5px" }} />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" />
 						</a>
 						<a href="https://www.gimp.org/" target="_blank" rel="noreferrer">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gimp/gimp-original.svg" alt="GIMP" style={{ height: "40px", width: "40px", padding: "5px" }} />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gimp/gimp-original.svg" alt="GIMP" />
 						</a>
 						<a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noreferrer">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Adobe Photoshop" style={{ height: "40px", width: "40px", padding: "5px" }} />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Adobe Photoshop" />
 						</a>
 					</div>
 				</section>
@@ -86,11 +86,11 @@ function Portfolio() {
 					<div className="project-box">
 						<p className="project-title">Title</p>
 						<div className="project-techs">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" style={{ height: "20px", width: "20px"}} />
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" style={{ height: "20px", width: "20px"}} />
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style={{ height: "20px", width: "20px"}} />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
 						</div>
-						<img className="project-img" src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg" width="250px" height="140px"/>
+						<img className="project-img" src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg" alt="Description"/>
 						<p className="project-description">Description</p>
 						<div className="project-buttons">
 							<button>Demo</button>
