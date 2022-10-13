@@ -19,7 +19,7 @@ function Portfolio() {
 						Hi! My name is <span>Akos Varga</span>.
 					</h1>
 					<h2 id="middleH">
-					Welcome to my portfolio page!
+						Welcome to my portfolio page!
 					</h2>
 					<h2>
 						I'm an aspiring <span>front-end developer</span>, constantly improving.
@@ -58,7 +58,7 @@ function Portfolio() {
 					<div id="techs" style={{ paddingBottom: "15px" }} >
 						<a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" style={{ height: "40px", width: "40px", padding: "5px" }} />
 						</a>
-						<a href="https://nodejs.org/" target="_blank" rel="noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"  alt="NodeJS" style={{ height: "40px", width: "40px", padding: "5px" }} />
+						<a href="https://nodejs.org/" target="_blank" rel="noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" style={{ height: "40px", width: "40px", padding: "5px" }} />
 						</a>
 						<a href="https://expressjs.com/" target="_blank" rel="noreferrer"><img src="https://expressjs.com/images/favicon.png" alt="ExpressJS" style={{ height: "40px", width: "40px", padding: "5px" }} />
 						</a>
@@ -81,7 +81,23 @@ function Portfolio() {
 						</a>
 					</div>
 				</section>
-				<section id="projects"></section>
+				<section id="projects">
+					<h1>Projects</h1>
+					<div className="project-box">
+						<p className="project-title">Title</p>
+						<img className="project-img" src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg" width="250px" height="140px"/>
+						<p className="project-description">Description</p>
+						<div className="project-techs">
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" style={{ height: "20px", width: "20px", paddingRight: "5px" }} />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" style={{ height: "20px", width: "20px", paddingRight: "5px" }} />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style={{ height: "20px", width: "20px", paddingRight: "5px" }} />
+						</div>
+						<div className="project-buttons">
+							<button>Demo</button>
+							<button>Code</button>
+						</div>
+					</div>
+				</section>
 				<section id="contact">
 					<h1>Get in touch</h1>
 					<div id="contacts">
