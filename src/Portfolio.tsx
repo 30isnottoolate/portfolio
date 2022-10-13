@@ -85,13 +85,13 @@ function Portfolio() {
 					<h1>Projects</h1>
 					<div className="project-box">
 						<p className="project-title">Title</p>
+						<div className="project-techs">
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" style={{ height: "20px", width: "20px"}} />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" style={{ height: "20px", width: "20px"}} />
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style={{ height: "20px", width: "20px"}} />
+						</div>
 						<img className="project-img" src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg" width="250px" height="140px"/>
 						<p className="project-description">Description</p>
-						<div className="project-techs">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" style={{ height: "20px", width: "20px", paddingRight: "5px" }} />
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" style={{ height: "20px", width: "20px", paddingRight: "5px" }} />
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style={{ height: "20px", width: "20px", paddingRight: "5px" }} />
-						</div>
 						<div className="project-buttons">
 							<button>Demo</button>
 							<button>Code</button>
