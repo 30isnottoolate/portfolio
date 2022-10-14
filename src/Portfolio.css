@@ -155,7 +155,7 @@ ul > li {
 	gap: 2.5px;
 	width: 250px;
 	height: 500px;
-	border-radius: 5px;
+	border-radius: 7px;
 	box-shadow: 0 0 15px 3px #80b9ff;
 }
 
@@ -188,6 +188,37 @@ ul > li {
 
 .project-buttons {
 	margin: auto;
+}
+
+.project-buttons > a {
+	display: inline-block;
+	background-color: #000f20;
+	color: #80b9ff;
+	text-align: center;
+	text-shadow: none;
+	padding: 4px 0;
+	border: 2px solid #80b9ff;
+	border-radius: 5px;
+}
+
+.project-buttons > a:hover {
+	background-color: #80b9ff;
+	color: #000f20;
+}
+
+.project-demo-button {
+	width: 176px;
+	margin-right: 8px;
+}
+
+.project-code-button {
+	width: 50px;
+}
+
+.project-code-button:hover {
+	background-color: #80b9ff;
+	color: #000f20;
+	text-shadow: none;
 }
 
 .project-buttons > button {
