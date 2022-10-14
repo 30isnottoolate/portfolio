@@ -215,3 +215,15 @@ ul > li {
 #contacts > div > a > img {
 	vertical-align: middle;
 }
+
+.visible {
+	opacity: 1;
+	transition-property: opacity;
+	transition-duration: 0.5s;
+}
+
+.invisible {
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.5s;
+}
