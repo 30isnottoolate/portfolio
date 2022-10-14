@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './Portfolio.css';
+import Project from './Project';
 
+const codeLabel = "</>";
 const NUMBER_OF_PROJECTS = 8;
 
 const Portfolio: React.FC = () => {
 	const [projectIndex, setProjectIndex] = useState(1);
 	const [visibleProjects, setVisibleProjects] = useState(() => {
 		if (window.innerWidth < 1400 && window.innerWidth >= 1100) return 3;
-			else if (window.innerWidth < 1100 && window.innerWidth >= 700) return 2;
-			else if (window.innerWidth < 700) return 1;
-			else return 4;
+		else if (window.innerWidth < 1100 && window.innerWidth >= 700) return 2;
+		else if (window.innerWidth < 700) return 1;
+		else return 4;
 	});
 
 	useEffect(() => {
@@ -19,7 +21,7 @@ const Portfolio: React.FC = () => {
 			else if (window.innerWidth < 700) setVisibleProjects(1);
 			else setVisibleProjects(4);
 		});
-		return () => window.removeEventListener("resize", () => {});
+		return () => window.removeEventListener("resize", () => { });
 	}, []);
 
 	const handlePrev = () => {
@@ -131,8 +133,8 @@ const Portfolio: React.FC = () => {
 				</section>
 				<section id="projects">
 					<h1>Projects</h1>
-					<div id="projects-container" style={{width: (visibleProjects * 300 - 50)}}>
-						<div id="project-slider" style={{left: ((projectIndex - 1) * (-300))}}>
+					<div id="projects-container" style={{ width: (visibleProjects * 300 - 50) }}>
+						<div id="project-slider" style={{ left: ((projectIndex - 1) * (-300)) }}>
 							<div className={`project-box ${projectVisibility(1)}`}>
 								<p className="project-title">Title</p>
 								<div className="project-techs">
@@ -143,11 +145,19 @@ const Portfolio: React.FC = () => {
 								<img className="project-img" src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg" alt="Description" />
 								<p className="project-description">Description</p>
 								<div className="project-buttons">
-									<button>Demo</button>
-									<button>Code</button>
+									<a className="project-demo-button" href="https://www.solidbackgrounds.com">Demo</a>
+									<a className="project-code-button" href="https://www.solidbackgrounds.com">{codeLabel}</a>
 								</div>
 							</div>
-							<div className={`project-box ${projectVisibility(2)}`}></div>
+							<Project
+								projectVisibility={projectVisibility(2)}
+								title={"Title"}
+								techs={["js", "ts", "react"]}
+								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
+								description="Some text here..."
+								demoHref="https://www.solidbackgrounds.com"
+								codeHref="https://www.solidbackgrounds.com"
+							/>
 							<div className={`project-box ${projectVisibility(3)}`}></div>
 							<div className={`project-box ${projectVisibility(4)}`}></div>
 							<div className={`project-box ${projectVisibility(5)}`}></div>
