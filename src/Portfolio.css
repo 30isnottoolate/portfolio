@@ -140,6 +140,11 @@ ul > li {
 	gap: 60px
 }
 
+#prev-button, #next-button {
+	position: relative;
+	border: none;
+}
+
 #project-slider {
 	display: grid;
 	grid-template-columns: repeat(8, auto);
