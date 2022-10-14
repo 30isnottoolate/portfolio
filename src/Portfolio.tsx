@@ -3,7 +3,7 @@ import './Portfolio.css';
 import Project from './Project';
 
 const codeLabel = "</>";
-const NUMBER_OF_PROJECTS = 8;
+const NUMBER_OF_PROJECTS = 6;
 
 const Portfolio: React.FC = () => {
 	const [projectIndex, setProjectIndex] = useState(1);
@@ -135,20 +135,15 @@ const Portfolio: React.FC = () => {
 					<h1>Projects</h1>
 					<div id="projects-container" style={{ width: (visibleProjects * 300 - 50) }}>
 						<div id="project-slider" style={{ left: ((projectIndex - 1) * (-300)) }}>
-							<div className={`project-box ${projectVisibility(1)}`}>
-								<p className="project-title">Title</p>
-								<div className="project-techs">
-									<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
-									<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
-									<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-								</div>
-								<img className="project-img" src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg" alt="Description" />
-								<p className="project-description">Description</p>
-								<div className="project-buttons">
-									<a className="project-demo-button" href="https://www.solidbackgrounds.com">Demo</a>
-									<a className="project-code-button" href="https://www.solidbackgrounds.com">{codeLabel}</a>
-								</div>
-							</div>
+							<Project
+								projectVisibility={projectVisibility(1)}
+								title={"Title"}
+								techs={["js", "ts", "react"]}
+								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
+								description="Some text here..."
+								demoHref="https://www.solidbackgrounds.com"
+								codeHref="https://www.solidbackgrounds.com"
+							/>
 							<Project
 								projectVisibility={projectVisibility(2)}
 								title={"Title"}
@@ -158,12 +153,39 @@ const Portfolio: React.FC = () => {
 								demoHref="https://www.solidbackgrounds.com"
 								codeHref="https://www.solidbackgrounds.com"
 							/>
-							<div className={`project-box ${projectVisibility(3)}`}></div>
-							<div className={`project-box ${projectVisibility(4)}`}></div>
-							<div className={`project-box ${projectVisibility(5)}`}></div>
-							<div className={`project-box ${projectVisibility(6)}`}></div>
-							<div className={`project-box ${projectVisibility(7)}`}></div>
-							<div className={`project-box ${projectVisibility(8)}`}></div>
+							<Project
+								projectVisibility={projectVisibility(3)}
+								title={"Title"}
+								techs={["js", "ts", "react"]}
+								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
+								description="Some text here..."
+								demoHref="https://www.solidbackgrounds.com"
+								codeHref="https://www.solidbackgrounds.com"
+							/><Project
+								projectVisibility={projectVisibility(4)}
+								title={"Title"}
+								techs={["js", "ts", "react"]}
+								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
+								description="Some text here..."
+								demoHref="https://www.solidbackgrounds.com"
+								codeHref="https://www.solidbackgrounds.com"
+							/><Project
+								projectVisibility={projectVisibility(5)}
+								title={"Title"}
+								techs={["js", "ts", "react"]}
+								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
+								description="Some text here..."
+								demoHref="https://www.solidbackgrounds.com"
+								codeHref="https://www.solidbackgrounds.com"
+							/><Project
+								projectVisibility={projectVisibility(6)}
+								title={"Title"}
+								techs={["js", "ts", "react"]}
+								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
+								description="Some text here..."
+								demoHref="https://www.solidbackgrounds.com"
+								codeHref="https://www.solidbackgrounds.com"
+							/>
 						</div>
 						<button id="prev-button" onClick={handlePrev}>Previous</button>
 						<button id="next-button" onClick={handleNext}>Next</button>

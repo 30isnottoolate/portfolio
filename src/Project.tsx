@@ -40,8 +40,8 @@ const Project: React.FC<ProjectProps> = ({ projectVisibility, title, techs, src,
             <img className="project-img" src={src} alt={title} />
             <p className="project-description">{description} </p>
             <div className="project-buttons">
-                <a className="project-demo-button" href={demoHref} target="_blank" rel="noreferrer" >Demo</a>
-                <a className="project-code-button" href={codeHref} target="_blank" rel="noreferrer" >{codeLabel}</a>
+                <a className="project-demo-button" style={{display: `${projectVisibility === "invisible" ? "none" : ""}`}} href={demoHref} target="_blank" rel="noreferrer" >Demo</a>
+                <a className="project-code-button" style={{display: `${projectVisibility === "invisible" ? "none" : ""}`}} href={codeHref} target="_blank" rel="noreferrer" >{codeLabel}</a>
             </div>
         </div>
     );
