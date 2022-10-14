@@ -1,7 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import './Portfolio.css';
 
-function Portfolio() {
+const NUMBER_OF_PROJECTS = 8;
+
+const Portfolio: React.FC = () => {
+	const [projectIndex, setProjectIndex] = useState(1);
+	const [visibleProjects, setVisibleProjects] = useState(() => {
+		if (window.innerWidth < 1400 && window.innerWidth >= 1100) return 3;
+			else if (window.innerWidth < 1100 && window.innerWidth >= 700) return 2;
+			else if (window.innerWidth < 700) return 1;
+			else return 4;
+	});
+
+	useEffect(() => {
+		window.addEventListener("resize", () => {
+			if (window.innerWidth < 1400 && window.innerWidth >= 1100) setVisibleProjects(3);
+			else if (window.innerWidth < 1100 && window.innerWidth >= 700) setVisibleProjects(2);
+			else if (window.innerWidth < 700) setVisibleProjects(1);
+			else setVisibleProjects(4);
+		});
+		return () => window.removeEventListener("resize", () => {});
+	}, []);
+
 	return (
 		<div id="portfolio">
 			<header>
