@@ -131,8 +131,8 @@ const Portfolio: React.FC = () => {
 				</section>
 				<section id="projects">
 					<h1>Projects</h1>
-					<div id="projects-container">
-						<div id="project-slider">
+					<div id="projects-container" style={{width: (visibleProjects * 300 - 50)}}>
+						<div id="project-slider" style={{left: ((projectIndex - 1) * (-300))}}>
 							<div className={`project-box ${projectVisibility(1)}`}>
 								<p className="project-title">Title</p>
 								<div className="project-techs">
