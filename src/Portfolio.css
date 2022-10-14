@@ -142,9 +142,11 @@ ul > li {
 
 #project-slider {
 	display: grid;
-	grid-template-columns: auto auto auto auto;
+	grid-template-columns: repeat(8, auto);
 	gap: 50px;
 	position: relative;
+	transition-property: left;
+	transition-duration: 0.5s;
 }
 
 .project-box {
