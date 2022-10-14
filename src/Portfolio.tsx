@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Portfolio.css';
 import Project from './Project';
 
-const codeLabel = "</>";
 const NUMBER_OF_PROJECTS = 6;
 
 const Portfolio: React.FC = () => {
@@ -187,25 +186,31 @@ const Portfolio: React.FC = () => {
 								codeHref="https://www.solidbackgrounds.com"
 							/>
 						</div>
-						<button id="prev-button" onClick={handlePrev}>Previous</button>
-						<button id="next-button" onClick={handleNext}>Next</button>
+					</div>
+					<div id="project-index-buttons" style={{height: "0px"}}>
+						<svg id="prev-button" className={projectIndex > 1 ? "visible" : "invisible"} style={{ right: ((visibleProjects * 300 + 5) / 2), bottom: "345px" }} onClick={handlePrev} height="75px" width="40px" viewBox="-5 -5 30 70">
+							<polygon points="25,0 25,50 0,25" style={{ stroke: "#80b9ff", strokeWidth: 5 }} />
+						</svg>
+						<svg id="next-button" className={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"} style={{ left: ((visibleProjects * 300 + 5) / 2), bottom: "345px", transform: "rotate(180deg)"}} onClick={handleNext} height="75px" width="40px" viewBox="-5 -15 30 70">
+							<polygon points="25,0 25,50 0,25" style={{ stroke: "#80b9ff", strokeWidth: 5 }} />
+						</svg>
 					</div>
 				</section>
 				<section id="contact">
 					<h1>Get in touch</h1>
 					<div id="contacts">
 						<div id="linkedid">
-							<a href="https://www.linkedin.com/in/akos-varga-236497239">
+							<a href="https://www.linkedin.com/in/akos-varga-236497239" target="_blank" rel="noreferrer">
 								<img src="./linkedin.svg" alt="LinkedIn" /> <span>linkedin.com/in/akos-varga-236497239</span>
 							</a>
 						</div>
 						<div id="mail">
-							<a href="mailto:akos.varga.92@gmail.com?subject=Regarding a job opportunity">
+							<a href="mailto:akos.varga.92@gmail.com?subject=Regarding a job opportunity" target="_blank" rel="noreferrer">
 								<img src="./mail.svg" alt="Email" /> <span>akos.varga.92@gmail.com</span>
 							</a>
 						</div>
 						<div id="github">
-							<a href="https://github.com/30isnottoolate">
+							<a href="https://github.com/30isnottoolate" target="_blank" rel="noreferrer">
 								<img src="./github.svg" alt="Github" /> <span>github.com/30isnottoolate</span>
 							</a>
 						</div>
