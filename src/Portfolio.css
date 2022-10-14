@@ -30,6 +30,7 @@ header, footer {
 	box-shadow: 0 0 10vh 2vh #80b9ff;
 	height: 6vh;
 	min-height: 50px;
+	z-index: 10;
 }
 
 header {
@@ -44,11 +45,11 @@ section {
 	display: grid;
 	align-content: center;
     justify-items: center;
-	gap: 3vh;
+	gap: 30px;
 	background-color: #000f20;
 	text-shadow: 0 0 10px #6200ff;
 	height: 100vh;
-	padding: 0 40px 0 20px;
+	padding: 0 20px 0 20px;
 }
 
 nav {
@@ -94,8 +95,9 @@ h1 {
 }
 
 h2 {
+	text-align: center;
 	font-size: 30px;
-	font-weight:500;
+	font-weight: 500;
 }
 
 span {
@@ -109,35 +111,50 @@ span {
 
 #middleH {
 	font-family: "Poppins", Arial, Helvetica, sans-serif;
-	font-weight:500;
-}
-
-#welcome {
-	gap: 3vh;
-	text-align: center;
+	font-weight: 500;
 }
 
 ul > li {
 	padding-bottom: 10px;
 }
 
-#skills {
-	gap: 2vh;
-	text-align: center;
+#skills > div > h2 {
+	padding-bottom: 10px;
+}
+
+#skills > div > div {
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	gap: 5px;
+    align-content: center;
+    justify-content: center;
 }
 
 #skills > div > div > a > img {
-	height: 40px; 
-	width: 40px; 
+	height: 45px; 
+	width: 45px;
 	padding: 5px;
+}
+
+#projects {
+	gap: 60px
+}
+
+#project-slider {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	gap: 50px;
+	position: relative;
 }
 
 .project-box {
 	display: grid;
-	grid-template-rows: 60px 30px 140px 230px 30px;
+	grid-template-rows: 60px 30px 140px 210px 50px;
 	gap: 2.5px;
 	width: 250px;
 	height: 500px;
+	border-radius: 5px;
+	box-shadow: 0 0 15px 3px #80b9ff;
 }
 
 .project-title {
