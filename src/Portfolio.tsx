@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Portfolio.css';
 
 function Portfolio() {
@@ -57,7 +57,7 @@ function Portfolio() {
 						</div>
 					</div>
 					<div id="technologies">
-					<h2>Technologies and frameworks</h2>
+						<h2>Technologies and frameworks</h2>
 						<div id="techs" >
 							<a href="https://reactjs.org/" target="_blank" rel="noreferrer">
 								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
@@ -93,18 +93,25 @@ function Portfolio() {
 				</section>
 				<section id="projects">
 					<h1>Projects</h1>
-					<div className="project-box">
-						<p className="project-title">Title</p>
-						<div className="project-techs">
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
-							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-						</div>
-						<img className="project-img" src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg" alt="Description" />
-						<p className="project-description">Description</p>
-						<div className="project-buttons">
-							<button>Demo</button>
-							<button>Code</button>
+					<div id="projects-container">
+						<div id="project-slider">
+							<div className="project-box">
+								<p className="project-title">Title</p>
+								<div className="project-techs">
+									<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+									<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+									<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+								</div>
+								<img className="project-img" src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg" alt="Description" />
+								<p className="project-description">Description</p>
+								<div className="project-buttons">
+									<button>Demo</button>
+									<button>Code</button>
+								</div>
+							</div>
+							<div className="project-box"></div>
+							<div className="project-box"></div>
+							<div className="project-box"></div>
 						</div>
 					</div>
 				</section>
