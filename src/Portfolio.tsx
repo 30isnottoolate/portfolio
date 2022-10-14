@@ -22,6 +22,18 @@ const Portfolio: React.FC = () => {
 		return () => window.removeEventListener("resize", () => {});
 	}, []);
 
+	const handlePrev = () => {
+		if (projectIndex > 1) {
+			setProjectIndex((prev) => prev - 1);
+		}
+	}
+
+	const handleNext = () => {
+		if (projectIndex <= NUMBER_OF_PROJECTS - visibleProjects) {
+			setProjectIndex((prev) => prev + 1);
+		}
+	}
+
 	return (
 		<div id="portfolio">
 			<header>
@@ -133,6 +145,8 @@ const Portfolio: React.FC = () => {
 							<div className="project-box"></div>
 							<div className="project-box"></div>
 						</div>
+						<button id="prev-button" onClick={handlePrev}>Previous</button>
+						<button id="next-button" onClick={handleNext}>Next</button>
 					</div>
 				</section>
 				<section id="contact">
