@@ -34,6 +34,12 @@ const Portfolio: React.FC = () => {
 		}
 	}
 
+	const projectVisibility = (projectNumber: number) => {
+		if (projectNumber >= projectIndex && ((projectIndex + visibleProjects) > projectNumber)) {
+			return "visible"
+		} else return "invisible";
+	}
+
 	return (
 		<div id="portfolio">
 			<header>
@@ -127,7 +133,7 @@ const Portfolio: React.FC = () => {
 					<h1>Projects</h1>
 					<div id="projects-container">
 						<div id="project-slider">
-							<div className="project-box">
+							<div className={`project-box ${projectVisibility(1)}`}>
 								<p className="project-title">Title</p>
 								<div className="project-techs">
 									<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
@@ -141,9 +147,13 @@ const Portfolio: React.FC = () => {
 									<button>Code</button>
 								</div>
 							</div>
-							<div className="project-box"></div>
-							<div className="project-box"></div>
-							<div className="project-box"></div>
+							<div className={`project-box ${projectVisibility(2)}`}></div>
+							<div className={`project-box ${projectVisibility(3)}`}></div>
+							<div className={`project-box ${projectVisibility(4)}`}></div>
+							<div className={`project-box ${projectVisibility(5)}`}></div>
+							<div className={`project-box ${projectVisibility(6)}`}></div>
+							<div className={`project-box ${projectVisibility(7)}`}></div>
+							<div className={`project-box ${projectVisibility(8)}`}></div>
 						</div>
 						<button id="prev-button" onClick={handlePrev}>Previous</button>
 						<button id="next-button" onClick={handleNext}>Next</button>
