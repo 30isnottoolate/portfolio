@@ -165,7 +165,9 @@ ul > li {
 }
 
 .project-title {
-	padding: 6px 12px;
+	text-align: center;
+	padding: 9px 12px 3px 12px;
+	margin: auto;
 }
 
 .project-techs {
@@ -176,6 +178,10 @@ ul > li {
 	width: 20px;
 	height: 20px;
 	margin-right: 5px;
+}
+
+.project-techs > img:last-child {
+	margin-right: 0px;
 }
 
 .project-img {
