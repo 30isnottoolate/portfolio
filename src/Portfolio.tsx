@@ -13,6 +13,7 @@ const Portfolio: React.FC = () => {
 		else if (window.innerWidth < 700) return 1;
 		else return 4;
 	});
+	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
 
 	useEffect(() => {
 		window.addEventListener("resize", () => {
@@ -27,6 +28,13 @@ const Portfolio: React.FC = () => {
 	useEffect(() => {
 		setProjectIndex(1);
 	}, [visibleProjects]);
+
+	useEffect(() => {
+		window.addEventListener("scroll", () => {
+			setScrollPos(window.scrollY);
+		});
+		return () => window.removeEventListener("scroll", () => { });
+	}, []);
 
 	const handlePrev = () => {
 		if (projectIndex > 1) {
@@ -57,6 +65,7 @@ const Portfolio: React.FC = () => {
 					<a href="#contact">Contact</a>
 				</nav>
 			</header>
+			<img id="gear" src="./gear.svg" style={{ left: "5px", top: "5px", height: "45px", transform: `rotate(${scrollPos / (45 * Math.PI / 360)}deg)`}} />
 			<main>
 				<section id="welcome">
 					<h1 id="topH">
