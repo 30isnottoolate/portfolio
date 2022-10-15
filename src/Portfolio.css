@@ -169,16 +169,13 @@ ul > li {
 }
 
 .project-techs {
-	display: grid;
-	grid-template-columns: repeat(3, auto);
-	gap: 5px;
-    align-content: center;
-    justify-content: center;
+	margin: auto;
 }
 
 .project-techs > img {
 	width: 20px;
 	height: 20px;
+	margin-right: 5px;
 }
 
 .project-img {
