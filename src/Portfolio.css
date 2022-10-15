@@ -28,8 +28,7 @@ header, footer {
     align-content: center;
 	background-color: #000f20;
 	box-shadow: 0 0 10vh 2vh #80b9ff;
-	height: 6vh;
-	min-height: 50px;
+	height: 55px;
 	z-index: 10;
 }
 
@@ -37,8 +36,13 @@ header {
 	grid-template-columns: auto auto;
     justify-content: space-between;
 	position: fixed;
-	padding-left: 25px;
+	padding-left: 60px;
 	padding-right: 35px;
+}
+
+#gear {
+	position: fixed;
+	z-index: 20;
 }
 
 section {
