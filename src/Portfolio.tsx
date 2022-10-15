@@ -23,6 +23,10 @@ const Portfolio: React.FC = () => {
 		return () => window.removeEventListener("resize", () => { });
 	}, []);
 
+	useEffect(() => {
+		setProjectIndex(1);
+	}, [visibleProjects]);
+
 	const handlePrev = () => {
 		if (projectIndex > 1) {
 			setProjectIndex((prev) => prev - 1);
