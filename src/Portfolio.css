@@ -38,6 +38,7 @@ header {
 	position: fixed;
 	padding-left: 60px;
 	padding-right: 35px;
+	border-radius: 0 0 0 22.5px;
 }
 
 #gear {
@@ -151,6 +152,11 @@ ul > li {
 	position: relative;
 	transition-property: left;
 	transition-duration: 0.5s;
+}
+
+.arrow-button {
+	position: absolute;
+	height: 75px;
 }
 
 .project-box {
