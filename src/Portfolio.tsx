@@ -136,30 +136,30 @@ const Portfolio: React.FC = () => {
 						<div id="project-slider" style={{ left: ((projectIndex - 1) * (-300)) }}>
 							<Project
 								projectVisibility={projectVisibility(1)}
-								title={"Title"}
-								techs={["js", "ts", "react"]}
+								title={"Online Teleprompter"}
+								techs={["react", "ts", "css", "html"]}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
 								description="Some text here..."
-								demoHref="https://www.solidbackgrounds.com"
-								codeHref="https://www.solidbackgrounds.com"
+								demoHref="https://30isnottoolate.github.io/online-teleprompter-ts"
+								codeHref="https://github.com/30isnottoolate/online-teleprompter-ts"
 							/>
 							<Project
 								projectVisibility={projectVisibility(2)}
-								title={"Title"}
-								techs={["js", "ts", "react"]}
+								title={"Stage Teleprompter"}
+								techs={["react", "js", "css", "html"]}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
 								description="Some text here..."
-								demoHref="https://www.solidbackgrounds.com"
-								codeHref="https://www.solidbackgrounds.com"
+								demoHref="https://30isnottoolate.github.io/stage-teleprompter"
+								codeHref="https://github.com/30isnottoolate/stage-teleprompter"
 							/>
 							<Project
 								projectVisibility={projectVisibility(3)}
-								title={"Title"}
-								techs={["js", "ts", "react"]}
+								title={"Portfolio Page"}
+								techs={["react", "ts", "css", "html"]}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
 								description="Some text here..."
-								demoHref="https://www.solidbackgrounds.com"
-								codeHref="https://www.solidbackgrounds.com"
+								demoHref="https://30isnottoolate.github.io/portfolio"
+								codeHref="https://github.com/30isnottoolate/portfolio"
 							/><Project
 								projectVisibility={projectVisibility(4)}
 								title={"Title"}
