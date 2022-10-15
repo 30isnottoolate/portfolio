@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Portfolio.css';
 import Project from './Project';
+import Arrow from './Arrow';
 
 const NUMBER_OF_PROJECTS = 6;
 
@@ -191,13 +192,25 @@ const Portfolio: React.FC = () => {
 							/>
 						</div>
 					</div>
-					<div id="project-index-buttons" style={{height: "0px"}}>
-						<svg id="prev-button" className={projectIndex > 1 ? "visible" : "invisible"} style={{ right: ((visibleProjects * 300 + 5) / 2), bottom: "345px" }} onClick={handlePrev} height="75px" width="40px" viewBox="-5 -5 30 70">
-							<polygon points="25,0 25,50 0,25" style={{ stroke: "#80b9ff", strokeWidth: 5 }} />
-						</svg>
-						<svg id="next-button" className={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"} style={{ left: ((visibleProjects * 300 + 5) / 2), bottom: "345px", transform: "rotate(180deg)"}} onClick={handleNext} height="75px" width="40px" viewBox="-5 -15 30 70">
-							<polygon points="25,0 25,50 0,25" style={{ stroke: "#80b9ff", strokeWidth: 5 }} />
-						</svg>
+					<div id="project-index-buttons" style={{ height: "0px" }}>
+						<Arrow
+							arrowClassName={projectIndex > 1 ? "visible" : "invisible"}
+							posX={((visibleProjects * 300 + 5) / 2) * (-1)}
+							posY={-345}
+							mirrored={true}
+							clickHandler={handlePrev}
+							color={"#80b9ff"}
+							strokeWidth={5}
+						/>
+						<Arrow
+							arrowClassName={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
+							posX={(visibleProjects * 300 + 5) / 2}
+							posY={-345}
+							mirrored={false}
+							clickHandler={handleNext}
+							color={"#80b9ff"}
+							strokeWidth={5}
+						/>
 					</div>
 				</section>
 				<section id="contact">
