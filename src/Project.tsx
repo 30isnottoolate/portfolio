@@ -1,13 +1,12 @@
-
 const techBase = {
-    html: {src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", alt: "HTML"},
-    css: {src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", alt: "CSS"},
-    js: {src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", alt: "JavaScript"},
-    ts: {src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", alt: "TypeScript"},
-    react: {src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React"},
-    nodejs: {src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", alt: "NodeJS"},
-    expressjs: {src: "https://expressjs.com/images/favicon.png", alt: "ExpressJS"},
-    mongodb: {src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", alt: "MongoDB"}
+    html: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", alt: "HTML" },
+    css: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", alt: "CSS" },
+    js: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", alt: "JavaScript" },
+    ts: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", alt: "TypeScript" },
+    react: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React" },
+    nodejs: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", alt: "NodeJS" },
+    expressjs: { src: "https://expressjs.com/images/favicon.png", alt: "ExpressJS" },
+    mongodb: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", alt: "MongoDB" }
 }
 
 const codeLabel = "</>";
@@ -40,8 +39,8 @@ const Project: React.FC<ProjectProps> = ({ projectVisibility, title, techs, src,
             <img className="project-img" src={src} alt={title} />
             <p className="project-description">{description} </p>
             <div className="project-buttons">
-                <a className="project-demo-button" style={{display: `${projectVisibility === "invisible" ? "none" : ""}`}} href={demoHref} target="_blank" rel="noreferrer" >Demo</a>
-                <a className="project-code-button" style={{display: `${projectVisibility === "invisible" ? "none" : ""}`}} href={codeHref} target="_blank" rel="noreferrer" >{codeLabel}</a>
+                <a className="project-demo-button" style={{ display: `${projectVisibility === "invisible" ? "none" : ""}` }} href={demoHref} target="_blank" rel="noreferrer" >Demo</a>
+                <a className="project-code-button" style={{ display: `${projectVisibility === "invisible" ? "none" : ""}` }} href={codeHref} target="_blank" rel="noreferrer" >{codeLabel}</a>
             </div>
         </div>
     );
