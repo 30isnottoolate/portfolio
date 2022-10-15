@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Portfolio.css';
 import Project from './Project';
 import Arrow from './Arrow';
@@ -14,6 +14,8 @@ const Portfolio: React.FC = () => {
 		else return 4;
 	});
 	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
+
+	const projectContainerRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		window.addEventListener("resize", () => {
@@ -146,7 +148,7 @@ const Portfolio: React.FC = () => {
 				</section>
 				<section id="projects">
 					<h1>Projects</h1>
-					<div id="projects-container" style={{ width: (visibleProjects * 300 - 50) }}>
+					<div id="projects-container" ref={projectContainerRef} style={{ width: (visibleProjects * 300 - 50) }}>
 						<div id="project-slider" style={{ left: ((projectIndex - 1) * (-300)) }}>
 							<Project
 								projectVisibility={projectVisibility(1)}
@@ -204,8 +206,8 @@ const Portfolio: React.FC = () => {
 					<div id="project-index-buttons" style={{ height: "0px" }}>
 						<Arrow
 							arrowClassName={projectIndex > 1 ? "visible" : "invisible"}
-							posX={((visibleProjects * 300 + 5) / 2) * (-1)}
-							posY={-345}
+							posX={projectContainerRef.current ? projectContainerRef.current.offsetLeft - 66 : 0}
+							posY={projectContainerRef.current ? projectContainerRef.current.offsetTop + 250 - 37.5 : 0}
 							mirrored={true}
 							clickHandler={handlePrev}
 							color={"#80b9ff"}
@@ -213,8 +215,8 @@ const Portfolio: React.FC = () => {
 						/>
 						<Arrow
 							arrowClassName={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
-							posX={(visibleProjects * 300 + 5) / 2}
-							posY={-345}
+							posX={projectContainerRef.current ? projectContainerRef.current.offsetLeft + visibleProjects * 300 - 25 : 0}
+							posY={projectContainerRef.current ? projectContainerRef.current.offsetTop + 250 - 37.5 : 0}
 							mirrored={false}
 							clickHandler={handleNext}
 							color={"#80b9ff"}
