@@ -68,6 +68,7 @@ const Portfolio: React.FC = () => {
 					<a href="#projects">Projects</a>
 					<a href="#contact">Contact</a>
 				</nav>
+				<p id="menu-button">X</p>
 			</header>
 			<img id="gear" src="./gear.svg" alt="Gear" style={{ left: "5px", top: "5px", height: "45px", transform: `rotate(${scrollPos / (45 * Math.PI / 360)}deg)` }} />
 			<main>
