@@ -35,8 +35,8 @@ const Portfolio: React.FC = () => {
 	useEffect(() => {
 		setProjectIndex(1);
 		if (viewportWidth < 1400 && viewportWidth >= 1100) setVisibleProjects(3);
-			else if (viewportWidth < 1100 && viewportWidth >= 700) setVisibleProjects(2);
-			else if (viewportWidth < 700) setVisibleProjects(1);
+			else if (viewportWidth < 1100 && viewportWidth >= 750) setVisibleProjects(2);
+			else if (viewportWidth < 750) setVisibleProjects(1);
 			else setVisibleProjects(4);
 	}, [viewportWidth]);
 
