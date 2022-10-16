@@ -282,3 +282,29 @@ ul > li {
 	transition-property: opacity;
 	transition-duration: 0.5s;
 }
+
+@media only screen and (max-width: 650px) {
+	body {
+		font-size: 16px;
+	}
+
+	#logo {
+		font-size: 24px;
+	}
+	
+	footer {
+		font-size: 12px;
+	}
+	
+	h1 {
+		font-size: 30px;
+	}
+	
+	h2 {
+		font-size: 20px;
+	}
+
+	.project-buttons > a {
+		padding: 6px 0;
+	}
+}
