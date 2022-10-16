@@ -67,7 +67,7 @@ const Portfolio: React.FC = () => {
 					<a href="#contact">Contact</a>
 				</nav>
 			</header>
-			<img id="gear" src="./gear.svg" style={{ left: "5px", top: "5px", height: "45px", transform: `rotate(${scrollPos / (45 * Math.PI / 360)}deg)`}} />
+			<img id="gear" src="./gear.svg" alt="Gear" style={{ left: "5px", top: "5px", height: "45px", transform: `rotate(${scrollPos / (45 * Math.PI / 360)}deg)` }} />
 			<main>
 				<section id="welcome">
 					<h1 id="topH">
@@ -148,8 +148,28 @@ const Portfolio: React.FC = () => {
 				</section>
 				<section id="projects">
 					<h1>Projects</h1>
-					<div id="projects-container" ref={projectContainerRef} style={{ width: (visibleProjects * 300 - 50) }}>
-						<div id="project-slider" style={{ left: ((projectIndex - 1) * (-300)) }}>
+					<div id="project-index-buttons" style={{ height: "60px" }}>
+							<Arrow
+								arrowClassName={projectIndex > 1 ? "visible" : "invisible"}
+								posX={(-visibleProjects * 300 / 2)}
+								posY={297.5}
+								mirrored={true}
+								clickHandler={handlePrev}
+								color={"#80b9ff"}
+								strokeWidth={5}
+							/>
+							<Arrow
+								arrowClassName={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
+								posX={(visibleProjects * 300 / 2)}
+								posY={297.5}
+								mirrored={false}
+								clickHandler={handleNext}
+								color={"#80b9ff"}
+								strokeWidth={5}
+							/>
+						</div>
+					<div id="projects-container" ref={projectContainerRef} style={{ width: (visibleProjects * 300 - 50 + 150) }}>
+						<div id="project-slider" style={{ left: ((projectIndex - 1) * (-300)) + 75 }}>
 							<Project
 								projectVisibility={projectVisibility(1)}
 								title={"Online Teleprompter"}
@@ -202,26 +222,6 @@ const Portfolio: React.FC = () => {
 								codeHref="https://www.solidbackgrounds.com"
 							/>
 						</div>
-					</div>
-					<div id="project-index-buttons" style={{ height: "0px" }}>
-						<Arrow
-							arrowClassName={projectIndex > 1 ? "visible" : "invisible"}
-							posX={projectContainerRef.current ? projectContainerRef.current.offsetLeft - 66 : 0}
-							posY={projectContainerRef.current ? projectContainerRef.current.offsetTop + 250 - 37.5 : 0}
-							mirrored={true}
-							clickHandler={handlePrev}
-							color={"#80b9ff"}
-							strokeWidth={5}
-						/>
-						<Arrow
-							arrowClassName={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
-							posX={projectContainerRef.current ? projectContainerRef.current.offsetLeft + visibleProjects * 300 - 25 : 0}
-							posY={projectContainerRef.current ? projectContainerRef.current.offsetTop + 250 - 37.5 : 0}
-							mirrored={false}
-							clickHandler={handleNext}
-							color={"#80b9ff"}
-							strokeWidth={5}
-						/>
 					</div>
 				</section>
 				<section id="contact">
