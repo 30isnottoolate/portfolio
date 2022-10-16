@@ -16,6 +16,7 @@ body {
 	font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
 	font-size: 20px;
 	font-weight: 500;
+	width: 100vw;
 	overflow-x: hidden;
 }
 
@@ -141,8 +142,20 @@ ul > li {
 	padding: 5px;
 }
 
+.arrow-button {
+	position: relative;
+	height: 75px;
+	z-index: 5;
+}
+
 #projects {
-	gap: 60px
+	gap: 0;
+	padding: 0;
+}
+
+#projects-container {
+	height: 550px;
+	overflow: hidden;
 }
 
 #project-slider {
@@ -150,13 +163,9 @@ ul > li {
 	grid-template-columns: repeat(8, auto);
 	gap: 50px;
 	position: relative;
+	top: 25px;
 	transition-property: left;
 	transition-duration: 0.5s;
-}
-
-.arrow-button {
-	position: absolute;
-	height: 75px;
 }
 
 .project-box {
