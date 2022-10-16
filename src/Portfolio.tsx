@@ -7,10 +7,11 @@ const NUMBER_OF_PROJECTS = 6;
 
 const Portfolio: React.FC = () => {
 	const [projectIndex, setProjectIndex] = useState(1);
+	const [viewportWidth, setViewportWidth] = useState(document.body.offsetWidth);
 	const [visibleProjects, setVisibleProjects] = useState(() => {
-		if (window.innerWidth < 1400 && window.innerWidth >= 1100) return 3;
-		else if (window.innerWidth < 1100 && window.innerWidth >= 700) return 2;
-		else if (window.innerWidth < 700) return 1;
+		if (document.body.offsetWidth < 1400 && document.body.offsetWidth >= 1100) return 3;
+		else if (document.body.offsetWidth < 1100 && document.body.offsetWidth >= 700) return 2;
+		else if (document.body.offsetWidth < 700) return 1;
 		else return 4;
 	});
 	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
@@ -19,17 +20,10 @@ const Portfolio: React.FC = () => {
 
 	useEffect(() => {
 		window.addEventListener("resize", () => {
-			if (window.innerWidth < 1400 && window.innerWidth >= 1100) setVisibleProjects(3);
-			else if (window.innerWidth < 1100 && window.innerWidth >= 700) setVisibleProjects(2);
-			else if (window.innerWidth < 700) setVisibleProjects(1);
-			else setVisibleProjects(4);
+			setViewportWidth(document.body.offsetWidth);
 		});
 		return () => window.removeEventListener("resize", () => { });
 	}, []);
-
-	useEffect(() => {
-		setProjectIndex(1);
-	}, [visibleProjects]);
 
 	useEffect(() => {
 		window.addEventListener("scroll", () => {
@@ -37,6 +31,13 @@ const Portfolio: React.FC = () => {
 		});
 		return () => window.removeEventListener("scroll", () => { });
 	}, []);
+
+	useEffect(() => {
+		if (viewportWidth < 1400 && viewportWidth >= 1100) setVisibleProjects(3);
+			else if (viewportWidth < 1100 && viewportWidth >= 700) setVisibleProjects(2);
+			else if (viewportWidth < 700) setVisibleProjects(1);
+			else setVisibleProjects(4);
+	}, [viewportWidth]);
 
 	const handlePrev = () => {
 		if (projectIndex > 1) {
