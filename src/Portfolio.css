@@ -27,6 +27,7 @@ header, section, footer {
 header, footer {
 	display: grid;
     align-content: center;
+    align-items: center;
 	background-color: #000f20;
 	box-shadow: 0 0 10vh 2vh #80b9ff;
 	height: 55px;
@@ -86,6 +87,10 @@ nav > a:hover {
 #logo {
 	font-size: 30px;
 	font-weight: 700;
+}
+
+#menu-button {
+	display: none;
 }
 
 footer {
@@ -290,6 +295,14 @@ ul > li {
 
 	#logo {
 		font-size: 24px;
+	}
+
+	nav {
+		display: none;
+	}
+
+	#menu-button {
+		display: initial;
 	}
 	
 	footer {
