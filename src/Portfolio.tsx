@@ -109,7 +109,7 @@ const Portfolio: React.FC = () => {
 					<h1>My Skills</h1>
 					<div id="languages">
 						<h2>Languages</h2>
-						<div id="langs" >
+						<div className="icon-collection" >
 							<Icon
 								href={"https://html.spec.whatwg.org/"}
 								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"}
@@ -134,7 +134,7 @@ const Portfolio: React.FC = () => {
 					</div>
 					<div id="technologies">
 						<h2>Technologies and frameworks</h2>
-						<div id="techs" >
+						<div className="icon-collection" >
 							<Icon
 								href={"https://reactjs.org/"}
 								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"}
@@ -159,7 +159,7 @@ const Portfolio: React.FC = () => {
 					</div>
 					<div id="tools-apps">
 						<h2>Tools and applications</h2>
-						<div id="tools">
+						<div className="icon-collection" >
 							<Icon
 								href={"https://git-scm.com/"}
 								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"}
