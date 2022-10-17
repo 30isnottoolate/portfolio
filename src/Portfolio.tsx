@@ -114,52 +114,71 @@ const Portfolio: React.FC = () => {
 								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"}
 								alt={"HTML"}
 							/>
-							<a href="https://html.spec.whatwg.org/" target="_blank" rel="noreferrer">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
-							</a>
-							<a href="https://www.w3.org/TR/CSS/" target="_blank" rel="noreferrer">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
-							</a>
-							<a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/" target="_blank" rel="noreferrer">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-							</a>
-							<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
-							</a>
+							<Icon
+								href={"https://www.w3.org/TR/CSS/"}
+								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"}
+								alt={"CSS"}
+							/>
+							<Icon
+								href={"https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"}
+								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"}
+								alt={"JavaScript"}
+							/>
+							<Icon
+								href={"https://www.typescriptlang.org/"}
+								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"}
+								alt={"TypeScript"}
+							/>
 						</div>
 					</div>
 					<div id="technologies">
 						<h2>Technologies and frameworks</h2>
 						<div id="techs" >
-							<a href="https://reactjs.org/" target="_blank" rel="noreferrer">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
-							</a>
-							<a href="https://nodejs.org/" target="_blank" rel="noreferrer">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" />
-							</a>
-							<a href="https://expressjs.com/" target="_blank" rel="noreferrer">
-								<img src="https://expressjs.com/images/favicon.png" alt="ExpressJS" />
-							</a>
-							<a href="https://www.mongodb.com/" target="_blank" rel="noreferrer">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
-							</a>
+							<Icon
+								href={"https://reactjs.org/"}
+								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"}
+								alt={"React"}
+							/>
+							<Icon
+								href={"https://nodejs.org/"}
+								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"}
+								alt={"NodeJS"}
+							/>
+							<Icon
+								href={"https://expressjs.com/"}
+								src={"https://expressjs.com/images/favicon.png"}
+								alt={"ExpressJS"}
+							/>
+							<Icon
+								href={"https://www.mongodb.com/"}
+								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"}
+								alt={"MongoDB"}
+							/>
 						</div>
 					</div>
 					<div id="tools-apps">
 						<h2>Tools and applications</h2>
 						<div id="tools">
-							<a href="https://git-scm.com/" target="_blank" rel="noreferrer">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-							</a>
-							<a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" />
-							</a>
-							<a href="https://www.gimp.org/" target="_blank" rel="noreferrer">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gimp/gimp-original.svg" alt="GIMP" />
-							</a>
-							<a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noreferrer">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Adobe Photoshop" />
-							</a>
+							<Icon
+								href={"https://git-scm.com/"}
+								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"}
+								alt={"Git"}
+							/>
+							<Icon
+								href={"https://code.visualstudio.com/"}
+								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"}
+								alt={"VS Code"}
+							/>
+							<Icon
+								href={"https://www.gimp.org/"}
+								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gimp/gimp-original.svg"}
+								alt={"GIMP"}
+							/>
+							<Icon
+								href={"https://www.adobe.com/products/photoshop.html"}
+								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"}
+								alt={"Adobe Photoshop"}
+							/>
 						</div>
 					</div>
 				</section>
