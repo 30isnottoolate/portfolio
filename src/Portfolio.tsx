@@ -277,21 +277,18 @@ const Portfolio: React.FC = () => {
 							alt={"LinkedIn"}
 							text={"linkedin.com/in/akos-varga-236497239"} 
 						/>
-						<div id="linkedid">
-							<a href="https://www.linkedin.com/in/akos-varga-236497239" target="_blank" rel="noreferrer">
-								<img src="./linkedin.svg" alt="LinkedIn" /> <span>linkedin.com/in/akos-varga-236497239</span>
-							</a>
-						</div>
-						<div id="mail">
-							<a href="mailto:akos.varga.92@gmail.com?subject=Regarding a job opportunity" target="_blank" rel="noreferrer">
-								<img src="./mail.svg" alt="Email" /> <span>akos.varga.92@gmail.com</span>
-							</a>
-						</div>
-						<div id="github">
-							<a href="https://github.com/30isnottoolate" target="_blank" rel="noreferrer">
-								<img src="./github.svg" alt="Github" /> <span>github.com/30isnottoolate</span>
-							</a>
-						</div>
+						<Contact
+							href={"mailto:akos.varga.92@gmail.com?subject=Regarding a job opportunity"}
+							src={"./mail.svg"}
+							alt={"Email"}
+							text={"akos.varga.92@gmail.com"} 
+						/>
+						<Contact
+							href={"https://github.com/30isnottoolate"}
+							src={"./github.svg"}
+							alt={"Github"}
+							text={"github.com/30isnottoolate"} 
+						/>
 					</div>
 				</section>
 			</main>
