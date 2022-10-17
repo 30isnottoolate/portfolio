@@ -7,7 +7,7 @@ interface IconProps {
 const Icon: React.FC<IconProps> = ({ href, src, alt }: IconProps) => {
     return (
         <a href={href} target="_blank" rel="noreferrer">
-            <img src={src} alt={alt} />
+            <img className="icon-image" src={src} alt={alt} />
         </a>
     );
 }
