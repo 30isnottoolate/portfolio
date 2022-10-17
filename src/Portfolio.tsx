@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Portfolio.css';
+import Icon from './Icon';
 import Project from './Project';
 import Arrow from './Arrow';
 
@@ -108,6 +109,11 @@ const Portfolio: React.FC = () => {
 					<div id="languages">
 						<h2>Languages</h2>
 						<div id="langs" >
+							<Icon
+								href={"https://html.spec.whatwg.org/"}
+								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"}
+								alt={"HTML"}
+							/>
 							<a href="https://html.spec.whatwg.org/" target="_blank" rel="noreferrer">
 								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
 							</a>
@@ -183,10 +189,10 @@ const Portfolio: React.FC = () => {
 						style={{
 							width: (visibleProjects * (viewportWidth <= 650 ? 240 : 300) + (viewportWidth <= 650 ? 60 : 100))
 						}}>
-						<div 
-							id="project-slider" 
-							style={{ 
-								left: ((projectIndex - 1) * (-(viewportWidth <= 650 ? 240 : 300))) + (viewportWidth <= 650 ? 50 : 75) 
+						<div
+							id="project-slider"
+							style={{
+								left: ((projectIndex - 1) * (-(viewportWidth <= 650 ? 240 : 300))) + (viewportWidth <= 650 ? 50 : 75)
 							}}>
 							<Project
 								projectVisibility={projectVisibility(1)}
