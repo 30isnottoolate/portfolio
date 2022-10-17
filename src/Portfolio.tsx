@@ -16,8 +16,6 @@ const Portfolio: React.FC = () => {
 	});
 	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
 
-	const projectContainerRef = useRef<HTMLDivElement>(null);
-
 	useEffect(() => {
 		window.addEventListener("resize", () => {
 			setViewportWidth(document.body.offsetWidth);
@@ -35,9 +33,9 @@ const Portfolio: React.FC = () => {
 	useEffect(() => {
 		setProjectIndex(1);
 		if (viewportWidth < 1400 && viewportWidth >= 1100) setVisibleProjects(3);
-			else if (viewportWidth < 1100 && viewportWidth >= 750) setVisibleProjects(2);
-			else if (viewportWidth < 750) setVisibleProjects(1);
-			else setVisibleProjects(4);
+		else if (viewportWidth < 1100 && viewportWidth >= 750) setVisibleProjects(2);
+		else if (viewportWidth < 750) setVisibleProjects(1);
+		else setVisibleProjects(4);
 	}, [viewportWidth]);
 
 	const handlePrev = () => {
@@ -70,7 +68,17 @@ const Portfolio: React.FC = () => {
 				</nav>
 				<p id="menu-button">X</p>
 			</header>
-			<img id="gear" src="./gear.svg" alt="Gear" style={{ left: "5px", top: "5px", height: "45px", transform: `rotate(${scrollPos / (45 * Math.PI / 360)}deg)` }} />
+			<img
+				id="gear"
+				src="./gear.svg"
+				alt="Gear"
+				style={{
+					left: `${viewportWidth <= 650 ? 4.5 : 5}px`,
+					top: `${viewportWidth <= 650 ? 4.5 : 5}px`,
+					height: `${viewportWidth <= 650 ? 36 : 45}px`,
+					transform: `rotate(${scrollPos / ((viewportWidth <= 650 ? 36 : 45) * Math.PI / 360)}deg)`
+				}}
+			/>
 			<main>
 				<section id="welcome">
 					<h1 id="topH">
@@ -151,28 +159,35 @@ const Portfolio: React.FC = () => {
 				</section>
 				<section id="projects">
 					<h1>Projects</h1>
-					<div id="project-index-buttons" style={{ height: "60px" }}>
-							<Arrow
-								arrowClassName={projectIndex > 1 ? "visible" : "invisible"}
-								posX={(-visibleProjects * 300 / 2)}
-								posY={297.5}
-								mirrored={true}
-								clickHandler={handlePrev}
-								color={"#80b9ff"}
-								strokeWidth={5}
-							/>
-							<Arrow
-								arrowClassName={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
-								posX={(visibleProjects * 300 / 2)}
-								posY={297.5}
-								mirrored={false}
-								clickHandler={handleNext}
-								color={"#80b9ff"}
-								strokeWidth={5}
-							/>
-						</div>
-					<div id="projects-container" ref={projectContainerRef} style={{ width: (visibleProjects * 300 - 50 + 150) }}>
-						<div id="project-slider" style={{ left: ((projectIndex - 1) * (-300)) + 75 }}>
+					<div id="project-index-buttons" style={{ height: (viewportWidth <= 650 ? 48 : 60) }}>
+						<Arrow
+							arrowClassName={projectIndex > 1 ? "visible" : "invisible"}
+							posX={(-visibleProjects * (viewportWidth <= 650 ? 230 : 300) / 2)}
+							posY={(viewportWidth <= 650 ? 238 : 297.5)}
+							mirrored={true}
+							clickHandler={handlePrev}
+							color={"#80b9ff"}
+							strokeWidth={5}
+						/>
+						<Arrow
+							arrowClassName={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
+							posX={(visibleProjects * (viewportWidth <= 650 ? 230 : 300) / 2)}
+							posY={(viewportWidth <= 650 ? 238 : 297.5)}
+							mirrored={false}
+							clickHandler={handleNext}
+							color={"#80b9ff"}
+							strokeWidth={5}
+						/>
+					</div>
+					<div id="projects-container"
+						style={{
+							width: (visibleProjects * (viewportWidth <= 650 ? 240 : 300) + (viewportWidth <= 650 ? 60 : 100))
+						}}>
+						<div 
+							id="project-slider" 
+							style={{ 
+								left: ((projectIndex - 1) * (-(viewportWidth <= 650 ? 240 : 300))) + (viewportWidth <= 650 ? 50 : 75) 
+							}}>
 							<Project
 								projectVisibility={projectVisibility(1)}
 								title={"Online Teleprompter"}
