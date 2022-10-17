@@ -3,6 +3,7 @@ import './Portfolio.css';
 import Icon from './Icon';
 import Project from './Project';
 import Arrow from './Arrow';
+import Contact from './Contact';
 
 const NUMBER_OF_PROJECTS = 6;
 
@@ -270,6 +271,12 @@ const Portfolio: React.FC = () => {
 				<section id="contact">
 					<h1>Get in touch</h1>
 					<div id="contacts">
+						<Contact
+							href={"https://www.linkedin.com/in/akos-varga-236497239"}
+							src={"./linkedin.svg"}
+							alt={"LinkedIn"}
+							text={"linkedin.com/in/akos-varga-236497239"} 
+						/>
 						<div id="linkedid">
 							<a href="https://www.linkedin.com/in/akos-varga-236497239" target="_blank" rel="noreferrer">
 								<img src="./linkedin.svg" alt="LinkedIn" /> <span>linkedin.com/in/akos-varga-236497239</span>
