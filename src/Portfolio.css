@@ -96,6 +96,12 @@ nav > a:hover {
 
 .menu-button > div {
 	background-color: #80b9ff;
+	width: 35px; 
+	height: 5px;
+	border-radius: 2.5px;
+	margin: 5px 0;
+	transition-property: transform, opacity;
+	transition-duration: 0.5s, 0.5s;
 }
 
 footer {
@@ -319,19 +325,16 @@ ul > li {
 
 	nav > a {
 		text-align: right;
+		padding: 4px 10px;
+	}
+
+	nav > a:hover {
+		background-color: #80b9ff;
+		color: #000f20;
 	}
 
 	.menu-button {
 		display: inline-block;
-	}
-
-	.menu-button > div {
-		width: 35px; 
-		height: 5px;
-		border-radius: 2.5px;
-		margin: 5px 0;
-		transition-property: transform, opacity;
-		transition-duration: 0.5s, 0.5s;
 	}
 
 	footer {
