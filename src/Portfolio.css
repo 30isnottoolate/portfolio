@@ -89,8 +89,13 @@ nav > a:hover {
 	font-weight: 700;
 }
 
-#menu-button {
+.menu-button {
 	display: none;
+
+}
+
+.menu-button > div {
+	background-color: #80b9ff;
 }
 
 footer {
@@ -138,18 +143,16 @@ ul > li {
 	padding-bottom: 10px;
 }
 
-#skills > div > div {
-	display: grid;
-	grid-template-columns: repeat(4, auto);
-	gap: 5px;
-    align-content: center;
-    justify-content: center;
+.icon-collection {
+	width: 200px;
+	margin: 0 auto;
 }
 
-#skills > div > div > a > img {
-	height: 45px; 
-	width: 45px;
-	padding: 5px;
+.icon-image {
+	box-sizing: content-box;
+	height: 40px;
+	width: 40px;
+	margin: 0 5px;
 }
 
 #projects {
@@ -250,7 +253,7 @@ ul > li {
 }
 
 #contacts > div {
-	margin-bottom: 2vh;
+	margin-bottom: 12px;
 }
 
 .contact-image {
@@ -288,6 +291,7 @@ ul > li {
 
 	header {
 		padding-left: 56px;
+		padding-right: 20px;
 		border-radius: 0 0 0 22.5px;
 	}
 
@@ -301,12 +305,35 @@ ul > li {
 
 	nav {
 		display: none;
+		justify-content: space-between;
+		position: fixed;
+		background-color: #000f20;
+		top: 45px;
+		left: 0px;
+		width: calc(100vw - 0px);
+		height: 35px;
+		padding: 0 20px;
+		border: 1px solid #80b9ff;
+		border-width: 1px 0;
 	}
 
-	#menu-button {
-		display: initial;
+	nav > a {
+		text-align: right;
 	}
-	
+
+	.menu-button {
+		display: inline-block;
+	}
+
+	.menu-button > div {
+		width: 35; 
+		height: 5;
+		border-radius: 2.5;
+		margin: 5px 0;
+		transition-property: transform, opacity;
+		transition-duration: 0.5s, 0.5s;
+	}
+
 	footer {
 		font-size: 12px;
 	}
@@ -319,10 +346,14 @@ ul > li {
 		font-size: 24px;
 	}
 
-	#skills > div > div > a > img {
-		height: 36px; 
+	.icon-collection {
+		width: 176px;
+	}
+	
+	.icon-image {
+		height: 36px;
 		width: 36px;
-		padding: 4px;
+		margin: 0 4px;
 	}
 
 	.arrow-button {
