@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Portfolio.css';
+import MenuButton from './MenuButton';
 import Icon from './Icon';
 import Project from './Project';
 import Arrow from './Arrow';
@@ -68,7 +69,7 @@ const Portfolio: React.FC = () => {
 					<a href="#projects">Projects</a>
 					<a href="#contact">Contact</a>
 				</nav>
-				<p id="menu-button">X</p>
+				<MenuButton />
 			</header>
 			<img
 				id="gear"
@@ -147,8 +148,9 @@ const Portfolio: React.FC = () => {
 							/>
 							<Icon
 								href={"https://expressjs.com/"}
-								src={"https://expressjs.com/images/favicon.png"}
+								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"}
 								alt={"ExpressJS"}
+								bGColor={"#ffffff"}
 							/>
 							<Icon
 								href={"https://www.mongodb.com/"}
