@@ -74,14 +74,12 @@ a, a:visited {
 }
 
 nav > a {
-	transition-property: text-shadow;
-	transition-duration: 0.5s;
+	transition: text-shadow 0.5s;
 }
 
 nav > a:hover {
 	text-shadow: 0 0 3vh #a2ccff;
-	transition-property: text-shadow;
-	transition-duration: 0.4s;
+	transition: text-shadow 0.5s;
 }
 
 #logo {
@@ -100,8 +98,7 @@ nav > a:hover {
 	height: 5px;
 	border-radius: 2.5px;
 	margin: 5px 0;
-	transition-property: transform, opacity;
-	transition-duration: 0.5s, 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
 }
 
 footer {
@@ -183,8 +180,7 @@ ul > li {
 	gap: 50px;
 	position: relative;
 	top: 25px;
-	transition-property: left;
-	transition-duration: 0.5s;
+	transition: left 0.5s;
 }
 
 .project-box {
@@ -276,14 +272,12 @@ ul > li {
 
 .visible {
 	opacity: 1;
-	transition-property: opacity;
-	transition-duration: 0.5s;
+	transition: opacity 0.5s;
 }
 
 .invisible {
 	opacity: 0;
-	transition-property: opacity;
-	transition-duration: 0.5s;
+	transition: opacity 0.5s;
 }
 
 @media only screen and (max-width: 650px) {
@@ -297,7 +291,7 @@ ul > li {
 
 	header {
 		padding-left: 56px;
-		padding-right: 20px;
+		padding-right: 10px;
 		border-radius: 0 0 0 22.5px;
 	}
 
@@ -316,16 +310,15 @@ ul > li {
 		background-color: #000f20;
 		top: 45px;
 		left: 0px;
-		width: calc(100vw - 0px);
+		width: 100vw;
 		height: 35px;
-		padding: 0 20px;
 		border: 1px solid #80b9ff;
 		border-width: 1px 0;
 	}
 
 	nav > a {
 		text-align: right;
-		padding: 4px 10px;
+		padding: 4px 10px 5px 10px;
 	}
 
 	nav > a:hover {
