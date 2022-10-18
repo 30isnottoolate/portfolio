@@ -11,6 +11,7 @@ const NUMBER_OF_PROJECTS = 6;
 const Portfolio: React.FC = () => {
 	const [projectIndex, setProjectIndex] = useState(1);
 	const [viewportWidth, setViewportWidth] = useState(document.body.offsetWidth);
+	const [isMenuVisible, setIsMenuVisible] = useState(viewportWidth <= 650 ? false : true);
 	const [visibleProjects, setVisibleProjects] = useState(() => {
 		if (document.body.offsetWidth < 1400 && document.body.offsetWidth >= 1100) return 3;
 		else if (document.body.offsetWidth < 1100 && document.body.offsetWidth >= 700) return 2;
@@ -35,11 +36,16 @@ const Portfolio: React.FC = () => {
 
 	useEffect(() => {
 		setProjectIndex(1);
+		setIsMenuVisible(viewportWidth <= 650 ? false : true);
 		if (viewportWidth < 1400 && viewportWidth >= 1100) setVisibleProjects(3);
 		else if (viewportWidth < 1100 && viewportWidth >= 750) setVisibleProjects(2);
 		else if (viewportWidth < 750) setVisibleProjects(1);
 		else setVisibleProjects(4);
 	}, [viewportWidth]);
+
+	const handleMenuClick = () => {
+		setIsMenuVisible((prevValue) => !prevValue);
+	}
 
 	const handlePrev = () => {
 		if (projectIndex > 1) {
@@ -63,13 +69,16 @@ const Portfolio: React.FC = () => {
 		<div id="portfolio">
 			<header>
 				<a id="logo" href="#welcome">30isnottoolate</a>
-				<nav>
+				<nav style={{display: (isMenuVisible ? "grid" : "none")}}>
 					<a href="#bio">Bio</a>
 					<a href="#skills">Skills</a>
 					<a href="#projects">Projects</a>
 					<a href="#contact">Contact</a>
 				</nav>
-				<MenuButton />
+				<MenuButton 
+					isMenuVisible={isMenuVisible}
+					clickHandler={handleMenuClick} 
+				/>
 			</header>
 			<img
 				id="gear"
