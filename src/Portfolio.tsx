@@ -65,17 +65,9 @@ const Portfolio: React.FC = () => {
 		} else return "invisible";
 	}
 
-	const getHeaderBorderRadius = () => {
-		if (viewportWidth <= 650) {
-			if (isMenuVisible) {
-				return "0";
-			} else return "0 0 0 22.5px";
-		} else return "0 0 0 28px";
-	}
-
 	return (
 		<div id="portfolio">
-			<header style={{borderRadius: getHeaderBorderRadius()}}>
+			<header>
 				<a id="logo" href="#welcome">30isnottoolate</a>
 				<nav style={{display: (isMenuVisible ? "grid" : "none")}}>
 					<a href="#bio">Bio</a>
