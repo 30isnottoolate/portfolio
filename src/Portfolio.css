@@ -317,7 +317,6 @@ ul > li {
 	}
 
 	nav > a {
-		text-align: right;
 		padding: 4px 10px 5px 10px;
 	}
 
@@ -399,5 +398,37 @@ ul > li {
 
 	.contact-image {
 		width: 32px;
+	}
+}
+
+@media only screen and (max-width: 380px) {
+	header {
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 0;
+	}
+
+	#gear {
+		display: none;
+	}
+
+	nav {
+		display: none;
+		grid-template-columns: auto;
+		justify-content: end;
+		position: fixed;
+		background-color: #000f20;
+		top: 45px;
+		left: 0px;
+		width: 100vw;
+		height: auto;
+		border: 1px solid #80b9ff;
+		border-width: 0 0 1px 0;
+	}
+
+	nav > a {
+		text-align: center;
+		width: 100vw;
+		padding: 4px 10px 5px 10px;
 	}
 }
