@@ -283,10 +283,10 @@ const Portfolio: React.FC = () => {
 					<h1>Get in touch</h1>
 					<div id="contacts">
 						<Contact
-							href={"https://www.linkedin.com/in/akos-varga-236497239"}
+							href={"https://www.linkedin.com/in/30isnottoolate/"}
 							src={"./linkedin.svg"}
 							alt={"LinkedIn"}
-							text={"linkedin.com/in/akos-varga-236497239"} 
+							text={"linkedin.com/in/30isnottoolate"} 
 						/>
 						<Contact
 							href={"mailto:akos.varga.92@gmail.com?subject=Regarding a job opportunity"}
@@ -295,7 +295,7 @@ const Portfolio: React.FC = () => {
 							text={"akos.varga.92@gmail.com"} 
 						/>
 						<Contact
-							href={"https://github.com/30isnottoolate"}
+							href={"https://github.com/30isnottoolate/"}
 							src={"./github.svg"}
 							alt={"Github"}
 							text={"github.com/30isnottoolate"} 
