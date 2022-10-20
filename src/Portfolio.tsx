@@ -9,16 +9,18 @@ import Contact from './Contact';
 const NUMBER_OF_PROJECTS = 6;
 
 const Portfolio: React.FC = () => {
-	const [projectIndex, setProjectIndex] = useState(1);
 	const [viewportWidth, setViewportWidth] = useState(document.body.offsetWidth);
 	const [isMenuVisible, setIsMenuVisible] = useState(viewportWidth <= 650 ? false : true);
+	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
+	const [projectIndex, setProjectIndex] = useState(1);
 	const [visibleProjects, setVisibleProjects] = useState(() => {
 		if (document.body.offsetWidth < 1400 && document.body.offsetWidth >= 1100) return 3;
 		else if (document.body.offsetWidth < 1100 && document.body.offsetWidth >= 700) return 2;
 		else if (document.body.offsetWidth < 700) return 1;
 		else return 4;
 	});
-	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
+	const [touchPosX, setTouchPosX] = useState(0);
+	const [swiped, setSwiped] = useState(false);
 
 	useEffect(() => {
 		window.addEventListener("resize", () => {
@@ -65,19 +67,34 @@ const Portfolio: React.FC = () => {
 		} else return "invisible";
 	}
 
+	const handleTouchStart = (event: React.TouchEvent) => {
+		setTouchPosX(event.touches[0].clientX);
+		setSwiped(true);
+	}
+
+	const handleTouchMove = (event: React.TouchEvent) => {
+		if (swiped && (touchPosX + 120 < event.touches[0].clientX)) {
+			setSwiped(false);
+			handlePrev();
+		} else if (swiped && (touchPosX - 120 > event.touches[0].clientX)) {
+			setSwiped(false);
+			handleNext();
+		}
+	}
+
 	return (
 		<div id="portfolio">
 			<header>
 				<a id="logo" href="#welcome">30isnottoolate</a>
-				<nav style={{display: (isMenuVisible ? "grid" : "none")}}>
+				<nav style={{ display: (isMenuVisible ? "grid" : "none") }}>
 					<a href="#bio">Bio</a>
 					<a href="#skills">Skills</a>
 					<a href="#projects">Projects</a>
 					<a href="#contact">Contact</a>
 				</nav>
-				<MenuButton 
+				<MenuButton
 					isMenuVisible={isMenuVisible}
-					clickHandler={handleMenuClick} 
+					clickHandler={handleMenuClick}
 				/>
 			</header>
 			<img
@@ -219,7 +236,10 @@ const Portfolio: React.FC = () => {
 					<div id="projects-container"
 						style={{
 							width: (visibleProjects * (viewportWidth <= 650 ? 240 : 300) + (viewportWidth <= 650 ? 60 : 100))
-						}}>
+						}}
+						onTouchStart={handleTouchStart}
+						onTouchMove={handleTouchMove}
+					>
 						<div
 							id="project-slider"
 							style={{
@@ -286,19 +306,19 @@ const Portfolio: React.FC = () => {
 							href={"https://www.linkedin.com/in/30isnottoolate/"}
 							src={"./linkedin.svg"}
 							alt={"LinkedIn"}
-							text={"linkedin.com/in/30isnottoolate"} 
+							text={"linkedin.com/in/30isnottoolate"}
 						/>
 						<Contact
 							href={"mailto:akos.varga.92@gmail.com?subject=Regarding a job opportunity"}
 							src={"./mail.svg"}
 							alt={"Email"}
-							text={"akos.varga.92@gmail.com"} 
+							text={"akos.varga.92@gmail.com"}
 						/>
 						<Contact
 							href={"https://github.com/30isnottoolate/"}
 							src={"./github.svg"}
 							alt={"Github"}
-							text={"github.com/30isnottoolate"} 
+							text={"github.com/30isnottoolate"}
 						/>
 					</div>
 				</section>
