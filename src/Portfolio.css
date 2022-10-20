@@ -63,7 +63,7 @@ nav {
 	display: grid;
 	grid-template-columns: repeat(4, auto);
     align-items: center;
-	gap: min(4vw, 3em);
+	gap: 4vw;
 	font-family: "Poppins", Arial, Helvetica, sans-serif;
 	text-shadow: 0 0 10px #6200ff;
 }
@@ -324,19 +324,21 @@ ul > li {
 
 	nav {
 		display: none;
-		justify-content: end;
+		grid-template-columns: auto;
+		gap: 0;
 		position: fixed;
 		background-color: #000f20;
 		top: 45px;
 		right: 0px;
 		width: auto;
-		height: 35px;
 		border: 1px solid #80b9ff;
 		border-width: 0 0 1px 1px;
 	}
 
 	nav > a {
-		padding: 4px 10px 5px 10px;
+		text-align: right;
+		width: auto;
+		padding: 7.5px 15px 7.5px 15px;
 	}
 
 	nav > a:hover {
@@ -426,22 +428,17 @@ ul > li {
 	}
 
 	nav {
-		display: none;
 		grid-template-columns: auto;
-		justify-content: end;
-		position: fixed;
-		background-color: #000f20;
 		top: 45px;
-		left: 0px;
 		width: 100vw;
 		height: auto;
-		border: 1px solid #80b9ff;
 		border-width: 0 0 1px 0;
 	}
 
 	nav > a {
 		text-align: center;
 		width: 100vw;
-		padding: 4px 10px 5px 10px;
+		padding-top: 7.5px;
+		padding-bottom: 7.5px;
 	}
 }
