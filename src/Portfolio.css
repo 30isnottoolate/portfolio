@@ -151,6 +151,25 @@ ul > li {
 	margin: 0 auto;
 }
 
+.icon-container {
+	display: inline-block;
+}
+
+.icon-tooltip {
+	background-color: #80b9ff;
+	color: #000f20;
+	position: absolute;
+	opacity: 0;
+	font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	text-align: center;
+	text-shadow: none;
+	padding: 3px 6px;
+	border: 1px solid #80b9ff;
+	border-radius: 3px;
+}
+
 .icon-image {
 	box-sizing: content-box;
 	height: 40px;
