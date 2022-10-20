@@ -30,7 +30,7 @@ const Icon: React.FC<IconProps> = ({ href, src, alt, bGColor }: IconProps) => {
     }
 
     return (
-        <div className="icon-container" style={{ display: "inline-block" }}>
+        <div className="icon-container">
             <a
                 ref={iconRef}
                 href={href}
@@ -45,25 +45,15 @@ const Icon: React.FC<IconProps> = ({ href, src, alt, bGColor }: IconProps) => {
                     onMouseLeave={handleHoverEnd}
                 />
             </a>
-            <p
+            <span
                 ref={tooltipRef}
-                className="tooltip"
+                className="icon-tooltip"
                 style={{
-                    backgroundColor: "#80b9ff",
-                    color: "#000f20",
-                    opacity: "0",
-                    position: "absolute",
-                    fontSize: "14px",
-                    textAlign: "center",
-                    textShadow: "none",
                     top: getToolTipTop(),
-                    left: getToolTipLeft(),
-                    padding: "3px 6px",
-                    border: "1px solid #80b9ff",
-                    borderRadius: "2px"
+                    left: getToolTipLeft()
                 }}>
                 {alt}
-            </p>
+            </span>
         </div>
 
     );
