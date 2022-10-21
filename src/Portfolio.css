@@ -10,6 +10,19 @@ html {
 	scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: #002249;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a2ccff;
+	border-radius: 2.5px;
+}
+
 body {
 	user-select: none;
 	color: #a2ccff;
