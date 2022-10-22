@@ -131,12 +131,7 @@ const Portfolio: React.FC = () => {
 					<img
 						id="avatar-image"
 						src="./avatar.png"
-						style={{
-							height: "50vw",
-							maxHeight: "250px",
-							borderRadius: "50%",
-							border: "10px solid #80b9ff"
-						}} />
+					/>
 					<h1 id="topH">
 						Hi! My name is <span>Akos Varga</span>.
 					</h1>
