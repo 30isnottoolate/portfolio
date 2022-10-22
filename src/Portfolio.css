@@ -444,6 +444,10 @@ ul > li {
 		border-radius: 0;
 	}
 
+	#back-to-top {
+		display: none;
+	}
+
 	nav {
 		grid-template-columns: auto;
 		top: 45px;
