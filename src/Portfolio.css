@@ -386,6 +386,10 @@ ul > li {
 		font-size: 24px;
 	}
 
+	#avatar-image {
+		border-width: 2vw;
+	}
+
 	.icon-collection {
 		width: 176px;
 	}
