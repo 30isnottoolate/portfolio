@@ -61,6 +61,10 @@ header {
 	z-index: 20;
 }
 
+#back-to-top {
+	transition: bottom 0.5s ease-out;
+}
+
 section {
 	display: grid;
 	align-content: center;
