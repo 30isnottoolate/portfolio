@@ -115,7 +115,7 @@ const Portfolio: React.FC = () => {
 			</a>
 			<main>
 				<section id="welcome">
-					<img src="./avatar.png" style={{height: "50vw", maxHeight: "250px", borderRadius: "50%", border: "10px solid #80b9ff"}} />
+					<img id="avatar-image" src="./avatar.png" style={{height: "50vw", maxHeight: "250px", borderRadius: "50%", border: "10px solid #80b9ff"}} />
 					<h1 id="topH">
 						Hi! My name is <span>Akos Varga</span>.
 					</h1>
