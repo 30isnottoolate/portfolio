@@ -160,10 +160,10 @@ ul > li {
 }
 
 #avatar-image {
-	height: "50vw";
-	max-height: "250px";
-	border-radius: "50%";
-	border: "10px solid #80b9ff"
+	height: 50vw;
+	max-height: 250px;
+	border-radius: 50%;
+	border: 10px solid #80b9ff;
 }
 
 #skills > div > h2 {
