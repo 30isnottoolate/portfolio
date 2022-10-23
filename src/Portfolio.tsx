@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Portfolio.css';
+import Gear from './Gear';
 import MenuButton from './MenuButton';
 import BackToTop from './BackToTop';
 import Icon from './Icon';
@@ -98,18 +99,11 @@ const Portfolio: React.FC = () => {
 					clickHandler={handleMenuClick}
 				/>
 			</header>
-			<img
-				id="gear"
-				src="./gear.svg"
-				alt="Gear"
-				style={{
-					left: `${viewportWidth <= 650 ? 4.5 : 5}px`,
-					top: `${viewportWidth <= 650 ? 4.5 : 5}px`,
-					height: `${viewportWidth <= 650 ? 36 : 45}px`,
-					transform: `rotate(${scrollPos / ((viewportWidth <= 650 ? 36 : 45) * Math.PI / 360)}deg)`
-				}}
+			<Gear
+				viewportWidth={viewportWidth}
+				scrollPos={scrollPos}
 			/>
-			<BackToTop scrollPos={scrollPos}/>
+			<BackToTop scrollPos={scrollPos} />
 			<main>
 				<section id="welcome">
 					<img
