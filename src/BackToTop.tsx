@@ -5,7 +5,8 @@ const BackToTop: React.FC<{scrollPos: number}> = ({scrollPos}) => {
             href="#welcome"
             style={{
                 position: "fixed",
-                bottom: (scrollPos > 1300 ? "30px" : "-50px"), right: "40px"
+                bottom: (scrollPos > 1300 ? "30px" : "-50px"), 
+                right: "40px"
             }}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
