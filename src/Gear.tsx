@@ -13,3 +13,5 @@ const Gear: React.FC<{viewportWidth: number, scrollPos: number}> = ({viewportWid
         />
     );
 }
+
+export default Gear;
