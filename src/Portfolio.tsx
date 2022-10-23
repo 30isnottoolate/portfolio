@@ -109,6 +109,7 @@ const Portfolio: React.FC = () => {
 					<img
 						id="avatar-image"
 						src="./avatar.png"
+						alt="Akos Varga"
 					/>
 					<h1 id="topH">
 						Hi! My name is <span>Akos Varga</span>.
