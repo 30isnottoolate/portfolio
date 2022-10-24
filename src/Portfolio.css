@@ -66,6 +66,7 @@ header {
 }
 
 #back-to-top {
+	right: 40px;
 	transition: bottom 0.5s ease-out;
 }
 
@@ -351,6 +352,10 @@ ul > li {
 		border-radius: 0 0 0 22.5px;
 	}
 
+	#back-to-top {
+		right: -100px;
+	}
+
 	section {
 		gap: 24px;
 	}
@@ -466,10 +471,6 @@ ul > li {
 @media only screen and (max-width: 380px) {
 	header {
 		border-radius: 0;
-	}
-
-	#back-to-top {
-		display: none;
 	}
 
 	nav {
