@@ -91,11 +91,17 @@ a, a:visited {
 }
 
 nav > a {
-	transition: text-shadow 0.5s;
+	transition: text-shadow 0.5s, opacity 0.5s;
+}
+
+nav:hover > a {
+	opacity: 0.4;
+	transition: opacity 0.5s;
 }
 
 nav > a:hover {
-	text-shadow: 0 0 3vh #a2ccff;
+	opacity: 1;
+	text-shadow: 0 0 25px #a2ccff;
 	transition: text-shadow 0.5s;
 }
 
