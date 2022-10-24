@@ -259,7 +259,7 @@ const Portfolio: React.FC = () => {
 								projectVisibility={projectVisibility(2)}
 								title={"Stage Teleprompter"}
 								techs={["react", "js", "css", "html"]}
-								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
+								src="stage-teleprompter-screenshot.png"
 								description="Some text here..."
 								demoHref="https://30isnottoolate.github.io/stage-teleprompter"
 								codeHref="https://github.com/30isnottoolate/stage-teleprompter"
