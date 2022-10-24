@@ -19,8 +19,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #a2ccff;
+    background: #80b9ff;
 	border-radius: 2.5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a2ccff;
 }
 
 body {
@@ -263,8 +267,9 @@ ul > li {
 }
 
 .project-img {
-	width: 100%;
+	width: calc(100% - 16px);
 	border: 1px solid #80b9ff;
+	margin: 8px;
 }
 
 .project-description {
