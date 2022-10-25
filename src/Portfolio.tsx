@@ -14,7 +14,7 @@ const HOVER_COLOR = "#a2ccff";
 const BG_COLOR = "#000f20";
 
 const Portfolio: React.FC = () => {
-	const [theme, setTheme] = useState({color: "#80b9ff", secColor: "#a2ccff", bGColor: "#000f20"})
+	const [theme, setTheme] = useState({color: "#80b9ff", secColor: "#a2ccff", bgColor: "#000f20"})
 	const [viewportWidth, setViewportWidth] = useState(document.body.offsetWidth);
 	const [isMenuVisible, setIsMenuVisible] = useState(viewportWidth <= 650 ? false : true);
 	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
@@ -229,7 +229,9 @@ const Portfolio: React.FC = () => {
 							posY={(viewportWidth <= 650 ? 238 : 297.5)}
 							mirrored={true}
 							clickHandler={handlePrev}
-							color={DEFAULT_COLOR}
+							color={theme.color}
+							hoverColor={theme.secColor}
+							bgColor={theme.bgColor}
 							strokeWidth={5}
 						/>
 						<Arrow
@@ -238,7 +240,9 @@ const Portfolio: React.FC = () => {
 							posY={(viewportWidth <= 650 ? 238 : 297.5)}
 							mirrored={false}
 							clickHandler={handleNext}
-							color={DEFAULT_COLOR}
+							color={theme.color}
+							hoverColor={theme.secColor}
+							bgColor={theme.bgColor}
 							strokeWidth={5}
 						/>
 					</div>
