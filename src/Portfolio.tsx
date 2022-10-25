@@ -9,6 +9,9 @@ import Arrow from './Arrow';
 import Contact from './Contact';
 
 const NUMBER_OF_PROJECTS = 6;
+const DEFAULT_COLOR = "#80b9ff";
+const HOVER_COLOR = "#a2ccff";
+const BG_COLOR = "#000f20";
 
 const Portfolio: React.FC = () => {
 	const [viewportWidth, setViewportWidth] = useState(document.body.offsetWidth);
@@ -103,7 +106,11 @@ const Portfolio: React.FC = () => {
 				viewportWidth={viewportWidth}
 				scrollPos={scrollPos}
 			/>
-			<BackToTop scrollPos={scrollPos} />
+			<BackToTop
+				scrollPos={scrollPos}
+				color={DEFAULT_COLOR}
+				hoverColor={HOVER_COLOR}
+			/>
 			<main>
 				<section id="welcome">
 					<img
@@ -221,7 +228,7 @@ const Portfolio: React.FC = () => {
 							posY={(viewportWidth <= 650 ? 238 : 297.5)}
 							mirrored={true}
 							clickHandler={handlePrev}
-							color={"#80b9ff"}
+							color={DEFAULT_COLOR}
 							strokeWidth={5}
 						/>
 						<Arrow
@@ -230,7 +237,7 @@ const Portfolio: React.FC = () => {
 							posY={(viewportWidth <= 650 ? 238 : 297.5)}
 							mirrored={false}
 							clickHandler={handleNext}
-							color={"#80b9ff"}
+							color={DEFAULT_COLOR}
 							strokeWidth={5}
 						/>
 					</div>
