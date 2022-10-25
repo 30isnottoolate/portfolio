@@ -14,6 +14,7 @@ const HOVER_COLOR = "#a2ccff";
 const BG_COLOR = "#000f20";
 
 const Portfolio: React.FC = () => {
+	const [theme, setTheme] = useState({color: "#80b9ff", secColor: "#a2ccff", bGColor: "#000f20"})
 	const [viewportWidth, setViewportWidth] = useState(document.body.offsetWidth);
 	const [isMenuVisible, setIsMenuVisible] = useState(viewportWidth <= 650 ? false : true);
 	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
