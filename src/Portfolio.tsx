@@ -9,12 +9,9 @@ import Arrow from './Arrow';
 import Contact from './Contact';
 
 const NUMBER_OF_PROJECTS = 6;
-const DEFAULT_COLOR = "#80b9ff";
-const HOVER_COLOR = "#a2ccff";
-const BG_COLOR = "#000f20";
 
 const Portfolio: React.FC = () => {
-	const [theme, setTheme] = useState({color: "#80b9ff", secColor: "#a2ccff", bgColor: "#000f20"})
+	const [theme, setTheme] = useState({ color: "#80b9ff", secColor: "#a2ccff", bgColor: "#000f20" })
 	const [viewportWidth, setViewportWidth] = useState(document.body.offsetWidth);
 	const [isMenuVisible, setIsMenuVisible] = useState(viewportWidth <= 650 ? false : true);
 	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
@@ -247,7 +244,8 @@ const Portfolio: React.FC = () => {
 							strokeWidth={5}
 						/>
 					</div>
-					<div id="projects-container"
+					<div
+						id="projects-container"
 						style={{
 							width: (visibleProjects * (viewportWidth <= 650 ? 240 : 300) + (viewportWidth <= 650 ? 60 : 100))
 						}}
