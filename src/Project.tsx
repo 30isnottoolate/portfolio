@@ -12,6 +12,7 @@ const techBase = {
 const codeLabel = "</>";
 
 interface ProjectProps {
+    classTheme: string;
     projectVisibility: string;
     title: string;
     techs: string[];
@@ -21,7 +22,7 @@ interface ProjectProps {
     codeHref: string;
 }
 
-const Project: React.FC<ProjectProps> = ({ projectVisibility, title, techs, src, description, demoHref, codeHref }: ProjectProps) => {
+const Project: React.FC<ProjectProps> = ({ classTheme, projectVisibility, title, techs, src, description, demoHref, codeHref }: ProjectProps) => {
 
     const generateTechIcons = () => {
         let techIcons: string = "";
@@ -33,7 +34,7 @@ const Project: React.FC<ProjectProps> = ({ projectVisibility, title, techs, src,
     }
 
     return (
-        <div className={`project-box ${projectVisibility}`} >
+        <div className={`project-box ${projectVisibility} ${classTheme}`} >
             <p className="project-title">{title}</p>
             <div className="project-techs" dangerouslySetInnerHTML={{ __html: generateTechIcons() }} />
             <img className="project-img" src={src} alt={title} />
