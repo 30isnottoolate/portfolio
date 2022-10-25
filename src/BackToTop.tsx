@@ -1,4 +1,4 @@
-const BackToTop: React.FC<{scrollPos: number}> = ({scrollPos}) => {
+const BackToTop: React.FC<{scrollPos: number, color: string, hoverColor: string}> = ({scrollPos, color, hoverColor}) => {
     return (
         <a
             id="back-to-top"
@@ -9,9 +9,11 @@ const BackToTop: React.FC<{scrollPos: number}> = ({scrollPos}) => {
             }}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
+                onMouseEnter={(event) => event.currentTarget.style.fill = hoverColor}
+                onMouseLeave={(event) => event.currentTarget.style.fill = color}
                 width="45"
                 height="45"
-                fill="#80b9ff"
+                fill={color}
                 stroke="#000f20"
                 strokeWidth="0.1"
                 viewBox="0 0 16 16">
