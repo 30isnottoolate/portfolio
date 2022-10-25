@@ -29,7 +29,6 @@ html {
 
 body {
 	user-select: none;
-	color: #a2ccff;
 	font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
 	font-size: 20px;
 	font-weight: 500;
@@ -45,8 +44,7 @@ header, footer {
 	display: grid;
     align-content: center;
     align-items: center;
-	background-color: #000f20;
-	box-shadow: 0 0 20px 5px #80b9ff;
+	/*background-color: #000f20;*/
 	height: 55px;
 	z-index: 10;
 }
@@ -66,7 +64,10 @@ header {
 }
 
 #back-to-top {
+	width: 45px;
+	height: 45px;
 	right: 40px;
+	border-radius: 50%;
 	transition: bottom 0.5s ease-out;
 }
 
@@ -75,8 +76,8 @@ section {
 	align-content: center;
     justify-items: center;
 	gap: 30px;
-	background-color: #000f20;
-	text-shadow: 0 0 10px #6200ff;
+	/*background-color: #000f20;*/
+	/*text-shadow: 0 0 10px #6200ff;*/
 	height: auto;
 	padding: 150px 20px 50px 20px;
 }
@@ -87,11 +88,11 @@ nav {
     align-items: center;
 	gap: 4vw;
 	font-family: "Poppins", Arial, Helvetica, sans-serif;
-	text-shadow: 0 0 10px #6200ff;
+	/*text-shadow: 0 0 10px #6200ff;*/
 }
 
-a, a:visited {
-	color: #80b9ff;
+a, a:active, a:visited {
+	color: inherit;
 	text-decoration: none;
 }
 
@@ -117,7 +118,6 @@ nav > a:hover {
 
 .menu-button {
 	display: none;
-
 }
 
 .menu-button > div {
@@ -175,7 +175,6 @@ ul > li {
 	max-height: 250px;
 	border-radius: 50%;
 	border: 10px solid #80b9ff;
-	box-shadow: 0 0 50px 5px #80b9ff;
 }
 
 #skills > div > h2 {
@@ -202,7 +201,6 @@ ul > li {
 	text-align: center;
 	text-shadow: none;
 	padding: 3px 6px;
-	border: 1px solid #80b9ff;
 	border-radius: 3px;
 }
 
@@ -245,7 +243,6 @@ ul > li {
 	width: 250px;
 	height: 500px;
 	border-radius: 7px;
-	box-shadow: 0 0 10px 2px #80b9ff;
 }
 
 .project-title {
@@ -335,6 +332,42 @@ ul > li {
 .invisible {
 	opacity: 0;
 	transition: opacity 0.5s;
+}
+
+.dark {
+	background-color: #000f20;
+	color:#80b9ff;
+	text-shadow: 0 0 10px #6200ff;
+}
+
+.light {
+	background-color: #a2ccff;
+	color:#000f20;
+	text-shadow: 0 0 10px #80b9ff;
+}
+
+.dark-big-shadow {
+	box-shadow: 0 0 50px 5px #80b9ff;
+}
+
+.dark-medium-shadow {
+	box-shadow: 0 0 20px 5px #80b9ff;
+}
+
+.dark-small-shadow {
+	box-shadow: 0 0 10px 2px #80b9ff;
+}
+
+.light-big-shadow {
+	box-shadow: 0 0 50px 5px #000f20;
+}
+
+.light-medium-shadow {
+	box-shadow: 0 0 20px 5px #000f20;
+}
+
+.light-small-shadow {
+	box-shadow: 0 0 10px 2px #000f20;
 }
 
 @media only screen and (max-width: 650px) {
