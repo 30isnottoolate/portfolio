@@ -109,8 +109,9 @@ const Portfolio: React.FC = () => {
 			/>
 			<BackToTop
 				scrollPos={scrollPos}
-				color={DEFAULT_COLOR}
-				hoverColor={HOVER_COLOR}
+				color={theme.color}
+				hoverColor={theme.secColor}
+				strokeColor={theme.bgColor}
 			/>
 			<main>
 				<section id="welcome">
