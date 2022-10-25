@@ -9,9 +9,12 @@ import Arrow from './Arrow';
 import Contact from './Contact';
 
 const NUMBER_OF_PROJECTS = 6;
+const DARK_THEME = { color: "#80b9ff", secColor: "#a2ccff", bgColor: "#000f20" };
+const LIGHT_THEME = { color: "#000f20", secColor: "#002249", bgColor: "#a2ccff" };
 
 const Portfolio: React.FC = () => {
-	const [theme, setTheme] = useState({ color: "#80b9ff", secColor: "#a2ccff", bgColor: "#000f20" })
+	const [isItDark, setIsItDark] = useState(false);
+	const [theme, setTheme] = useState(isItDark ? DARK_THEME : LIGHT_THEME);
 	const [viewportWidth, setViewportWidth] = useState(document.body.offsetWidth);
 	const [isMenuVisible, setIsMenuVisible] = useState(viewportWidth <= 650 ? false : true);
 	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
@@ -24,6 +27,12 @@ const Portfolio: React.FC = () => {
 	});
 	const [touchPosX, setTouchPosX] = useState(0);
 	const [swiped, setSwiped] = useState(false);
+
+	useEffect(() => {
+		if (isItDark) {
+			setTheme(DARK_THEME);
+		} else setTheme(LIGHT_THEME);
+	}, [isItDark]);
 
 	useEffect(() => {
 		window.addEventListener("resize", () => {
@@ -47,6 +56,10 @@ const Portfolio: React.FC = () => {
 		else if (viewportWidth < 750) setVisibleProjects(1);
 		else setVisibleProjects(4);
 	}, [viewportWidth]);
+
+	const changeTheme = () => {
+		setIsItDark((prevValue) => !prevValue);
+	}
 
 	const handleMenuClick = () => {
 		setIsMenuVisible((prevValue) => !prevValue);
@@ -86,9 +99,9 @@ const Portfolio: React.FC = () => {
 	}
 
 	return (
-		<div id="portfolio">
-			<header>
-				<a id="logo" href="#welcome">30isnottoolate</a>
+		<div id="portfolio" className={isItDark ? "dark" : "light"} >
+			<header className={isItDark ? "dark dark-big-shadow" : "light light-big-shadow"}>
+				<a id="logo" href="#welcome" onClick={changeTheme} >30isnottoolate</a>
 				<nav style={{ display: (isMenuVisible ? "grid" : "none") }}>
 					<a href="#bio">Bio</a>
 					<a href="#skills">Skills</a>
@@ -103,6 +116,7 @@ const Portfolio: React.FC = () => {
 			<Gear
 				viewportWidth={viewportWidth}
 				scrollPos={scrollPos}
+				color={theme.color}
 			/>
 			<BackToTop
 				scrollPos={scrollPos}
@@ -114,6 +128,7 @@ const Portfolio: React.FC = () => {
 				<section id="welcome">
 					<img
 						id="avatar-image"
+						className={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
 						src="./avatar.png"
 						alt="Akos Varga"
 					/>
@@ -258,6 +273,7 @@ const Portfolio: React.FC = () => {
 								left: ((projectIndex - 1) * (-(viewportWidth <= 650 ? 240 : 300))) + (viewportWidth <= 650 ? 50 : 75)
 							}}>
 							<Project
+								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
 								projectVisibility={projectVisibility(1)}
 								title={"Online Teleprompter"}
 								techs={["react", "ts", "css", "html"]}
@@ -267,6 +283,7 @@ const Portfolio: React.FC = () => {
 								codeHref="https://github.com/30isnottoolate/online-teleprompter-ts"
 							/>
 							<Project
+								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
 								projectVisibility={projectVisibility(2)}
 								title={"Stage Teleprompter"}
 								techs={["react", "js", "css", "html"]}
@@ -276,6 +293,7 @@ const Portfolio: React.FC = () => {
 								codeHref="https://github.com/30isnottoolate/stage-teleprompter"
 							/>
 							<Project
+								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
 								projectVisibility={projectVisibility(3)}
 								title={"Portfolio Page"}
 								techs={["react", "ts", "css", "html"]}
@@ -284,6 +302,7 @@ const Portfolio: React.FC = () => {
 								demoHref="https://30isnottoolate.github.io/portfolio"
 								codeHref="https://github.com/30isnottoolate/portfolio"
 							/><Project
+								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
 								projectVisibility={projectVisibility(4)}
 								title={"Title"}
 								techs={["js", "ts", "react"]}
@@ -292,6 +311,7 @@ const Portfolio: React.FC = () => {
 								demoHref="https://www.solidbackgrounds.com"
 								codeHref="https://www.solidbackgrounds.com"
 							/><Project
+								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
 								projectVisibility={projectVisibility(5)}
 								title={"Title"}
 								techs={["js", "ts", "react"]}
@@ -300,6 +320,7 @@ const Portfolio: React.FC = () => {
 								demoHref="https://www.solidbackgrounds.com"
 								codeHref="https://www.solidbackgrounds.com"
 							/><Project
+								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
 								projectVisibility={projectVisibility(6)}
 								title={"Title"}
 								techs={["js", "ts", "react"]}
@@ -335,7 +356,7 @@ const Portfolio: React.FC = () => {
 					</div>
 				</section>
 			</main>
-			<footer id="bottom">© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate</footer>
+			<footer id="bottom" className={isItDark ? "dark dark-big-shadow" : "light light-big-shadow"} >© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate</footer>
 		</div>
 	);
 }
