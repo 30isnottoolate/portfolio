@@ -35,7 +35,8 @@ const Icon: React.FC<IconProps> = ({ href, src, alt, bGColor }: IconProps) => {
                 ref={iconRef}
                 href={href}
                 target="_blank"
-                rel="noreferrer">
+                rel="noreferrer"
+                style={{backgroundColor: "#000f20", height: "50px"}}>
                 <img
                     className="icon-image"
                     src={src}
