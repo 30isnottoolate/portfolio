@@ -13,6 +13,7 @@ const codeLabel = "</>";
 
 interface ProjectProps {
     classTheme: string;
+    buttonTheme: string
     projectVisibility: string;
     title: string;
     techs: string[];
@@ -22,7 +23,9 @@ interface ProjectProps {
     codeHref: string;
 }
 
-const Project: React.FC<ProjectProps> = ({ classTheme, projectVisibility, title, techs, src, description, demoHref, codeHref }: ProjectProps) => {
+const Project: React.FC<ProjectProps> = ({ 
+    classTheme, buttonTheme, projectVisibility, title, techs, src, description, demoHref, codeHref 
+}: ProjectProps) => {
 
     const generateTechIcons = () => {
         let techIcons: string = "";
@@ -40,8 +43,8 @@ const Project: React.FC<ProjectProps> = ({ classTheme, projectVisibility, title,
             <img className="project-img" src={src} alt={title} />
             <p className="project-description">{description} </p>
             <div className="project-buttons">
-                <a className="project-demo-button" style={{ display: `${projectVisibility === "invisible" ? "none" : ""}` }} href={demoHref} target="_blank" rel="noreferrer" >Demo</a>
-                <a className="project-code-button" style={{ display: `${projectVisibility === "invisible" ? "none" : ""}` }} href={codeHref} target="_blank" rel="noreferrer" >{codeLabel}</a>
+                <a className={`project-demo-button ${buttonTheme}`} style={{ display: `${projectVisibility === "invisible" ? "none" : ""}` }} href={demoHref} target="_blank" rel="noreferrer" >Demo</a>
+                <a className={`project-code-button ${buttonTheme}`} style={{ display: `${projectVisibility === "invisible" ? "none" : ""}` }} href={codeHref} target="_blank" rel="noreferrer" >{codeLabel}</a>
             </div>
         </div>
     );
