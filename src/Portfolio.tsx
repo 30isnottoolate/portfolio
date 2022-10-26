@@ -274,6 +274,7 @@ const Portfolio: React.FC = () => {
 							}}>
 							<Project
 								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
+								buttonTheme={isItDark ? "dark-button" : "light-button"}
 								projectVisibility={projectVisibility(1)}
 								title={"Online Teleprompter"}
 								techs={["react", "ts", "css", "html"]}
@@ -284,6 +285,7 @@ const Portfolio: React.FC = () => {
 							/>
 							<Project
 								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
+								buttonTheme={isItDark ? "dark-button" : "light-button"}
 								projectVisibility={projectVisibility(2)}
 								title={"Stage Teleprompter"}
 								techs={["react", "js", "css", "html"]}
@@ -294,6 +296,7 @@ const Portfolio: React.FC = () => {
 							/>
 							<Project
 								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
+								buttonTheme={isItDark ? "dark-button" : "light-button"}
 								projectVisibility={projectVisibility(3)}
 								title={"Portfolio Page"}
 								techs={["react", "ts", "css", "html"]}
@@ -303,6 +306,7 @@ const Portfolio: React.FC = () => {
 								codeHref="https://github.com/30isnottoolate/portfolio"
 							/><Project
 								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
+								buttonTheme={isItDark ? "dark-button" : "light-button"}
 								projectVisibility={projectVisibility(4)}
 								title={"Title"}
 								techs={["js", "ts", "react"]}
@@ -312,6 +316,7 @@ const Portfolio: React.FC = () => {
 								codeHref="https://www.solidbackgrounds.com"
 							/><Project
 								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
+								buttonTheme={isItDark ? "dark-button" : "light-button"}
 								projectVisibility={projectVisibility(5)}
 								title={"Title"}
 								techs={["js", "ts", "react"]}
@@ -321,6 +326,7 @@ const Portfolio: React.FC = () => {
 								codeHref="https://www.solidbackgrounds.com"
 							/><Project
 								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
+								buttonTheme={isItDark ? "dark-button" : "light-button"}
 								projectVisibility={projectVisibility(6)}
 								title={"Title"}
 								techs={["js", "ts", "react"]}
@@ -337,20 +343,23 @@ const Portfolio: React.FC = () => {
 					<div id="contacts">
 						<Contact
 							href={"https://www.linkedin.com/in/30isnottoolate/"}
-							src={"./linkedin.svg"}
-							alt={"LinkedIn"}
+							color={theme.color}
+							bgColor={theme.bgColor}
+							contactType={"linkedin"}
 							text={"linkedin.com/in/30isnottoolate"}
 						/>
 						<Contact
 							href={"mailto:akos.varga.92@gmail.com?subject=Regarding a job opportunity"}
-							src={"./mail.svg"}
-							alt={"Email"}
+							color={theme.color}
+							bgColor={theme.bgColor}
+							contactType={"email"}
 							text={"akos.varga.92@gmail.com"}
 						/>
 						<Contact
 							href={"https://github.com/30isnottoolate/"}
-							src={"./github.svg"}
-							alt={"Github"}
+							color={theme.color}
+							bgColor={theme.bgColor}
+							contactType={"github"}
 							text={"github.com/30isnottoolate"}
 						/>
 					</div>
