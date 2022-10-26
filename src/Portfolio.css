@@ -281,18 +281,13 @@ ul > li {
 
 .project-buttons > a {
 	display: inline-block;
-	background-color: #000f20;
-	color: #80b9ff;
+	/*background-color: #000f20;
+	color: #80b9ff;*/
 	text-align: center;
 	text-shadow: none;
 	padding: 4px 0;
-	border: 2px solid #80b9ff;
+	/*border: 2px solid #80b9ff;*/
 	border-radius: 5px;
-}
-
-.project-buttons > a:hover {
-	background-color: #80b9ff;
-	color: #000f20;
 }
 
 .project-demo-button {
@@ -368,6 +363,28 @@ ul > li {
 
 .light-small-shadow {
 	box-shadow: 0 0 10px 2px #000f20;
+}
+
+.dark-button {
+	background-color: #000f20;
+	color: #a2ccff;
+	border: 2px solid #a2ccff;
+}
+
+.dark-button:hover {
+	background-color: #a2ccff;
+	color: #000f20;
+}
+
+.light-button {
+	background-color: #a2ccff;
+	color: #000f20;
+	border: 2px solid #000f20;
+}
+
+.light-button:hover {
+	background-color: #000f20;
+	color: #a2ccff;
 }
 
 @media only screen and (max-width: 650px) {
