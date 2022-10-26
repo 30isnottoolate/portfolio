@@ -367,17 +367,17 @@ ul > li {
 
 .dark-button {
 	background-color: #000f20;
-	color: #a2ccff;
-	border: 2px solid #a2ccff;
+	color: #80b9ff;
+	border: 2px solid #80b9ff;
 }
 
 .dark-button:hover {
-	background-color: #a2ccff;
+	background-color: #80b9ff;
 	color: #000f20;
 }
 
 .light-button {
-	background-color: #a2ccff;
+	background-color: #80b9ff;
 	color: #000f20;
 	border: 2px solid #000f20;
 }
