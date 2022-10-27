@@ -186,12 +186,19 @@ nav > a:hover {
 }
 
 .menu-button > div {
-	background-color: #80b9ff;
 	width: 35px; 
 	height: 5px;
 	border-radius: 2.5px;
 	margin: 5px 0;
 	transition: transform 0.5s, opacity 0.5s;
+}
+
+.dark-menu-button {
+	background-color: #80b9ff;
+}
+
+.light-menu-button {
+	background-color: #000f20;
 }
 
 h1 {
