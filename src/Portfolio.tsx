@@ -99,8 +99,8 @@ const Portfolio: React.FC = () => {
 	}
 
 	return (
-		<div id="portfolio" className={isItDark ? "dark" : "light"} >
-			<header className={isItDark ? "dark dark-big-shadow" : "light light-big-shadow"}>
+		<div id="portfolio">
+			<header className={isItDark ? "dark-header-footer" : "light-header-footer"} >
 				<a id="logo" href="#welcome" onClick={changeTheme} >30isnottoolate</a>
 				<nav style={{ display: (isMenuVisible ? "grid" : "none") }}>
 					<a href="#bio">Bio</a>
@@ -116,19 +116,17 @@ const Portfolio: React.FC = () => {
 			<Gear
 				viewportWidth={viewportWidth}
 				scrollPos={scrollPos}
-				color={theme.color}
+				svgStrokeClass={isItDark ? "dark-svg-stroke" : "light-svg-stroke"}
 			/>
 			<BackToTop
+				svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
 				scrollPos={scrollPos}
-				color={theme.color}
-				hoverColor={theme.secColor}
-				strokeColor={theme.bgColor}
 			/>
-			<main>
+			<main className={isItDark ? "dark-main" : "light-main"} >
 				<section id="welcome">
 					<img
 						id="avatar-image"
-						className={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
+						className={isItDark ? "dark-avatar" : "light-avatar"}
 						src="./avatar.png"
 						alt="Akos Varga"
 					/>
@@ -161,23 +159,27 @@ const Portfolio: React.FC = () => {
 						<div className="icon-collection" >
 							<Icon
 								href={"https://html.spec.whatwg.org/"}
-								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"}
-								alt={"HTML"}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								iconType="html"
+								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
 							/>
 							<Icon
 								href={"https://www.w3.org/TR/CSS/"}
-								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"}
-								alt={"CSS"}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								iconType="css"
+								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
 							/>
 							<Icon
 								href={"https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"}
-								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"}
-								alt={"JavaScript"}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								iconType="js"
+								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
 							/>
 							<Icon
 								href={"https://www.typescriptlang.org/"}
-								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"}
-								alt={"TypeScript"}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								iconType="ts"
+								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
 							/>
 						</div>
 					</div>
@@ -186,24 +188,27 @@ const Portfolio: React.FC = () => {
 						<div className="icon-collection" >
 							<Icon
 								href={"https://reactjs.org/"}
-								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"}
-								alt={"React"}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								iconType="react"
+								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
 							/>
 							<Icon
 								href={"https://nodejs.org/"}
-								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"}
-								alt={"NodeJS"}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								iconType="node"
+								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
 							/>
 							<Icon
 								href={"https://expressjs.com/"}
-								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"}
-								alt={"ExpressJS"}
-								bGColor={"#ffffff"}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								iconType="express"
+								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
 							/>
 							<Icon
 								href={"https://www.mongodb.com/"}
-								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"}
-								alt={"MongoDB"}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								iconType="mongodb"
+								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
 							/>
 						</div>
 					</div>
@@ -212,23 +217,27 @@ const Portfolio: React.FC = () => {
 						<div className="icon-collection" >
 							<Icon
 								href={"https://git-scm.com/"}
-								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"}
-								alt={"Git"}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								iconType="git"
+								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
 							/>
 							<Icon
 								href={"https://code.visualstudio.com/"}
-								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"}
-								alt={"VS Code"}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								iconType="vscode"
+								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
 							/>
 							<Icon
 								href={"https://www.gimp.org/"}
-								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gimp/gimp-original.svg"}
-								alt={"GIMP"}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								iconType="gimp"
+								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
 							/>
 							<Icon
 								href={"https://www.adobe.com/products/photoshop.html"}
-								src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"}
-								alt={"Adobe Photoshop"}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								iconType="ps"
+								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
 							/>
 						</div>
 					</div>
@@ -237,26 +246,20 @@ const Portfolio: React.FC = () => {
 					<h1>Projects</h1>
 					<div id="project-index-buttons" style={{ height: (viewportWidth <= 650 ? 48 : 60) }}>
 						<Arrow
-							arrowClassName={projectIndex > 1 ? "visible" : "invisible"}
+							visibilityClass={projectIndex > 1 ? "visible" : "invisible"}
+							svgStrokeClass={isItDark ? "dark-svg-stroke" : "light-svg-stroke"}
 							posX={(-visibleProjects * (viewportWidth <= 650 ? 230 : 300) / 2)}
 							posY={(viewportWidth <= 650 ? 238 : 297.5)}
 							mirrored={true}
 							clickHandler={handlePrev}
-							color={theme.color}
-							hoverColor={theme.secColor}
-							bgColor={theme.bgColor}
-							strokeWidth={5}
 						/>
 						<Arrow
-							arrowClassName={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
+							visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
+							svgStrokeClass={isItDark ? "dark-svg-stroke" : "light-svg-stroke"}
 							posX={(visibleProjects * (viewportWidth <= 650 ? 230 : 300) / 2)}
 							posY={(viewportWidth <= 650 ? 238 : 297.5)}
 							mirrored={false}
 							clickHandler={handleNext}
-							color={theme.color}
-							hoverColor={theme.secColor}
-							bgColor={theme.bgColor}
-							strokeWidth={5}
 						/>
 					</div>
 					<div
@@ -273,65 +276,71 @@ const Portfolio: React.FC = () => {
 								left: ((projectIndex - 1) * (-(viewportWidth <= 650 ? 240 : 300))) + (viewportWidth <= 650 ? 50 : 75)
 							}}>
 							<Project
-								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
-								buttonTheme={isItDark ? "dark-button" : "light-button"}
-								projectVisibility={projectVisibility(1)}
+								themeClass={isItDark ? "dark-project-box" : "light-project-box"}
+								visibilityClass={projectVisibility(1)}
 								title={"Online Teleprompter"}
 								techs={["react", "ts", "css", "html"]}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
 								description="Some text here..."
+								buttonThemeClass={isItDark ? "dark-button" : "light-button"}
 								demoHref="https://30isnottoolate.github.io/online-teleprompter-ts"
 								codeHref="https://github.com/30isnottoolate/online-teleprompter-ts"
 							/>
 							<Project
-								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
-								buttonTheme={isItDark ? "dark-button" : "light-button"}
-								projectVisibility={projectVisibility(2)}
+								themeClass={isItDark ? "dark-project-box" : "light-project-box"}
+								visibilityClass={projectVisibility(2)}
 								title={"Stage Teleprompter"}
 								techs={["react", "js", "css", "html"]}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
 								src="stage-teleprompter-screenshot.png"
 								description="Some text here..."
+								buttonThemeClass={isItDark ? "dark-button" : "light-button"}
 								demoHref="https://30isnottoolate.github.io/stage-teleprompter"
 								codeHref="https://github.com/30isnottoolate/stage-teleprompter"
 							/>
 							<Project
-								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
-								buttonTheme={isItDark ? "dark-button" : "light-button"}
-								projectVisibility={projectVisibility(3)}
+								themeClass={isItDark ? "dark-project-box" : "light-project-box"}
+								visibilityClass={projectVisibility(3)}
 								title={"Portfolio Page"}
 								techs={["react", "ts", "css", "html"]}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
 								description="Some text here..."
+								buttonThemeClass={isItDark ? "dark-button" : "light-button"}
 								demoHref="https://30isnottoolate.github.io/portfolio"
 								codeHref="https://github.com/30isnottoolate/portfolio"
 							/><Project
-								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
-								buttonTheme={isItDark ? "dark-button" : "light-button"}
-								projectVisibility={projectVisibility(4)}
+								themeClass={isItDark ? "dark-project-box" : "light-project-box"}
+								visibilityClass={projectVisibility(4)}
 								title={"Title"}
 								techs={["js", "ts", "react"]}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
 								description="Some text here..."
+								buttonThemeClass={isItDark ? "dark-button" : "light-button"}
 								demoHref="https://www.solidbackgrounds.com"
 								codeHref="https://www.solidbackgrounds.com"
 							/><Project
-								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
-								buttonTheme={isItDark ? "dark-button" : "light-button"}
-								projectVisibility={projectVisibility(5)}
+								themeClass={isItDark ? "dark-project-box" : "light-project-box"}
+								visibilityClass={projectVisibility(5)}
 								title={"Title"}
 								techs={["js", "ts", "react"]}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
 								description="Some text here..."
+								buttonThemeClass={isItDark ? "dark-button" : "light-button"}
 								demoHref="https://www.solidbackgrounds.com"
 								codeHref="https://www.solidbackgrounds.com"
 							/><Project
-								classTheme={isItDark ? "dark dark-medium-shadow" : "light light-medium-shadow"}
-								buttonTheme={isItDark ? "dark-button" : "light-button"}
-								projectVisibility={projectVisibility(6)}
+								themeClass={isItDark ? "dark-project-box" : "light-project-box"}
+								visibilityClass={projectVisibility(6)}
 								title={"Title"}
 								techs={["js", "ts", "react"]}
+								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
 								description="Some text here..."
+								buttonThemeClass={isItDark ? "dark-button" : "light-button"}
 								demoHref="https://www.solidbackgrounds.com"
 								codeHref="https://www.solidbackgrounds.com"
 							/>
@@ -343,29 +352,26 @@ const Portfolio: React.FC = () => {
 					<div id="contacts">
 						<Contact
 							href={"https://www.linkedin.com/in/30isnottoolate/"}
-							color={theme.color}
-							bgColor={theme.bgColor}
+							svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
 							contactType={"linkedin"}
 							text={"linkedin.com/in/30isnottoolate"}
 						/>
 						<Contact
 							href={"mailto:akos.varga.92@gmail.com?subject=Regarding a job opportunity"}
-							color={theme.color}
-							bgColor={theme.bgColor}
+							svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
 							contactType={"email"}
 							text={"akos.varga.92@gmail.com"}
 						/>
 						<Contact
 							href={"https://github.com/30isnottoolate/"}
-							color={theme.color}
-							bgColor={theme.bgColor}
+							svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
 							contactType={"github"}
 							text={"github.com/30isnottoolate"}
 						/>
 					</div>
 				</section>
 			</main>
-			<footer id="bottom" className={isItDark ? "dark dark-big-shadow" : "light light-big-shadow"} >© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate</footer>
+			<footer id="bottom" className={isItDark ? "dark-header-footer" : "light-header-footer"} >© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate</footer>
 		</div>
 	);
 }
