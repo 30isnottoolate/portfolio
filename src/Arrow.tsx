@@ -1,23 +1,19 @@
 interface ArrowProps {
-    arrowClassName: string;
+    visibilityClass: string;
+    svgStrokeClass: string;
     posX: number;
     posY: number;
     mirrored: boolean;
     clickHandler: () => void;
-    color: string;
-    hoverColor: string;
-    bgColor: string;
-    strokeWidth: number;
 }
 
 const Arrow: React.FC<ArrowProps> = ({
-    arrowClassName, posX, posY, mirrored, clickHandler, color, hoverColor, bgColor, strokeWidth 
+    visibilityClass, svgStrokeClass, posX, posY, mirrored, clickHandler
 }: ArrowProps) => {
     return (
         <svg
-            className={`arrow-button ${arrowClassName}`}
+            className={`arrow-button ${visibilityClass}`}
             style={{
-                fill: bgColor,
                 left: posX,
                 top: posY,
                 transform: mirrored ? "scaleX(-1)" : "scaleX(1)"
@@ -26,12 +22,10 @@ const Arrow: React.FC<ArrowProps> = ({
             viewBox="-5 -5 35 60"
         >
             <polygon
+                className={svgStrokeClass}
                 points="0,0 25,25 0,50"
-                onMouseEnter={(event) => event.currentTarget.style.stroke = hoverColor}
-                onMouseLeave={(event) => event.currentTarget.style.stroke = color}
                 style={{
-                    stroke: color,
-                    strokeWidth: strokeWidth
+                    strokeWidth: 5
                 }} />
         </svg>
     );
