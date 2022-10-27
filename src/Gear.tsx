@@ -1,7 +1,8 @@
-const Gear: React.FC<{ viewportWidth: number, scrollPos: number, color: string }> = ({ viewportWidth, scrollPos, color }) => {
+const Gear: React.FC<{ viewportWidth: number, scrollPos: number, svgStrokeClass: string }> = ({ viewportWidth, scrollPos, svgStrokeClass }) => {
     return (
         <svg
             id="gear"
+            className={svgStrokeClass}
             style={{
                 left: `${viewportWidth <= 650 ? 4.5 : 5}px`,
                 top: `${viewportWidth <= 650 ? 4.5 : 5}px`,
@@ -10,7 +11,7 @@ const Gear: React.FC<{ viewportWidth: number, scrollPos: number, color: string }
             }}
             viewBox="0 0 1000 1000">
             <path
-                fill="none" stroke={color} strokeWidth="30"
+                fill="none" strokeWidth="30"
                 d="M 641.66,550.00
                 C 641.45,550.60 641.17,551.40 640.95,552.00
                     633.75,571.64 623.94,586.24 610.42,602.00
