@@ -109,8 +109,9 @@ const Portfolio: React.FC = () => {
 					<a href="#contact">Contact</a>
 				</nav>
 				<MenuButton
-					isMenuVisible={isMenuVisible}
 					clickHandler={handleMenuClick}
+					themeClass={isItDark ? "dark-menu-button" : "light-menu-button"}
+					isMenuVisible={isMenuVisible}
 				/>
 			</header>
 			<Gear
