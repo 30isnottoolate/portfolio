@@ -14,11 +14,11 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = ({ href, svgFillClass, contactType, text }: ContactProps) => {
     return (
         <div>
-            <a href={href} target="_blank" rel="noreferrer">
-                <svg className={`contact-image ${svgFillClass}`} viewBox="0 0 16 16">
+            <a className={svgFillClass} href={href} target="_blank" rel="noreferrer">
+                <svg className="contact-image" viewBox="0 0 16 16">
                     <path d={paths[contactType as keyof typeof paths]} />
                 </svg>
-                <span className="contact-text">{text}</span>
+                <span className="contact-text" >{text}</span>
             </a>
         </div>
     );
