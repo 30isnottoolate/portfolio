@@ -98,15 +98,44 @@ const Portfolio: React.FC = () => {
 		}
 	}
 
+
+
 	return (
 		<div id="portfolio">
 			<header className={isItDark ? "dark-header-footer" : "light-header-footer"} >
-				<a id="logo" href="#welcome" onClick={changeTheme} >30isnottoolate</a>
-				<nav style={{ display: (isMenuVisible ? "grid" : "none") }}>
-					<a href="#bio">Bio</a>
-					<a href="#skills">Skills</a>
-					<a href="#projects">Projects</a>
-					<a href="#contact">Contact</a>
+				<a
+					id="logo"
+					href="#welcome"
+					onClick={changeTheme} >
+					30isnottoolate
+				</a>
+				<nav
+					className={viewportWidth <= 650 ? (isItDark ? "dark-mini-nav" : "light-mini-nav") : ""}
+					style={{
+						display: (isMenuVisible ? "grid" : "none"),
+						borderWidth: (viewportWidth <= 380 ? "0 0 1px 0" : viewportWidth > 650 ? "0" : "0 0 1px 1px")
+					}}
+				>
+					<a
+						className={viewportWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : ""}
+						href="#bio">
+						Bio
+					</a>
+					<a
+						className={viewportWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : ""}
+						href="#skills">
+						Skills
+					</a>
+					<a
+						className={viewportWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : ""}
+						href="#projects">
+						Projects
+					</a>
+					<a
+						className={viewportWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : ""}
+						href="#contact">
+						Contact
+					</a>
 				</nav>
 				<MenuButton
 					clickHandler={handleMenuClick}

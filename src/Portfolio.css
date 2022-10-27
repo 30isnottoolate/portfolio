@@ -64,8 +64,7 @@ header {
 	grid-template-columns: auto auto;
     justify-content: space-between;
 	position: fixed;
-	padding-left: 70px;
-	padding-right: 35px;
+	padding: 0 20px 0 70px;
 	border-radius: 0 0 0 28px;
 }
 
@@ -152,7 +151,7 @@ nav {
 	display: grid;
 	grid-template-columns: repeat(4, auto);
     align-items: center;
-	gap: 4vw;
+	gap: 0;
 	font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
@@ -162,11 +161,12 @@ a, a:active, a:visited {
 }
 
 nav > a {
+	padding: 10px 2vw;
 	transition: text-shadow 0.5s, opacity 0.5s;
 }
 
 nav:hover > a {
-	opacity: 0.4;
+	opacity: 0.25;
 	transition: opacity 0.5s;
 }
 
@@ -244,11 +244,13 @@ ul > li {
 }
 
 .dark-avatar {
+	background-color: #80b9ff;
 	box-shadow: 0 0 20px 5px #80b9ff;
 	border: 10px solid #80b9ff;
 }
 
 .light-avatar {
+	background-color: #000f20;
 	box-shadow: 0 0 20px 5px #000f20;
 	border: 10px solid #002249;
 }
@@ -478,12 +480,19 @@ ul > li {
 		grid-template-columns: auto;
 		gap: 0;
 		position: fixed;
-		background-color: #000f20;
 		top: 45px;
 		right: 0px;
 		width: auto;
+	}
+
+	.dark-mini-nav {
+		background-color: #000f20;
 		border: 1px solid #80b9ff;
-		border-width: 0 0 1px 1px;
+	}
+
+	.light-mini-nav {
+		background-color: #80b9ff;
+		border: 1px solid #000f20;
 	}
 
 	nav > a {
@@ -492,9 +501,14 @@ ul > li {
 		padding: 7.5px 15px 7.5px 15px;
 	}
 
-	nav > a:hover {
+	.dark-mini-nav-a:hover {
 		background-color: #80b9ff;
 		color: #000f20;
+	}
+
+	.light-mini-nav-a:hover {
+		background-color: #000f20;
+		color: #80b9ff;
 	}
 
 	.menu-button {
@@ -595,7 +609,6 @@ ul > li {
 		top: 45px;
 		width: 100vw;
 		height: auto;
-		border-width: 0 0 1px 0;
 	}
 
 	nav > a {
