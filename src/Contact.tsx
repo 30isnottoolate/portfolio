@@ -6,17 +6,16 @@ const paths = {
 
 interface ContactProps {
     href: string;
-    color: string;
-    bgColor: string;
+    svgFillClass: string;
     contactType: string;
     text: string;
 }
 
-const Contact: React.FC<ContactProps> = ({ href, color, bgColor, contactType, text }: ContactProps) => {
+const Contact: React.FC<ContactProps> = ({ href, svgFillClass, contactType, text }: ContactProps) => {
     return (
         <div>
             <a href={href} target="_blank" rel="noreferrer">
-                <svg className="contact-image" fill={color} stroke={bgColor} strokeWidth="0.1" viewBox="0 0 16 16">
+                <svg className={`contact-image ${svgFillClass}`} viewBox="0 0 16 16">
                     <path d={paths[contactType as keyof typeof paths]} />
                 </svg>
                 <span className="contact-text">{text}</span>
