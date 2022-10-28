@@ -11,7 +11,7 @@ import Contact from './Contact';
 const NUMBER_OF_PROJECTS = 6;
 
 const Portfolio: React.FC = () => {
-	const [isItDark, setIsItDark] = useState(false);
+	const [isItDark, setIsItDark] = useState(true);
 	const [viewportWidth, setViewportWidth] = useState(document.body.offsetWidth);
 	const [isMenuVisible, setIsMenuVisible] = useState(viewportWidth <= 650 ? false : true);
 	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
@@ -89,40 +89,47 @@ const Portfolio: React.FC = () => {
 		}
 	}
 
-
+	const headerFooterTheme = () => isItDark ? "dark-header-footer" : "light-header-footer";
+	const navTheme = () => viewportWidth <= 650 ? (isItDark ? "dark-mini-nav" : "light-mini-nav") : "";
+	const navAnchorTheme = () => viewportWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : "";
+	const svgStrokeTheme = () => isItDark ? "dark-svg-stroke" : "light-svg-stroke";
+	const svgFillTheme = () => isItDark ? "dark-svg-fill" : "light-svg-fill";
+	const tooltipTheme = () => isItDark ? "dark-icon-tooltip" : "light-icon-tooltip";
+	const projectBoxTheme = () => isItDark ? "dark-project-box" : "light-project-box";
+	const projectButtonTheme = () => isItDark ? "dark-button" : "light-button";
 
 	return (
 		<div id="portfolio">
-			<header className={isItDark ? "dark-header-footer" : "light-header-footer"} >
+			<header className={headerFooterTheme()} >
 				<a
 					id="logo"
 					href="#welcome" >
 					30isnottoolate
 				</a>
 				<nav
-					className={viewportWidth <= 650 ? (isItDark ? "dark-mini-nav" : "light-mini-nav") : ""}
+					className={navTheme()}
 					style={{
 						display: (isMenuVisible ? "grid" : "none"),
 						borderWidth: (viewportWidth <= 380 ? "0 0 1px 0" : viewportWidth > 650 ? "0" : "0 0 1px 1px")
 					}}
 				>
 					<a
-						className={viewportWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : ""}
+						className={navAnchorTheme()}
 						href="#bio">
 						Bio
 					</a>
 					<a
-						className={viewportWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : ""}
+						className={navAnchorTheme()}
 						href="#skills">
 						Skills
 					</a>
 					<a
-						className={viewportWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : ""}
+						className={navAnchorTheme()}
 						href="#projects">
 						Projects
 					</a>
 					<a
-						className={viewportWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : ""}
+						className={navAnchorTheme()}
 						href="#contact">
 						Contact
 					</a>
@@ -134,13 +141,13 @@ const Portfolio: React.FC = () => {
 				/>
 			</header>
 			<Gear
-				svgStrokeClass={isItDark ? "dark-svg-stroke" : "light-svg-stroke"}
+				svgStrokeClass={svgStrokeTheme()}
 				changeTheme={changeTheme}
 				viewportWidth={viewportWidth}
 				scrollPos={scrollPos}
 			/>
 			<BackToTop
-				svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+				svgFillClass={svgFillTheme()}
 				scrollPos={scrollPos}
 			/>
 			<main className={isItDark ? "dark-main" : "light-main"} >
@@ -180,27 +187,27 @@ const Portfolio: React.FC = () => {
 						<div className="icon-collection" >
 							<Icon
 								href={"https://html.spec.whatwg.org/"}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								iconType="html"
-								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
+								iconTooltipClass={tooltipTheme()}
 							/>
 							<Icon
 								href={"https://www.w3.org/TR/CSS/"}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								iconType="css"
-								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
+								iconTooltipClass={tooltipTheme()}
 							/>
 							<Icon
 								href={"https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								iconType="js"
-								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
+								iconTooltipClass={tooltipTheme()}
 							/>
 							<Icon
 								href={"https://www.typescriptlang.org/"}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								iconType="ts"
-								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
+								iconTooltipClass={tooltipTheme()}
 							/>
 						</div>
 					</div>
@@ -209,27 +216,27 @@ const Portfolio: React.FC = () => {
 						<div className="icon-collection" >
 							<Icon
 								href={"https://reactjs.org/"}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								iconType="react"
-								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
+								iconTooltipClass={tooltipTheme()}
 							/>
 							<Icon
 								href={"https://nodejs.org/"}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								iconType="node"
-								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
+								iconTooltipClass={tooltipTheme()}
 							/>
 							<Icon
 								href={"https://expressjs.com/"}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								iconType="express"
-								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
+								iconTooltipClass={tooltipTheme()}
 							/>
 							<Icon
 								href={"https://www.mongodb.com/"}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								iconType="mongodb"
-								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
+								iconTooltipClass={tooltipTheme()}
 							/>
 						</div>
 					</div>
@@ -238,27 +245,27 @@ const Portfolio: React.FC = () => {
 						<div className="icon-collection" >
 							<Icon
 								href={"https://git-scm.com/"}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								iconType="git"
-								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
+								iconTooltipClass={tooltipTheme()}
 							/>
 							<Icon
 								href={"https://code.visualstudio.com/"}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								iconType="vscode"
-								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
+								iconTooltipClass={tooltipTheme()}
 							/>
 							<Icon
 								href={"https://www.gimp.org/"}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								iconType="gimp"
-								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
+								iconTooltipClass={tooltipTheme()}
 							/>
 							<Icon
 								href={"https://www.adobe.com/products/photoshop.html"}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								iconType="ps"
-								iconTooltipClass={isItDark ? "dark-icon-tooltip" : "light-icon-tooltip"}
+								iconTooltipClass={tooltipTheme()}
 							/>
 						</div>
 					</div>
@@ -268,7 +275,7 @@ const Portfolio: React.FC = () => {
 					<div id="project-index-buttons" style={{ height: (viewportWidth <= 650 ? 48 : 60) }}>
 						<Arrow
 							visibilityClass={projectIndex > 1 ? "visible" : "invisible"}
-							svgStrokeClass={isItDark ? "dark-svg-stroke" : "light-svg-stroke"}
+							svgStrokeClass={svgStrokeTheme()}
 							posX={(-visibleProjects * (viewportWidth <= 650 ? 230 : 300) / 2)}
 							posY={(viewportWidth <= 650 ? 238 : 297.5)}
 							mirrored={true}
@@ -276,7 +283,7 @@ const Portfolio: React.FC = () => {
 						/>
 						<Arrow
 							visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
-							svgStrokeClass={isItDark ? "dark-svg-stroke" : "light-svg-stroke"}
+							svgStrokeClass={svgStrokeTheme()}
 							posX={(visibleProjects * (viewportWidth <= 650 ? 230 : 300) / 2)}
 							posY={(viewportWidth <= 650 ? 238 : 297.5)}
 							mirrored={false}
@@ -297,71 +304,71 @@ const Portfolio: React.FC = () => {
 								left: ((projectIndex - 1) * (-(viewportWidth <= 650 ? 240 : 300))) + (viewportWidth <= 650 ? 50 : 75)
 							}}>
 							<Project
-								themeClass={isItDark ? "dark-project-box" : "light-project-box"}
+								themeClass={projectBoxTheme()}
 								visibilityClass={projectVisibility(1)}
 								title={"Online Teleprompter"}
 								techs={["react", "ts", "css", "html"]}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
 								description="Some text here..."
-								buttonThemeClass={isItDark ? "dark-button" : "light-button"}
+								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://30isnottoolate.github.io/online-teleprompter-ts"
 								codeHref="https://github.com/30isnottoolate/online-teleprompter-ts"
 							/>
 							<Project
-								themeClass={isItDark ? "dark-project-box" : "light-project-box"}
+								themeClass={projectBoxTheme()}
 								visibilityClass={projectVisibility(2)}
 								title={"Stage Teleprompter"}
 								techs={["react", "js", "css", "html"]}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								src="stage-teleprompter-screenshot.png"
 								description="Some text here..."
-								buttonThemeClass={isItDark ? "dark-button" : "light-button"}
+								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://30isnottoolate.github.io/stage-teleprompter"
 								codeHref="https://github.com/30isnottoolate/stage-teleprompter"
 							/>
 							<Project
-								themeClass={isItDark ? "dark-project-box" : "light-project-box"}
+								themeClass={projectBoxTheme()}
 								visibilityClass={projectVisibility(3)}
 								title={"Portfolio Page"}
 								techs={["react", "ts", "css", "html"]}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
 								description="Some text here..."
-								buttonThemeClass={isItDark ? "dark-button" : "light-button"}
+								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://30isnottoolate.github.io/portfolio"
 								codeHref="https://github.com/30isnottoolate/portfolio"
 							/><Project
-								themeClass={isItDark ? "dark-project-box" : "light-project-box"}
+								themeClass={projectBoxTheme()}
 								visibilityClass={projectVisibility(4)}
 								title={"Title"}
 								techs={["js", "ts", "react"]}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
 								description="Some text here..."
-								buttonThemeClass={isItDark ? "dark-button" : "light-button"}
+								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://www.solidbackgrounds.com"
 								codeHref="https://www.solidbackgrounds.com"
 							/><Project
-								themeClass={isItDark ? "dark-project-box" : "light-project-box"}
+								themeClass={projectBoxTheme()}
 								visibilityClass={projectVisibility(5)}
 								title={"Title"}
 								techs={["js", "ts", "react"]}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
 								description="Some text here..."
-								buttonThemeClass={isItDark ? "dark-button" : "light-button"}
+								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://www.solidbackgrounds.com"
 								codeHref="https://www.solidbackgrounds.com"
 							/><Project
-								themeClass={isItDark ? "dark-project-box" : "light-project-box"}
+								themeClass={projectBoxTheme()}
 								visibilityClass={projectVisibility(6)}
 								title={"Title"}
 								techs={["js", "ts", "react"]}
-								svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+								svgFillClass={svgFillTheme()}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
 								description="Some text here..."
-								buttonThemeClass={isItDark ? "dark-button" : "light-button"}
+								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://www.solidbackgrounds.com"
 								codeHref="https://www.solidbackgrounds.com"
 							/>
@@ -373,26 +380,26 @@ const Portfolio: React.FC = () => {
 					<div id="contacts">
 						<Contact
 							href={"https://www.linkedin.com/in/30isnottoolate/"}
-							svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+							svgFillClass={svgFillTheme()}
 							contactType={"linkedin"}
 							text={"linkedin.com/in/30isnottoolate"}
 						/>
 						<Contact
 							href={"mailto:akos.varga.92@gmail.com?subject=Regarding a job opportunity"}
-							svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+							svgFillClass={svgFillTheme()}
 							contactType={"email"}
 							text={"akos.varga.92@gmail.com"}
 						/>
 						<Contact
 							href={"https://github.com/30isnottoolate/"}
-							svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+							svgFillClass={svgFillTheme()}
 							contactType={"github"}
 							text={"github.com/30isnottoolate"}
 						/>
 					</div>
 				</section>
 			</main>
-			<footer id="bottom" className={isItDark ? "dark-header-footer" : "light-header-footer"} >© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate</footer>
+			<footer id="bottom" className={headerFooterTheme()} >© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate</footer>
 		</div>
 	);
 }
