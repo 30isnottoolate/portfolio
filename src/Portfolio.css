@@ -6,7 +6,7 @@
 	--dark-secondary: #002249;
 	--light-primary: #80b9ff;
 	--light-secondary: #a2ccff;
-  }
+}
 
 * {
 	box-sizing: border-box;
@@ -82,6 +82,7 @@ footer {
 
 #gear {
 	position: fixed;
+	cursor: pointer;
 	z-index: 20;
 }
 
@@ -318,6 +319,7 @@ ul > li {
 .arrow-button {
 	position: relative;
 	height: 75px;
+	cursor: pointer;
 	z-index: 5;
 }
 
