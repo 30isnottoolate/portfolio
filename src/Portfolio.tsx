@@ -96,8 +96,7 @@ const Portfolio: React.FC = () => {
 			<header className={isItDark ? "dark-header-footer" : "light-header-footer"} >
 				<a
 					id="logo"
-					href="#welcome"
-					onClick={changeTheme} >
+					href="#welcome" >
 					30isnottoolate
 				</a>
 				<nav
@@ -135,9 +134,10 @@ const Portfolio: React.FC = () => {
 				/>
 			</header>
 			<Gear
+				svgStrokeClass={isItDark ? "dark-svg-stroke" : "light-svg-stroke"}
+				changeTheme={changeTheme}
 				viewportWidth={viewportWidth}
 				scrollPos={scrollPos}
-				svgStrokeClass={isItDark ? "dark-svg-stroke" : "light-svg-stroke"}
 			/>
 			<BackToTop
 				svgFillClass={isItDark ? "dark-svg-fill" : "light-svg-fill"}
