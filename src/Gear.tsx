@@ -1,8 +1,9 @@
-const Gear: React.FC<{ viewportWidth: number, scrollPos: number, svgStrokeClass: string }> = ({ viewportWidth, scrollPos, svgStrokeClass }) => {
+const Gear: React.FC<{ svgStrokeClass: string, changeTheme: () => void, viewportWidth: number, scrollPos: number }> = ({ svgStrokeClass, changeTheme, viewportWidth, scrollPos }) => {
     return (
         <svg
             id="gear"
             className={svgStrokeClass}
+            onClick={changeTheme}
             style={{
                 left: `${viewportWidth <= 650 ? 4.5 : 5}px`,
                 top: `${viewportWidth <= 650 ? 4.5 : 5}px`,
