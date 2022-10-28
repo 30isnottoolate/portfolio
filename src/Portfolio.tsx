@@ -9,12 +9,9 @@ import Arrow from './Arrow';
 import Contact from './Contact';
 
 const NUMBER_OF_PROJECTS = 6;
-const DARK_THEME = { color: "#80b9ff", secColor: "#a2ccff", bgColor: "#000f20" };
-const LIGHT_THEME = { color: "#000f20", secColor: "#002249", bgColor: "#a2ccff" };
 
 const Portfolio: React.FC = () => {
 	const [isItDark, setIsItDark] = useState(false);
-	const [theme, setTheme] = useState(isItDark ? DARK_THEME : LIGHT_THEME);
 	const [viewportWidth, setViewportWidth] = useState(document.body.offsetWidth);
 	const [isMenuVisible, setIsMenuVisible] = useState(viewportWidth <= 650 ? false : true);
 	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
@@ -27,12 +24,6 @@ const Portfolio: React.FC = () => {
 	});
 	const [touchPosX, setTouchPosX] = useState(0);
 	const [swiped, setSwiped] = useState(false);
-
-	useEffect(() => {
-		if (isItDark) {
-			setTheme(DARK_THEME);
-		} else setTheme(LIGHT_THEME);
-	}, [isItDark]);
 
 	useEffect(() => {
 		window.addEventListener("resize", () => {
