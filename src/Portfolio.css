@@ -1,6 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
+:root {
+	--dark-primary: #000f20;
+	--dark-secondary: #002249;
+	--light-primary: #80b9ff;
+	--light-secondary: #a2ccff;
+  }
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -15,16 +22,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    background: #002249;
+    background: var(--dark-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #80b9ff;
+    background: var(--light-primary);
 	border-radius: 2.5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #a2ccff;
+    background: var(--light-secondary);
 }
 
 body {
@@ -49,15 +56,15 @@ header, footer {
 }
 
 .dark-header-footer {
-	background-color: #000f20;
-	color:#80b9ff;
-	box-shadow: 0 0 50px 5px #80b9ff;
+	background-color: var(--dark-primary);
+	color:var(--light-primary);
+	box-shadow: 0 0 50px 5px var(--light-primary);
 }
 
 .light-header-footer {
-	background-color: #80b9ff;
-	color:#000f20;
-	box-shadow: 0 0 50px 5px #000f20;
+	background-color: var(--light-primary);
+	color:var(--dark-primary);
+	box-shadow: 0 0 50px 5px var(--dark-primary);
 }
 
 header {
@@ -87,55 +94,55 @@ footer {
 }
 
 .dark-svg-fill {
-	background-color: #000f20;
-	color: #80b9ff;
-	fill: #80b9ff;
+	background-color: var(--dark-primary);
+	color: var(--light-primary);
+	fill: var(--light-primary);
 }
 
 .dark-svg-fill:hover {
-	color: #a2ccff;
-	fill: #a2ccff;
+	color: var(--light-secondary);
+	fill: var(--light-secondary);
 }
 
 .light-svg-fill {
-	background-color: #a2ccff;
-	color: #000f20;
-	fill: #000f20;
+	background-color: var(--light-secondary);
+	color: var(--dark-primary);
+	fill: var(--dark-primary);
 }
 
 .light-svg-fill:hover {
-	color: #002249;
-	fill: #002249;
+	color: var(--dark-secondary);
+	fill: var(--dark-secondary);
 }
 
 .dark-svg-stroke {
-	stroke: #80b9ff;
-	fill: #000f20;
+	stroke: var(--light-primary);
+	fill: var(--dark-primary);
 }
 
 .light-svg-stroke {
-	stroke: #000f20;
-	fill: #a2ccff;
+	stroke: var(--dark-primary);
+	fill: var(--light-secondary);
 }
 
 .dark-svg-stroke:hover {
-	stroke: #a2ccff;
+	stroke: var(--light-secondary);
 }
 
 .light-svg-stroke:hover {
-	stroke: #002249;
+	stroke: var(--dark-secondary);
 }
 
 .dark-main {
-	background-color: #000f20;
-	color:#80b9ff;
+	background-color: var(--dark-primary);
+	color:var(--light-primary);
 	text-shadow: 0 0 10px #6200ff;
 }
 
 .light-main {
-	background-color: #a2ccff;
-	color:#000f20;
-	text-shadow: 0 0 10px #80b9ff;
+	background-color: var(--light-secondary);
+	color:var(--dark-primary);
+	text-shadow: 0 0 10px var(--light-primary);
 }
 
 section {
@@ -172,7 +179,7 @@ nav:hover > a {
 
 nav > a:hover {
 	opacity: 1;
-	text-shadow: 0 0 25px #a2ccff;
+	text-shadow: 0 0 25px var(--light-secondary);
 	transition: text-shadow 0.5s;
 }
 
@@ -194,11 +201,11 @@ nav > a:hover {
 }
 
 .dark-menu-button {
-	background-color: #80b9ff;
+	background-color: var(--light-primary);
 }
 
 .light-menu-button {
-	background-color: #000f20;
+	background-color: var(--dark-primary);
 }
 
 h1 {
@@ -244,15 +251,15 @@ ul > li {
 }
 
 .dark-avatar {
-	background-color: #80b9ff;
-	box-shadow: 0 0 20px 5px #80b9ff;
-	border: 10px solid #80b9ff;
+	background-color: var(--light-primary);
+	box-shadow: 0 0 20px 5px var(--light-primary);
+	border: 10px solid var(--light-primary);
 }
 
 .light-avatar {
-	background-color: #000f20;
-	box-shadow: 0 0 20px 5px #000f20;
-	border: 10px solid #002249;
+	background-color: var(--dark-primary);
+	box-shadow: 0 0 20px 5px var(--dark-primary);
+	border: 10px solid var(--dark-secondary);
 }
 
 #skills > div > h2 {
@@ -275,8 +282,8 @@ ul > li {
 }
 
 .icon-tooltip {
-	background-color: #80b9ff;
-	color: #000f20;
+	background-color: var(--light-primary);
+	color: var(--dark-primary);
 	position: absolute;
 	opacity: 0;
 	font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
@@ -289,13 +296,13 @@ ul > li {
 }
 
 .dark-icon-tooltip {
-	background-color: #80b9ff;
-	color: #000f20;
+	background-color: var(--light-primary);
+	color: var(--dark-primary);
 }
 
 .light-icon-tooltip {
-	background-color: #000f20;
-	color: #80b9ff;
+	background-color: var(--dark-primary);
+	color: var(--light-primary);
 }
 
 .icon-image {
@@ -338,11 +345,11 @@ ul > li {
 }
 
 .dark-project-box {
-	box-shadow: 0 0 15px 5px #80b9ff;
+	box-shadow: 0 0 15px 5px var(--light-primary);
 }
 
 .light-project-box {
-	box-shadow: 0 0 15px 5px #000f20;
+	box-shadow: 0 0 15px 5px var(--dark-primary);
 }
 
 .project-title {
@@ -366,7 +373,7 @@ ul > li {
 
 .project-img {
 	width: calc(100% - 16px);
-	border: 1px solid #80b9ff;
+	border: 1px solid var(--light-primary);
 	margin: 8px;
 }
 
@@ -388,25 +395,25 @@ ul > li {
 }
 
 .dark-button {
-	background-color: #000f20;
-	color: #80b9ff;
-	border: 2px solid #80b9ff;
+	background-color: var(--dark-primary);
+	color: var(--light-primary);
+	border: 2px solid var(--light-primary);
 }
 
 .dark-button:hover {
-	background-color: #80b9ff;
-	color: #000f20;
+	background-color: var(--light-primary);
+	color: var(--dark-primary);
 }
 
 .light-button {
-	background-color: #80b9ff;
-	color: #000f20;
-	border: 2px solid #000f20;
+	background-color: var(--light-primary);
+	color: var(--dark-primary);
+	border: 2px solid var(--dark-primary);
 }
 
 .light-button:hover {
-	background-color: #000f20;
-	color: #a2ccff;
+	background-color: var(--dark-primary);
+	color: var(--light-secondary);
 }
 
 .project-demo-button {
@@ -486,13 +493,13 @@ ul > li {
 	}
 
 	.dark-mini-nav {
-		background-color: #000f20;
-		border: 1px solid #80b9ff;
+		background-color: var(--dark-primary);
+		border: 1px solid var(--light-primary);
 	}
 
 	.light-mini-nav {
-		background-color: #80b9ff;
-		border: 1px solid #000f20;
+		background-color: var(--light-primary);
+		border: 1px solid var(--dark-primary);
 	}
 
 	nav > a {
@@ -502,13 +509,13 @@ ul > li {
 	}
 
 	.dark-mini-nav-a:hover {
-		background-color: #80b9ff;
-		color: #000f20;
+		background-color: var(--light-primary);
+		color: var(--dark-primary);
 	}
 
 	.light-mini-nav-a:hover {
-		background-color: #000f20;
-		color: #80b9ff;
+		background-color: var(--dark-primary);
+		color: var(--light-primary);
 	}
 
 	.menu-button {
