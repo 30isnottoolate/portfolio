@@ -3,9 +3,13 @@
 
 :root {
 	--dark-primary: #000f20;
-	--dark-secondary: #002249;
-	--light-primary: #80b9ff;
-	--light-secondary: #a2ccff;
+	--dark-primary-alt: #002249;
+	--dark-secondary: #80b9ff;
+	--dark-secondary-alt: #a2ccff;
+	--light-primary: #a2ccff;
+	--light-primary-alt: #80b9ff;
+	--light-secondary: #000f20;
+	--light-secondary-alt: #002249;
 }
 
 * {
@@ -15,23 +19,6 @@
 
 html {
 	scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar {
-    width: 20px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--dark-secondary);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--light-primary);
-	border-radius: 2.5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--light-secondary);
 }
 
 body {
@@ -57,14 +44,14 @@ header, footer {
 
 .dark-header-footer {
 	background-color: var(--dark-primary);
-	color:var(--light-primary);
-	box-shadow: 0 0 50px 5px var(--light-primary);
+	color:var(--dark-secondary);
+	box-shadow: 0 0 50px 5px var(--dark-secondary);
 }
 
 .light-header-footer {
-	background-color: var(--light-primary);
-	color:var(--dark-primary);
-	box-shadow: 0 0 50px 5px var(--dark-primary);
+	background-color: var(--light-primary-alt);
+	color:var(--light-secondary);
+	box-shadow: 0 0 50px 5px var(--light-secondary);
 }
 
 header {
@@ -96,53 +83,53 @@ footer {
 
 .dark-svg-fill {
 	background-color: var(--dark-primary);
-	color: var(--light-primary);
-	fill: var(--light-primary);
-}
-
-.dark-svg-fill:hover {
-	color: var(--light-secondary);
-	fill: var(--light-secondary);
-}
-
-.light-svg-fill {
-	background-color: var(--light-secondary);
-	color: var(--dark-primary);
-	fill: var(--dark-primary);
-}
-
-.light-svg-fill:hover {
 	color: var(--dark-secondary);
 	fill: var(--dark-secondary);
 }
 
-.dark-svg-stroke {
-	stroke: var(--light-primary);
-	fill: var(--dark-primary);
+.dark-svg-fill:hover {
+	color: var(--dark-secondary-alt);
+	fill: var(--dark-secondary-alt);
 }
 
-.light-svg-stroke {
-	stroke: var(--dark-primary);
+.light-svg-fill {
+	background-color: var(--light-primary);
+	color: var(--light-secondary);
 	fill: var(--light-secondary);
 }
 
+.light-svg-fill:hover {
+	color: var(--light-secondary-alt);
+	fill: var(--light-secondary-alt);
+}
+
+.dark-svg-stroke {
+	stroke: var(--dark-secondary);
+	fill: var(--dark-primary);
+}
+
 .dark-svg-stroke:hover {
+	stroke: var(--dark-secondary-alt);
+}
+
+.light-svg-stroke {
 	stroke: var(--light-secondary);
+	fill: var(--light-primary);
 }
 
 .light-svg-stroke:hover {
-	stroke: var(--dark-secondary);
+	stroke: var(--light-secondary-alt);
 }
 
 .dark-main {
 	background-color: var(--dark-primary);
-	color:var(--light-primary);
+	color:var(--dark-secondary);
 	text-shadow: 0 0 10px #6200ff;
 }
 
 .light-main {
-	background-color: var(--light-secondary);
-	color:var(--dark-primary);
+	background-color: var(--light-primary);
+	color:var(--light-secondary);
 	text-shadow: 0 0 10px var(--light-primary);
 }
 
@@ -202,11 +189,11 @@ nav > a:hover {
 }
 
 .dark-menu-button {
-	background-color: var(--light-primary);
+	background-color: var(--dark-secondary);
 }
 
 .light-menu-button {
-	background-color: var(--dark-primary);
+	background-color: var(--light-secondary);
 }
 
 h1 {
@@ -252,15 +239,15 @@ ul > li {
 }
 
 .dark-avatar {
-	background-color: var(--light-primary);
-	box-shadow: 0 0 20px 5px var(--light-primary);
-	border: 10px solid var(--light-primary);
+	background-color: var(--dark-secondary);
+	box-shadow: 0 0 20px 5px var(--dark-secondary);
+	border: 10px solid var(--dark-secondary);
 }
 
 .light-avatar {
-	background-color: var(--dark-primary);
-	box-shadow: 0 0 20px 5px var(--dark-primary);
-	border: 10px solid var(--dark-secondary);
+	background-color: var(--light-secondary);
+	box-shadow: 0 0 20px 5px var(--light-secondary);
+	border: 10px solid var(--light-secondary);
 }
 
 #skills > div > h2 {
@@ -283,8 +270,6 @@ ul > li {
 }
 
 .icon-tooltip {
-	background-color: var(--light-primary);
-	color: var(--dark-primary);
 	position: absolute;
 	opacity: 0;
 	font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
@@ -297,12 +282,12 @@ ul > li {
 }
 
 .dark-icon-tooltip {
-	background-color: var(--light-primary);
+	background-color: var(--dark-secondary);
 	color: var(--dark-primary);
 }
 
 .light-icon-tooltip {
-	background-color: var(--dark-primary);
+	background-color: var(--light-secondary);
 	color: var(--light-primary);
 }
 
@@ -347,11 +332,11 @@ ul > li {
 }
 
 .dark-project-box {
-	box-shadow: 0 0 15px 5px var(--light-primary);
+	box-shadow: 0 0 15px 5px var(--dark-secondary);
 }
 
 .light-project-box {
-	box-shadow: 0 0 15px 5px var(--dark-primary);
+	box-shadow: 0 0 15px 5px var(--light-secondary);
 }
 
 .project-title {
@@ -375,8 +360,15 @@ ul > li {
 
 .project-img {
 	width: calc(100% - 16px);
-	border: 1px solid var(--light-primary);
 	margin: 8px;
+}
+
+.dark-project-box > .project-img {
+	border: 1px solid var(--dark-secondary);
+}
+
+.light-project-box > .project-img {
+	border: 1px solid var(--light-secondary);
 }
 
 .project-description {
@@ -398,24 +390,24 @@ ul > li {
 
 .dark-button {
 	background-color: var(--dark-primary);
-	color: var(--light-primary);
-	border: 2px solid var(--light-primary);
+	color: var(--dark-secondary);
+	border: 2px solid var(--dark-secondary);
 }
 
 .dark-button:hover {
-	background-color: var(--light-primary);
+	background-color: var(--dark-secondary);
 	color: var(--dark-primary);
 }
 
 .light-button {
 	background-color: var(--light-primary);
-	color: var(--dark-primary);
-	border: 2px solid var(--dark-primary);
+	color: var(--light-secondary);
+	border: 2px solid var(--light-secondary);
 }
 
 .light-button:hover {
-	background-color: var(--dark-primary);
-	color: var(--light-secondary);
+	background-color: var(--light-secondary);
+	color: var(--light-primary);
 }
 
 .project-demo-button {
@@ -496,12 +488,12 @@ ul > li {
 
 	.dark-mini-nav {
 		background-color: var(--dark-primary);
-		border: 1px solid var(--light-primary);
+		border: 1px solid var(--dark-secondary);
 	}
 
 	.light-mini-nav {
 		background-color: var(--light-primary);
-		border: 1px solid var(--dark-primary);
+		border: 1px solid var(--light-secondary);
 	}
 
 	nav > a {
@@ -511,12 +503,12 @@ ul > li {
 	}
 
 	.dark-mini-nav-a:hover {
-		background-color: var(--light-primary);
+		background-color: var(--dark-secondary);
 		color: var(--dark-primary);
 	}
 
 	.light-mini-nav-a:hover {
-		background-color: var(--dark-primary);
+		background-color: var(--light-secondary);
 		color: var(--light-primary);
 	}
 
