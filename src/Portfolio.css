@@ -130,7 +130,7 @@ footer {
 .light-main {
 	background-color: var(--light-primary);
 	color:var(--light-secondary);
-	text-shadow: 0 0 10px var(--light-primary);
+	text-shadow: 0 0 10px var(--light-primary-alt);
 }
 
 section {
@@ -167,8 +167,15 @@ nav:hover > a {
 
 nav > a:hover {
 	opacity: 1;
-	text-shadow: 0 0 25px var(--light-secondary);
 	transition: text-shadow 0.5s;
+}
+
+.dark-header-footer > nav > a:hover {
+	text-shadow: 0 0 25px var(--dark-secondary);
+}
+
+.light-header-footer > nav > a:hover {
+	text-shadow: 0 0 25px var(--light-secondary-alt);
 }
 
 #logo {
@@ -492,7 +499,7 @@ ul > li {
 	}
 
 	.light-mini-nav {
-		background-color: var(--light-primary);
+		background-color: var(--light-primary-alt);
 		border: 1px solid var(--light-secondary);
 	}
 
