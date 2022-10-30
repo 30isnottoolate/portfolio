@@ -43,7 +43,7 @@ header, footer {
 }
 
 .dark-header-footer {
-	background-color: var(--dark-primary);
+	background-color: var(--dark-primary-alt);
 	color:var(--dark-secondary);
 	box-shadow: 0 0 50px 5px var(--dark-secondary);
 }
@@ -157,7 +157,7 @@ a, a:active, a:visited {
 
 nav > a {
 	padding: 10px 2vw;
-	transition: text-shadow 0.5s, opacity 0.5s;
+	transition: color 0.5s, text-shadow 0.5s, opacity 0.5s;
 }
 
 nav:hover > a {
@@ -167,15 +167,17 @@ nav:hover > a {
 
 nav > a:hover {
 	opacity: 1;
-	transition: text-shadow 0.5s;
+	transition: color 0.5s, text-shadow 0.5s, opacity 0.5s;
 }
 
 .dark-header-footer > nav > a:hover {
+	color: var(--dark-secondary-alt);
 	text-shadow: 0 0 25px var(--dark-secondary);
 }
 
 .light-header-footer > nav > a:hover {
-	text-shadow: 0 0 25px var(--light-secondary-alt);
+	color: var(--light-secondary-alt);
+	text-shadow: 0 0 35px var(--light-secondary-alt); 
 }
 
 #logo {
