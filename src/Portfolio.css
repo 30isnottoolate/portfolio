@@ -30,6 +30,38 @@ body {
 	overflow-x: hidden;
 }
 
+.dark::-webkit-scrollbar {
+	width: 10px;
+}
+
+.dark::-webkit-scrollbar-track {
+	background: var(--dark-primary);
+}
+
+.dark::-webkit-scrollbar-thumb {
+	background: var(--dark-secondary);
+}
+
+.dark::-webkit-scrollbar-thumb:hover {
+	background: var(--dark-secondary-alt);
+}
+
+.light::-webkit-scrollbar {
+	width: 10px;
+}
+
+.light::-webkit-scrollbar-track {
+	background: var(--light-primary);
+}
+
+.light::-webkit-scrollbar-thumb {
+	background: var(--light-secondary);
+}
+
+.light::-webkit-scrollbar-thumb:hover {
+	background: var(--light-secondary-alt);
+}
+
 header, section, footer {
 	width: 100vw;
 }
