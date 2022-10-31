@@ -40,6 +40,10 @@ const Portfolio: React.FC = () => {
 	}, []);
 
 	useEffect(() => {
+		isItDark ? document.body.className = "dark" : document.body.className = "light";
+	}, [isItDark]);
+
+	useEffect(() => {
 		setProjectIndex(1);
 		setIsMenuVisible(viewportWidth <= 650 ? false : true);
 		if (viewportWidth < 1400 && viewportWidth >= 1100) setVisibleProjects(3);
