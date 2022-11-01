@@ -169,7 +169,16 @@ nav > a:hover {
 	z-index: 20;
 }
 
+#side-contacts {
+	position: fixed;
+	bottom: 110px;
+	left: 0px;
+}
 
+.side-contact {
+	width: 110px;
+	height: 55px;
+}
 
 #back-to-top {
 	width: 45px;
