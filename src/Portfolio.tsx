@@ -392,19 +392,16 @@ const Portfolio: React.FC = () => {
 					<h1>Get in touch</h1>
 					<div id="contacts">
 						<Contact
-							href={"https://www.linkedin.com/in/30isnottoolate/"}
 							svgFillClass={svgFillTheme()}
 							contactType={"linkedin"}
 							text={"linkedin.com/in/30isnottoolate"}
 						/>
 						<Contact
-							href={"mailto:akos.varga.92@gmail.com?subject=Regarding a job opportunity"}
 							svgFillClass={svgFillTheme()}
 							contactType={"email"}
 							text={"akos.varga.92@gmail.com"}
 						/>
 						<Contact
-							href={"https://github.com/30isnottoolate/"}
 							svgFillClass={svgFillTheme()}
 							contactType={"github"}
 							text={"github.com/30isnottoolate"}
