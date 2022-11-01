@@ -1,7 +1,9 @@
 const SideContacts: React.FC = () => {
     return (
-        <div>
-
+        <div className="side-contacts">
+            <div className="side-contact"></div>
+            <div className="side-contact"></div>
+            <div className="side-contact"></div>
         </div>
     )
 }
