@@ -1,6 +1,6 @@
 import contacts from "./contacts";
 
-const SideContacts: React.FC<{themeClass: string}> = (themeClass) => {
+const SideContacts: React.FC<{themeClass: string}> = ({themeClass}) => {
     return (
         <div id="side-contacts">
             <div className={`side-contact ${themeClass}`} >
