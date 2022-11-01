@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Portfolio.css';
-import Gear from './Gear';
 import MenuButton from './MenuButton';
+import Gear from './Gear';
+import SideContacts from './SideContacts';
 import BackToTop from './BackToTop';
 import Icon from './Icon';
 import Project from './Project';
@@ -159,6 +160,7 @@ const Portfolio: React.FC = () => {
 				viewportWidth={viewportWidth}
 				scrollPos={scrollPos}
 			/>
+			<SideContacts />
 			<BackToTop
 				svgFillClass={svgFillTheme()}
 				scrollPos={scrollPos}
