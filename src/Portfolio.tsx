@@ -394,17 +394,14 @@ const Portfolio: React.FC = () => {
 						<Contact
 							svgFillClass={svgFillTheme()}
 							contactType={"linkedin"}
-							text={"linkedin.com/in/30isnottoolate"}
 						/>
 						<Contact
 							svgFillClass={svgFillTheme()}
 							contactType={"email"}
-							text={"akos.varga.92@gmail.com"}
 						/>
 						<Contact
 							svgFillClass={svgFillTheme()}
 							contactType={"github"}
-							text={"github.com/30isnottoolate"}
 						/>
 					</div>
 				</section>
