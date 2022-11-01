@@ -11,7 +11,15 @@ import Contact from './Contact';
 const NUMBER_OF_PROJECTS = 6;
 
 const Portfolio: React.FC = () => {
-	const [isItDark, setIsItDark] = useState(true);
+	const [isItDark, setIsItDark] = useState(() => {
+		if (localStorage.getItem("isItDark")) {
+			if (localStorage.getItem("isItDark") === "true") {
+				return true;
+			} else return false;
+		} else {
+			return true;
+		}
+	});
 	const [viewportWidth, setViewportWidth] = useState(document.body.offsetWidth);
 	const [isMenuVisible, setIsMenuVisible] = useState(viewportWidth <= 650 ? false : true);
 	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
@@ -41,6 +49,7 @@ const Portfolio: React.FC = () => {
 
 	useEffect(() => {
 		isItDark ? document.body.className = "dark" : document.body.className = "light";
+		localStorage.setItem("isItDark", isItDark.toString());
 	}, [isItDark]);
 
 	useEffect(() => {
