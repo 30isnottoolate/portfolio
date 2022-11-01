@@ -178,12 +178,17 @@ nav > a:hover {
 .side-contact {
 	display: flex;
 	flex-direction: row-reverse;
-	background-color: #003f88;
+	background-color: #002550;
 	width: 90px;
-	height: 50px;
-	padding: 5px;
+	height: auto;
+	padding: 7.5px;
 	border-radius: 0 5px 5px 0;
 	margin-bottom: 5px
+}
+
+.side-contact-image {
+	fill: #ececff;
+	width: 40px;
 }
 
 #back-to-top {
