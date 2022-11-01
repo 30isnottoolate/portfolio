@@ -197,12 +197,20 @@ nav > a:hover {
 	fill: var(--dark-primary);
 }
 
+.dark-side-contact:hover {
+	background-color: var(--dark-secondary-alt);
+}
+
 .light-side-contact {
 	background-color: var(--light-secondary);
 }
 
 .light-side-contact > svg {
 	fill: var(--light-primary);
+}
+
+.light-side-contact:hover {
+	background-color: var(--light-secondary-alt);
 }
 
 #back-to-top {
