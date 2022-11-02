@@ -160,7 +160,10 @@ const Portfolio: React.FC = () => {
 				viewportWidth={viewportWidth}
 				scrollPos={scrollPos}
 			/>
-			<SideContacts themeClass={isItDark ? "dark-side-contact" : "light-side-contact"} />
+			<SideContacts
+				scrollPos={scrollPos}
+				themeClass={isItDark ? "dark-side-contact" : "light-side-contact"}
+			/>
 			<BackToTop
 				svgFillClass={svgFillTheme()}
 				scrollPos={scrollPos}
