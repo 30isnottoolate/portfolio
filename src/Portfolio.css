@@ -317,6 +317,12 @@ section {
 	padding: 150px 20px 50px 20px;
 }
 
+#welcome {
+	min-height: 600px;
+	height: 100vh;
+	padding: 150px 70px 50px 70px; 
+}
+
 h1 {
 	text-align: center;
 	font-family: "Poppins", Arial, Helvetica, sans-serif;
@@ -346,11 +352,6 @@ span {
 
 ul > li {
 	padding-bottom: 10px;
-}
-
-#welcome {
-	min-height: 600px;
-	height: 100vh;
 }
 
 #avatar-image {
@@ -585,14 +586,6 @@ ul > li {
 		border-radius: 0 0 0 22.5px;
 	}
 
-	#back-to-top {
-		right: -100px;
-	}
-
-	section {
-		gap: 24px;
-	}
-
 	#logo {
 		font-size: 24px;
 	}
@@ -637,8 +630,24 @@ ul > li {
 		display: inline-block;
 	}
 
+	#side-contacts {
+		display: none;
+	}
+
+	#back-to-top {
+		right: -100px;
+	}
+
+	section {
+		gap: 24px;
+	}
+
 	footer {
 		font-size: 12px;
+	}
+
+	#welcome {
+		padding: 150px 20px 50px 20px;
 	}
 	
 	h1 {
