@@ -78,14 +78,12 @@ header, footer {
 	background-color: var(--dark-primary-alt);
 	color:var(--dark-secondary);
 	box-shadow: 0 0 50px 5px var(--dark-secondary);
-	transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
 .light-header-footer {
 	background-color: var(--light-primary-alt);
 	color:var(--light-secondary);
 	box-shadow: 0 0 50px 5px var(--light-secondary);
-	transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
 header {
@@ -122,17 +120,15 @@ a, a:active, a:visited {
 
 nav > a {
 	padding: 10px 2vw;
-	transition: color 0.5s, text-shadow 0.5s, opacity 0.5s;
+	transition: color 0.35s, text-shadow 0.35s, opacity 0.35s;
 }
 
 nav:hover > a {
 	opacity: 0.35;
-	transition: opacity 0.5s;
 }
 
 nav > a:hover {
 	opacity: 1;
-	transition: color 0.5s, text-shadow 0.5s, opacity 0.5s;
 }
 
 .dark-header-footer > nav > a:hover {
@@ -154,7 +150,7 @@ nav > a:hover {
 	height: 5px;
 	border-radius: 2.5px;
 	margin: 5px 0;
-	transition: transform 0.5s, opacity 0.5s, background-color 0.25s ease-in-out;
+	transition: transform 0.5s, opacity 0.5s;
 }
 
 .dark-menu-button {
@@ -192,7 +188,6 @@ nav > a:hover {
 
 .side-contact:hover {
 	left: 0px;
-	transition: left 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 
 .side-contact-image {
@@ -205,7 +200,6 @@ nav > a:hover {
 
 .dark-side-contact > svg {
 	fill: var(--dark-primary);
-	transition: fill 0.25s ease-in-out;
 }
 
 .dark-side-contact:hover {
@@ -218,7 +212,6 @@ nav > a:hover {
 
 .light-side-contact > svg {
 	fill: var(--light-primary);
-	transition: fill 0.25s ease-in-out;
 }
 
 .light-side-contact:hover {
@@ -230,67 +223,61 @@ nav > a:hover {
 	height: 45px;
 	right: 40px;
 	border-radius: 50%;
-	transition: bottom 0.5s ease-out, color 0.25s ease-in-out, fill 0.25s ease-in-out;
+	transition: bottom 0.5s ease-out, fill 0.25s ease-in-out;
+}
+
+.dark-svg-fill, .light-svg-fill {
+	transition: fill 0.25s ease-in-out;
 }
 
 .dark-svg-fill {
-	color: var(--dark-secondary);
 	fill: var(--dark-secondary);
-	transition: color 0.25s ease-in-out, fill 0.25s ease-in-out;
 }
 
 .dark-svg-fill:hover {
-	color: var(--dark-secondary-alt);
 	fill: var(--dark-secondary-alt);
-	transition: color 0.25s ease-in-out, fill 0.25s ease-in-out;
 }
 
 .light-svg-fill {
-	color: var(--light-secondary);
 	fill: var(--light-secondary);
-	transition: color 0.25s ease-in-out, fill 0.25s ease-in-out;
 }
 
 .light-svg-fill:hover {
-	color: var(--light-secondary-alt);
 	fill: var(--light-secondary-alt);
-	transition: color 0.25s ease-in-out, fill 0.25s ease-in-out;
+}
+
+.dark-svg-stroke, .light-svg-stroke {
+	transition: stroke 0.25s ease-in-out, fill 0.25s ease-in-out;
 }
 
 .dark-svg-stroke {
 	stroke: var(--dark-secondary);
 	fill: var(--dark-primary);
-	transition: stroke 0.25s ease-in-out, fill 0.25s ease-in-out;
 }
 
 .dark-svg-stroke:hover {
 	stroke: var(--dark-secondary-alt);
-	transition: stroke 0.25s ease-in-out, fill 0.25s ease-in-out;
 }
 
 .light-svg-stroke {
 	stroke: var(--light-secondary);
 	fill: var(--light-primary);
-	transition: stroke 0.25s ease-in-out, fill 0.25s ease-in-out;
 }
 
 .light-svg-stroke:hover {
 	stroke: var(--light-secondary-alt);
-	transition: stroke 0.25s ease-in-out, fill 0.25s ease-in-out;
 }
 
 .dark-main {
 	background-color: var(--dark-primary);
 	color:var(--dark-secondary);
 	text-shadow: 0 0 10px #6200ff;
-	transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
 }
 
 .light-main {
 	background-color: var(--light-primary);
 	color:var(--light-secondary);
 	text-shadow: 0 0 10px var(--light-primary-alt);
-	transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
 }
 
 section {
@@ -348,14 +335,12 @@ ul > li {
 	background-color: var(--dark-secondary);
 	box-shadow: 0 0 20px 5px var(--dark-secondary);
 	border: 10px solid var(--dark-secondary);
-	transition: border 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
 }
 
 .light-avatar {
 	background-color: var(--light-secondary);
 	box-shadow: 0 0 20px 5px var(--light-secondary);
 	border: 10px solid var(--light-secondary);
-	transition: border 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
 }
 
 #skills > div > h2 {
@@ -441,12 +426,10 @@ ul > li {
 
 .dark-project-box {
 	box-shadow: 0 0 15px 5px var(--dark-secondary);
-	transition: box-shadow 0.25s ease-in-out;
 }
 
 .light-project-box {
 	box-shadow: 0 0 15px 5px var(--light-secondary);
-	transition: box-shadow 0.25s ease-in-out;
 }
 
 .project-title {
@@ -474,13 +457,11 @@ ul > li {
 }
 
 .dark-project-box > .project-img {
-	border: 1px solid var(--dark-secondary);
-	transition: border 0.25s ease-in-out;
+	border: 1px solid var(--dark-secondary);;
 }
 
 .light-project-box > .project-img {
 	border: 1px solid var(--light-secondary);
-	transition: border 0.25s ease-in-out;
 }
 
 .project-description {
@@ -504,26 +485,22 @@ ul > li {
 	background-color: var(--dark-primary);
 	color: var(--dark-secondary);
 	border: 2px solid var(--dark-secondary);
-	transition: background-color 0.15s ease-in-out, color 0.25s ease-in-out, border 0.25s ease-in-out;
 }
 
 .dark-button:hover {
 	background-color: var(--dark-secondary);
 	color: var(--dark-primary);
-	transition: background-color 0.15s ease-in-out, color 0.25s ease-in-out, border 0.25s ease-in-out;
 }
 
 .light-button {
 	background-color: var(--light-primary);
 	color: var(--light-secondary);
 	border: 2px solid var(--light-secondary);
-	transition: background-color 0.15s ease-in-out, color 0.25s ease-in-out, border 0.25s ease-in-out;
 }
 
 .light-button:hover {
 	background-color: var(--light-secondary);
 	color: var(--light-primary);
-	transition: background-color 0.15s ease-in-out, color 0.25s ease-in-out, border 0.25s ease-in-out;
 }
 
 .project-demo-button {
