@@ -1,13 +1,6 @@
-import { useState, useEffect } from "react";
 import contacts from "./contacts";
 
 const SideContacts: React.FC<{ scrollPos: number, themeClass: string }> = ({ scrollPos, themeClass }) => {
-    const [startUp, setStartUp] = useState(false);
-    useEffect(() => {
-        let timer = setTimeout(() => setStartUp(true), 2500);
-        return clearTimeout(timer);
-    }, []);
-    
     return (
         <div id="side-contacts" style={{}}>
             <a href={contacts["linkedin"].href} target="_blank" rel="noreferrer" >
