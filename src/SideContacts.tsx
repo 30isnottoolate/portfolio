@@ -1,25 +1,31 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import contacts from "./contacts";
 
 const SideContacts: React.FC<{ scrollPos: number, themeClass: string }> = ({ scrollPos, themeClass }) => {
+    const [startUp, setStartUp] = useState(false);
+    useEffect(() => {
+        let timer = setTimeout(() => setStartUp(true), 2500);
+        return clearTimeout(timer);
+    }, []);
+    
     return (
-        <div id="side-contacts">
+        <div id="side-contacts" style={{}}>
             <a href={contacts["linkedin"].href} target="_blank" rel="noreferrer" >
-                <div className={`side-contact ${themeClass}`} style={{left: (scrollPos > 1410 ? "-80px" : "")}} >
+                <div id="side-contact-1" className={`side-contact ${themeClass}`} style={{left: (scrollPos > 1410 ? "-80px" : "")}} >
                     <svg className="side-contact-image" viewBox="0 0 16 16">
                         <path d={contacts["linkedin"].path} />
                     </svg>
                 </div>
             </a>
             <a href={contacts["email"].href} target="_blank" rel="noreferrer" >
-                <div className={`side-contact ${themeClass}`} style={{left: (scrollPos > 1350 ? "-80px" : "")}} >
+                <div id="side-contact-2" className={`side-contact ${themeClass}`} style={{left: (scrollPos > 1350 ? "-80px" : "")}} >
                     <svg className="side-contact-image" viewBox="0 2 16 12">
                         <path d={contacts["email"].path} />
                     </svg>
                 </div>
             </a>
             <a href={contacts["github"].href} target="_blank" rel="noreferrer" >
-                <div className={`side-contact ${themeClass}`} style={{left: (scrollPos > 1300 ? "-80px" : "")}} >
+                <div id="side-contact-3" className={`side-contact ${themeClass}`} style={{left: (scrollPos > 1300 ? "-80px" : "")}} >
                     <svg className="side-contact-image" viewBox="0 0 16 16">
                         <path d={contacts["github"].path} />
                     </svg>
