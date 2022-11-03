@@ -1,4 +1,4 @@
-import contacts from "./contacts";
+import contacts from "../utilities/contacts";
 
 const SideContacts: React.FC<{ scrollPos: number, themeClass: string }> = ({ scrollPos, themeClass }) => {
     return (

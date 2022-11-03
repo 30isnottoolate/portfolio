@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import icons from './icons';
+import icons from '../utilities/icons';
 
 interface IconProps {
     href: string;

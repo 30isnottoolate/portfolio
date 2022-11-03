@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './Portfolio.css';
-import MenuButton from './MenuButton';
-import Gear from './Gear';
-import SideContacts from './SideContacts';
-import BackToTop from './BackToTop';
-import Icon from './Icon';
-import Project from './Project';
-import Arrow from './Arrow';
-import Contact from './Contact';
+import MenuButton from './components/MenuButton';
+import Gear from './components/Gear';
+import SideContacts from './components/SideContacts';
+import BackToTop from './components/BackToTop';
+import Icon from './components/Icon';
+import Project from './components/Project';
+import Arrow from './components/Arrow';
+import Contact from './components/Contact';
 
 const NUMBER_OF_PROJECTS = 6;
 
@@ -173,7 +173,7 @@ const Portfolio: React.FC = () => {
 					<img
 						id="avatar-image"
 						className={isItDark ? "dark-avatar" : "light-avatar"}
-						src="./avatar.png"
+						src="./images/avatar.png"
 						alt="Akos Varga"
 					/>
 					<h1 id="topH">
@@ -339,7 +339,7 @@ const Portfolio: React.FC = () => {
 								title={"Stage Teleprompter"}
 								techs={["react", "js", "css", "html"]}
 								svgFillClass={svgFillTheme()}
-								src="stage-teleprompter-screenshot.png"
+								src="/images/project_screenshots/stage-teleprompter-screenshot.png"
 								description="Some text here..."
 								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://30isnottoolate.github.io/stage-teleprompter"

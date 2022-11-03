@@ -1,4 +1,4 @@
-import contacts from './contacts';
+import contacts from '../utilities/contacts';
 
 interface ContactProps {
     svgFillClass: string;
