@@ -584,7 +584,7 @@ ul > li {
 		padding-left: 56px;
 		padding-right: 10px;
 		border-radius: 0 0 0 22.5px;
-	}
+	} 
 
 	#logo {
 		font-size: 24px;
@@ -601,29 +601,17 @@ ul > li {
 	}
 
 	.dark-mini-nav {
-		background-color: var(--dark-primary);
-		border: 1px solid var(--dark-secondary);
+		background-color: var(--dark-primary-alt);
 	}
 
 	.light-mini-nav {
 		background-color: var(--light-primary-alt);
-		border: 1px solid var(--light-secondary);
 	}
 
 	nav > a {
 		text-align: right;
 		width: auto;
 		padding: 7.5px 15px 7.5px 15px;
-	}
-
-	.dark-mini-nav-a:hover {
-		background-color: var(--dark-secondary);
-		color: var(--dark-primary);
-	}
-
-	.light-mini-nav-a:hover {
-		background-color: var(--light-secondary);
-		color: var(--light-primary);
 	}
 
 	#menu-button {
