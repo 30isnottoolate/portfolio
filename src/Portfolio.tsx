@@ -327,7 +327,7 @@ const Portfolio: React.FC = () => {
 								title={"Online Teleprompter"}
 								techs={["react", "ts", "css", "html"]}
 								svgFillClass={svgFillTheme()}
-								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
+								src="/images/project_screenshots/online-teleprompter-screenshot.png"
 								description="Some text here..."
 								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://30isnottoolate.github.io/online-teleprompter-ts"
@@ -351,7 +351,7 @@ const Portfolio: React.FC = () => {
 								title={"Portfolio Page"}
 								techs={["react", "ts", "css", "html"]}
 								svgFillClass={svgFillTheme()}
-								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
+								src="/images/project_screenshots/portfolio-screenshot.png"
 								description="Some text here..."
 								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://30isnottoolate.github.io/portfolio"
