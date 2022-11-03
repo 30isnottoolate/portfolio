@@ -340,7 +340,7 @@ const Portfolio: React.FC = () => {
 								techs={["react", "js", "css", "html"]}
 								svgFillClass={svgFillTheme()}
 								src="/images/project_screenshots/stage-teleprompter-screenshot.png"
-								description="Some text here..."
+								description="The first project that will actually be used IRL. A musician friend of mine commissioned me to make an app, which will be used in a stage teleprompter box for musicians and public speakers, and controlled with a three-button footswitch. It's made with class components, and will eventually be turned into a desktop app with Electron."
 								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://30isnottoolate.github.io/stage-teleprompter"
 								codeHref="https://github.com/30isnottoolate/stage-teleprompter"
