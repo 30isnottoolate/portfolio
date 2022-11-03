@@ -179,7 +179,7 @@ nav > a:hover {
 	position: relative;
 	width: 80px;
 	height: auto;
-	left: -25px;
+	left: 0px;
 	transform: translateX(-80px);
 	padding: 7.5px;
 	border-radius: 0 5px 5px 0;
@@ -187,7 +187,7 @@ nav > a:hover {
 }
 
 .side-contact:hover {
-	left: 0px;
+	left: 25px;
 }
 
 #side-contact-1, #side-contact-2, #side-contact-3 {
@@ -214,7 +214,7 @@ nav > a:hover {
 	}
 	
 	to {
-		transform: translateX(0px);
+		transform: translateX(-25px);
 	}
 }
 
