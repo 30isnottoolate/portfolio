@@ -327,7 +327,7 @@ const Portfolio: React.FC = () => {
 								title={"Online Teleprompter"}
 								techs={["react", "ts", "css", "html"]}
 								svgFillClass={svgFillTheme()}
-								src="/images/project_screenshots/online-teleprompter-screenshot.png"
+								src="./images/project_screenshots/online-teleprompter-screenshot.png"
 								description="The idea has come from the stage teleprompter project, but with much less features. This is the first app I've made with React hooks (useState, useEffect, useRef), and TypeScript. It has a simple user interface, nothing flashy, just a pure learning app. A formula was developed for the ideal text sliding speed after a lot of experiments."
 								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://30isnottoolate.github.io/online-teleprompter-ts"
@@ -339,7 +339,7 @@ const Portfolio: React.FC = () => {
 								title={"Stage Teleprompter"}
 								techs={["react", "js", "css", "html"]}
 								svgFillClass={svgFillTheme()}
-								src="/images/project_screenshots/stage-teleprompter-screenshot.png"
+								src="./images/project_screenshots/stage-teleprompter-screenshot.png"
 								description="The first project that will actually be used IRL. A musician friend of mine commissioned me to make an app, which will be used in a stage teleprompter box for musicians and public speakers, and controlled with a three-button footswitch. It's made with class components, and will eventually be turned into a desktop app with Electron."
 								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://30isnottoolate.github.io/stage-teleprompter"
@@ -351,7 +351,7 @@ const Portfolio: React.FC = () => {
 								title={"Portfolio Page"}
 								techs={["react", "ts", "css", "html"]}
 								svgFillClass={svgFillTheme()}
-								src="/images/project_screenshots/portfolio-screenshot.png"
+								src="./images/project_screenshots/portfolio-screenshot.png"
 								description="The title says it all. It's my porfolio page. You are currently looking at it. A visual representation of my work, full of SVG images, animations, daring color schemes. Made with React functional components and hooks, written in TypeScript. The projects section is touch swipe compatible. Also, try clicking to gear in the top left corner."
 								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://30isnottoolate.github.io/portfolio"
