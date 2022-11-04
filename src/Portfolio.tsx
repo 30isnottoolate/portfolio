@@ -94,10 +94,10 @@ const Portfolio: React.FC = () => {
 	}
 
 	const handleTouchMove = (event: React.TouchEvent) => {
-		if (swiped && (touchPosX + 120 < event.touches[0].clientX)) {
+		if (swiped && (touchPosX + 80 < event.touches[0].clientX)) {
 			setSwiped(false);
 			handlePrev();
-		} else if (swiped && (touchPosX - 120 > event.touches[0].clientX)) {
+		} else if (swiped && (touchPosX - 80 > event.touches[0].clientX)) {
 			setSwiped(false);
 			handleNext();
 		}
