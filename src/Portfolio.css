@@ -32,6 +32,14 @@ body {
 	overflow-x: hidden;
 }
 
+.dark {
+	background-color: var(--dark-primary);
+}
+
+.light {
+	background-color: var(--light-primary);
+}
+
 .dark::-webkit-scrollbar {
 	width: 10px;
 }
@@ -69,7 +77,7 @@ body {
 }
 
 .light-bg {
-	background-color: var(--light-tertiary);
+	background-color: var(--light-primary-alt);
 }
 
 header, section, footer {
