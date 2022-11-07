@@ -8,7 +8,6 @@ const Background: React.FC<{themeClass: string}> = ({themeClass}) => {
             let sum = "";
             for (let i = 0; i < 50; i++) {
                 sum = sum + `<div 
-                class=${themeClass}
                 style="
                     display: inline-block;
                     position: absolute; 
@@ -23,7 +22,7 @@ const Background: React.FC<{themeClass: string}> = ({themeClass}) => {
     }, []);
 
     return (
-        <div style={{ position: "absolute", zIndex: -10, left: 0, top: 0, width: document.body.offsetWidth, height: document.body.offsetHeight }} dangerouslySetInnerHTML={{ __html: elements }} />
+        <div className={themeClass} style={{ position: "absolute", zIndex: -10, left: 0, top: 0, width: document.body.offsetWidth, height: document.body.offsetHeight }} dangerouslySetInnerHTML={{ __html: elements }} />
     )
 }
 
