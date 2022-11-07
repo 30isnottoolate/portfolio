@@ -6,10 +6,12 @@
 	--dark-primary-alt: #002249;
 	--dark-secondary: #80b9ff;
 	--dark-secondary-alt: #a2ccff;
+	--dark-tertiary: #003f88;
 	--light-primary: #ececff;
 	--light-primary-alt: #c4c4dd;
 	--light-secondary: #002550;
 	--light-secondary-alt: #003f88;
+	--light-tertiary: #80b9ff;
 }
 
 * {
@@ -60,6 +62,14 @@ body {
 
 .light::-webkit-scrollbar-thumb:hover {
 	background: var(--light-secondary-alt);
+}
+
+.dark-bg {
+	background-color: var(--dark-tertiary);
+}
+
+.light-bg {
+	background-color: var(--light-tertiary);
 }
 
 header, section, footer {
