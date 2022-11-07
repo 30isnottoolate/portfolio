@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const Background: React.FC = () => {
+const Background: React.FC<{themeClass: string}> = ({themeClass}) => {
     const [elements, setElements] = useState("");
 
     useEffect(() => {
@@ -8,9 +8,9 @@ const Background: React.FC = () => {
             let sum = "";
             for (let i = 0; i < 50; i++) {
                 sum = sum + `<div 
+                class=${themeClass}
                 style="
-                    display: inline-block; 
-                    background-color: #003f88; 
+                    display: inline-block;
                     position: absolute; 
                     left: ${Math.random() * document.body.offsetWidth}px; 
                     top: ${Math.random() * document.body.offsetHeight}px; 
@@ -23,7 +23,7 @@ const Background: React.FC = () => {
     }, []);
 
     return (
-        <div style={{ backgroundColor: "#000f20", position: "absolute", zIndex: -10, left: 0, top: 0, width: document.body.offsetWidth, height: document.body.offsetHeight }} dangerouslySetInnerHTML={{ __html: elements }} />
+        <div style={{ position: "absolute", zIndex: -10, left: 0, top: 0, width: document.body.offsetWidth, height: document.body.offsetHeight }} dangerouslySetInnerHTML={{ __html: elements }} />
     )
 }
 
