@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Portfolio.css';
+import Background from './components/Background';
 import MenuButton from './components/MenuButton';
 import Gear from './components/Gear';
 import SideContacts from './components/SideContacts';
@@ -115,6 +116,7 @@ const Portfolio: React.FC = () => {
 
 	return (
 		<div id="portfolio">
+			<Background />
 			<header className={headerFooterTheme()} >
 				<a
 					id="logo"
