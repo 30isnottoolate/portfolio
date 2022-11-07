@@ -72,12 +72,16 @@ body {
 	background: var(--light-secondary-alt);
 }
 
-.dark-bg {
-	background-color: var(--dark-tertiary);
+.dark-bg > svg, .light-bg > svg {
+	position: absolute
 }
 
-.light-bg {
-	background-color: var(--light-primary-alt);
+.dark-bg > svg {
+	fill: var(--dark-tertiary);
+}
+
+.light-bg > svg {
+	fill: var(--light-primary-alt);
 }
 
 header, section, footer {
