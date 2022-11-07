@@ -52,7 +52,6 @@ const Portfolio: React.FC = () => {
 	useEffect(() => {
 		isItDark ? document.body.className = "dark" : document.body.className = "light";
 		localStorage.setItem("isItDark", isItDark.toString());
-		document.body.style.backgroundColor = (isItDark ? "#000f20" : "#ececff");
 	}, [isItDark]);
 
 	useEffect(() => {
@@ -116,7 +115,7 @@ const Portfolio: React.FC = () => {
 
 	return (
 		<div id="portfolio">
-			<Background />
+			<Background themeClass={isItDark ? "dark-bg" : "light-bg"} />
 			<header className={headerFooterTheme()} >
 				<a
 					id="logo"
