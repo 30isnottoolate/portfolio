@@ -456,10 +456,12 @@ ul > li {
 }
 
 .dark-project-box {
+	background-color: var(--dark-primary);
 	box-shadow: 0 0 15px 5px var(--dark-secondary);
 }
 
 .light-project-box {
+	background-color: var(--light-primary);
 	box-shadow: 0 0 15px 5px var(--light-secondary);
 }
 
