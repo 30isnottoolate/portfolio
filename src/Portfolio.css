@@ -301,13 +301,11 @@ nav > a:hover {
 }
 
 .dark-main {
-	background-color: var(--dark-primary);
 	color:var(--dark-secondary);
 	text-shadow: 0 0 10px #6200ff;
 }
 
 .light-main {
-	background-color: var(--light-primary);
 	color:var(--light-secondary);
 	text-shadow: 0 0 10px var(--light-primary-alt);
 }
