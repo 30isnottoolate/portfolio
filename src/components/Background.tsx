@@ -10,23 +10,46 @@ const figures = [
 
 const squareSide = 200 // 1 figure inside every (squareSide x squareSide) square
 
-const Background: React.FC<{ themeClass: string, bodyWidth: number, bodyHeight: number }> = ({ themeClass, bodyWidth, bodyHeight }) => {
+const Background: React.FC<{ themeClass: string }> = ({ themeClass }) => {
     const [decor, setDecor] = useState("");
 
     useEffect(() => {
+        window.addEventListener("load", () => {
+            generateBG();
+        });
+        return () => window.removeEventListener("load", () => { });
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            generateBG();
+        });
+        return () => window.removeEventListener("resize", () => { });
+    }, []);
+
+    const generateBG = () => {
         setDecor(() => {
             let content = "";
-            for (let x = 0; x < Math.floor(bodyWidth / 200); x++) {
-                for (let y = 0; y < Math.floor(bodyHeight / 200); y++) {
-                    content = content + `<svg xmlns="http://www.w3.org/2000/svg" style="display: inline-block; position: absolute; left: ${x * squareSide + (Math.random() *  squareSide)}px; top: ${y * squareSide + (Math.random() *  squareSide)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random()*5)]}</svg>`;
+            for (let x = 0; x < Math.floor(document.body.offsetWidth / 200); x++) {
+                for (let y = 0; y < Math.floor(document.body.offsetHeight / 200); y++) {
+                    content = content + `<svg xmlns="http://www.w3.org/2000/svg" style="display: inline-block; position: absolute; left: ${x * squareSide + (Math.random() * squareSide)}px; top: ${y * squareSide + (Math.random() * squareSide)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random() * 5)]}</svg>`;
                 }
             }
             return content;
-        })
-    }, [bodyWidth, bodyHeight]);
+        });
+    }
 
     return (
-        <div className={themeClass} style={{ position: "absolute", zIndex: -10, left: 0, top: 0, width: document.body.offsetWidth, height: document.body.offsetHeight }} dangerouslySetInnerHTML={{ __html: decor }} />
+        <div
+            className={`${themeClass} background`}
+            style={{
+                left: 0,
+                top: 0,
+                width: document.body.offsetWidth,
+                height: document.body.offsetHeight
+            }}
+            dangerouslySetInnerHTML={{ __html: decor }}
+        />
     )
 }
 

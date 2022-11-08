@@ -128,8 +128,6 @@ const Portfolio: React.FC = () => {
 		<div id="portfolio">
 			<Background 
 				themeClass={isItDark ? "dark-bg" : "light-bg"}
-				bodyWidth={bodyWidth}
-				bodyHeight={bodyHeight}
 			/>
 			<header className={headerFooterTheme()} >
 				<a
