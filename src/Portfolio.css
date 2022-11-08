@@ -73,7 +73,8 @@ body {
 }
 
 .background {
-	position: absolute
+	position: absolute;
+	z-index: -10;
 }
 
 .dark-bg > svg {
