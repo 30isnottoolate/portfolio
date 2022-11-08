@@ -37,6 +37,14 @@ const Portfolio: React.FC = () => {
 	const [swiped, setSwiped] = useState(false);
 
 	useEffect(() => {
+		window.addEventListener("load", () => {
+			setBodyWidth(document.body.offsetWidth);
+			setBodyHeight(document.body.offsetHeight);
+		});
+		return () => window.removeEventListener("load", () => { });
+	}, [])
+
+	useEffect(() => {
 		window.addEventListener("resize", () => {
 			setBodyWidth(document.body.offsetWidth);
 			setBodyHeight(document.body.offsetHeight);
@@ -119,6 +127,8 @@ const Portfolio: React.FC = () => {
 		<div id="portfolio">
 			<Background 
 				themeClass={isItDark ? "dark-bg" : "light-bg"}
+				bodyWidth={bodyWidth}
+				bodyHeight={bodyHeight}
 			/>
 			<header className={headerFooterTheme()} >
 				<a
