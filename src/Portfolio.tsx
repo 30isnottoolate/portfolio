@@ -22,9 +22,9 @@ const Portfolio: React.FC = () => {
 			return true;
 		}
 	});
-	const [documentWidth, setDocumentWidth] = useState(document.body.offsetWidth);
-	const [documentHeight, setDocumentHeight] = useState(document.body.offsetHeight);
-	const [isMenuVisible, setIsMenuVisible] = useState(documentWidth <= 650 ? false : true);
+	const [bodyWidth, setBodyWidth] = useState(document.body.offsetWidth);
+	const [bodyHeight, setBodyHeight] = useState(document.body.offsetHeight);
+	const [isMenuVisible, setIsMenuVisible] = useState(bodyWidth <= 650 ? false : true);
 	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
 	const [projectIndex, setProjectIndex] = useState(1);
 	const [visibleProjects, setVisibleProjects] = useState(() => {
@@ -38,8 +38,8 @@ const Portfolio: React.FC = () => {
 
 	useEffect(() => {
 		window.addEventListener("resize", () => {
-			setDocumentWidth(document.body.offsetWidth);
-			setDocumentHeight(document.body.offsetHeight);
+			setBodyWidth(document.body.offsetWidth);
+			setBodyHeight(document.body.offsetHeight);
 		});
 		return () => window.removeEventListener("resize", () => { });
 	}, []);
@@ -58,12 +58,12 @@ const Portfolio: React.FC = () => {
 
 	useEffect(() => {
 		setProjectIndex(1);
-		setIsMenuVisible(documentWidth <= 650 ? false : true);
-		if (documentWidth < 1400 && documentWidth >= 1100) setVisibleProjects(3);
-		else if (documentWidth < 1100 && documentWidth >= 750) setVisibleProjects(2);
-		else if (documentWidth < 750) setVisibleProjects(1);
+		setIsMenuVisible(bodyWidth <= 650 ? false : true);
+		if (bodyWidth < 1400 && bodyWidth >= 1100) setVisibleProjects(3);
+		else if (bodyWidth < 1100 && bodyWidth >= 750) setVisibleProjects(2);
+		else if (bodyWidth < 750) setVisibleProjects(1);
 		else setVisibleProjects(4);
-	}, [documentWidth]);
+	}, [bodyWidth]);
 
 	const changeTheme = () => {
 		setIsItDark((prevValue) => !prevValue);
@@ -107,8 +107,8 @@ const Portfolio: React.FC = () => {
 	}
 
 	const headerFooterTheme = () => isItDark ? "dark-header-footer" : "light-header-footer";
-	const navTheme = () => documentWidth <= 650 ? (isItDark ? "dark-mini-nav" : "light-mini-nav") : "";
-	const navAnchorTheme = () => documentWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : "";
+	const navTheme = () => bodyWidth <= 650 ? (isItDark ? "dark-mini-nav" : "light-mini-nav") : "";
+	const navAnchorTheme = () => bodyWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : "";
 	const svgStrokeTheme = () => isItDark ? "dark-svg-stroke" : "light-svg-stroke";
 	const svgFillTheme = () => isItDark ? "dark-svg-fill" : "light-svg-fill";
 	const tooltipTheme = () => isItDark ? "dark-icon-tooltip" : "light-icon-tooltip";
@@ -117,7 +117,9 @@ const Portfolio: React.FC = () => {
 
 	return (
 		<div id="portfolio">
-			<Background themeClass={isItDark ? "dark-bg" : "light-bg"} />
+			<Background 
+				themeClass={isItDark ? "dark-bg" : "light-bg"}
+			/>
 			<header className={headerFooterTheme()} >
 				<a
 					id="logo"
@@ -128,7 +130,7 @@ const Portfolio: React.FC = () => {
 					className={navTheme()}
 					style={{
 						display: (isMenuVisible ? "grid" : "none"),
-						borderWidth: (documentWidth <= 380 ? "0 0 1px 0" : documentWidth > 650 ? "0" : "0 0 1px 1px")
+						borderWidth: (bodyWidth <= 380 ? "0 0 1px 0" : bodyWidth > 650 ? "0" : "0 0 1px 1px")
 					}}
 				>
 					<a
@@ -161,7 +163,7 @@ const Portfolio: React.FC = () => {
 			<Gear
 				svgStrokeClass={svgStrokeTheme()}
 				changeTheme={changeTheme}
-				documentWidth={documentWidth}
+				bodyWidth={bodyWidth}
 				scrollPos={scrollPos}
 			/>
 			<SideContacts
@@ -294,20 +296,20 @@ const Portfolio: React.FC = () => {
 				</section>
 				<section id="projects">
 					<h1>Projects</h1>
-					<div id="project-index-buttons" style={{ height: (documentWidth <= 650 ? 48 : 60) }}>
+					<div id="project-index-buttons" style={{ height: (bodyWidth <= 650 ? 48 : 60) }}>
 						<Arrow
 							visibilityClass={projectIndex > 1 ? "visible" : "invisible"}
 							svgStrokeClass={svgStrokeTheme()}
-							posX={(-visibleProjects * (documentWidth <= 650 ? 230 : 300) / 2)}
-							posY={(documentWidth <= 650 ? 238 : 297.5)}
+							posX={(-visibleProjects * (bodyWidth <= 650 ? 230 : 300) / 2)}
+							posY={(bodyWidth <= 650 ? 238 : 297.5)}
 							mirrored={true}
 							clickHandler={handlePrev}
 						/>
 						<Arrow
 							visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
 							svgStrokeClass={svgStrokeTheme()}
-							posX={(visibleProjects * (documentWidth <= 650 ? 230 : 300) / 2)}
-							posY={(documentWidth <= 650 ? 238 : 297.5)}
+							posX={(visibleProjects * (bodyWidth <= 650 ? 230 : 300) / 2)}
+							posY={(bodyWidth <= 650 ? 238 : 297.5)}
 							mirrored={false}
 							clickHandler={handleNext}
 						/>
@@ -315,7 +317,7 @@ const Portfolio: React.FC = () => {
 					<div
 						id="projects-container"
 						style={{
-							width: (visibleProjects * (documentWidth <= 650 ? 240 : 300) + (documentWidth <= 650 ? 60 : 100))
+							width: (visibleProjects * (bodyWidth <= 650 ? 240 : 300) + (bodyWidth <= 650 ? 60 : 100))
 						}}
 						onTouchStart={handleTouchStart}
 						onTouchMove={handleTouchMove}
@@ -323,7 +325,7 @@ const Portfolio: React.FC = () => {
 						<div
 							id="project-slider"
 							style={{
-								left: ((projectIndex - 1) * (-(documentWidth <= 650 ? 240 : 300))) + (documentWidth <= 650 ? 50 : 75)
+								left: ((projectIndex - 1) * (-(bodyWidth <= 650 ? 240 : 300))) + (bodyWidth <= 650 ? 50 : 75)
 							}}>
 							<Project
 								themeClass={projectBoxTheme()}

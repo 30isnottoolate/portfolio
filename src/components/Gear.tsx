@@ -1,14 +1,14 @@
-const Gear: React.FC<{ svgStrokeClass: string, changeTheme: () => void, documentWidth: number, scrollPos: number }> = ({ svgStrokeClass, changeTheme, documentWidth, scrollPos }) => {
+const Gear: React.FC<{ svgStrokeClass: string, changeTheme: () => void, bodyWidth: number, scrollPos: number }> = ({ svgStrokeClass, changeTheme, bodyWidth, scrollPos }) => {
     return (
         <svg
             id="gear"
             className={svgStrokeClass}
             onClick={changeTheme}
             style={{
-                left: `${documentWidth <= 650 ? 4.5 : 5}px`,
-                top: `${documentWidth <= 650 ? 4.5 : 5}px`,
-                height: `${documentWidth <= 650 ? 36 : 45}px`,
-                transform: `rotate(${scrollPos / ((documentWidth <= 650 ? 36 : 45) * Math.PI / 360)}deg)`
+                left: `${bodyWidth <= 650 ? 4.5 : 5}px`,
+                top: `${bodyWidth <= 650 ? 4.5 : 5}px`,
+                height: `${bodyWidth <= 650 ? 36 : 45}px`,
+                transform: `rotate(${scrollPos / ((bodyWidth <= 650 ? 36 : 45) * Math.PI / 360)}deg)`
             }}
             viewBox="0 0 1000 1000">
             <path
