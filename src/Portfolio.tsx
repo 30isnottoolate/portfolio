@@ -22,7 +22,8 @@ const Portfolio: React.FC = () => {
 			return true;
 		}
 	});
-	const [documentWidth, setdocumentWidth] = useState(document.body.offsetWidth);
+	const [documentWidth, setDocumentWidth] = useState(document.body.offsetWidth);
+	const [documentHeight, setDocumentHeight] = useState(document.body.offsetHeight);
 	const [isMenuVisible, setIsMenuVisible] = useState(documentWidth <= 650 ? false : true);
 	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
 	const [projectIndex, setProjectIndex] = useState(1);
@@ -37,7 +38,8 @@ const Portfolio: React.FC = () => {
 
 	useEffect(() => {
 		window.addEventListener("resize", () => {
-			setdocumentWidth(document.body.offsetWidth);
+			setDocumentWidth(document.body.offsetWidth);
+			setDocumentHeight(document.body.offsetHeight);
 		});
 		return () => window.removeEventListener("resize", () => { });
 	}, []);
