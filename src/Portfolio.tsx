@@ -22,17 +22,12 @@ const Portfolio: React.FC = () => {
 			return true;
 		}
 	});
-	const [bodyWidth, setBodyWidth] = useState(document.body.offsetWidth);
-	const [bodyHeight, setBodyHeight] = useState(document.body.offsetHeight);
-	const [isMenuVisible, setIsMenuVisible] = useState(bodyWidth <= 650 ? false : true);
-	const [scrollPos, setScrollPos] = useState(document.body.scrollTop);
+	const [bodyWidth, setBodyWidth] = useState(0);
+	const [bodyHeight, setBodyHeight] = useState(0);
+	const [isMenuVisible, setIsMenuVisible] = useState(false);
+	const [scrollPos, setScrollPos] = useState(0);
 	const [projectIndex, setProjectIndex] = useState(1);
-	const [visibleProjects, setVisibleProjects] = useState(() => {
-		if (document.body.offsetWidth < 1400 && document.body.offsetWidth >= 1100) return 3;
-		else if (document.body.offsetWidth < 1100 && document.body.offsetWidth >= 700) return 2;
-		else if (document.body.offsetWidth < 700) return 1;
-		else return 4;
-	});
+	const [visibleProjects, setVisibleProjects] = useState(1);
 	const [touchPosX, setTouchPosX] = useState(0);
 	const [swiped, setSwiped] = useState(false);
 
@@ -40,9 +35,15 @@ const Portfolio: React.FC = () => {
 		window.addEventListener("load", () => {
 			setBodyWidth(document.body.offsetWidth);
 			setBodyHeight(document.body.offsetHeight);
+			setIsMenuVisible(document.body.offsetWidth <= 650 ? false : true);
+			setProjectIndex(1);
+			if (document.body.offsetWidth < 1400 && document.body.offsetWidth >= 1100) setVisibleProjects(3);
+			else if (document.body.offsetWidth < 1100 && document.body.offsetWidth >= 750) setVisibleProjects(2);
+			else if (document.body.offsetWidth < 750) setVisibleProjects(1);
+			else setVisibleProjects(4);
 		});
 		return () => window.removeEventListener("load", () => { });
-	}, [])
+	}, []);
 
 	useEffect(() => {
 		window.addEventListener("resize", () => {
@@ -65,8 +66,8 @@ const Portfolio: React.FC = () => {
 	}, [isItDark]);
 
 	useEffect(() => {
-		setProjectIndex(1);
 		setIsMenuVisible(bodyWidth <= 650 ? false : true);
+		setProjectIndex(1);
 		if (bodyWidth < 1400 && bodyWidth >= 1100) setVisibleProjects(3);
 		else if (bodyWidth < 1100 && bodyWidth >= 750) setVisibleProjects(2);
 		else if (bodyWidth < 750) setVisibleProjects(1);
