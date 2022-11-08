@@ -367,7 +367,7 @@ const Portfolio: React.FC = () => {
 								techs={["react", "ts", "css", "html"]}
 								svgFillClass={svgFillTheme()}
 								src="./images/project_screenshots/portfolio-screenshot.png"
-								description="The title says it all. It's my porfolio page. You are currently looking at it. A visual representation of my work, full of SVG images, animations, daring color schemes. Made with React functional components and hooks, written in TypeScript. The projects section is touch swipe compatible. Also, try clicking to gear in the top left corner."
+								description="The title says it all. It's my porfolio page. You are currently looking at it. A visual representation of my work, full of SVG images, animations, daring color schemes. Made with React functional components and hooks, written in TypeScript. The projects section is touch swipe compatible. Also, try clicking the gear in the top left corner."
 								buttonThemeClass={projectButtonTheme()}
 								demoHref="https://30isnottoolate.github.io/portfolio"
 								codeHref="https://github.com/30isnottoolate/portfolio"
