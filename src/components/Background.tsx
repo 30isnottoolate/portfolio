@@ -32,7 +32,7 @@ const Background: React.FC<{ themeClass: string }> = ({ themeClass }) => {
             let content = "";
             for (let x = 0; x < Math.floor(document.body.offsetWidth / 200); x++) {
                 for (let y = 0; y < Math.floor(document.body.offsetHeight / 200); y++) {
-                    content = content + `<svg xmlns="http://www.w3.org/2000/svg" style="display: inline-block; position: absolute; left: ${x * squareSide + (Math.random() * squareSide)}px; top: ${y * squareSide + (Math.random() * squareSide)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random() * 5)]}</svg>`;
+                    content = content + `<svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: ${x * squareSide + (Math.random() * squareSide)}px; top: ${y * squareSide + (Math.random() * squareSide)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random() * 5)]}</svg>`;
                 }
             }
             return content;
