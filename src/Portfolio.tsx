@@ -183,6 +183,7 @@ const Portfolio: React.FC = () => {
 			>
 				<Background
 					themeClass={isItDark ? "dark-bg" : "light-bg"}
+					contentRef={contentRef}
 				/>
 				<div 
 					id="content-container"
