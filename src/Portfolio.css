@@ -72,9 +72,29 @@ body {
 	background: var(--light-secondary-alt);
 }
 
+#parallax-container {
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-perspective: 1px;
+	perspective: 1px;
+}
+
 .background {
 	position: absolute;
+	left: 0;
+	top: 0;
+	-webkit-transform: translateZ(-1px);
+	transform: translateZ(-1px) scale(1.5);
 	z-index: -10;
+}
+
+#content-body {
+	position: absolute;
+	left: 0;
+	top: 0;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
 }
 
 .dark-bg > svg {
