@@ -65,7 +65,6 @@ const Portfolio: React.FC = () => {
 	}, []);
 
 	useEffect(() => {
-		isItDark ? document.body.className = "dark" : document.body.className = "light";
 		localStorage.setItem("isItDark", isItDark.toString());
 	}, [isItDark]);
 
@@ -178,6 +177,7 @@ const Portfolio: React.FC = () => {
 			/>
 			<div
 				id="parallax-container"
+				className={isItDark ? "dark" : "light"}
 				ref={paraContainerRef}
 			>
 				<Background
