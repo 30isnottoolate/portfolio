@@ -374,7 +374,7 @@ const Portfolio: React.FC = () => {
 							/><Project
 								themeClass={projectBoxTheme()}
 								visibilityClass={projectVisibility(4)}
-								title={"Title"}
+								title={"Coming soon..."}
 								techs={["js", "ts", "react"]}
 								svgFillClass={svgFillTheme()}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
@@ -385,7 +385,7 @@ const Portfolio: React.FC = () => {
 							/><Project
 								themeClass={projectBoxTheme()}
 								visibilityClass={projectVisibility(5)}
-								title={"Title"}
+								title={"Coming soon..."}
 								techs={["js", "ts", "react"]}
 								svgFillClass={svgFillTheme()}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
@@ -396,7 +396,7 @@ const Portfolio: React.FC = () => {
 							/><Project
 								themeClass={projectBoxTheme()}
 								visibilityClass={projectVisibility(6)}
-								title={"Title"}
+								title={"Coming soon..."}
 								techs={["js", "ts", "react"]}
 								svgFillClass={svgFillTheme()}
 								src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
