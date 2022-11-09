@@ -86,7 +86,7 @@ body {
 	left: 0;
 	top: 0;
 	-webkit-transform: translateZ(-1px);
-	transform: translateZ(-1px) scale(1.5);
+	transform: translateZ(-1px) scale(2);
 	z-index: -10;
 }
 
