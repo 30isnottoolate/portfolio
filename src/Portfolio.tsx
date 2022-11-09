@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './Portfolio.css';
 import Background from './components/Background';
 import MenuButton from './components/MenuButton';
@@ -30,6 +30,8 @@ const Portfolio: React.FC = () => {
 	const [visibleProjects, setVisibleProjects] = useState(1);
 	const [touchPosX, setTouchPosX] = useState(0);
 	const [swiped, setSwiped] = useState(false);
+
+	const contentRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		window.addEventListener("load", () => {
@@ -125,7 +127,7 @@ const Portfolio: React.FC = () => {
 	const projectButtonTheme = () => isItDark ? "dark-button" : "light-button";
 
 	return (
-		<div id="portfolio">
+		<>
 			<header className={headerFooterTheme()} >
 				<a
 					id="logo"
@@ -184,7 +186,10 @@ const Portfolio: React.FC = () => {
 				<Background
 					themeClass={isItDark ? "dark-bg" : "light-bg"}
 				/>
-				<div id="content-container">
+				<div 
+					id="content-container" 
+					ref={contentRef}
+				>
 					<main className={isItDark ? "dark-main" : "light-main"} >
 						<section id="welcome">
 							<img
@@ -431,7 +436,7 @@ const Portfolio: React.FC = () => {
 					<footer id="bottom" className={headerFooterTheme()} >© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate</footer>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 
