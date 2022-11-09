@@ -32,6 +32,7 @@ const Portfolio: React.FC = () => {
 	const [swiped, setSwiped] = useState(false);
 
 	const paraContainerRef = useRef<HTMLDivElement>(null);
+	const contentRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		window.addEventListener("load", () => {
@@ -183,7 +184,10 @@ const Portfolio: React.FC = () => {
 				<Background
 					themeClass={isItDark ? "dark-bg" : "light-bg"}
 				/>
-				<div id="content-container">
+				<div 
+					id="content-container"
+					ref={contentRef}
+				>
 					<main className={isItDark ? "dark-main" : "light-main"} >
 						<section id="welcome">
 							<img
