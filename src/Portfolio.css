@@ -580,7 +580,8 @@ ul > li {
 	padding: 150px 20px;
 }
 
-#contacts > div {
+#contacts > a {
+	display: block;
 	margin-bottom: 12px;
 }
 
