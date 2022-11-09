@@ -78,24 +78,16 @@ const Portfolio: React.FC = () => {
 		else setVisibleProjects(4);
 	}, [bodyWidth]);
 
-	const changeTheme = () => {
-		setIsItDark((prevValue) => !prevValue);
-	}
+	const changeTheme = () => setIsItDark((prevValue) => !prevValue);
 
-	const handleMenuClick = () => {
-		setIsMenuVisible((prevValue) => !prevValue);
-	}
+	const handleMenuClick = () => setIsMenuVisible((prevValue) => !prevValue);
 
 	const handlePrev = () => {
-		if (projectIndex > 1) {
-			setProjectIndex((prev) => prev - 1);
-		}
+		if (projectIndex > 1) setProjectIndex((prevValue) => prevValue - 1);
 	}
 
 	const handleNext = () => {
-		if (projectIndex <= NUMBER_OF_PROJECTS - visibleProjects) {
-			setProjectIndex((prev) => prev + 1);
-		}
+		if (projectIndex <= NUMBER_OF_PROJECTS - visibleProjects) setProjectIndex((prevValue) => prevValue + 1);
 	}
 
 	const projectVisibility = (projectNumber: number) => {
