@@ -192,7 +192,7 @@ const Portfolio: React.FC = () => {
 						alt="Akos Varga"
 					/>
 					<h1 id="topH">
-						Hi! My name is <span>Akos Varga</span>.
+						Hi! My name is <span>Akoš Varga</span>.
 					</h1>
 					<h2 id="middleH">
 						Welcome to my portfolio page!
