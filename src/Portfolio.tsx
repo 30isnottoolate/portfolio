@@ -215,7 +215,7 @@ const Portfolio: React.FC = () => {
 				</section>
 				<section id="skills">
 					<h1>My Skills</h1>
-					<div id="languages">
+					<>
 						<h2>Languages</h2>
 						<div className="icon-collection" >
 							<Icon
@@ -243,8 +243,8 @@ const Portfolio: React.FC = () => {
 								iconTooltipClass={tooltipTheme()}
 							/>
 						</div>
-					</div>
-					<div id="technologies">
+					</>
+					<>
 						<h2>Technologies and frameworks</h2>
 						<div className="icon-collection" >
 							<Icon
@@ -272,8 +272,8 @@ const Portfolio: React.FC = () => {
 								iconTooltipClass={tooltipTheme()}
 							/>
 						</div>
-					</div>
-					<div id="tools-apps">
+					</>
+					<>
 						<h2>Tools and applications</h2>
 						<div className="icon-collection" >
 							<Icon
@@ -301,7 +301,7 @@ const Portfolio: React.FC = () => {
 								iconTooltipClass={tooltipTheme()}
 							/>
 						</div>
-					</div>
+					</>
 				</section>
 				<section id="projects">
 					<h1>Projects</h1>

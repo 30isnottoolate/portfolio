@@ -397,14 +397,18 @@ ul > li {
 	border: 10px solid var(--light-secondary);
 }
 
-#skills > div > h2 {
-	padding-bottom: 10px;
+#skills {
+	gap: 15px;
+}
+
+#skills > h2 {
+	margin-bottom: 0px;
 }
 
 .icon-collection {
 	width: 220px;
 	height: 50px;
-	margin: 0 auto;
+	margin: 0 auto 30px auto;
 }
 
 .icon-container {
@@ -679,6 +683,18 @@ ul > li {
 
 	#avatar-image {
 		border-width: 2vw;
+	}
+
+	#skills {
+		gap: 12px;
+	}
+	
+	#skills > h2 {
+		margin-bottom: 0px;
+	}
+	
+	.icon-collection {
+		margin: 0 auto 24px auto;
 	}
 
 	.icon-collection {
