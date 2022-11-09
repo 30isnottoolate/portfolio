@@ -14,25 +14,10 @@ const Background: React.FC<{ themeClass: string, contentRef: RefObject<HTMLDivEl
     const [decor, setDecor] = useState("");
 
     useEffect(() => {
-        if (contentRef.current) {
-            contentRef.current.addEventListener("load", () => {
-                generateBG();
-            });
-        }
-        return () => {
-            if (contentRef.current) contentRef.current.removeEventListener("load", () => { });
-        }
-    }, []);
-
-    useEffect(() => {
-        if (contentRef.current) {
-            contentRef.current.addEventListener("resize", () => {
-                generateBG();
-            });
-        }
-        return () => {
-            if (contentRef.current) contentRef.current.removeEventListener("resize", () => { });
-        }
+        window.addEventListener("load", () => {
+            generateBG();
+        });
+        return () => window.removeEventListener("load", () => { });
     }, []);
 
     const generateBG = () => {
