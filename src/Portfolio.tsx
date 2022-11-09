@@ -31,7 +31,7 @@ const Portfolio: React.FC = () => {
 	const [touchPosX, setTouchPosX] = useState(0);
 	const [swiped, setSwiped] = useState(false);
 
-	const contentRef = useRef<HTMLDivElement>(null);
+	const paraContainerRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		window.addEventListener("load", () => {
@@ -56,10 +56,12 @@ const Portfolio: React.FC = () => {
 	}, []);
 
 	useEffect(() => {
-		window.addEventListener("scroll", () => {
-			setScrollPos(window.scrollY);
-		});
-		return () => window.removeEventListener("scroll", () => { });
+		if (paraContainerRef.current) {
+			paraContainerRef.current.addEventListener("scroll", () => {
+				if (paraContainerRef.current) setScrollPos(paraContainerRef.current.scrollTop);
+			});
+		}
+		return () => paraContainerRef.current?.removeEventListener("scroll", () => { });
 	}, []);
 
 	useEffect(() => {
@@ -182,14 +184,14 @@ const Portfolio: React.FC = () => {
 				svgFillClass={svgFillTheme()}
 				scrollPos={scrollPos}
 			/>
-			<div id="parallax-container">
+			<div
+				id="parallax-container"
+				ref={paraContainerRef}
+			>
 				<Background
 					themeClass={isItDark ? "dark-bg" : "light-bg"}
 				/>
-				<div 
-					id="content-container" 
-					ref={contentRef}
-				>
+				<div id="content-container">
 					<main className={isItDark ? "dark-main" : "light-main"} >
 						<section id="welcome">
 							<img
