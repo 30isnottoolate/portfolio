@@ -171,7 +171,7 @@ const Portfolio: React.FC = () => {
 			/>
 			<BackToTop
 				svgFillClass={svgFillTheme()}
-				scrollPos={scrollPos}
+				paraContainerRef={paraContainerRef}
 			/>
 			<div
 				id="parallax-container"

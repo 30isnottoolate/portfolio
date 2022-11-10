@@ -1,4 +1,19 @@
-const BackToTop: React.FC<{ svgFillClass: string, scrollPos: number }> = ({ svgFillClass, scrollPos }) => {
+import React, { useState, useEffect, RefObject } from 'react';
+
+const BackToTop: React.FC<{ svgFillClass: string, paraContainerRef: RefObject<HTMLDivElement> }> = ({ svgFillClass, paraContainerRef }) => {
+    const [scrollPos, setScrollPos] = useState(0);
+    
+    useEffect(() => {
+        let refHolder = paraContainerRef.current;
+
+		if (refHolder) {
+			refHolder.addEventListener("scroll", () => {
+				if (refHolder) setScrollPos(refHolder.scrollTop);
+			});
+		}
+
+		return () => refHolder?.removeEventListener("scroll", () => { });
+	}, [paraContainerRef]);
 
     return (
         <a
