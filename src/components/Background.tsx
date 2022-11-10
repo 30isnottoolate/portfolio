@@ -1,4 +1,4 @@
-import React, { useEffect, useState, RefObject } from "react"
+import React, { useState, useCallback, useEffect, RefObject } from "react"
 
 const figures = [
     /*nut*/'<path d="m11.42 2 3.428 6-3.428 6H4.58L1.152 8 4.58 2h6.84zM4.58 1a1 1 0 0 0-.868.504l-3.428 6a1 1 0 0 0 0 .992l3.428 6A1 1 0 0 0 4.58 15h6.84a1 1 0 0 0 .868-.504l3.429-6a1 1 0 0 0 0-.992l-3.429-6A1 1 0 0 0 11.42 1H4.58z"/><path d="M6.848 5.933a2.5 2.5 0 1 0 2.5 4.33 2.5 2.5 0 0 0-2.5-4.33zm-1.78 3.915a3.5 3.5 0 1 1 6.061-3.5 3.5 3.5 0 0 1-6.062 3.5z"/>',
@@ -8,31 +8,38 @@ const figures = [
     /*eye*/'<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/><path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>'
 ];
 
-const squareSide = 200 // 1 figure inside every (squareSide x squareSide) square
+const squareSide = 200; // 1 figure inside every (squareSide x squareSide) square
 
 const Background: React.FC<{ themeClass: string, contentRef: RefObject<HTMLDivElement> }> = ({ themeClass, contentRef }) => {
     const [decor, setDecor] = useState("");
 
-    useEffect(() => {
-        window.addEventListener("load", () => {
-            generateBG();
-        });
-        return () => window.removeEventListener("load", () => { });
-    }, []);
-
-    const generateBG = () => {
+    const generateBackground = useCallback((contentWidth: number, contentHeight: number) => {
         setDecor(() => {
-            let content = "";
+            let backgroundContent = "";
             if (contentRef.current) {
-                for (let x = 0; x < Math.floor(contentRef.current.offsetWidth / squareSide); x++) {
-                    for (let y = 0; y < Math.floor(contentRef.current.offsetHeight / squareSide); y++) {
-                        content = content + `<svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: ${x * squareSide + (Math.random() * squareSide)}px; top: ${y * squareSide + (Math.random() * squareSide)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random() * 5)]}</svg>`;
+                for (let x = 0; x < Math.floor(contentWidth / squareSide); x++) {
+                    for (let y = 0; y < Math.floor(contentHeight / squareSide); y++) {
+                        backgroundContent = backgroundContent + `<svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: ${x * squareSide + (Math.random() * squareSide)}px; top: ${y * squareSide + (Math.random() * squareSide)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random() * 5)]}</svg>`;
                     }
                 }
             }
-            return content;
+            return backgroundContent;
         });
-    }
+    }, [contentRef]);
+
+    useEffect(() => {
+        window.addEventListener("load", () => {
+            generateBackground(contentRef.current ? contentRef.current.offsetWidth : 0, contentRef.current ? contentRef.current.offsetHeight : 0);
+        });
+        return () => window.removeEventListener("load", () => { });
+    }, [contentRef, generateBackground]);
+
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            generateBackground(contentRef.current ? contentRef.current.offsetWidth : 0, contentRef.current ? contentRef.current.offsetHeight : 0);
+        });
+        return () => window.removeEventListener("resize", () => { })
+    }, [contentRef, generateBackground]);
 
     return (
         <div
