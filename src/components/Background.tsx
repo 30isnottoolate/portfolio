@@ -32,17 +32,25 @@ const Background: React.FC<{ themeClass: string, contentRef: RefObject<HTMLDivEl
     }, [contentRef]);
 
     useEffect(() => {
+        let refHolder = contentRef.current;
+
         window.addEventListener("load", () => {
-            generateBackground(contentRef.current ? contentRef.current.offsetWidth : 0, contentRef.current ? contentRef.current.offsetHeight : 0);
+            generateBackground(refHolder ? refHolder.offsetWidth : 0, refHolder ? refHolder.offsetHeight : 0);
         });
+        
         return () => window.removeEventListener("load", () => { });
     }, [contentRef, generateBackground]);
 
     useEffect(() => {
-        window.addEventListener("resize", () => {
-            generateBackground(contentRef.current ? contentRef.current.offsetWidth : 0, contentRef.current ? contentRef.current.offsetHeight : 0);
-        });
-        return () => window.removeEventListener("resize", () => { })
+        let refHolder = contentRef.current;
+
+        if (refHolder) {
+            refHolder.addEventListener("resize", () => {
+                generateBackground(refHolder ? refHolder.offsetWidth : 0, refHolder ? refHolder.offsetHeight : 0);
+            });
+        }
+        
+        return () => refHolder?.removeEventListener("resize", () => { })
     }, [contentRef, generateBackground]);
 
     return (
