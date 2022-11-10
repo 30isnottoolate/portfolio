@@ -23,7 +23,6 @@ const Portfolio: React.FC = () => {
 		}
 	});
 	const [bodyWidth, setBodyWidth] = useState(0);
-	const [bodyHeight, setBodyHeight] = useState(0);
 	const [isMenuVisible, setIsMenuVisible] = useState(false);
 	const [scrollPos, setScrollPos] = useState(0);
 	const [projectIndex, setProjectIndex] = useState(1);
@@ -37,7 +36,6 @@ const Portfolio: React.FC = () => {
 	useEffect(() => {
 		window.addEventListener("load", () => {
 			setBodyWidth(document.body.offsetWidth);
-			setBodyHeight(document.body.offsetHeight);
 			setIsMenuVisible(document.body.offsetWidth <= 650 ? false : true);
 			setProjectIndex(1);
 			if (document.body.offsetWidth < 1400 && document.body.offsetWidth >= 1100) setVisibleProjects(3);
@@ -51,7 +49,6 @@ const Portfolio: React.FC = () => {
 	useEffect(() => {
 		window.addEventListener("resize", () => {
 			setBodyWidth(document.body.offsetWidth);
-			setBodyHeight(document.body.offsetHeight);
 		});
 		return () => window.removeEventListener("resize", () => { });
 	}, []);
@@ -185,7 +182,7 @@ const Portfolio: React.FC = () => {
 					themeClass={isItDark ? "dark-bg" : "light-bg"}
 					contentRef={contentRef}
 				/>
-				<div 
+				<div
 					id="content-container"
 					ref={contentRef}
 				>
@@ -377,7 +374,8 @@ const Portfolio: React.FC = () => {
 										buttonThemeClass={projectButtonTheme()}
 										demoHref="https://30isnottoolate.github.io/portfolio"
 										codeHref="https://github.com/30isnottoolate/portfolio"
-									/><Project
+									/>
+									<Project
 										themeClass={projectBoxTheme()}
 										visibilityClass={projectVisibility(4)}
 										title={"Coming soon..."}
@@ -388,7 +386,8 @@ const Portfolio: React.FC = () => {
 										buttonThemeClass={projectButtonTheme()}
 										demoHref="https://www.solidbackgrounds.com"
 										codeHref="https://www.solidbackgrounds.com"
-									/><Project
+									/>
+									<Project
 										themeClass={projectBoxTheme()}
 										visibilityClass={projectVisibility(5)}
 										title={"Coming soon..."}
@@ -399,7 +398,8 @@ const Portfolio: React.FC = () => {
 										buttonThemeClass={projectButtonTheme()}
 										demoHref="https://www.solidbackgrounds.com"
 										codeHref="https://www.solidbackgrounds.com"
-									/><Project
+									/>
+									<Project
 										themeClass={projectBoxTheme()}
 										visibilityClass={projectVisibility(6)}
 										title={"Coming soon..."}
