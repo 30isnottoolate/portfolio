@@ -53,14 +53,14 @@ const Portfolio: React.FC = () => {
 		return () => window.removeEventListener("resize", () => { });
 	}, []);
 
-	useEffect(() => {
+	/* useEffect(() => {
 		if (paraContainerRef.current) {
 			paraContainerRef.current.addEventListener("scroll", () => {
 				if (paraContainerRef.current) setScrollPos(paraContainerRef.current.scrollTop);
 			});
 		}
 		return () => paraContainerRef.current?.removeEventListener("scroll", () => { });
-	}, []);
+	}, []); */
 
 	useEffect(() => {
 		localStorage.setItem("isItDark", isItDark.toString());
@@ -117,6 +117,8 @@ const Portfolio: React.FC = () => {
 	const projectBoxTheme = () => isItDark ? "dark-project-box" : "light-project-box";
 	const projectButtonTheme = () => isItDark ? "dark-button" : "light-button";
 
+	console.count("render: ");
+
 	return (
 		<>
 			<header className={headerFooterTheme()} >
@@ -166,7 +168,7 @@ const Portfolio: React.FC = () => {
 				paraContainerRef={paraContainerRef}
 			/>
 			<SideContacts
-				scrollPos={scrollPos}
+				paraContainerRef={paraContainerRef}
 				themeClass={isItDark ? "dark-side-contact" : "light-side-contact"}
 			/>
 			<BackToTop

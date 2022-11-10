@@ -1,6 +1,21 @@
+import React, { useState, useEffect, RefObject } from 'react';
 import contacts from "../utilities/contacts";
 
-const SideContacts: React.FC<{ scrollPos: number, themeClass: string }> = ({ scrollPos, themeClass }) => {
+const SideContacts: React.FC<{ paraContainerRef: RefObject<HTMLDivElement>, themeClass: string }> = ({ paraContainerRef, themeClass }) => {
+    const [scrollPos, setScrollPos] = useState(0);
+
+    useEffect(() => {
+        let refHolder = paraContainerRef.current;
+
+        if (refHolder) {
+            refHolder.addEventListener("scroll", () => {
+                if (refHolder) setScrollPos(refHolder.scrollTop);
+            });
+        }
+
+        return () => refHolder?.removeEventListener("scroll", () => { });
+    }, [paraContainerRef]);
+    
     return (
         <div id="side-contacts">
             <a
