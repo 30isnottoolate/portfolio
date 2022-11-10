@@ -163,7 +163,7 @@ const Portfolio: React.FC = () => {
 				svgStrokeClass={svgStrokeTheme()}
 				changeTheme={changeTheme}
 				bodyWidth={bodyWidth}
-				scrollPos={scrollPos}
+				paraContainerRef={paraContainerRef}
 			/>
 			<SideContacts
 				scrollPos={scrollPos}
