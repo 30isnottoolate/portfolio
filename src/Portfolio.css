@@ -633,6 +633,10 @@ ul > li {
 		font-size: 16px;
 	}
 
+	.dark::-webkit-scrollbar {
+		display: none;
+	}
+
 	header, footer {
 		height: 45px;
 	}
