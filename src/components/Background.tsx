@@ -34,11 +34,7 @@ const Background: React.FC<{ themeClass: string, contentRef: RefObject<HTMLDivEl
     useEffect(() => {
         let refHolder = contentRef.current;
 
-        window.addEventListener("load", () => {
-            generateBackground(refHolder ? refHolder.offsetWidth : 0, refHolder ? refHolder.offsetHeight : 0);
-        });
-        
-        return () => window.removeEventListener("load", () => { });
+        generateBackground(refHolder ? refHolder.offsetWidth : 0, refHolder ? refHolder.offsetHeight : 0);
     }, [contentRef, generateBackground]);
 
     useEffect(() => {
