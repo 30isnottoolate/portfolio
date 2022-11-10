@@ -11,7 +11,7 @@
 	--light-primary-alt: #c4c4dd;
 	--light-secondary: #002550;
 	--light-secondary-alt: #003f88;
-	--light-tertiary: #80b9ff;
+	--light-tertiary: #a2ccff;
 }
 
 * {
@@ -85,9 +85,17 @@ body {
 	position: absolute;
 	left: 0;
 	top: 0;
-	-webkit-transform: translateZ(-1px);
-	transform: translateZ(-1px) scale(2);
 	z-index: -10;
+}
+
+.background-1 {
+	-webkit-transform: translateZ(-1px) scale(2);
+	transform: translateZ(-1px) scale(2);
+}
+
+.background-2 {
+	-webkit-transform: translateZ(-2px) scale(2);
+	transform: translateZ(-2px) scale(2);
 }
 
 #content-container {
@@ -98,11 +106,19 @@ body {
 	transform: translateZ(0);
 }
 
-.dark-bg > svg {
+.background-1.dark-background > svg {
 	fill: var(--dark-tertiary);
 }
 
-.light-bg > svg {
+.background-1.light-background > svg {
+	fill: var(--light-tertiary);
+}
+
+.background-2.dark-background > svg {
+	fill: var(--dark-primary-alt);
+}
+
+.background-2.light-background > svg {
 	fill: var(--light-primary-alt);
 }
 

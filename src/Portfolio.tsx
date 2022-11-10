@@ -179,7 +179,11 @@ const Portfolio: React.FC = () => {
 				ref={paraContainerRef}
 			>
 				<Background
-					themeClass={isItDark ? "dark-bg" : "light-bg"}
+					themeClass={isItDark ? "dark-background background-1" : "light-background background-1"}
+					contentRef={contentRef}
+				/>
+				<Background
+					themeClass={isItDark ? "dark-background background-2" : "light-background background-2"}
 					contentRef={contentRef}
 				/>
 				<div
@@ -195,7 +199,7 @@ const Portfolio: React.FC = () => {
 								alt="Akos Varga"
 							/>
 							<h1 id="topH">
-								Hi! My name is <span>Akoš Varga</span>.
+								Hi! My name is <span>Akos Varga</span>.
 							</h1>
 							<h2 id="middleH">
 								Welcome to my portfolio page!
