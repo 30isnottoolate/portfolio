@@ -8,18 +8,22 @@ const figures = [
     /*eye*/'<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/><path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>'
 ];
 
-const squareSide = 200; // 1 figure inside every (squareSide x squareSide) square
-
 const Background: React.FC<{ themeClass: string, contentRef: RefObject<HTMLDivElement> }> = ({ themeClass, contentRef }) => {
     const [decor, setDecor] = useState("");
 
     const generateBackground = useCallback((contentWidth: number, contentHeight: number) => {
         setDecor(() => {
             let backgroundContent = "";
+            let squareSide = contentWidth <= 650 ? 150 : contentWidth <= 300 ? 100 : 200; // 1 figure inside every (squareSide x squareSide) square
+
+            const figurePosition = (position: number, contentWidthOrHeight: number) => {
+                return contentWidthOrHeight / Math.floor(contentWidthOrHeight / squareSide) * (position + Math.random());
+            };
+
             if (contentRef.current) {
                 for (let x = 0; x < Math.floor(contentWidth / squareSide); x++) {
                     for (let y = 0; y < Math.floor(contentHeight / squareSide); y++) {
-                        backgroundContent = backgroundContent + `<svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: ${x * squareSide + (Math.random() * squareSide)}px; top: ${y * squareSide + (Math.random() * squareSide)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random() * 5)]}</svg>`;
+                        backgroundContent = backgroundContent + `<svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: ${figurePosition(x, contentWidth)}px; top: ${figurePosition(y, contentHeight)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random() * 5)]}</svg>`;
                     }
                 }
             }
