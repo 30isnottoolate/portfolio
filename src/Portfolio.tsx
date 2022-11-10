@@ -24,7 +24,6 @@ const Portfolio: React.FC = () => {
 	});
 	const [bodyWidth, setBodyWidth] = useState(0);
 	const [isMenuVisible, setIsMenuVisible] = useState(false);
-	const [scrollPos, setScrollPos] = useState(0);
 	const [projectIndex, setProjectIndex] = useState(1);
 	const [visibleProjects, setVisibleProjects] = useState(1);
 	const [touchPosX, setTouchPosX] = useState(0);
@@ -52,15 +51,6 @@ const Portfolio: React.FC = () => {
 		});
 		return () => window.removeEventListener("resize", () => { });
 	}, []);
-
-	/* useEffect(() => {
-		if (paraContainerRef.current) {
-			paraContainerRef.current.addEventListener("scroll", () => {
-				if (paraContainerRef.current) setScrollPos(paraContainerRef.current.scrollTop);
-			});
-		}
-		return () => paraContainerRef.current?.removeEventListener("scroll", () => { });
-	}, []); */
 
 	useEffect(() => {
 		localStorage.setItem("isItDark", isItDark.toString());
