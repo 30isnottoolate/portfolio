@@ -89,11 +89,13 @@ body {
 }
 
 .background-1 {
+	overflow: hidden;
 	-webkit-transform: translateZ(-1px) scale(2);
 	transform: translateZ(-1px) scale(2);
 }
 
 .background-2 {
+	overflow: hidden;
 	-webkit-transform: translateZ(-2px) scale(2);
 	transform: translateZ(-2px) scale(2);
 }

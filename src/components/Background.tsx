@@ -60,7 +60,7 @@ const Background: React.FC<{ themeClass: string, contentRef: RefObject<HTMLDivEl
                 left: 0,
                 top: 0,
                 width: contentRef.current ? contentRef.current.offsetWidth : 0,
-                height: contentRef.current ? contentRef.current.offsetHeight : 0
+                height: contentRef.current ? contentRef.current.offsetHeight * 0.75 : 0
             }}
             dangerouslySetInnerHTML={{ __html: decor }}
         />
