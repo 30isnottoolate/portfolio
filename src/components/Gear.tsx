@@ -1,19 +1,19 @@
 import React, { useState, useEffect, RefObject } from 'react';
 
 const Gear: React.FC<{ svgStrokeClass: string, changeTheme: () => void, bodyWidth: number, paraContainerRef: RefObject<HTMLDivElement> }> = ({ svgStrokeClass, changeTheme, bodyWidth, paraContainerRef }) => {
-	const [scrollPos, setScrollPos] = useState(0);
-    
+    const [scrollPos, setScrollPos] = useState(0);
+
     useEffect(() => {
-        let refHolder = paraContainerRef.current
+        let refHolder = paraContainerRef.current;
 
-		if (refHolder) {
-			refHolder.addEventListener("scroll", () => {
-				if (refHolder) setScrollPos(refHolder.scrollTop);
-			});
-		}
+        if (refHolder) {
+            refHolder.addEventListener("scroll", () => {
+                if (refHolder) setScrollPos(refHolder.scrollTop);
+            });
+        }
 
-		return () => refHolder?.removeEventListener("scroll", () => { });
-	}, [paraContainerRef]);
+        return () => refHolder?.removeEventListener("scroll", () => { });
+    }, [paraContainerRef]);
 
     return (
         <svg
