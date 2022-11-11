@@ -1,7 +1,19 @@
 import React, { useState, useEffect, RefObject } from 'react';
 
-const Gear: React.FC<{ svgStrokeClass: string, changeTheme: () => void, bodyWidth: number, paraContainerRef: RefObject<HTMLDivElement> }> = ({ svgStrokeClass, changeTheme, bodyWidth, paraContainerRef }) => {
+const Gear: React.FC<{ svgStrokeClass: string, changeTheme: () => void, paraContainerRef: RefObject<HTMLDivElement> }> = ({ svgStrokeClass, changeTheme, paraContainerRef }) => {
+    const [bodyWidth, setBodyWidth] = useState(380);
     const [scrollPos, setScrollPos] = useState(0);
+
+    useEffect(() => {
+        setBodyWidth(document.body.offsetWidth);
+    }, [])
+
+    useEffect(() => {
+		window.addEventListener("resize", () => {
+			setBodyWidth(document.body.offsetWidth);
+		});
+		return () => window.removeEventListener("resize", () => { });
+	}, []);
 
     useEffect(() => {
         let refHolder = paraContainerRef.current;

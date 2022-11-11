@@ -106,7 +106,6 @@ const Portfolio: React.FC = () => {
 			<Gear
 				svgStrokeClass={svgStrokeTheme()}
 				changeTheme={changeTheme}
-				bodyWidth={bodyWidth}
 				paraContainerRef={paraContainerRef}
 			/>
 			<SideContacts
