@@ -57,7 +57,6 @@ const Portfolio: React.FC = () => {
 	const headerFooterTheme = () => isItDark ? "dark-header-footer" : "light-header-footer";
 	const navTheme = () => bodyWidth <= 650 ? (isItDark ? "dark-mini-nav" : "light-mini-nav") : "";
 	const navAnchorTheme = () => bodyWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : "";
-	const svgStrokeTheme = () => isItDark ? "dark-svg-stroke" : "light-svg-stroke";
 	const svgFillTheme = () => isItDark ? "dark-svg-fill" : "light-svg-fill";
 	const tooltipTheme = () => isItDark ? "dark-icon-tooltip" : "light-icon-tooltip";
 
@@ -104,7 +103,7 @@ const Portfolio: React.FC = () => {
 				/>
 			</header>
 			<Gear
-				svgStrokeClass={svgStrokeTheme()}
+				isItDark={isItDark}
 				changeTheme={changeTheme}
 				paraContainerRef={paraContainerRef}
 			/>
