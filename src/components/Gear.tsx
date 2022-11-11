@@ -33,9 +33,6 @@ const Gear: React.FC<{ svgStrokeClass: string, changeTheme: () => void, paraCont
             className={svgStrokeClass}
             onClick={changeTheme}
             style={{
-                left: `${bodyWidth <= 650 ? 4.5 : 5}px`,
-                top: `${bodyWidth <= 650 ? 4.5 : 5}px`,
-                height: `${bodyWidth <= 650 ? 36 : 45}px`,
                 transform: `rotate(${scrollPos / ((bodyWidth <= 650 ? 36 : 45) * Math.PI / 360)}deg)`
             }}
             viewBox="0 0 1000 1000">
