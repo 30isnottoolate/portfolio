@@ -9,45 +9,32 @@ const figures = [
 ];
 
 const Background: React.FC<{ themeClass: string, contentRef: RefObject<HTMLDivElement> }> = ({ themeClass, contentRef }) => {
-    const [decor, setDecor] = useState("");
+    const [wallpaper, setWallpaper] = useState("");
 
     const generateBackground = useCallback((contentWidth: number, contentHeight: number) => {
-        setDecor(() => {
+        setWallpaper(() => {
             let backgroundContent = "";
-            let squareSide = contentWidth <= 650 ? 150 : contentWidth <= 300 ? 100 : 200; // 1 figure inside every (squareSide x squareSide) square
+            let blockSide = contentWidth <= 650 ? 150 : contentWidth <= 300 ? 100 : 200; // 1 figure inside every (blockSide x blockSide) block
 
             const figurePosition = (position: number, contentWidthOrHeight: number) => {
-                return contentWidthOrHeight / Math.floor(contentWidthOrHeight / squareSide) * (position + Math.random());
+                return contentWidthOrHeight / Math.floor(contentWidthOrHeight / blockSide) * (position + Math.random());
             };
 
             if (contentRef.current) {
-                for (let x = 0; x < Math.floor(contentWidth / squareSide); x++) {
-                    for (let y = 0; y < Math.floor(contentHeight / squareSide); y++) {
+                for (let x = 0; x < Math.floor(contentWidth / blockSide); x++) {
+                    for (let y = 0; y < Math.floor(contentHeight / blockSide); y++) {
                         backgroundContent = backgroundContent + `<svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: ${figurePosition(x, contentWidth)}px; top: ${figurePosition(y, contentHeight)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random() * 5)]}</svg>`;
                     }
                 }
             }
+
             return backgroundContent;
         });
     }, [contentRef]);
 
     useEffect(() => {
-        let refHolder = contentRef.current;
-
-        generateBackground(refHolder ? refHolder.offsetWidth : 0, refHolder ? refHolder.offsetHeight : 0);
-    }, [contentRef, generateBackground]);
-
-    useEffect(() => {
-        let refHolder = contentRef.current;
-
-        if (refHolder) {
-            refHolder.addEventListener("resize", () => {
-                generateBackground(refHolder ? refHolder.offsetWidth : 0, refHolder ? refHolder.offsetHeight : 0);
-            });
-        }
-        
-        return () => refHolder?.removeEventListener("resize", () => { })
-    }, [contentRef, generateBackground]);
+        if (contentRef.current) generateBackground(contentRef.current.offsetWidth, contentRef.current.offsetHeight);
+    }, [contentRef, contentRef.current?.offsetWidth, generateBackground]);
 
     return (
         <div
@@ -58,7 +45,7 @@ const Background: React.FC<{ themeClass: string, contentRef: RefObject<HTMLDivEl
                 width: contentRef.current ? contentRef.current.offsetWidth : 0,
                 height: contentRef.current ? contentRef.current.offsetHeight * 0.75 : 0
             }}
-            dangerouslySetInnerHTML={{ __html: decor }}
+            dangerouslySetInnerHTML={{ __html: wallpaper }}
         />
     )
 }
