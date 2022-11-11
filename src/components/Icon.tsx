@@ -3,12 +3,11 @@ import icons from '../utilities/icons';
 
 interface IconProps {
     href: string;
-    svgFillClass: string;
+    isItDark: boolean;
     iconType: string;
-    iconTooltipClass: string;
 }
 
-const Icon: React.FC<IconProps> = ({href, svgFillClass, iconType, iconTooltipClass}: IconProps) => {
+const Icon: React.FC<IconProps> = ({href, isItDark, iconType}: IconProps) => {
     const iconRef = useRef<HTMLAnchorElement>(null);
     const tooltipRef = useRef<HTMLParagraphElement>(null);
 
@@ -30,6 +29,9 @@ const Icon: React.FC<IconProps> = ({href, svgFillClass, iconType, iconTooltipCla
         }
     }
 
+    const svgFillTheme = () => isItDark ? "dark-svg-fill" : "light-svg-fill";
+	const tooltipTheme = () => isItDark ? "dark-icon-tooltip" : "light-icon-tooltip";
+
     return (
         <div className="icon-container">
             <a
@@ -38,7 +40,7 @@ const Icon: React.FC<IconProps> = ({href, svgFillClass, iconType, iconTooltipCla
                 target="_blank"
                 rel="noreferrer" >
                 <svg
-                    className={`icon-image ${svgFillClass}`}
+                    className={`icon-image ${svgFillTheme()}`}
                     viewBox="0 0 128 128"
                     onMouseEnter={handleHoverStart}
                     onMouseLeave={handleHoverEnd}
@@ -47,7 +49,7 @@ const Icon: React.FC<IconProps> = ({href, svgFillClass, iconType, iconTooltipCla
             </a>
             <span
                 ref={tooltipRef}
-                className={`icon-tooltip ${iconTooltipClass}`}
+                className={`icon-tooltip ${tooltipTheme()}`}
                 style={{
                     top: getToolTipTop(),
                     left: getToolTipLeft(),

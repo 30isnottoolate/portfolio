@@ -30,7 +30,6 @@ const Portfolio: React.FC = () => {
 	const changeTheme = () => setIsItDark((prevValue) => !prevValue);
 
 	const svgFillTheme = () => isItDark ? "dark-svg-fill" : "light-svg-fill";
-	const tooltipTheme = () => isItDark ? "dark-icon-tooltip" : "light-icon-tooltip";
 
 	return (
 		<>
@@ -102,27 +101,23 @@ const Portfolio: React.FC = () => {
 								<div className="icon-collection" >
 									<Icon
 										href={"https://html.spec.whatwg.org/"}
-										svgFillClass={svgFillTheme()}
+										isItDark={isItDark}
 										iconType="html"
-										iconTooltipClass={tooltipTheme()}
 									/>
 									<Icon
 										href={"https://www.w3.org/TR/CSS/"}
-										svgFillClass={svgFillTheme()}
+										isItDark={isItDark}
 										iconType="css"
-										iconTooltipClass={tooltipTheme()}
 									/>
 									<Icon
 										href={"https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"}
-										svgFillClass={svgFillTheme()}
+										isItDark={isItDark}
 										iconType="js"
-										iconTooltipClass={tooltipTheme()}
 									/>
 									<Icon
 										href={"https://www.typescriptlang.org/"}
-										svgFillClass={svgFillTheme()}
+										isItDark={isItDark}
 										iconType="ts"
-										iconTooltipClass={tooltipTheme()}
 									/>
 								</div>
 							</>
@@ -131,27 +126,23 @@ const Portfolio: React.FC = () => {
 								<div className="icon-collection" >
 									<Icon
 										href={"https://reactjs.org/"}
-										svgFillClass={svgFillTheme()}
+										isItDark={isItDark}
 										iconType="react"
-										iconTooltipClass={tooltipTheme()}
 									/>
 									<Icon
 										href={"https://nodejs.org/"}
-										svgFillClass={svgFillTheme()}
+										isItDark={isItDark}
 										iconType="node"
-										iconTooltipClass={tooltipTheme()}
 									/>
 									<Icon
 										href={"https://expressjs.com/"}
-										svgFillClass={svgFillTheme()}
+										isItDark={isItDark}
 										iconType="express"
-										iconTooltipClass={tooltipTheme()}
 									/>
 									<Icon
 										href={"https://www.mongodb.com/"}
-										svgFillClass={svgFillTheme()}
+										isItDark={isItDark}
 										iconType="mongodb"
-										iconTooltipClass={tooltipTheme()}
 									/>
 								</div>
 							</>
@@ -160,27 +151,23 @@ const Portfolio: React.FC = () => {
 								<div className="icon-collection" >
 									<Icon
 										href={"https://git-scm.com/"}
-										svgFillClass={svgFillTheme()}
+										isItDark={isItDark}
 										iconType="git"
-										iconTooltipClass={tooltipTheme()}
 									/>
 									<Icon
 										href={"https://code.visualstudio.com/"}
-										svgFillClass={svgFillTheme()}
+										isItDark={isItDark}
 										iconType="vscode"
-										iconTooltipClass={tooltipTheme()}
 									/>
 									<Icon
 										href={"https://www.gimp.org/"}
-										svgFillClass={svgFillTheme()}
+										isItDark={isItDark}
 										iconType="gimp"
-										iconTooltipClass={tooltipTheme()}
 									/>
 									<Icon
 										href={"https://www.adobe.com/products/photoshop.html"}
-										svgFillClass={svgFillTheme()}
+										isItDark={isItDark}
 										iconType="ps"
-										iconTooltipClass={tooltipTheme()}
 									/>
 								</div>
 							</>
