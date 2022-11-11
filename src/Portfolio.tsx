@@ -109,8 +109,6 @@ const Portfolio: React.FC = () => {
 	const projectBoxTheme = () => isItDark ? "dark-project-box" : "light-project-box";
 	const projectButtonTheme = () => isItDark ? "dark-button" : "light-button";
 
-	console.log(bodyWidth)
-
 	return (
 		<>
 			<header className={headerFooterTheme()} >
