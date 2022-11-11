@@ -9,8 +9,6 @@ import Icon from './components/Icon';
 import ProjectsContainer from './components/ProjectsContainer';
 import Contact from './components/Contact';
 
-const NUMBER_OF_PROJECTS = 6;
-
 const Portfolio: React.FC = () => {
 	const [isItDark, setIsItDark] = useState(() => {
 		if (localStorage.getItem("isItDark")) {
@@ -25,10 +23,6 @@ const Portfolio: React.FC = () => {
 		return document.body.offsetWidth;
 	});
 	const [isMenuVisible, setIsMenuVisible] = useState(false);
-	const [projectIndex, setProjectIndex] = useState(1);
-	const [visibleProjects, setVisibleProjects] = useState(1);
-	const [touchPosX, setTouchPosX] = useState(0);
-	const [swiped, setSwiped] = useState(false);
 
 	const paraContainerRef = useRef<HTMLDivElement>(null);
 	const contentRef = useRef<HTMLDivElement>(null);
@@ -37,11 +31,6 @@ const Portfolio: React.FC = () => {
 		window.addEventListener("load", () => {
 			setBodyWidth(document.body.offsetWidth);
 			setIsMenuVisible(document.body.offsetWidth <= 650 ? false : true);
-			setProjectIndex(1);
-			if (document.body.offsetWidth < 1400 && document.body.offsetWidth >= 1100) setVisibleProjects(3);
-			else if (document.body.offsetWidth < 1100 && document.body.offsetWidth >= 750) setVisibleProjects(2);
-			else if (document.body.offsetWidth < 750) setVisibleProjects(1);
-			else setVisibleProjects(4);
 		});
 		return () => window.removeEventListener("load", () => { });
 	}, []);
@@ -59,45 +48,11 @@ const Portfolio: React.FC = () => {
 
 	useEffect(() => {
 		setIsMenuVisible(bodyWidth <= 650 ? false : true);
-		setProjectIndex(1);
-		if (bodyWidth < 1400 && bodyWidth >= 1100) setVisibleProjects(3);
-		else if (bodyWidth < 1100 && bodyWidth >= 750) setVisibleProjects(2);
-		else if (bodyWidth < 750) setVisibleProjects(1);
-		else setVisibleProjects(4);
 	}, [bodyWidth]);
 
 	const changeTheme = () => setIsItDark((prevValue) => !prevValue);
 
 	const handleMenuClick = () => setIsMenuVisible((prevValue) => !prevValue);
-
-	const handlePrev = () => {
-		if (projectIndex > 1) setProjectIndex((prevValue) => prevValue - 1);
-	}
-
-	const handleNext = () => {
-		if (projectIndex <= NUMBER_OF_PROJECTS - visibleProjects) setProjectIndex((prevValue) => prevValue + 1);
-	}
-
-	const projectVisibility = (projectNumber: number) => {
-		if (projectNumber >= projectIndex && ((projectIndex + visibleProjects) > projectNumber)) {
-			return "visible"
-		} else return "invisible";
-	}
-
-	const handleTouchStart = (event: React.TouchEvent) => {
-		setTouchPosX(event.touches[0].clientX);
-		setSwiped(true);
-	}
-
-	const handleTouchMove = (event: React.TouchEvent) => {
-		if (swiped && (touchPosX + 80 < event.touches[0].clientX)) {
-			setSwiped(false);
-			handlePrev();
-		} else if (swiped && (touchPosX - 80 > event.touches[0].clientX)) {
-			setSwiped(false);
-			handleNext();
-		}
-	}
 
 	const headerFooterTheme = () => isItDark ? "dark-header-footer" : "light-header-footer";
 	const navTheme = () => bodyWidth <= 650 ? (isItDark ? "dark-mini-nav" : "light-mini-nav") : "";
@@ -105,8 +60,6 @@ const Portfolio: React.FC = () => {
 	const svgStrokeTheme = () => isItDark ? "dark-svg-stroke" : "light-svg-stroke";
 	const svgFillTheme = () => isItDark ? "dark-svg-fill" : "light-svg-fill";
 	const tooltipTheme = () => isItDark ? "dark-icon-tooltip" : "light-icon-tooltip";
-	const projectBoxTheme = () => isItDark ? "dark-project-box" : "light-project-box";
-	const projectButtonTheme = () => isItDark ? "dark-button" : "light-button";
 
 	return (
 		<>
