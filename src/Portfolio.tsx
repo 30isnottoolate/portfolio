@@ -6,8 +6,7 @@ import Gear from './components/Gear';
 import SideContacts from './components/SideContacts';
 import BackToTop from './components/BackToTop';
 import Icon from './components/Icon';
-import Project from './components/Project';
-import Arrow from './components/Arrow';
+import ProjectsContainer from './components/ProjectsContainer';
 import Contact from './components/Contact';
 
 const NUMBER_OF_PROJECTS = 6;
@@ -304,111 +303,7 @@ const Portfolio: React.FC = () => {
 						</section>
 						<section id="projects">
 							<h1>Projects</h1>
-							<div id="project-index-buttons" style={{ height: (bodyWidth <= 650 ? 48 : 60) }}>
-								<Arrow
-									visibilityClass={projectIndex > 1 ? "visible" : "invisible"}
-									svgStrokeClass={svgStrokeTheme()}
-									posX={(-visibleProjects * (bodyWidth <= 650 ? 230 : 300) / 2)}
-									posY={(bodyWidth <= 650 ? 238 : 297.5)}
-									mirrored={true}
-									clickHandler={handlePrev}
-								/>
-								<Arrow
-									visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
-									svgStrokeClass={svgStrokeTheme()}
-									posX={(visibleProjects * (bodyWidth <= 650 ? 230 : 300) / 2)}
-									posY={(bodyWidth <= 650 ? 238 : 297.5)}
-									mirrored={false}
-									clickHandler={handleNext}
-								/>
-							</div>
-							<div
-								id="projects-container"
-								style={{
-									width: (visibleProjects * (bodyWidth <= 650 ? 240 : 300) + (bodyWidth <= 650 ? 60 : 100))
-								}}
-								onTouchStart={handleTouchStart}
-								onTouchMove={handleTouchMove}
-							>
-								<div
-									id="project-slider"
-									style={{
-										left: ((projectIndex - 1) * (-(bodyWidth <= 650 ? 240 : 300))) + (bodyWidth <= 650 ? 50 : 75)
-									}}>
-									<Project
-										themeClass={projectBoxTheme()}
-										visibilityClass={projectVisibility(1)}
-										title={"Online Teleprompter"}
-										techs={["react", "ts", "css", "html"]}
-										svgFillClass={svgFillTheme()}
-										src="./images/project_screenshots/online-teleprompter-screenshot.png"
-										description="The idea has come from the stage teleprompter project, but with much less features. This is the first app I've made with React hooks (useState, useEffect, useRef), and TypeScript. It has a simple user interface, nothing flashy, just a pure learning app. A formula was developed for the ideal text sliding speed after a lot of experiments."
-										buttonThemeClass={projectButtonTheme()}
-										demoHref="https://30isnottoolate.github.io/online-teleprompter-ts"
-										codeHref="https://github.com/30isnottoolate/online-teleprompter-ts"
-									/>
-									<Project
-										themeClass={projectBoxTheme()}
-										visibilityClass={projectVisibility(2)}
-										title={"Stage Teleprompter"}
-										techs={["react", "js", "css", "html"]}
-										svgFillClass={svgFillTheme()}
-										src="./images/project_screenshots/stage-teleprompter-screenshot.png"
-										description="The first project that will actually be used IRL. A musician friend of mine commissioned me to make an app, which will be used in a stage teleprompter box for musicians and public speakers, and controlled with a three-button footswitch. It's made with class components, and will eventually be turned into a desktop app with Electron."
-										buttonThemeClass={projectButtonTheme()}
-										demoHref="https://30isnottoolate.github.io/stage-teleprompter"
-										codeHref="https://github.com/30isnottoolate/stage-teleprompter"
-									/>
-									<Project
-										themeClass={projectBoxTheme()}
-										visibilityClass={projectVisibility(3)}
-										title={"Portfolio Page"}
-										techs={["react", "ts", "css", "html"]}
-										svgFillClass={svgFillTheme()}
-										src="./images/project_screenshots/portfolio-screenshot.png"
-										description="The title says it all. It's my porfolio page. You are currently looking at it. A visual representation of my work, full of SVG images, animations, daring color schemes. Made with React functional components and hooks, written in TypeScript. The projects section is touch swipe compatible. Also, try clicking the gear in the top left corner."
-										buttonThemeClass={projectButtonTheme()}
-										demoHref="https://30isnottoolate.github.io/portfolio"
-										codeHref="https://github.com/30isnottoolate/portfolio"
-									/>
-									<Project
-										themeClass={projectBoxTheme()}
-										visibilityClass={projectVisibility(4)}
-										title={"Coming soon..."}
-										techs={["js", "ts", "react"]}
-										svgFillClass={svgFillTheme()}
-										src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
-										description="Some text here..."
-										buttonThemeClass={projectButtonTheme()}
-										demoHref="https://www.solidbackgrounds.com"
-										codeHref="https://www.solidbackgrounds.com"
-									/>
-									<Project
-										themeClass={projectBoxTheme()}
-										visibilityClass={projectVisibility(5)}
-										title={"Coming soon..."}
-										techs={["js", "ts", "react"]}
-										svgFillClass={svgFillTheme()}
-										src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
-										description="Some text here..."
-										buttonThemeClass={projectButtonTheme()}
-										demoHref="https://www.solidbackgrounds.com"
-										codeHref="https://www.solidbackgrounds.com"
-									/>
-									<Project
-										themeClass={projectBoxTheme()}
-										visibilityClass={projectVisibility(6)}
-										title={"Coming soon..."}
-										techs={["js", "ts", "react"]}
-										svgFillClass={svgFillTheme()}
-										src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
-										description="Some text here..."
-										buttonThemeClass={projectButtonTheme()}
-										demoHref="https://www.solidbackgrounds.com"
-										codeHref="https://www.solidbackgrounds.com"
-									/>
-								</div>
-							</div>
+							<ProjectsContainer isItDark={isItDark}/>
 						</section>
 						<section id="contact">
 							<h1>Get in touch</h1>
