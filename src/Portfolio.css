@@ -780,6 +780,14 @@ ul > li {
 		border-radius: 7px;
 	}
 
+	.dark-project-box {
+		box-shadow: 0 0 12px 4px var(--dark-secondary);
+	}
+	
+	.light-project-box {
+		box-shadow: 0 0 12px 4px var(--light-secondary);
+	}
+
 	.project-techs > img {
 		width: 16px;
 		height: 16px;
