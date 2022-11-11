@@ -19,44 +19,16 @@ const Portfolio: React.FC = () => {
 			return true;
 		}
 	});
-	const [bodyWidth, setBodyWidth] = useState(() => {
-		return document.body.offsetWidth;
-	});
-	const [isMenuVisible, setIsMenuVisible] = useState(false);
 
 	const paraContainerRef = useRef<HTMLDivElement>(null);
 	const contentRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		window.addEventListener("load", () => {
-			setBodyWidth(document.body.offsetWidth);
-			setIsMenuVisible(document.body.offsetWidth <= 650 ? false : true);
-		});
-		return () => window.removeEventListener("load", () => { });
-	}, []);
-
-	useEffect(() => {
-		window.addEventListener("resize", () => {
-			setBodyWidth(document.body.offsetWidth);
-		});
-		return () => window.removeEventListener("resize", () => { });
-	}, []);
-
-	useEffect(() => {
 		localStorage.setItem("isItDark", isItDark.toString());
 	}, [isItDark]);
 
-	useEffect(() => {
-		setIsMenuVisible(bodyWidth <= 650 ? false : true);
-	}, [bodyWidth]);
-
 	const changeTheme = () => setIsItDark((prevValue) => !prevValue);
 
-	const handleMenuClick = () => setIsMenuVisible((prevValue) => !prevValue);
-
-	const headerFooterTheme = () => isItDark ? "dark-header-footer" : "light-header-footer";
-	const navTheme = () => bodyWidth <= 650 ? (isItDark ? "dark-mini-nav" : "light-mini-nav") : "";
-	const navAnchorTheme = () => bodyWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : "";
 	const svgFillTheme = () => isItDark ? "dark-svg-fill" : "light-svg-fill";
 	const tooltipTheme = () => isItDark ? "dark-icon-tooltip" : "light-icon-tooltip";
 
@@ -215,7 +187,7 @@ const Portfolio: React.FC = () => {
 						</section>
 						<section id="projects">
 							<h1>Projects</h1>
-							<ProjectsContainer isItDark={isItDark}/>
+							<ProjectsContainer isItDark={isItDark} />
 						</section>
 						<section id="contact">
 							<h1>Get in touch</h1>
@@ -235,7 +207,12 @@ const Portfolio: React.FC = () => {
 							</div>
 						</section>
 					</main>
-					<footer id="bottom" className={headerFooterTheme()} >© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate</footer>
+					<footer
+						id="bottom"
+						className={isItDark ? "dark-header-footer" : "light-header-footer"}
+					>
+						© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate
+					</footer>
 				</div>
 			</div>
 		</>
