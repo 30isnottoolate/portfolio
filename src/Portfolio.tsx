@@ -41,7 +41,7 @@ const Portfolio: React.FC = () => {
 			/>
 			<SideContacts
 				paraContainerRef={paraContainerRef}
-				themeClass={isItDark ? "dark-side-contact" : "light-side-contact"}
+				isItDark={isItDark}
 			/>
 			<BackToTop
 				svgFillClass={svgFillTheme()}
