@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Portfolio.css';
 import Background from './components/Background';
-import MenuButton from './components/MenuButton';
+import NavBar from './components/NavBar';
 import Gear from './components/Gear';
 import SideContacts from './components/SideContacts';
 import BackToTop from './components/BackToTop';
@@ -62,46 +62,7 @@ const Portfolio: React.FC = () => {
 
 	return (
 		<>
-			<header className={headerFooterTheme()} >
-				<a
-					id="logo"
-					href="#welcome" >
-					30isnottoolate
-				</a>
-				<nav
-					className={navTheme()}
-					style={{
-						display: (isMenuVisible ? "grid" : "none"),
-						borderWidth: (bodyWidth <= 380 ? "0 0 1px 0" : bodyWidth > 650 ? "0" : "0 0 1px 1px")
-					}}
-				>
-					<a
-						className={navAnchorTheme()}
-						href="#bio">
-						Bio
-					</a>
-					<a
-						className={navAnchorTheme()}
-						href="#skills">
-						Skills
-					</a>
-					<a
-						className={navAnchorTheme()}
-						href="#projects">
-						Projects
-					</a>
-					<a
-						className={navAnchorTheme()}
-						href="#contact">
-						Contact
-					</a>
-				</nav>
-				<MenuButton
-					clickHandler={handleMenuClick}
-					themeClass={isItDark ? "dark-menu-button" : "light-menu-button"}
-					isMenuVisible={isMenuVisible}
-				/>
-			</header>
+			<NavBar isItDark={isItDark} />
 			<Gear
 				isItDark={isItDark}
 				changeTheme={changeTheme}
