@@ -44,7 +44,7 @@ const Portfolio: React.FC = () => {
 				isItDark={isItDark}
 			/>
 			<BackToTop
-				svgFillClass={svgFillTheme()}
+				isItDark={isItDark}
 				paraContainerRef={paraContainerRef}
 			/>
 			<div
