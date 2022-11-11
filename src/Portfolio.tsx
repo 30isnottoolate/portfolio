@@ -27,16 +27,12 @@ const Portfolio: React.FC = () => {
 		localStorage.setItem("isItDark", isItDark.toString());
 	}, [isItDark]);
 
-	const changeTheme = () => setIsItDark((prevValue) => !prevValue);
-
-	const svgFillTheme = () => isItDark ? "dark-svg-fill" : "light-svg-fill";
-
 	return (
 		<>
 			<NavBar isItDark={isItDark} />
 			<Gear
 				isItDark={isItDark}
-				changeTheme={changeTheme}
+				changeTheme={() => setIsItDark((prevValue) => !prevValue)}
 				paraContainerRef={paraContainerRef}
 			/>
 			<SideContacts
@@ -180,15 +176,15 @@ const Portfolio: React.FC = () => {
 							<h1>Get in touch</h1>
 							<div id="contacts">
 								<Contact
-									svgFillClass={svgFillTheme()}
+									isItDark={isItDark}
 									contactType={"linkedin"}
 								/>
 								<Contact
-									svgFillClass={svgFillTheme()}
+									isItDark={isItDark}
 									contactType={"email"}
 								/>
 								<Contact
-									svgFillClass={svgFillTheme()}
+									isItDark={isItDark}
 									contactType={"github"}
 								/>
 							</div>
