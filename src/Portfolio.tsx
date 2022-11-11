@@ -22,7 +22,9 @@ const Portfolio: React.FC = () => {
 			return true;
 		}
 	});
-	const [bodyWidth, setBodyWidth] = useState(0);
+	const [bodyWidth, setBodyWidth] = useState(() => {
+		return document.body.offsetWidth;
+	});
 	const [isMenuVisible, setIsMenuVisible] = useState(false);
 	const [projectIndex, setProjectIndex] = useState(1);
 	const [visibleProjects, setVisibleProjects] = useState(1);
@@ -106,6 +108,8 @@ const Portfolio: React.FC = () => {
 	const tooltipTheme = () => isItDark ? "dark-icon-tooltip" : "light-icon-tooltip";
 	const projectBoxTheme = () => isItDark ? "dark-project-box" : "light-project-box";
 	const projectButtonTheme = () => isItDark ? "dark-button" : "light-button";
+
+	console.log(bodyWidth)
 
 	return (
 		<>
