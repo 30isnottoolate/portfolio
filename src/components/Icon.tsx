@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import icons from '../utilities/icons';
 
 interface IconProps {
@@ -8,8 +8,22 @@ interface IconProps {
 }
 
 const Icon: React.FC<IconProps> = ({href, isItDark, iconType}: IconProps) => {
+    const [tooltipPos, setTooltipPos] = useState({left: 0, top: 0})
+
     const iconRef = useRef<HTMLAnchorElement>(null);
     const tooltipRef = useRef<HTMLParagraphElement>(null);
+
+    useEffect(() => {
+        setTooltipPos({left: getToolTipLeft(), top: getToolTipTop()});
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            setTooltipPos({left: getToolTipLeft(), top: getToolTipTop()});
+        });
+
+        return () => window.removeEventListener("resize", () => { });
+    }, [])
 
     const handleHoverStart = () => {
         if (tooltipRef.current) tooltipRef.current.style.opacity = "1";
@@ -19,14 +33,12 @@ const Icon: React.FC<IconProps> = ({href, isItDark, iconType}: IconProps) => {
         if (tooltipRef.current) tooltipRef.current.style.opacity = "0";
     }
 
-    const getToolTipTop = () => {
-        if (iconRef.current) return iconRef.current.offsetTop + iconRef.current.offsetHeight + 5;
+    const getToolTipLeft = () => {
+        return iconRef.current && tooltipRef.current ? (iconRef.current.offsetLeft + iconRef.current.offsetWidth / 2 - tooltipRef.current.offsetWidth / 2) : 0;
     }
 
-    const getToolTipLeft = () => {
-        if (iconRef.current && tooltipRef.current) {
-            return iconRef.current.offsetLeft + iconRef.current.offsetWidth / 2 - tooltipRef.current.offsetWidth / 2;
-        }
+    const getToolTipTop = () => {
+        return iconRef.current ? (iconRef.current.offsetTop + iconRef.current.offsetHeight + 5) : 0;
     }
 
     const svgFillTheme = () => isItDark ? "dark-svg-fill" : "light-svg-fill";
@@ -51,8 +63,8 @@ const Icon: React.FC<IconProps> = ({href, isItDark, iconType}: IconProps) => {
                 ref={tooltipRef}
                 className={`icon-tooltip ${tooltipTheme()}`}
                 style={{
-                    top: getToolTipTop(),
-                    left: getToolTipLeft(),
+                    left: tooltipPos.left,
+                    top: tooltipPos.top
                 }}>
                 {icons[iconType as keyof typeof icons].iconText}
             </span>
