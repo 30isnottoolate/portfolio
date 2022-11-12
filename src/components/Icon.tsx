@@ -12,12 +12,20 @@ const Icon: React.FC<{href: string, iconType: string}> = ({href, iconType}) => {
     }, []);
 
     useEffect(() => {
+        window.addEventListener("load", () => {
+            setTooltipPos({left: getToolTipLeft(), top: getToolTipTop()});
+        });
+
+        return () => window.removeEventListener("load", () => { });
+    }, []);
+
+    useEffect(() => {
         window.addEventListener("resize", () => {
             setTooltipPos({left: getToolTipLeft(), top: getToolTipTop()});
         });
 
         return () => window.removeEventListener("resize", () => { });
-    }, [])
+    }, []);
 
     const handleHoverStart = () => {
         if (tooltipRef.current) tooltipRef.current.style.opacity = "1";
