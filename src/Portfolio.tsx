@@ -57,11 +57,10 @@ const Portfolio: React.FC = () => {
 					id="content-container"
 					ref={contentRef}
 				>
-					<main className={isItDark ? "dark-main" : "light-main"} >
+					<main>
 						<section id="welcome">
 							<img
 								id="avatar-image"
-								className={isItDark ? "dark-avatar" : "light-avatar"}
 								src="./images/avatar.png"
 								alt="Akos Varga"
 							/>

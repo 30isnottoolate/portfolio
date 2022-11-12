@@ -362,14 +362,12 @@ nav > a:hover {
 	stroke: var(--light-secondary-alt);
 }
 
-.dark-main {
+.dark main {
 	color:var(--dark-secondary);
-	text-shadow: 0 0 10px #6200ff;
 }
 
-.light-main {
+.light main {
 	color:var(--light-secondary);
-	text-shadow: 0 0 10px var(--light-primary-alt);
 }
 
 section {
@@ -424,13 +422,13 @@ ul > li {
 	border-radius: 50%;
 }
 
-.dark-avatar {
+.dark #avatar-image {
 	background-color: var(--dark-secondary);
 	box-shadow: 0 0 20px 5px var(--dark-secondary);
 	border: 10px solid var(--dark-secondary);
 }
 
-.light-avatar {
+.light #avatar-image {
 	background-color: var(--light-secondary);
 	box-shadow: 0 0 20px 5px var(--light-secondary);
 	border: 10px solid var(--light-secondary);
@@ -555,11 +553,11 @@ ul > li {
 	margin: 8px;
 }
 
-.dark .project-box > .project-img {
+.dark .project-img {
 	border: 1px solid var(--dark-secondary);;
 }
 
-.light .project-box > .project-img {
+.light .project-img {
 	border: 1px solid var(--light-secondary);
 }
 
@@ -648,7 +646,7 @@ ul > li {
 		font-size: 16px;
 	}
 
-	.dark::-webkit-scrollbar {
+	#parallax-container::-webkit-scrollbar {
 		display: none;
 	}
 
