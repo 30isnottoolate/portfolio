@@ -1,7 +1,7 @@
 import React, { useState, useEffect, RefObject } from 'react';
 import contacts from "../utilities/contacts";
 
-const SideContacts: React.FC<{ paraContainerRef: RefObject<HTMLDivElement>, isItDark: boolean }> = ({ paraContainerRef, isItDark }) => {
+const SideContacts: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ paraContainerRef }) => {
     const [scrollPos, setScrollPos] = useState(0);
 
     useEffect(() => {
@@ -15,14 +15,12 @@ const SideContacts: React.FC<{ paraContainerRef: RefObject<HTMLDivElement>, isIt
 
         return () => refHolder?.removeEventListener("scroll", () => { });
     }, [paraContainerRef]);
-
-    const themeClass = () => isItDark ? "dark-side-contact" : "light-side-contact";
     
     return (
         <div id="side-contacts">
             <a
                 id="side-contact-1"
-                className={`side-contact ${themeClass()}`}
+                className="side-contact"
                 style={{ left: (scrollPos > 1410 ? "-80px" : "") }}
                 href={contacts["linkedin"].href}
                 target="_blank"
@@ -34,7 +32,7 @@ const SideContacts: React.FC<{ paraContainerRef: RefObject<HTMLDivElement>, isIt
             </a>
             <a
                 id="side-contact-2"
-                className={`side-contact ${themeClass()}`}
+                className="side-contact"
                 style={{ left: (scrollPos > 1350 ? "-80px" : "") }}
                 href={contacts["email"].href}
                 target="_blank"
@@ -46,7 +44,7 @@ const SideContacts: React.FC<{ paraContainerRef: RefObject<HTMLDivElement>, isIt
             </a>
             <a
                 id="side-contact-3"
-                className={`side-contact ${themeClass()}`}
+                className="side-contact"
                 style={{ left: (scrollPos > 1300 ? "-80px" : "") }}
                 href={contacts["github"].href}
                 target="_blank"

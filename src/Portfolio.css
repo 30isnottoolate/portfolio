@@ -285,27 +285,27 @@ nav > a:hover {
 	width: 40px;
 }
 
-.dark-side-contact {
+.dark .side-contact {
 	background-color: var(--dark-secondary);
 }
 
-.dark-side-contact > svg {
+.dark .side-contact > svg {
 	fill: var(--dark-primary);
 }
 
-.dark-side-contact:hover {
+.dark .side-contact:hover {
 	background-color: var(--dark-secondary-alt);
 }
 
-.light-side-contact {
+.light .side-contact {
 	background-color: var(--light-secondary);
 }
 
-.light-side-contact > svg {
+.light .side-contact > svg {
 	fill: var(--light-primary);
 }
 
-.light-side-contact:hover {
+.light .side-contact:hover {
 	background-color: var(--light-secondary-alt);
 }
 

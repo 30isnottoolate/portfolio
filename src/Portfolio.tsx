@@ -37,7 +37,6 @@ const Portfolio: React.FC = () => {
 			/>
 			<SideContacts
 				paraContainerRef={paraContainerRef}
-				isItDark={isItDark}
 			/>
 			<BackToTop
 				isItDark={isItDark}
