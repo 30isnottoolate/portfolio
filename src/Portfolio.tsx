@@ -45,7 +45,6 @@ const Portfolio: React.FC = () => {
 			/>
 			<div
 				id="parallax-container"
-				className={isItDark ? "dark" : "light"}
 				ref={paraContainerRef}
 			>
 				<Background

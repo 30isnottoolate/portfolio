@@ -36,35 +36,35 @@ body {
 	background-color: var(--light-primary);
 }
 
-.dark::-webkit-scrollbar {
+.dark #parallax-container::-webkit-scrollbar {
 	width: 10px;
 }
 
-.dark::-webkit-scrollbar-track {
+.dark #parallax-container::-webkit-scrollbar-track {
 	background: var(--dark-primary);
 }
 
-.dark::-webkit-scrollbar-thumb {
+.dark #parallax-container::-webkit-scrollbar-thumb {
 	background: var(--dark-secondary);
 }
 
-.dark::-webkit-scrollbar-thumb:hover {
+.dark #parallax-container::-webkit-scrollbar-thumb:hover {
 	background: var(--dark-secondary-alt);
 }
 
-.light::-webkit-scrollbar {
+.light #parallax-container::-webkit-scrollbar {
 	width: 10px;
 }
 
-.light::-webkit-scrollbar-track {
+.light #parallax-container::-webkit-scrollbar-track {
 	background: var(--light-primary);
 }
 
-.light::-webkit-scrollbar-thumb {
+.light #parallax-container::-webkit-scrollbar-thumb {
 	background: var(--light-secondary);
 }
 
-.light::-webkit-scrollbar-thumb:hover {
+.light #parallax-container::-webkit-scrollbar-thumb:hover {
 	background: var(--light-secondary-alt);
 }
 
