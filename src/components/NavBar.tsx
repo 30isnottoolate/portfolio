@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import MenuButton from './MenuButton';
 
-const NavBar: React.FC<{isItDark: boolean}> = ({isItDark}) => {
+const NavBar: React.FC = () => {
     const [bodyWidth, setBodyWidth] = useState(380);
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
@@ -20,48 +20,34 @@ const NavBar: React.FC<{isItDark: boolean}> = ({isItDark}) => {
 
     const handleMenuClick = () => setIsMenuVisible((prevValue) => !prevValue);
 
-	const headerFooterTheme = () => isItDark ? "dark-header-footer" : "light-header-footer";
-	const navTheme = () => bodyWidth <= 650 ? (isItDark ? "dark-mini-nav" : "light-mini-nav") : "";
-	const navAnchorTheme = () => bodyWidth <= 650 ? (isItDark ? "dark-mini-nav-a" : "light-mini-nav-a") : "";
-
     return (
-        <header className={headerFooterTheme()} >
+        <header className="header-footer" >
             <a
                 id="logo"
                 href="#welcome" >
                 30isnottoolate
             </a>
             <nav
-                className={navTheme()}
                 style={{
                     display: (isMenuVisible ? "grid" : "none"),
                     borderWidth: (bodyWidth <= 380 ? "0 0 1px 0" : bodyWidth > 650 ? "0" : "0 0 1px 1px")
                 }}
             >
-                <a
-                    className={navAnchorTheme()}
-                    href="#bio">
+                <a href="#bio">
                     Bio
                 </a>
-                <a
-                    className={navAnchorTheme()}
-                    href="#skills">
+                <a href="#skills">
                     Skills
                 </a>
-                <a
-                    className={navAnchorTheme()}
-                    href="#projects">
+                <a href="#projects">
                     Projects
                 </a>
-                <a
-                    className={navAnchorTheme()}
-                    href="#contact">
+                <a href="#contact">
                     Contact
                 </a>
             </nav>
             <MenuButton
                 clickHandler={handleMenuClick}
-                themeClass={isItDark ? "dark-menu-button" : "light-menu-button"}
                 isMenuVisible={isMenuVisible}
             />
         </header>

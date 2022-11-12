@@ -24,12 +24,13 @@ const Portfolio: React.FC = () => {
 	const contentRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
+		document.body.className = isItDark ? "dark" : "light";
 		localStorage.setItem("isItDark", isItDark.toString());
 	}, [isItDark]);
 
 	return (
 		<>
-			<NavBar isItDark={isItDark} />
+			<NavBar />
 			<Gear
 				isItDark={isItDark}
 				changeTheme={() => setIsItDark((prevValue) => !prevValue)}
@@ -192,7 +193,7 @@ const Portfolio: React.FC = () => {
 					</main>
 					<footer
 						id="bottom"
-						className={isItDark ? "dark-header-footer" : "light-header-footer"}
+						className="header-footer"
 					>
 						© {new Date().getFullYear()} Akos Varga, aka 30isnottoolate
 					</footer>

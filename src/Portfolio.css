@@ -133,13 +133,13 @@ header, footer {
 	z-index: 4;
 }
 
-.dark-header-footer {
+.dark .header-footer {
 	background-color: var(--dark-primary-alt);
 	color:var(--dark-secondary);
 	box-shadow: 0 0 50px 5px var(--dark-secondary);
 }
 
-.light-header-footer {
+.light .header-footer {
 	background-color: var(--light-primary-alt);
 	color:var(--light-secondary);
 	box-shadow: 0 0 50px 5px var(--light-secondary);
@@ -190,21 +190,21 @@ nav > a:hover {
 	opacity: 1;
 }
 
-.dark-header-footer > nav > a:hover {
+.dark nav > a:hover {
 	color: var(--dark-secondary-alt);
 	text-shadow: 0 0 25px var(--dark-secondary);
 }
 
-.light-header-footer > nav > a:hover {
+.light nav > a:hover {
 	color: var(--light-secondary-alt);
 	text-shadow: 0 0 35px var(--light-secondary-alt); 
 }
 
-#menu-button {
+.menu-button {
 	display: none;
 }
 
-#menu-button > div {
+.menu-button-parts {
 	width: 35px; 
 	height: 5px;
 	border-radius: 2.5px;
@@ -212,11 +212,11 @@ nav > a:hover {
 	transition: transform 0.5s, opacity 0.5s;
 }
 
-.dark-menu-button {
+.dark .menu-button-parts {
 	background-color: var(--dark-secondary);
 }
 
-.light-menu-button {
+.light .menu-button-parts {
 	background-color: var(--light-secondary);
 }
 
@@ -679,11 +679,11 @@ ul > li {
 		width: auto;
 	}
 
-	.dark-mini-nav {
+	.dark nav {
 		background-color: var(--dark-primary-alt);
 	}
 
-	.light-mini-nav {
+	.light nav {
 		background-color: var(--light-primary-alt);
 	}
 
@@ -693,7 +693,7 @@ ul > li {
 		padding: 7.5px 15px 7.5px 15px;
 	}
 
-	#menu-button {
+	.menu-button {
 		display: inline-block;
 	}
 
