@@ -59,7 +59,6 @@ const ProjectsContainer: React.FC<{isItDark: boolean}> = ({isItDark}) => {
 		}
 	}
 
-    const svgStrokeTheme = () => isItDark ? "dark-svg-stroke" : "light-svg-stroke";
 	const svgFillTheme = () => isItDark ? "dark-svg-fill" : "light-svg-fill";
 	const projectBoxTheme = () => isItDark ? "dark-project-box" : "light-project-box";
 	const projectButtonTheme = () => isItDark ? "dark-button" : "light-button";
@@ -69,7 +68,6 @@ const ProjectsContainer: React.FC<{isItDark: boolean}> = ({isItDark}) => {
             <div id="project-index-buttons" style={{ height: (bodyWidth <= 650 ? 48 : 60) }}>
                 <Arrow
                     visibilityClass={projectIndex > 1 ? "visible" : "invisible"}
-                    svgStrokeClass={svgStrokeTheme()}
                     posX={(-visibleProjects * (bodyWidth <= 650 ? 230 : 300) / 2)}
                     posY={(bodyWidth <= 650 ? 238 : 297.5)}
                     mirrored={true}
@@ -77,7 +75,6 @@ const ProjectsContainer: React.FC<{isItDark: boolean}> = ({isItDark}) => {
                 />
                 <Arrow
                     visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
-                    svgStrokeClass={svgStrokeTheme()}
                     posX={(visibleProjects * (bodyWidth <= 650 ? 230 : 300) / 2)}
                     posY={(bodyWidth <= 650 ? 238 : 297.5)}
                     mirrored={false}

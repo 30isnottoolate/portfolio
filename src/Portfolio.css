@@ -340,25 +340,25 @@ nav > a:hover {
 	fill: var(--light-secondary-alt);
 }
 
-.dark-svg-stroke, .light-svg-stroke {
+.svg-stroke {
 	transition: stroke 0.25s ease-in-out, fill 0.25s ease-in-out;
 }
 
-.dark-svg-stroke {
+.dark .svg-stroke {
 	stroke: var(--dark-secondary);
 	fill: var(--dark-primary);
 }
 
-.dark-svg-stroke:hover {
+.dark .svg-stroke:hover {
 	stroke: var(--dark-secondary-alt);
 }
 
-.light-svg-stroke {
+.light .svg-stroke {
 	stroke: var(--light-secondary);
 	fill: var(--light-primary);
 }
 
-.light-svg-stroke:hover {
+.light .svg-stroke:hover {
 	stroke: var(--light-secondary-alt);
 }
 

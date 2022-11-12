@@ -32,7 +32,6 @@ const Portfolio: React.FC = () => {
 		<>
 			<NavBar />
 			<Gear
-				isItDark={isItDark}
 				changeTheme={() => setIsItDark((prevValue) => !prevValue)}
 				paraContainerRef={paraContainerRef}
 			/>

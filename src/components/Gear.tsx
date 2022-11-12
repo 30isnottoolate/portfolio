@@ -1,6 +1,6 @@
 import React, { useState, useEffect, RefObject } from 'react';
 
-const Gear: React.FC<{ isItDark: boolean, changeTheme: () => void, paraContainerRef: RefObject<HTMLDivElement> }> = ({ isItDark, changeTheme, paraContainerRef }) => {
+const Gear: React.FC<{ changeTheme: () => void, paraContainerRef: RefObject<HTMLDivElement> }> = ({ changeTheme, paraContainerRef }) => {
     const [bodyWidth, setBodyWidth] = useState(380);
     const [scrollPos, setScrollPos] = useState(0);
 
@@ -27,12 +27,10 @@ const Gear: React.FC<{ isItDark: boolean, changeTheme: () => void, paraContainer
         return () => refHolder?.removeEventListener("scroll", () => { });
     }, [paraContainerRef]);
 
-	const svgStrokeTheme = () => isItDark ? "dark-svg-stroke" : "light-svg-stroke";
-
     return (
         <svg
             id="gear"
-            className={svgStrokeTheme()}
+            className="svg-stroke"
             onClick={changeTheme}
             style={{
                 transform: `rotate(${scrollPos / ((bodyWidth <= 650 ? 36 : 45) * Math.PI / 360)}deg)`
