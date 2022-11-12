@@ -1,6 +1,6 @@
 import React, { useState, useEffect, RefObject } from 'react';
 
-const BackToTop: React.FC<{ isItDark: boolean, paraContainerRef: RefObject<HTMLDivElement> }> = ({ isItDark, paraContainerRef }) => {
+const BackToTop: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ paraContainerRef }) => {
     const [scrollPos, setScrollPos] = useState(0);
     
     useEffect(() => {
@@ -19,7 +19,7 @@ const BackToTop: React.FC<{ isItDark: boolean, paraContainerRef: RefObject<HTMLD
         <a
             id="back-to-top"
             href="#welcome"
-            className={isItDark ? "dark-svg-fill" : "light-svg-fill"}
+            className="svg-fill"
             style={{
                 position: "fixed",
                 bottom: (scrollPos > 1300 ? "35px" : "-50px"),

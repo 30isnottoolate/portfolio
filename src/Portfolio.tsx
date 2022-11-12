@@ -39,7 +39,6 @@ const Portfolio: React.FC = () => {
 				paraContainerRef={paraContainerRef}
 			/>
 			<BackToTop
-				isItDark={isItDark}
 				paraContainerRef={paraContainerRef}
 			/>
 			<div
