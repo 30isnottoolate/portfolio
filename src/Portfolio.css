@@ -85,16 +85,32 @@ body {
 	z-index: -10;
 }
 
-.background-1 {
+#background-1 {
 	overflow: hidden;
 	-webkit-transform: translateZ(-1px) scale(2);
 	transform: translateZ(-1px) scale(2);
 }
 
-.background-2 {
+#background-2 {
 	overflow: hidden;
 	-webkit-transform: translateZ(-2px) scale(2);
 	transform: translateZ(-2px) scale(2);
+}
+
+.dark #background-1 > svg {
+	fill: var(--dark-tertiary);
+}
+
+.dark #background-2 > svg {
+	fill: var(--dark-primary-alt);
+}
+
+.light #background-1 > svg {
+	fill: var(--light-tertiary);
+}
+
+.light #background-2 > svg {
+	fill: var(--light-primary-alt);
 }
 
 #content-container {
@@ -103,22 +119,6 @@ body {
 	top: 0;
 	-webkit-transform: translateZ(0);
 	transform: translateZ(0);
-}
-
-.background-1.dark-background > svg {
-	fill: var(--dark-tertiary);
-}
-
-.background-1.light-background > svg {
-	fill: var(--light-tertiary);
-}
-
-.background-2.dark-background > svg {
-	fill: var(--dark-primary-alt);
-}
-
-.background-2.light-background > svg {
-	fill: var(--light-primary-alt);
 }
 
 header, section, footer {

@@ -46,11 +46,11 @@ const Portfolio: React.FC = () => {
 				ref={paraContainerRef}
 			>
 				<Background
-					themeClass={isItDark ? "dark-background background-1" : "light-background background-1"}
+					givenID="background-1"
 					contentRef={contentRef}
 				/>
 				<Background
-					themeClass={isItDark ? "dark-background background-2" : "light-background background-2"}
+					givenID="background-2"
 					contentRef={contentRef}
 				/>
 				<div
