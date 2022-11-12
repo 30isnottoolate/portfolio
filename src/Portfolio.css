@@ -200,7 +200,7 @@ nav > a:hover {
 	text-shadow: 0 0 35px var(--light-secondary-alt); 
 }
 
-.menu-button {
+#menu-button {
 	display: none;
 }
 
@@ -693,7 +693,7 @@ ul > li {
 		padding: 7.5px 15px 7.5px 15px;
 	}
 
-	.menu-button {
+	#menu-button {
 		display: inline-block;
 	}
 
