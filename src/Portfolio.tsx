@@ -161,15 +161,12 @@ const Portfolio: React.FC = () => {
 							<h1>Get in touch</h1>
 							<div id="contacts">
 								<Contact
-									isItDark={isItDark}
 									contactType={"linkedin"}
 								/>
 								<Contact
-									isItDark={isItDark}
 									contactType={"email"}
 								/>
 								<Contact
-									isItDark={isItDark}
 									contactType={"github"}
 								/>
 							</div>
