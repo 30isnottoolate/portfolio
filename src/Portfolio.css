@@ -471,12 +471,12 @@ ul > li {
 	border-radius: 3px;
 }
 
-.dark-icon-tooltip {
+.dark .icon-tooltip {
 	background-color: var(--dark-secondary);
 	color: var(--dark-primary);
 }
 
-.light-icon-tooltip {
+.light .icon-tooltip {
 	background-color: var(--light-secondary);
 	color: var(--light-primary);
 }

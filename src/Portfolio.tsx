@@ -94,22 +94,18 @@ const Portfolio: React.FC = () => {
 								<div className="icon-collection" >
 									<Icon
 										href={"https://html.spec.whatwg.org/"}
-										isItDark={isItDark}
 										iconType="html"
 									/>
 									<Icon
 										href={"https://www.w3.org/TR/CSS/"}
-										isItDark={isItDark}
 										iconType="css"
 									/>
 									<Icon
 										href={"https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"}
-										isItDark={isItDark}
 										iconType="js"
 									/>
 									<Icon
 										href={"https://www.typescriptlang.org/"}
-										isItDark={isItDark}
 										iconType="ts"
 									/>
 								</div>
@@ -119,22 +115,18 @@ const Portfolio: React.FC = () => {
 								<div className="icon-collection" >
 									<Icon
 										href={"https://reactjs.org/"}
-										isItDark={isItDark}
 										iconType="react"
 									/>
 									<Icon
 										href={"https://nodejs.org/"}
-										isItDark={isItDark}
 										iconType="node"
 									/>
 									<Icon
 										href={"https://expressjs.com/"}
-										isItDark={isItDark}
 										iconType="express"
 									/>
 									<Icon
 										href={"https://www.mongodb.com/"}
-										isItDark={isItDark}
 										iconType="mongodb"
 									/>
 								</div>
@@ -144,22 +136,18 @@ const Portfolio: React.FC = () => {
 								<div className="icon-collection" >
 									<Icon
 										href={"https://git-scm.com/"}
-										isItDark={isItDark}
 										iconType="git"
 									/>
 									<Icon
 										href={"https://code.visualstudio.com/"}
-										isItDark={isItDark}
 										iconType="vscode"
 									/>
 									<Icon
 										href={"https://www.gimp.org/"}
-										isItDark={isItDark}
 										iconType="gimp"
 									/>
 									<Icon
 										href={"https://www.adobe.com/products/photoshop.html"}
-										isItDark={isItDark}
 										iconType="ps"
 									/>
 								</div>
