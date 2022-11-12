@@ -2,17 +2,14 @@ import React, {useState, useEffect} from 'react';
 import MenuButton from './MenuButton';
 
 const NavBar: React.FC = () => {
-    const [bodyWidth, setBodyWidth] = useState(380);
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
     useEffect(() => {
-        setBodyWidth(document.body.offsetWidth);
         setIsMenuVisible(document.body.offsetWidth <= 650 ? false : true);
     }, [])
 
     useEffect(() => {
 		window.addEventListener("resize", () => {
-			setBodyWidth(document.body.offsetWidth);
 			setIsMenuVisible(document.body.offsetWidth <= 650 ? false : true);
 		});
 		return () => window.removeEventListener("resize", () => { });
