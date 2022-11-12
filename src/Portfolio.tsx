@@ -155,7 +155,7 @@ const Portfolio: React.FC = () => {
 						</section>
 						<section id="projects">
 							<h1>Projects</h1>
-							<ProjectsContainer isItDark={isItDark} />
+							<ProjectsContainer />
 						</section>
 						<section id="contact">
 							<h1>Get in touch</h1>
