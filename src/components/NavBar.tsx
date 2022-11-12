@@ -29,8 +29,7 @@ const NavBar: React.FC = () => {
             </a>
             <nav
                 style={{
-                    display: (isMenuVisible ? "grid" : "none"),
-                    borderWidth: (bodyWidth <= 380 ? "0 0 1px 0" : bodyWidth > 650 ? "0" : "0 0 1px 1px")
+                    display: (isMenuVisible ? "grid" : "none")
                 }}
             >
                 <a href="#bio">
