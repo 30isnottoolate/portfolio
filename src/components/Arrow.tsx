@@ -12,7 +12,7 @@ const Arrow: React.FC<ArrowProps> = ({ visibilityClass, posX, mirrored, clickHan
             style={{
                 left: posX,
                 transform: mirrored ? "scaleX(-1)" : "scaleX(1)",
-                pointerEvents: visibilityClass == "visible" ? "initial" : "none"
+                pointerEvents: visibilityClass === "visible" ? "initial" : "none"
             }}
             onClick={clickHandler}
             viewBox="-5 -5 35 60"
