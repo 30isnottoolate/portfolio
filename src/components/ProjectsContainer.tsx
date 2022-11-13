@@ -65,14 +65,12 @@ const ProjectsContainer: React.FC = () => {
                 <Arrow
                     visibilityClass={projectIndex > 1 ? "visible" : "invisible"}
                     posX={(-visibleProjects * (bodyWidth <= 650 ? 230 : 300) / 2)}
-                    posY={(bodyWidth <= 650 ? 238 : 297.5)}
                     mirrored={true}
                     clickHandler={handlePrev}
                 />
                 <Arrow
                     visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
                     posX={(visibleProjects * (bodyWidth <= 650 ? 230 : 300) / 2)}
-                    posY={(bodyWidth <= 650 ? 238 : 297.5)}
                     mirrored={false}
                     clickHandler={handleNext}
                 />

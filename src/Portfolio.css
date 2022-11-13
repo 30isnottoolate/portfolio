@@ -503,6 +503,7 @@ li {
 
 .arrow-button {
 	position: relative;
+	top: 297.5px;
 	height: 75px;
 	cursor: pointer;
 	z-index: 3;
@@ -777,6 +778,7 @@ li {
 	}
 
 	.arrow-button {
+		top: 238px;
 		height: 60px;
 	}
 
