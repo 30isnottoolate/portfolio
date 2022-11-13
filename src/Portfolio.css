@@ -854,4 +854,8 @@ li {
 		padding-top: 7.5px;
 		padding-bottom: 7.5px;
 	}
+
+	.arrow-button {
+		top: 500px;
+	}
 }

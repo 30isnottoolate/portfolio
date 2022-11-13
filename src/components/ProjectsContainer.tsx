@@ -61,16 +61,16 @@ const ProjectsContainer: React.FC = () => {
 
     return (
         <>
-            <div id="project-index-buttons" style={{ height: (bodyWidth <= 650 ? 48 : 60) }}>
+            <div id="project-index-buttons" style={{ height: (bodyWidth > 650 ? 60 : 48) }}>
                 <Arrow
                     visibilityClass={projectIndex > 1 ? "visible" : "invisible"}
-                    posX={(-visibleProjects * (bodyWidth <= 650 ? 230 : 300) / 2)}
+                    posX={bodyWidth > 380 ? (-visibleProjects * (bodyWidth > 650 ? 300 : 230) / 2) : -15}
                     mirrored={true}
                     clickHandler={handlePrev}
                 />
                 <Arrow
                     visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
-                    posX={(visibleProjects * (bodyWidth <= 650 ? 230 : 300) / 2)}
+                    posX={bodyWidth > 380 ? (visibleProjects * (bodyWidth > 650 ? 300 : 230) / 2) : 15}
                     mirrored={false}
                     clickHandler={handleNext}
                 />
@@ -78,7 +78,7 @@ const ProjectsContainer: React.FC = () => {
             <div
                 id="projects-container"
                 style={{
-                    width: (visibleProjects * (bodyWidth <= 650 ? 240 : 300) + (bodyWidth <= 650 ? 60 : 100))
+                    width: (visibleProjects * (bodyWidth > 650 ? 300 : 240) + (bodyWidth > 650 ? 100 : bodyWidth > 380 ? 60 : 0))
                 }}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
@@ -86,7 +86,7 @@ const ProjectsContainer: React.FC = () => {
                 <div
                     id="project-slider"
                     style={{
-                        left: ((projectIndex - 1) * (-(bodyWidth <= 650 ? 240 : 300))) + (bodyWidth <= 650 ? 50 : 75)
+                        left: ((projectIndex - 1) * (-(bodyWidth > 650 ? 300 : 240))) + (bodyWidth > 650 ? 75 : bodyWidth > 380 ? 50 : 20)
                     }}>
                     <Project
                         visibilityClass={projectVisibility(1)}
