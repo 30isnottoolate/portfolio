@@ -42,7 +42,7 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
         });
 
         return () => {window.removeEventListener("resize", () => { })}
-    }, []);
+    }, [contentRef, generateBackground]);
 
     return (
         <div
