@@ -80,13 +80,36 @@ body {
 
 .background {
 	position: absolute;
-	opacity: 0;
+	opacity: 1;
 	left: 0;
 	top: 0;
+	overflow: hidden;
 	z-index: -10;
-	animation: fade-in 1s;
+}
+
+#background-1 {
+	-webkit-transform: translateZ(-1px) scale(2);
+	transform: translateZ(-1px) scale(2);
+}
+
+#background-2 {
+	-webkit-transform: translateZ(-2px) scale(2);
+	transform: translateZ(-2px) scale(2);
+}
+
+.figures {
+	opacity: 0;
+	animation: fade-in 1s ease-in;
 	animation-fill-mode: forwards;
-	animation-delay: 1s;
+	animation-delay: 0.5s
+}
+
+#background-1 > .figures {
+	animation-delay: 0.75s;
+}
+
+#background-2 > .figures {
+	animation-delay: 0s;
 }
 
 @keyframes fade-in {
@@ -100,31 +123,19 @@ body {
 	
 }
 
-#background-1 {
-	overflow: hidden;
-	-webkit-transform: translateZ(-1px) scale(2);
-	transform: translateZ(-1px) scale(2);
-}
-
-#background-2 {
-	overflow: hidden;
-	-webkit-transform: translateZ(-2px) scale(2);
-	transform: translateZ(-2px) scale(2);
-}
-
-.dark #background-1 > svg {
+.dark #background-1 > .figures {
 	fill: var(--dark-tertiary);
 }
 
-.dark #background-2 > svg {
+.dark #background-2 > .figures {
 	fill: var(--dark-primary-alt);
 }
 
-.light #background-1 > svg {
+.light #background-1 > .figures {
 	fill: var(--light-tertiary);
 }
 
-.light #background-2 > svg {
+.light #background-2 > .figures {
 	fill: var(--light-primary-alt);
 }
 
