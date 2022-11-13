@@ -434,7 +434,9 @@ li {
 }
 
 #avatar-image {
+	width: 50vw;
 	height: 50vw;
+	max-width: 250px;
 	max-height: 250px;
 	border-radius: 50%;
 }
