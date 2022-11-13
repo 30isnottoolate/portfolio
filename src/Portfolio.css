@@ -437,23 +437,25 @@ li {
 
 .icon-container {
 	display: inline-block;
-	height: 50px;
-	width: 50px;
-	padding: 5px;
+	height: 40px;
+	width: 40px;
+	padding: 0;
 	border-radius: 5px;
-	margin: 0 2.5px;
+	margin: 5px 7.5px;
+}
+
+.icon-image {
+	height: 40px;
+	width: 40px;
 }
 
 .icon-tooltip {
 	position: absolute;
 	opacity: 0;
-	font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
 	font-size: 14px;
-	font-weight: 300;
-	text-align: center;
-	text-shadow: none;
 	padding: 3px 6px;
 	border-radius: 3px;
+	transform: translateY(25%) translateX(calc(-50% + 20px));
 }
 
 .dark .icon-tooltip {
@@ -464,11 +466,6 @@ li {
 .light .icon-tooltip {
 	background-color: var(--light-secondary);
 	color: var(--light-primary);
-}
-
-.icon-image {
-	height: 40px;
-	width: 40px;
 }
 
 #projects {
@@ -733,18 +730,22 @@ li {
 		width: 176px;
 		height: 48px;
 	}
-	
+
 	.icon-container {
-		height: 40px;
-		width: 40px;
-		padding: 4px;
+		height: 32px;
+		width: 32px;
+		padding: 0;
 		border-radius: 4px;
-		margin: 0 2px;
+		margin: 4px 6px;
 	}
 	
 	.icon-image {
 		height: 32px;
 		width: 32px;
+	}
+
+	.icon-tooltip {
+		transform: translateY(25%) translateX(calc(-50% + 16px));
 	}
 
 	.arrow-button {
