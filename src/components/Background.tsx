@@ -36,6 +36,14 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
         if (contentRef.current) generateBackground(contentRef.current.offsetWidth, contentRef.current.offsetHeight);
     }, [contentRef, contentRef.current?.offsetWidth, generateBackground]);
 
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            if (contentRef.current) generateBackground(contentRef.current.offsetWidth, contentRef.current.offsetHeight);
+        });
+
+        return () => {window.removeEventListener("resize", () => { })}
+    }, []);
+
     return (
         <div
             id={givenID}
