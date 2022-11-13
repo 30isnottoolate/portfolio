@@ -11,7 +11,8 @@ const Arrow: React.FC<ArrowProps> = ({ visibilityClass, posX, mirrored, clickHan
             className={`arrow-button ${visibilityClass}`}
             style={{
                 left: posX,
-                transform: mirrored ? "scaleX(-1)" : "scaleX(1)"
+                transform: mirrored ? "scaleX(-1)" : "scaleX(1)",
+                pointerEvents: visibilityClass == "visible" ? "initial" : "none"
             }}
             onClick={clickHandler}
             viewBox="-5 -5 35 60"
