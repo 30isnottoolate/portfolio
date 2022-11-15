@@ -11,38 +11,46 @@ const figures = [
 const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivElement> }> = ({ givenID, contentRef }) => {
     const [wallpaper, setWallpaper] = useState("");
 
-    const generateBackground = useCallback((contentWidth: number, contentHeight: number) => {
-        setWallpaper(() => {
-            let backgroundContent = "";
-            let blockSide = contentWidth <= 650 ? 150 : contentWidth <= 300 ? 100 : 200; // 1 figure inside every (blockSide x blockSide) block
+    let delayTimer: ReturnType<typeof setTimeout>;
 
-            const figurePosition = (position: number, contentWidthOrHeight: number) => {
-                return contentWidthOrHeight / Math.floor(contentWidthOrHeight / blockSide) * (position + Math.random());
-            };
+    const generateBackground = (contentWidth: number, contentHeight: number) => {
+        let backgroundContent = "";
+        let blockSide = contentWidth <= 650 ? 150 : contentWidth <= 300 ? 100 : 200; // 1 figure inside every (blockSide x blockSide) block
 
-            if (contentRef.current) {
-                for (let x = 0; x < Math.floor(contentWidth / blockSide); x++) {
-                    for (let y = 0; y < Math.floor(contentHeight / blockSide); y++) {
-                        backgroundContent = backgroundContent + `<svg xmlns="http://www.w3.org/2000/svg" class="figures" style="position: absolute; left: ${figurePosition(x, contentWidth)}px; top: ${figurePosition(y, contentHeight)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random() * 5)]}</svg>`;
-                    }
+        const figurePosition = (position: number, contentWidthOrHeight: number) => {
+            return contentWidthOrHeight / Math.floor(contentWidthOrHeight / blockSide) * (position + Math.random());
+        };
+
+        if (contentRef.current) {
+            for (let x = 0; x < Math.floor(contentWidth / blockSide); x++) {
+                for (let y = 0; y < Math.floor(contentHeight / blockSide); y++) {
+                    backgroundContent = backgroundContent + `<svg xmlns="http://www.w3.org/2000/svg" class="figures" style="position: absolute; left: ${figurePosition(x, contentWidth)}px; top: ${figurePosition(y, contentHeight)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random() * 5)]}</svg>`;
                 }
             }
+        }
 
-            return backgroundContent;
-        });
+        return backgroundContent;
+    }
+
+    const updateBackground = useCallback(() => {
+        if (delayTimer) clearTimeout(delayTimer);
+
+        delayTimer = setTimeout(() => {
+            if (contentRef.current) setWallpaper(generateBackground(contentRef.current.offsetWidth, contentRef.current.offsetHeight));
+        }, 500);
     }, [contentRef]);
 
     useEffect(() => {
-        if (contentRef.current) generateBackground(contentRef.current.offsetWidth, contentRef.current.offsetHeight);
-    }, [contentRef, contentRef.current?.offsetWidth, generateBackground]);
+        updateBackground();
+    }, [updateBackground]);
 
     useEffect(() => {
         window.addEventListener("resize", () => {
-            if (contentRef.current) generateBackground(contentRef.current.offsetWidth, contentRef.current.offsetHeight);
+            updateBackground();
         });
 
-        return () => {window.removeEventListener("resize", () => { })}
-    }, [contentRef, generateBackground]);
+        return () => { window.removeEventListener("resize", () => { }) }
+    }, [updateBackground]);
 
     return (
         <div
