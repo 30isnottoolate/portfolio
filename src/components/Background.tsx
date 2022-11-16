@@ -50,8 +50,6 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
         return () => { window.removeEventListener("resize", () => { }) }
     }, [updateBackground]);
 
-    console.log("ping");
-
     return (
         <div
             id={givenID}
