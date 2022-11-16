@@ -122,19 +122,19 @@ body {
 	
 }
 
-.dark #background-1 > .figures {
+.dark #background-1 > div > .figures {
 	fill: var(--dark-tertiary);
 }
 
-.dark #background-2 > .figures {
+.dark #background-2 > div > .figures {
 	fill: var(--dark-primary-alt);
 }
 
-.light #background-1 > .figures {
+.light #background-1 > div > .figures {
 	fill: var(--light-tertiary);
 }
 
-.light #background-2 > .figures {
+.light #background-2 > div > .figures {
 	fill: var(--light-primary-alt);
 }
 
