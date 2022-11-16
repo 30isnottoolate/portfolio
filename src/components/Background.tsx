@@ -16,7 +16,11 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
 
         for (let x = 0; x < Math.floor(contentWidth / blockSide); x++) {
             for (let y = 0; y < Math.floor(contentHeight / blockSide); y++) {
-                pictures.push({ picture: Math.floor(Math.random() * 5), left: figurePosition(x, contentWidth), top: figurePosition(y, contentHeight) });
+                pictures.push({
+                    picture: Math.floor(Math.random() * 5),
+                    left: figurePosition(x, contentWidth),
+                    top: figurePosition(y, contentHeight)
+                });
             }
         }
 
@@ -27,7 +31,8 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
         clearTimeout(delayTimer.current);
 
         delayTimer.current = setTimeout(() => {
-            if (contentRef.current) generateBackground(contentRef.current.offsetWidth, contentRef.current.offsetHeight);
+            if (contentRef.current)
+                generateBackground(contentRef.current.offsetWidth, contentRef.current.offsetHeight);
         }, 500);
     }, [contentRef, generateBackground]);
 
