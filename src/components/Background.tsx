@@ -2,7 +2,7 @@ import React, { RefObject, useState, useRef, useCallback, useEffect } from 'reac
 import figures from '../utilities/figures';
 
 const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivElement> }> = ({ givenID, contentRef }) => {
-    const [wallpaper, setWallpaper] = useState([{ picture: <></>, left: 0, top: 0 }]);
+    const [wallpaper, setWallpaper] = useState([{ picture: 0, left: 0, top: 0 }]);
 
     const delayTimer = useRef(setTimeout(() => { }));
 
@@ -16,7 +16,7 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
 
         for (let x = 0; x < Math.floor(contentWidth / blockSide); x++) {
             for (let y = 0; y < Math.floor(contentHeight / blockSide); y++) {
-                pictures.push({ picture: figures[Math.floor(Math.random() * 5)], left: figurePosition(x, contentWidth), top: figurePosition(y, contentHeight) });
+                pictures.push({ picture: Math.floor(Math.random() * 5), left: figurePosition(x, contentWidth), top: figurePosition(y, contentHeight) });
             }
         }
 
@@ -63,7 +63,7 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
                         top: wallpaper[wallpaper.indexOf(item)].top
                     }}
                 >
-                    {item.picture}
+                    {figures[item.picture]}
                 </svg>
             ))}
         </div>
