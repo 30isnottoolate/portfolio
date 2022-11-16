@@ -98,6 +98,9 @@ body {
 }
 
 .figures {
+    position: absolute;
+    width: 16px;
+    height: 16px;
 	opacity: 0;
 	animation: fade-in 1s ease-in;
 	animation-fill-mode: forwards;

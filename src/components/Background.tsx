@@ -20,11 +20,8 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
                     <svg
                         className="figures"
                         style={{
-                            position: "absolute",
                             left: figurePosition(x, contentWidth),
-                            top: figurePosition(y, contentHeight),
-                            width: "16px",
-                            height: "16px"
+                            top: figurePosition(y, contentHeight)
                         }}>
                         {figures[Math.floor(Math.random() * 5)]}
                     </svg>
