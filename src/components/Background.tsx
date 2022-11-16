@@ -1,5 +1,5 @@
 import React, { RefObject, useState, useRef, useCallback, useEffect } from 'react';
-import figures from '../utilities/figures';
+import pictures from '../utilities/pictures';
 
 const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivElement> }> = ({ givenID, contentRef }) => {
     const [wallpaper, setWallpaper] = useState([{ picture: 0, left: 0, top: 0 }]);
@@ -62,13 +62,13 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
             {wallpaper.map(item => (
                 <svg
                     key={wallpaper.indexOf(item)}
-                    className="figures"
+                    className="pictures"
                     style={{
                         left: wallpaper[wallpaper.indexOf(item)].left,
                         top: wallpaper[wallpaper.indexOf(item)].top
                     }}
                 >
-                    {figures[item.picture]}
+                    {pictures[item.picture]}
                 </svg>
             ))}
         </div>

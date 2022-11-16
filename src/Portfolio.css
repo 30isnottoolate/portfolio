@@ -97,7 +97,7 @@ body {
 	transform: translateZ(-2px) scale(2);
 }
 
-.figures {
+.pictures {
     position: absolute;
     width: 16px;
     height: 16px;
@@ -106,11 +106,11 @@ body {
 	animation-fill-mode: forwards;
 }
 
-#background-1 > .figures {
+#background-1 > .pictures {
 	animation-delay: 0.5s;
 }
 
-#background-2 > .figures {
+#background-2 > .pictures {
 	animation-delay: 0s;
 }
 
@@ -125,19 +125,19 @@ body {
 	
 }
 
-.dark #background-1 > .figures {
+.dark #background-1 > .pictures {
 	fill: var(--dark-tertiary);
 }
 
-.dark #background-2 > .figures {
+.dark #background-2 > .pictures {
 	fill: var(--dark-primary-alt);
 }
 
-.light #background-1 > .figures {
+.light #background-1 > .pictures {
 	fill: var(--light-tertiary);
 }
 
-.light #background-2 > .figures {
+.light #background-2 > .pictures {
 	fill: var(--light-primary-alt);
 }
 
