@@ -17,7 +17,8 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
         for (let x = 0; x < Math.floor(contentWidth / blockSide); x++) {
             for (let y = 0; y < Math.floor(contentHeight / blockSide); y++) {
                 backgroundContent.push(
-                    <svg className="figures"
+                    <svg
+                        className="figures"
                         style={{
                             position: "absolute",
                             left: figurePosition(x, contentWidth),
@@ -65,7 +66,7 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
                 height: contentRef.current ? contentRef.current.offsetHeight * 0.75 : 0
             }}
         >
-            {wallpaper.map(figure => (figure))}
+            {wallpaper.map(figure => (<div key={wallpaper.indexOf(figure)}>{figure}</div>))}
         </div>
     );
 }
