@@ -2,12 +2,12 @@ import React, { RefObject, useState, useRef, useCallback, useEffect } from 'reac
 import figures from '../utilities/figures';
 
 const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivElement> }> = ({ givenID, contentRef }) => {
-    const [wallpaper, setWallpaper] = useState("");
+    const [wallpaper, setWallpaper] = useState([<></>]);
 
     const delayTimer = useRef(setTimeout(() => { }));
 
     const generateBackground = useCallback((contentWidth: number, contentHeight: number) => {
-        let backgroundContent = "";
+        let backgroundContent = [];
         let blockSide = contentWidth > 650 ? 200 : contentWidth > 300 ? 200 : 100; // 1 figure inside every (blockSide x blockSide) block
 
         const figurePosition = (position: number, contentWidthOrHeight: number) => {
@@ -16,7 +16,8 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
 
         for (let x = 0; x < Math.floor(contentWidth / blockSide); x++) {
             for (let y = 0; y < Math.floor(contentHeight / blockSide); y++) {
-                backgroundContent = backgroundContent + `<svg xmlns="http://www.w3.org/2000/svg" class="figures" style="position: absolute; left: ${figurePosition(x, contentWidth)}px; top: ${figurePosition(y, contentHeight)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random() * 5)]}</svg>`;
+                backgroundContent.push(<svg className="figures" style={{position: "absolute", left: figurePosition(x, contentWidth), top: figurePosition(y, contentHeight), width: "16px", height: "16px"}}>{figures[Math.floor(Math.random() * 5)]}</svg>);
+                //backgroundContent = backgroundContent + `<svg xmlns="http://www.w3.org/2000/svg" class="figures" style="position: absolute; left: ${figurePosition(x, contentWidth)}px; top: ${figurePosition(y, contentHeight)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random() * 5)]}</svg>`;
             }
         }
 
@@ -53,9 +54,10 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
                 width: contentRef.current ? contentRef.current.offsetWidth : 0,
                 height: contentRef.current ? contentRef.current.offsetHeight * 0.75 : 0
             }}
-            dangerouslySetInnerHTML={{ __html: wallpaper }}
-        />
-    )
+        >
+            {wallpaper.map(figure => (figure))}
+        </div>
+    );
 }
 
 export default Background;
