@@ -16,8 +16,18 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
 
         for (let x = 0; x < Math.floor(contentWidth / blockSide); x++) {
             for (let y = 0; y < Math.floor(contentHeight / blockSide); y++) {
-                backgroundContent.push(<svg className="figures" style={{position: "absolute", left: figurePosition(x, contentWidth), top: figurePosition(y, contentHeight), width: "16px", height: "16px"}}>{figures[Math.floor(Math.random() * 5)]}</svg>);
-                //backgroundContent = backgroundContent + `<svg xmlns="http://www.w3.org/2000/svg" class="figures" style="position: absolute; left: ${figurePosition(x, contentWidth)}px; top: ${figurePosition(y, contentHeight)}px;" width="16" height="16" viewBox="0 0 16 16">${figures[Math.floor(Math.random() * 5)]}</svg>`;
+                backgroundContent.push(
+                    <svg className="figures"
+                        style={{
+                            position: "absolute",
+                            left: figurePosition(x, contentWidth),
+                            top: figurePosition(y, contentHeight),
+                            width: "16px",
+                            height: "16px"
+                        }}>
+                        {figures[Math.floor(Math.random() * 5)]}
+                    </svg>
+                );
             }
         }
 
