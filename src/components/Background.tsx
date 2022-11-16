@@ -2,12 +2,12 @@ import React, { RefObject, useState, useRef, useCallback, useEffect } from 'reac
 import figures from '../utilities/figures';
 
 const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivElement> }> = ({ givenID, contentRef }) => {
-    const [wallpaper, setWallpaper] = useState([<></>]);
+    const [wallpaper, setWallpaper] = useState([{ picture: <></>, left: 0, top: 0 }]);
 
     const delayTimer = useRef(setTimeout(() => { }));
 
     const generateBackground = useCallback((contentWidth: number, contentHeight: number) => {
-        let backgroundContent = [];
+        let pictures = [];
         let blockSide = contentWidth > 650 ? 200 : contentWidth > 300 ? 200 : 100; // 1 figure inside every (blockSide x blockSide) block
 
         const figurePosition = (position: number, contentWidthOrHeight: number) => {
@@ -16,27 +16,18 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
 
         for (let x = 0; x < Math.floor(contentWidth / blockSide); x++) {
             for (let y = 0; y < Math.floor(contentHeight / blockSide); y++) {
-                backgroundContent.push(
-                    <svg
-                        className="figures"
-                        style={{
-                            left: figurePosition(x, contentWidth),
-                            top: figurePosition(y, contentHeight)
-                        }}>
-                        {figures[Math.floor(Math.random() * 5)]}
-                    </svg>
-                );
+                pictures.push({ picture: figures[Math.floor(Math.random() * 5)], left: figurePosition(x, contentWidth), top: figurePosition(y, contentHeight) });
             }
         }
 
-        return backgroundContent;
+        setWallpaper(pictures);
     }, []);
 
     const updateBackground = useCallback(() => {
         clearTimeout(delayTimer.current);
 
         delayTimer.current = setTimeout(() => {
-            if (contentRef.current) setWallpaper(generateBackground(contentRef.current.offsetWidth, contentRef.current.offsetHeight));
+            if (contentRef.current) generateBackground(contentRef.current.offsetWidth, contentRef.current.offsetHeight);
         }, 500);
     }, [contentRef, generateBackground]);
 
@@ -63,7 +54,18 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
                 height: contentRef.current ? contentRef.current.offsetHeight * 0.75 : 0
             }}
         >
-            {wallpaper.map(figure => (<div key={wallpaper.indexOf(figure)}>{figure}</div>))}
+            {wallpaper.map(item => (
+                <svg
+                    key={wallpaper.indexOf(item)}
+                    className="figures"
+                    style={{
+                        left: wallpaper[wallpaper.indexOf(item)].left,
+                        top: wallpaper[wallpaper.indexOf(item)].top
+                    }}
+                >
+                    {item.picture}
+                </svg>
+            ))}
         </div>
     );
 }
