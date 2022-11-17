@@ -16,19 +16,19 @@ const Project: React.FC<ProjectProps> = ({
     visibilityClass, title, techs, src, description, demoHref, codeHref 
 }: ProjectProps) => {
 
-    const generateTechIcons = () => {
-        let techIcons: string = "";
-        for (let i = 0; i < techs.length; i++) {
-            let currentIndex: string = techs[i];
-            techIcons = techIcons + `<svg class="svg-fill" viewBox="0 0 128 128">${icons[currentIndex as keyof typeof icons].path}</svg>`
-        }
-        return techIcons;
-    }
-
     return (
         <div className={`project-box ${visibilityClass}`} >
             <p className="project-title">{title}</p>
-            <div className="project-techs" dangerouslySetInnerHTML={{ __html: generateTechIcons() }} />
+            <div className="project-techs">
+            {techs.map(item => (
+                <svg
+                    className="svg-fill"
+                    viewBox="0 0 128 128"
+                >
+                    {icons[item as keyof typeof icons].path}
+                </svg>
+            ))}
+            </div>
             <img className="project-img" src={src} alt={title} />
             <p className="project-description">{description} </p>
             <div className="project-buttons">
