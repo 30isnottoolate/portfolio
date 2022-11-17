@@ -16,8 +16,9 @@ const Icon: React.FC<{ href: string, iconType: string }> = ({ href, iconType }) 
                     viewBox="0 0 128 128"
                     onMouseEnter={() => {if (tooltipRef.current) tooltipRef.current.style.opacity = "1"}}
                     onMouseLeave={() => {if (tooltipRef.current) tooltipRef.current.style.opacity = "0"}}
-                    dangerouslySetInnerHTML={{ __html: icons[iconType as keyof typeof icons].path }}
-                />
+                >
+                    {icons[iconType as keyof typeof icons].path}
+                </svg>
             </a>
             <p
                 ref={tooltipRef}
