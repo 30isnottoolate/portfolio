@@ -12,22 +12,22 @@ interface ProjectProps {
     codeHref: string;
 }
 
-const Project: React.FC<ProjectProps> = ({ 
-    visibilityClass, title, techs, src, description, demoHref, codeHref 
+const Project: React.FC<ProjectProps> = ({
+    visibilityClass, title, techs, src, description, demoHref, codeHref
 }: ProjectProps) => {
 
     return (
         <div className={`project-box ${visibilityClass}`} >
             <p className="project-title">{title}</p>
             <div className="project-techs">
-            {techs.map(item => (
-                <svg
-                    className="svg-fill"
-                    viewBox="0 0 128 128"
-                >
-                    {icons[item as keyof typeof icons].path}
-                </svg>
-            ))}
+                {techs.map(item => (
+                    <svg
+                        className="svg-fill"
+                        viewBox="0 0 128 128"
+                    >
+                        {icons[item as keyof typeof icons].path}
+                    </svg>
+                ))}
             </div>
             <img className="project-img" src={src} alt={title} />
             <p className="project-description">{description} </p>
