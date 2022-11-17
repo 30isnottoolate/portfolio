@@ -22,6 +22,7 @@ const Project: React.FC<ProjectProps> = ({
             <div className="project-techs">
                 {techs.map(item => (
                     <svg
+                        key={`${item}${title.charCodeAt(0) * description.charCodeAt(0)}`}
                         className="svg-fill"
                         viewBox="0 0 128 128"
                     >
