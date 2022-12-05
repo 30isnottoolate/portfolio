@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './Portfolio.css';
-import Background from './components/Background';
-import NavBar from './components/NavBar';
-import Gear from './components/Gear';
-import SideContacts from './components/SideContacts';
-import BackToTop from './components/BackToTop';
-import Icon from './components/Icon';
-import ProjectsContainer from './components/ProjectsContainer';
-import Contact from './components/Contact';
+import './App.css';
+import Background from './Background';
+import NavBar from './NavBar';
+import Gear from './Gear';
+import SideContacts from './SideContacts';
+import BackToTop from './BackToTop';
+import Icon from './Icon';
+import ProjectsContainer from './ProjectsContainer';
+import Contact from './Contact';
 
 const Portfolio: React.FC = () => {
 	const [isItDark, setIsItDark] = useState(() => {
