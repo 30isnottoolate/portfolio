@@ -90,21 +90,21 @@ const ProjectsContainer: React.FC = () => {
                     }}>
                     <Project
                         visibilityClass={projectVisibility(1)}
-                        title={"Online Teleprompter"}
+                        title={"Stage Teleprompter"}
                         techs={["react", "ts", "css", "html"]}
-                        src="./images/project_screenshots/online-teleprompter-screenshot.png"
-                        description="The idea has come from the stage teleprompter project, but with much less features. This is the first app I've made with React hooks (useState, useEffect, useRef), and TypeScript. It has a simple user interface, nothing flashy, just a pure learning app. A formula was developed for the ideal text sliding speed after a lot of experiments."
-                        demoHref="https://30isnottoolate.github.io/online-teleprompter-ts"
-                        codeHref="https://github.com/30isnottoolate/online-teleprompter-ts"
+                        src="./images/project_screenshots/stage-teleprompter-screenshot.png"
+                        description="The first project that will actually be used IRL. A musician friend of mine commissioned me to make an app, which will be used in a stage teleprompter for musicians and public speakers, and controlled with a three-button footswitch. Originally made with class components, now rewritten with functional comps and hooks."
+                        demoHref="https://30isnottoolate.github.io/stage-teleprompter-hooked-ts"
+                        codeHref="https://github.com/30isnottoolate/stage-teleprompter-hooked-ts"
                     />
                     <Project
                         visibilityClass={projectVisibility(2)}
-                        title={"Stage Teleprompter"}
-                        techs={["react", "js", "css", "html"]}
-                        src="./images/project_screenshots/stage-teleprompter-screenshot.png"
-                        description="The first project that will actually be used IRL. A musician friend of mine commissioned me to make an app, which will be used in a stage teleprompter box for musicians and public speakers, and controlled with a three-button footswitch. It's made with class components, and will eventually be turned into a desktop app with Electron."
-                        demoHref="https://30isnottoolate.github.io/stage-teleprompter"
-                        codeHref="https://github.com/30isnottoolate/stage-teleprompter"
+                        title={"Library Manager"}
+                        techs={["react", "ts", "css", "html"]}
+                        src="./images/project_screenshots/teleprompter-library-manager-screenshot.png"
+                        description="A utility application for the Stage Teleprompter, used for creating and editing JSON files read by the teleprompter app. A simple file validation was implemented to avoid corrupted or invalid files. It's also possible to highlight selected parts of the text. It will eventually be turned into a multiplatform desktop app with Electron."
+                        demoHref="https://30isnottoolate.github.io/teleprompter-library-manager"
+                        codeHref="https://github.com/30isnottoolate/teleprompter-library-manager"
                     />
                     <Project
                         visibilityClass={projectVisibility(3)}
@@ -117,12 +117,12 @@ const ProjectsContainer: React.FC = () => {
                     />
                     <Project
                         visibilityClass={projectVisibility(4)}
-                        title={"Coming soon..."}
-                        techs={["js", "ts", "react"]}
-                        src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
-                        description="Some text here..."
-                        demoHref="https://www.solidbackgrounds.com"
-                        codeHref="https://www.solidbackgrounds.com"
+                        title={"Online Teleprompter"}
+                        techs={["react", "ts", "css", "html"]}
+                        src="./images/project_screenshots/online-teleprompter-screenshot.png"
+                        description="The idea has come from the Stage Teleprompter project, but with much less features. This is the first app I've made with React hooks (useState, useEffect, useRef), and TypeScript. It has a simple user interface, nothing flashy, just a pure learning app. A formula was developed for the ideal text sliding speed after a lot of experiments."
+                        demoHref="https://30isnottoolate.github.io/online-teleprompter-ts"
+                        codeHref="https://github.com/30isnottoolate/online-teleprompter-ts"
                     />
                     <Project
                         visibilityClass={projectVisibility(5)}
