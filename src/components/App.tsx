@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
-import Background from './Background';
 import NavBar from './NavBar';
 import Gear from './Gear';
 import SideContacts from './SideContacts';
 import BackToTop from './BackToTop';
+import Background from './Background';
+import LazyImage from './LazyImage';
 import Icon from './Icon';
 import ProjectsContainer from './ProjectsContainer';
 import Contact from './Contact';
@@ -59,15 +60,15 @@ const Portfolio: React.FC = () => {
 				>
 					<main>
 						<section id="welcome">
-							<img
-								id="avatar-image"
+							<LazyImage
+								className="avatar-image"
 								src="./images/avatar.png"
 								alt="Akos Varga"
 							/>
-							<h1 style={{fontFamily: "'Roboto Condensed', Arial, Helvetica, sans-serif"}}>
+							<h1 style={{ fontFamily: "'Roboto Condensed', Arial, Helvetica, sans-serif" }}>
 								Hi! My name is <span>Akos Varga</span>.
 							</h1>
-							<h2 style={{fontFamily: "'Poppins', Arial, Helvetica, sans-serif"}}>
+							<h2 style={{ fontFamily: "'Poppins', Arial, Helvetica, sans-serif" }}>
 								Welcome to my portfolio page!
 							</h2>
 							<h2>
