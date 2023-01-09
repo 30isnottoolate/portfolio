@@ -177,13 +177,11 @@ header, footer {
 .dark .header-footer {
 	background-color: var(--dark-primary-alt);
 	color:var(--dark-secondary);
-	/* box-shadow: 0 0 50px 5px var(--dark-secondary); */
 }
 
 .light .header-footer {
 	background-color: var(--light-primary-alt);
 	color:var(--light-secondary);
-	/* box-shadow: 0 0 50px 5px var(--light-secondary); */
 }
 
 header {
@@ -364,7 +362,6 @@ nav > a:hover {
 }
 
 .dark .svg-fill {
-	/* background-color: var(--dark-primary); */
 	fill: var(--dark-secondary);
 }
 
@@ -373,7 +370,6 @@ nav > a:hover {
 }
 
 .light .svg-fill {
-	/* background-color: var(--light-primary); */
 	fill: var(--light-secondary);
 }
 
@@ -464,14 +460,10 @@ li {
 
 .dark .avatar-image {
 	background-color: var(--dark-secondary);
-	/* box-shadow: 0 0 20px 5px var(--dark-secondary) inset;
-	border: 10px solid var(--dark-secondary); */
 }
 
 .light .avatar-image {
 	background-color: var(--light-secondary);
-	/* box-shadow: 0 0 20px 5px var(--light-secondary);
-	border: 10px solid var(--light-secondary); */
 }
 
 #skills {
@@ -571,12 +563,10 @@ li {
 
 .dark .project-box {
 	background-color: var(--dark-tertiary);
-	/* box-shadow: 0 0 15px 5px var(--dark-secondary); */
 }
 
 .light .project-box {
 	background-color: var(--light-tertiary);
-	/* box-shadow: 0 0 15px 5px var(--light-secondary); */
 }
 
 .project-title {
@@ -599,8 +589,8 @@ li {
 }
 
 .project-img {
-	width: calc(100% - 16px);
-	margin: 8px;
+	width: calc(100% - 32px);
+	margin: 16px;
 }
 
 .dark .project-img {
@@ -613,7 +603,7 @@ li {
 
 .project-description {
 	font-size: 16px;
-	padding: 12px 10px 5px 10px;
+	padding: 16px;
 }
 
 .project-buttons {
@@ -652,8 +642,9 @@ li {
 }
 
 .project-demo-button {
-	width: 176px;
-	margin-right: 8px;
+	width: 152px;
+	margin-right: 16px;
+	margin-bottom: 16px;
 }
 
 .project-code-button {
@@ -840,23 +831,20 @@ li {
 		border-radius: 7px;
 	}
 
-	.dark-project-box {
-		/* box-shadow: 0 0 12px 4px var(--dark-secondary); */
-	}
-	
-	.light-project-box {
-		/* box-shadow: 0 0 12px 4px var(--light-secondary); */
-	}
-
 	.project-techs > img {
 		width: 16px;
 		height: 16px;
 		margin-right: 4px;
 	}
 
+	.project-img {
+		width: calc(100% - 24px);
+		margin: 12px;
+	}
+
 	.project-description {
 		font-size: 12px;
-		padding: 5px 10px;
+		padding: 12px;
 	}
 
 	.project-button {
@@ -864,8 +852,9 @@ li {
 	}
 
 	.project-demo-button {
-		width: 139px;
-		margin-right: 7px;
+		width: 124px;
+		margin-right: 12px;
+		margin-bottom: 12px;
 	}
 
 	.project-code-button {
