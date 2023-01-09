@@ -61,7 +61,7 @@ const ProjectsContainer: React.FC = () => {
 
     return (
         <>
-            <div id="project-index-buttons" style={{ height: (bodyWidth > 650 ? 60 : 48) }}>
+            <div id="project-index-buttons" style={{ height: (bodyWidth > 650 ? 32 : 25) }}>
                 <Arrow
                     visibilityClass={projectIndex > 1 ? "visible" : "invisible"}
                     posX={bodyWidth > 380 ? (-visibleProjects * (bodyWidth > 650 ? 300 : 230) / 2) : -15}

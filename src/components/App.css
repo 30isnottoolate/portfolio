@@ -413,13 +413,13 @@ section {
     justify-items: center;
 	gap: 30px;
 	height: auto;
-	padding: 150px 20px 50px 20px;
+	padding: 100px 20px 100px 20px;
 }
 
 #welcome {
 	min-height: 600px;
 	height: 100vh;
-	padding: 150px 70px 50px 70px; 
+	padding: 100px 70px 50px 70px; 
 }
 
 h1 {
@@ -652,7 +652,7 @@ li {
 }
 
 #contact {
-	padding: 150px 20px;
+	padding: 100px 20px;
 }
 
 #contacts > a {
@@ -756,7 +756,7 @@ li {
 	}
 
 	#welcome {
-		padding: 150px 20px 50px 20px;
+		padding: 100px 20px 50px 20px;
 	}
 	
 	h1 {
