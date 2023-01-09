@@ -93,7 +93,7 @@ const ProjectsContainer: React.FC = () => {
                         title={"Stage Teleprompter"}
                         techs={["react", "ts", "css", "html"]}
                         src="./images/project_screenshots/stage-teleprompter-screenshot.png"
-                        description="The first project that will actually be used IRL. A musician friend of mine commissioned me to make an app, which will be used in a stage teleprompter for musicians and public speakers, and controlled with a three-button footswitch. Originally made with class components, now rewritten with functional comps and hooks."
+                        description="The first project that will actually be used IRL. A musician friend of mine commissioned me to make an app, which will be used in a stage teleprompter for musicians and public speakers. Originally made with class components, now rewritten with functional comps and hooks."
                         demoHref="https://30isnottoolate.github.io/stage-teleprompter-hooked-ts"
                         codeHref="https://github.com/30isnottoolate/stage-teleprompter-hooked-ts"
                     />
@@ -102,7 +102,7 @@ const ProjectsContainer: React.FC = () => {
                         title={"Library Manager"}
                         techs={["react", "ts", "css", "html"]}
                         src="./images/project_screenshots/teleprompter-library-manager-screenshot.png"
-                        description="A utility application for the Stage Teleprompter, used for creating and editing JSON files read by the teleprompter app. A simple file validation was implemented to avoid corrupted or invalid files. It's also possible to highlight selected parts of the text. It will eventually be turned into a multiplatform desktop app with Electron."
+                        description="A utility application for the Stage Teleprompter, used for creating and editing JSON files read by the teleprompter app. You can highlight selected parts of the text with various colors. It will eventually be turned into a multiplatform desktop app with Electron."
                         demoHref="https://30isnottoolate.github.io/teleprompter-library-manager"
                         codeHref="https://github.com/30isnottoolate/teleprompter-library-manager"
                     />
@@ -111,7 +111,7 @@ const ProjectsContainer: React.FC = () => {
                         title={"Portfolio Page"}
                         techs={["react", "ts", "css", "html"]}
                         src="./images/project_screenshots/portfolio-screenshot.png"
-                        description="The title says it all. It's my porfolio page. You are currently looking at it. A visual representation of my work, full of SVG images, animations, daring color schemes. Made with React functional components and hooks, written in TypeScript. The projects section is touch swipe compatible. Also, try clicking the gear in the top left corner."
+                        description="The title says it all. It's my porfolio page. You are currently looking at it. A visual representation of my work, full of SVG images, animations, daring color schemes. Made with React functional components and hooks, written in TypeScript. The projects section is touch swipe compatible."
                         demoHref="https://30isnottoolate.github.io/portfolio"
                         codeHref="https://github.com/30isnottoolate/portfolio"
                     />
@@ -120,7 +120,7 @@ const ProjectsContainer: React.FC = () => {
                         title={"Online Teleprompter"}
                         techs={["react", "ts", "css", "html"]}
                         src="./images/project_screenshots/online-teleprompter-screenshot.png"
-                        description="The idea has come from the Stage Teleprompter project, but with much less features. This is the first app I've made with React hooks (useState, useEffect, useRef), and TypeScript. It has a simple user interface, nothing flashy, just a pure learning app. A formula was developed for the ideal text sliding speed after a lot of experiments."
+                        description="The idea has come from the Stage Teleprompter project, but with much less features. This is the first app I've made with React hooks and TypeScript. It has a simple user interface, just a pure learning app. A formula was developed for the ideal text sliding speed after a lot of experiments."
                         demoHref="https://30isnottoolate.github.io/online-teleprompter-ts"
                         codeHref="https://github.com/30isnottoolate/online-teleprompter-ts"
                     />
