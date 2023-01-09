@@ -435,7 +435,7 @@ li {
 	padding-bottom: 10px;
 }
 
-.lazy-image-container {
+.lazy-image-container, .avatar-image {
 	width: 50vw;
 	height: 50vw;
 	max-width: 250px;
@@ -445,10 +445,6 @@ li {
 .avatar-image {
 	display: block;
 	position: absolute;
-	width: 50vw;
-	height: 50vw;
-	max-width: 250px;
-	max-height: 250px;
 	border-radius: 50%;
 	transition-property: opacity;
 }
