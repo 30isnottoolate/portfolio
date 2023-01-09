@@ -2,16 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
 :root {
-	--dark-primary: #000f20;
-	--dark-primary-alt: #002249;
-	--dark-secondary: #80b9ff;
-	--dark-secondary-alt: #a2ccff;
-	--dark-tertiary: #003f88;
-	--light-primary: #ececff;
-	--light-primary-alt: #c4c4dd;
-	--light-secondary: #002550;
-	--light-secondary-alt: #003f88;
-	--light-tertiary: #a2ccff;
+	--dark-primary: #111827;
+	--dark-primary-alt: #1e293b;
+	--dark-secondary: #22d3ee;
+	--dark-secondary-alt: #a5f3fc;
+	--dark-tertiary: #1f2937;
+	--light-primary: #bae6fd;
+	--light-primary-alt: #7dd3fc;
+	--light-secondary: #0f172a;
+	--light-secondary-alt: #0c4a6e;
+	--light-tertiary: #38bdf8;
 }
 
 * {
@@ -102,16 +102,18 @@ body {
     width: 16px;
     height: 16px;
 	opacity: 0;
-	animation: fade-in 1s ease-in;
-	animation-fill-mode: forwards;
 }
 
 #background-1 > .pictures {
 	animation-delay: 0.5s;
+	animation: fade-in 1s ease-in;
+	animation-fill-mode: forwards;
 }
 
 #background-2 > .pictures {
 	animation-delay: 0s;
+	animation: fade-in-less 1s ease-in;
+	animation-fill-mode: forwards;
 }
 
 @keyframes fade-in {
@@ -120,25 +122,36 @@ body {
 	}
 
 	to {
-		opacity: 1;
+		opacity: 0.25;
+	}
+	
+}
+
+@keyframes fade-in-less {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 0.12;
 	}
 	
 }
 
 .dark #background-1 > .pictures {
-	fill: var(--dark-tertiary);
+	fill: var(--dark-secondary);
 }
 
 .dark #background-2 > .pictures {
-	fill: var(--dark-primary-alt);
+	fill: var(--dark-secondary-alt);
 }
 
 .light #background-1 > .pictures {
-	fill: var(--light-tertiary);
+	fill: var(--light-secondary);
 }
 
 .light #background-2 > .pictures {
-	fill: var(--light-primary-alt);
+	fill: var(--light-secondary-alt);
 }
 
 #content-container {
@@ -164,13 +177,13 @@ header, footer {
 .dark .header-footer {
 	background-color: var(--dark-primary-alt);
 	color:var(--dark-secondary);
-	box-shadow: 0 0 50px 5px var(--dark-secondary);
+	/* box-shadow: 0 0 50px 5px var(--dark-secondary); */
 }
 
 .light .header-footer {
 	background-color: var(--light-primary-alt);
 	color:var(--light-secondary);
-	box-shadow: 0 0 50px 5px var(--light-secondary);
+	/* box-shadow: 0 0 50px 5px var(--light-secondary); */
 }
 
 header {
@@ -351,7 +364,7 @@ nav > a:hover {
 }
 
 .dark .svg-fill {
-	background-color: var(--dark-primary);
+	/* background-color: var(--dark-primary); */
 	fill: var(--dark-secondary);
 }
 
@@ -360,7 +373,7 @@ nav > a:hover {
 }
 
 .light .svg-fill {
-	background-color: var(--light-primary);
+	/* background-color: var(--light-primary); */
 	fill: var(--light-secondary);
 }
 
@@ -440,25 +453,25 @@ li {
 	height: 50vw;
 	max-width: 250px;
 	max-height: 250px;
+	border-radius: 50%;
 }
 
 .avatar-image {
 	display: block;
 	position: absolute;
-	border-radius: 50%;
 	transition-property: opacity;
 }
 
 .dark .avatar-image {
 	background-color: var(--dark-secondary);
-	box-shadow: 0 0 20px 5px var(--dark-secondary);
-	border: 10px solid var(--dark-secondary);
+	/* box-shadow: 0 0 20px 5px var(--dark-secondary) inset;
+	border: 10px solid var(--dark-secondary); */
 }
 
 .light .avatar-image {
 	background-color: var(--light-secondary);
-	box-shadow: 0 0 20px 5px var(--light-secondary);
-	border: 10px solid var(--light-secondary);
+	/* box-shadow: 0 0 20px 5px var(--light-secondary);
+	border: 10px solid var(--light-secondary); */
 }
 
 #skills {
@@ -557,13 +570,13 @@ li {
 }
 
 .dark .project-box {
-	background-color: var(--dark-primary);
-	box-shadow: 0 0 15px 5px var(--dark-secondary);
+	background-color: var(--dark-tertiary);
+	/* box-shadow: 0 0 15px 5px var(--dark-secondary); */
 }
 
 .light .project-box {
-	background-color: var(--light-primary);
-	box-shadow: 0 0 15px 5px var(--light-secondary);
+	background-color: var(--light-tertiary);
+	/* box-shadow: 0 0 15px 5px var(--light-secondary); */
 }
 
 .project-title {
@@ -828,11 +841,11 @@ li {
 	}
 
 	.dark-project-box {
-		box-shadow: 0 0 12px 4px var(--dark-secondary);
+		/* box-shadow: 0 0 12px 4px var(--dark-secondary); */
 	}
 	
 	.light-project-box {
-		box-shadow: 0 0 12px 4px var(--light-secondary);
+		/* box-shadow: 0 0 12px 4px var(--light-secondary); */
 	}
 
 	.project-techs > img {
