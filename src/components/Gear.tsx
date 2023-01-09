@@ -1,5 +1,7 @@
 import React, { useState, useEffect, RefObject } from 'react';
 
+const ANGLE_VELOCITY = 36; // For a pixelperfect but ugly result use 360
+
 const Gear: React.FC<{ changeTheme: () => void, paraContainerRef: RefObject<HTMLDivElement> }> = ({ changeTheme, paraContainerRef }) => {
     const [bodyWidth, setBodyWidth] = useState(380);
     const [scrollPos, setScrollPos] = useState(0);
@@ -33,7 +35,7 @@ const Gear: React.FC<{ changeTheme: () => void, paraContainerRef: RefObject<HTML
             className="svg-stroke"
             onClick={changeTheme}
             style={{
-                transform: `rotate(${scrollPos / ((bodyWidth <= 650 ? 36 : 45) * Math.PI / 360)}deg)`
+                transform: `rotate(${scrollPos / ((bodyWidth <= 650 ? 36 : 45) * Math.PI / ANGLE_VELOCITY)}deg)`
             }}
             viewBox="0 0 1000 1000">
             <path
