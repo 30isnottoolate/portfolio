@@ -10,7 +10,7 @@ const LazyImage: React.FC<LazyImageProps> = ({ className, src, alt }: LazyImageP
     const [opacity, setOpacity] = useState(0);
 
     return (
-        <div>
+        <div className="lazy-image-container">
             <img
                 className={className}
                 src={src}
@@ -18,18 +18,17 @@ const LazyImage: React.FC<LazyImageProps> = ({ className, src, alt }: LazyImageP
                 onLoad={() => setOpacity(1)}
                 style={{
                     opacity: opacity,
-                    transitionProperty: "opacity",
+                    /* transitionProperty: "opacity", */
                     transitionDuration: "1s"
                 }}
             />
             <div
                 className={className}
                 style={{
-                    position: "absolute",
                     zIndex: -1, opacity: opacity === 0 ? 1 : 0,
-                    transitionProperty: "opacity",
+                    /* transitionProperty: "opacity", */
                     transitionDuration: "2.5s",
-                    transform: "translateY(-102%)"
+                    /* transform: "translateY(-100%)" */
                 }}
             />
         </div>

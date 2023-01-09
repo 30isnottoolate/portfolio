@@ -435,12 +435,22 @@ li {
 	padding-bottom: 10px;
 }
 
+.lazy-image-container {
+	width: 50vw;
+	height: 50vw;
+	max-width: 250px;
+	max-height: 250px;
+}
+
 .avatar-image {
+	display: block;
+	position: absolute;
 	width: 50vw;
 	height: 50vw;
 	max-width: 250px;
 	max-height: 250px;
 	border-radius: 50%;
+	transition-property: opacity;
 }
 
 .dark .avatar-image {
