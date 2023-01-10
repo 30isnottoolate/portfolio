@@ -1,4 +1,4 @@
-import React, { RefObject, useState, useRef, useCallback, useEffect } from 'react';
+import React, { RefObject, useState, useRef, useEffect } from 'react';
 import pictures from '../utilities/pictures';
 
 const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivElement> }> = ({ givenID, contentRef }) => {
@@ -6,7 +6,7 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
 
     const delayTimer = useRef(setTimeout(() => { }));
 
-    const generateBackground = useCallback((contentWidth: number, contentHeight: number) => {
+    const generateBackground = (contentWidth: number, contentHeight: number) => {
         let pictures = [];
         let blockSide = contentWidth > 650 ? 200 : contentWidth > 300 ? 200 : 100; // 1 figure inside every (blockSide x blockSide) block
 
@@ -25,28 +25,31 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
         }
 
         setWallpaper(pictures);
-    }, []);
+    }
 
-    const updateBackground = useCallback(() => {
+    const updateBackground = () => {
         clearTimeout(delayTimer.current);
 
         delayTimer.current = setTimeout(() => {
             if (contentRef.current)
                 generateBackground(contentRef.current.offsetWidth, contentRef.current.offsetHeight);
         }, 500);
-    }, [contentRef, generateBackground]);
+    }
 
     useEffect(() => {
+        let contentWidth = contentRef.current && contentRef.current.offsetWidth;
+
         updateBackground();
-    }, [updateBackground]);
 
-    useEffect(() => {
         window.addEventListener("resize", () => {
-            updateBackground();
+            if (contentRef.current && contentRef.current.offsetWidth !== contentWidth) {
+                contentWidth = contentRef.current.offsetWidth;
+                updateBackground();
+            }
         });
 
         return () => { window.removeEventListener("resize", () => { }) }
-    }, [updateBackground]);
+    }, [contentRef]);
 
     return (
         <div
