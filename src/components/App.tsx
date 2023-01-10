@@ -100,22 +100,6 @@ const Portfolio: React.FC = () => {
 											iconType={item.iconType}
 										/>
 									)}
-									{/* <Icon
-										href={"https://html.spec.whatwg.org/"}
-										iconType="html"
-									/>
-									<Icon
-										href={"https://www.w3.org/TR/CSS/"}
-										iconType="css"
-									/>
-									<Icon
-										href={"https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"}
-										iconType="js"
-									/>
-									<Icon
-										href={"https://www.typescriptlang.org/"}
-										iconType="ts"
-									/> */}
 								</div>
 							</>
 							<>
@@ -128,22 +112,6 @@ const Portfolio: React.FC = () => {
 											iconType={item.iconType}
 										/>
 									)}
-									{/* <Icon
-										href={"https://reactjs.org/"}
-										iconType="react"
-									/>
-									<Icon
-										href={"https://nodejs.org/"}
-										iconType="node"
-									/>
-									<Icon
-										href={"https://expressjs.com/"}
-										iconType="express"
-									/>
-									<Icon
-										href={"https://www.mongodb.com/"}
-										iconType="mongodb"
-									/> */}
 								</div>
 							</>
 							<>
@@ -156,22 +124,6 @@ const Portfolio: React.FC = () => {
 											iconType={item.iconType}
 										/>
 									)}
-									{/* <Icon
-										href={"https://git-scm.com/"}
-										iconType="git"
-									/>
-									<Icon
-										href={"https://code.visualstudio.com/"}
-										iconType="vscode"
-									/>
-									<Icon
-										href={"https://www.gimp.org/"}
-										iconType="gimp"
-									/>
-									<Icon
-										href={"https://www.adobe.com/products/photoshop.html"}
-										iconType="ps"
-									/> */}
 								</div>
 							</>
 						</section>
