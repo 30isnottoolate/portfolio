@@ -471,7 +471,7 @@ li {
 }
 
 .icon-collection {
-	width: 220px;
+	width: auto;
 	height: 50px;
 	margin: 0 auto 30px auto;
 }
@@ -778,14 +778,11 @@ li {
 	#skills > h2 {
 		margin-bottom: 0px;
 	}
-	
-	.icon-collection {
-		margin: 0 auto 24px auto;
-	}
 
 	.icon-collection {
-		width: 176px;
+		width: auto;
 		height: 48px;
+		margin: 0 auto 24px auto;
 	}
 
 	.icon-container {
