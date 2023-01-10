@@ -7,6 +7,7 @@ import BackToTop from './BackToTop';
 import Background from './Background';
 import LazyImage from './LazyImage';
 import Icon from './Icon';
+import iconsProps from '../utilities/iconsProps';
 import ProjectsContainer from './ProjectsContainer';
 import Contact from './Contact';
 
@@ -92,7 +93,14 @@ const Portfolio: React.FC = () => {
 							<>
 								<h2>Languages</h2>
 								<div className="icon-collection" >
-									<Icon
+									{iconsProps.slice(0, 4).map((item, index) =>
+										<Icon
+											key={index}
+											href={item.href}
+											iconType={item.iconType}
+										/>
+									)}
+									{/* <Icon
 										href={"https://html.spec.whatwg.org/"}
 										iconType="html"
 									/>
@@ -107,13 +115,20 @@ const Portfolio: React.FC = () => {
 									<Icon
 										href={"https://www.typescriptlang.org/"}
 										iconType="ts"
-									/>
+									/> */}
 								</div>
 							</>
 							<>
 								<h2>Technologies and frameworks</h2>
 								<div className="icon-collection" >
-									<Icon
+									{iconsProps.slice(4, 8).map((item, index) =>
+										<Icon
+											key={index}
+											href={item.href}
+											iconType={item.iconType}
+										/>
+									)}
+									{/* <Icon
 										href={"https://reactjs.org/"}
 										iconType="react"
 									/>
@@ -128,13 +143,20 @@ const Portfolio: React.FC = () => {
 									<Icon
 										href={"https://www.mongodb.com/"}
 										iconType="mongodb"
-									/>
+									/> */}
 								</div>
 							</>
 							<>
 								<h2>Tools and applications</h2>
 								<div className="icon-collection" >
-									<Icon
+									{iconsProps.slice(8, 12).map((item, index) =>
+										<Icon
+											key={index}
+											href={item.href}
+											iconType={item.iconType}
+										/>
+									)}
+									{/* <Icon
 										href={"https://git-scm.com/"}
 										iconType="git"
 									/>
@@ -149,7 +171,7 @@ const Portfolio: React.FC = () => {
 									<Icon
 										href={"https://www.adobe.com/products/photoshop.html"}
 										iconType="ps"
-									/>
+									/> */}
 								</div>
 							</>
 						</section>
