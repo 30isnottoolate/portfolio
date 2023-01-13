@@ -508,20 +508,20 @@ li {
 }
 
 .dark .icon-tooltip-arrow {
-	fill: var(--dark-secondary);
+	fill: var(--dark-secondary-alt);
 }
 
 .light .icon-tooltip-arrow {
-	fill: var(--light-secondary);
+	fill: var(--light-secondary-alt);
 }
 
 .dark .icon-tooltip {
-	background-color: var(--dark-secondary);
+	background-color: var(--dark-secondary-alt);
 	color: var(--dark-primary);
 }
 
 .light .icon-tooltip {
-	background-color: var(--light-secondary);
+	background-color: var(--light-secondary-alt);
 	color: var(--light-primary);
 }
 
