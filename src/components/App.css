@@ -3,10 +3,10 @@
 
 :root {
 	--dark-primary: #111827;
-	--dark-primary-alt: #1e293b;
+	--dark-primary-alt: #334155a8;
 	--dark-secondary: #22d3ee;
 	--dark-secondary-alt: #a5f3fc;
-	--dark-tertiary: #374151a9;
+	--dark-tertiary: #37415180;
 	--light-primary: #e0f2fe;
 	--light-primary-alt: #94a3b8a8;
 	--light-secondary: #0f172a;
@@ -174,6 +174,7 @@ header, footer {
     align-items: center;
 	height: 55px;
 	z-index: 4;
+	backdrop-filter: blur(7.5px);
 }
 
 .dark .header-footer {
@@ -561,6 +562,7 @@ li {
 	width: 250px;
 	height: 500px;
 	border-radius: 7px;
+	backdrop-filter: blur(7.5px);
 }
 
 .dark .project-box {
