@@ -32,10 +32,22 @@ const Project: React.FC<ProjectProps> = ({
             </div>
             <img className="project-img" src={src} alt={title} />
             <p className="project-description">{description} </p>
-            <div className="project-buttons">
-                <a className="project-button project-demo-button" style={{ display: `${visibilityClass === "invisible" ? "none" : ""}` }} href={demoHref} target="_blank" rel="noreferrer" >Demo</a>
-                <a className="project-button project-code-button" style={{ display: `${visibilityClass === "invisible" ? "none" : ""}` }} href={codeHref} target="_blank" rel="noreferrer" >{codeLabel}</a>
-            </div>
+            <a
+                className="project-button project-demo-button"
+                style={{ display: `${visibilityClass === "invisible" ? "none" : ""}` }}
+                href={demoHref}
+                target="_blank"
+                rel="noreferrer" >
+                Demo
+            </a>
+            <a
+                className="project-button project-code-button"
+                style={{ display: `${visibilityClass === "invisible" ? "none" : ""}` }}
+                href={codeHref}
+                target="_blank"
+                rel="noreferrer" >
+                {codeLabel}
+            </a>
         </div>
     );
 }
