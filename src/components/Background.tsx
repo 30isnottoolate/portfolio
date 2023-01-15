@@ -66,6 +66,7 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
                 <svg
                     key={wallpaper.indexOf(item)}
                     className="pictures"
+                    viewBox="0 0 16 16"
                     style={{
                         left: wallpaper[wallpaper.indexOf(item)].left,
                         top: wallpaper[wallpaper.indexOf(item)].top
