@@ -18,7 +18,7 @@ const Project: React.FC<ProjectProps> = ({
 
     return (
         <div className={`project-box ${visibilityClass}`} >
-            <p className="project-title">{title}</p>
+            <h3 className="project-title">{title}</h3>
             <div className="project-techs">
                 {techs.map(item => (
                     <svg
