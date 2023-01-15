@@ -22,7 +22,7 @@ const BackToTop: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ 
             className="svg-fill"
             style={{
                 position: "fixed",
-                bottom: (scrollPos > 1300 ? "2rem" : "-5rem"),
+                bottom: (scrollPos > 1300 ? "2.25rem" : "-5rem"),
             }}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"

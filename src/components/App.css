@@ -287,13 +287,13 @@ nav > a:hover {
 	height: auto;
 	left: 0;
 	transform: translateX(-5rem);
-	padding: 0.4rem;
+	padding: 0.25rem;
 	border-radius: 0 0.35rem 0.35rem 0;
 	margin-bottom: 0.35rem;
 }
 
 .side-contact:hover {
-	left: 1.5rem;
+	left: 1.125rem;
 }
 
 #side-contact-1, #side-contact-2, #side-contact-3 {
@@ -320,7 +320,7 @@ nav > a:hover {
 	}
 	
 	to {
-		transform: translateX(-1.5rem);
+		transform: translateX(-2rem);
 	}
 }
 
@@ -353,9 +353,9 @@ nav > a:hover {
 }
 
 #back-to-top {
-	width: 2.75rem;
-	height: 2.75rem;
-	right: 2.75rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	right: 3rem;
 	transition: bottom 0.5s ease-out, fill 0.25s ease-in-out;
 	z-index: 5;
 }
