@@ -5,12 +5,16 @@ const NavBar: React.FC = () => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
     useEffect(() => {
-        setIsMenuVisible(document.body.offsetWidth <= 650 ? false : true);
+        let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
+
+        setIsMenuVisible(document.body.offsetWidth / remValue <= 40.5 ? false : true);
     }, [])
 
     useEffect(() => {
         window.addEventListener("resize", () => {
-            setIsMenuVisible(document.body.offsetWidth <= 650 ? false : true);
+            let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
+
+            setIsMenuVisible(document.body.offsetWidth / remValue <= 40.5 ? false : true);
         });
         return () => window.removeEventListener("resize", () => { });
     }, []);
