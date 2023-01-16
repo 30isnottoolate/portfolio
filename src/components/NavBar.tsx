@@ -26,6 +26,7 @@ const NavBar: React.FC = () => {
             <header className="header-footer" >
                 <a
                     id="logo"
+                    className="header-link"
                     href="#welcome" >
                     30isnottoolate
                 </a>
@@ -35,16 +36,16 @@ const NavBar: React.FC = () => {
                     display: (isMenuVisible ? "grid" : "none")
                 }}
             >
-                <a href="#bio">
+                <a className="header-link" href="#bio">
                     Bio
                 </a>
-                <a href="#skills">
+                <a className="header-link" href="#skills">
                     Skills
                 </a>
-                <a href="#projects">
+                <a className="header-link" href="#projects">
                     Projects
                 </a>
-                <a href="#contact">
+                <a className="header-link" href="#contact">
                     Contact
                 </a>
             </nav>

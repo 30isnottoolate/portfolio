@@ -2,16 +2,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
 :root {
-	--dark-primary: #111827;
-	--dark-primary-alt: #334155b0;
-	--dark-secondary: #22d3ee;
-	--dark-secondary-alt: #a5f3fc;
-	--dark-tertiary: #374151;
-	--light-primary: #e0f2fe;
-	--light-primary-alt: #94a3b8b0;
-	--light-secondary: #0f172a;
-	--light-secondary-alt: #0c4a6e;
-	--light-tertiary: #94a3b8;
+	--dark-front-primary: #22d3ee;
+	--dark-front-secondary: #67e8f9; 
+	--dark-front-tertiary: #a5f3fc;
+
+	--dark-back-primary: #111827;
+	--dark-back-secondary: #334155c0;
+	--dark-back-tertiary: #1e293b;
+
+	--light-front-primary: #0A3E5C;
+	--light-front-secondary: #0c4a6e;
+	--light-front-tertiary: #083249;
+
+	--light-back-primary: #f8fafc;
+	--light-back-secondary: #94a3b880;
+	--light-back-tertiary: #cbd5e1b0;
 }
 
 * {
@@ -28,11 +33,11 @@ body {
 }
 
 .dark {
-	background-color: var(--dark-primary);
+	background-color: var(--dark-back-primary);
 }
 
 .light {
-	background-color: var(--light-primary);
+	background-color: var(--light-back-primary);
 }
 
 #parallax-container::-webkit-scrollbar {
@@ -40,27 +45,27 @@ body {
 }
 
 .dark #parallax-container::-webkit-scrollbar-track {
-	background: var(--dark-primary);
+	background: var(--dark-back-primary);
 }
 
 .dark #parallax-container::-webkit-scrollbar-thumb {
-	background: var(--dark-secondary);
+	background: var(--dark-front-primary);
 }
 
 .dark #parallax-container::-webkit-scrollbar-thumb:hover {
-	background: var(--dark-secondary-alt);
+	background: var(--dark-front-secondary);
 }
 
 .light #parallax-container::-webkit-scrollbar-track {
-	background: var(--light-primary);
+	background: var(--light-back-primary);
 }
 
 .light #parallax-container::-webkit-scrollbar-thumb {
-	background: var(--light-secondary);
+	background: var(--light-front-primary);
 }
 
 .light #parallax-container::-webkit-scrollbar-thumb:hover {
-	background: var(--light-secondary-alt);
+	background: var(--light-front-secondary);
 }
 
 #parallax-container {
@@ -85,13 +90,12 @@ body {
 #background-1 {
 	-webkit-transform: translateZ(-1px) scale(2);
 	transform: translateZ(-1px) scale(2);
-	filter: blur(0.5px);
 }
 
 #background-2 {
 	-webkit-transform: translateZ(-1.5px) scale(1.75);
 	transform: translateZ(-1.5px) scale(1.75);
-	filter: blur(1px);
+	filter: blur(0.5px);
 }
 
 .pictures {
@@ -136,19 +140,19 @@ body {
 }
 
 .dark #background-1 > .pictures {
-	fill: var(--dark-secondary);
+	fill: var(--dark-front-primary);
 }
 
 .dark #background-2 > .pictures {
-	fill: var(--dark-secondary-alt);
+	fill: var(--dark-front-secondary);
 }
 
 .light #background-1 > .pictures {
-	fill: var(--light-secondary);
+	fill: var(--light-front-primary);
 }
 
 .light #background-2 > .pictures {
-	fill: var(--light-secondary-alt);
+	fill: var(--light-front-secondary);
 }
 
 #content-container {
@@ -169,17 +173,17 @@ header, footer {
     align-items: center;
 	height: 3.5rem;
 	z-index: 5;
-	backdrop-filter: blur(7.5px);
+	backdrop-filter: blur(10px);
 }
 
 .dark .header-footer {
-	background-color: var(--dark-primary-alt);
-	color:var(--dark-secondary);
+	background-color: var(--dark-back-secondary);
+	color: var(--dark-front-secondary);
 }
 
 .light .header-footer {
-	background-color: var(--light-primary-alt);
-	color:var(--light-secondary);
+	background-color: var(--light-back-secondary);
+	color: var(--light-front-tertiary)
 }
 
 header {
@@ -194,6 +198,28 @@ footer {
 	font-size: 1rem;
 }
 
+.header-link {
+	transition: color 0.35s, text-shadow 0.35s, opacity 0.35s;
+}
+
+.dark .header-link {
+	color: var(--dark-front-secondary);
+}
+
+.dark .header-link:hover {
+	color: var(--dark-front-tertiary);
+	text-shadow: 0 0 2.5rem var(--dark-back-primary);
+}
+
+.light .header-link {
+	color: var(--light-front-tertiary);
+}
+
+.light .header-link:hover {
+	color: var(--light-front-primary);
+	text-shadow: 0 0 2.5rem var(--light-back-primary);
+}
+
 #logo {
 	position: fixed;
 	top: 0.75rem;
@@ -201,6 +227,16 @@ footer {
 	font-size: 1.75rem;
 	font-weight: 700;
 }
+
+/* .dark #logo:hover {
+	color: var(--dark-secondary-alt);
+	text-shadow: 0 0 2.5rem var(--dark-primary);
+}
+
+.light #logo:hover {
+	color: var(--light-secondary-alt);
+	text-shadow: 0 0 2.5rem var(--light-primary); 
+} */
 
 nav {
 	display: grid;
@@ -214,13 +250,13 @@ nav {
 	z-index: 10;
 }
 
-.dark nav {
-	color: var(--dark-secondary);
+/* .dark nav {
+	color: var(--dark-secondary-2);
 }
 
 .light nav {
 	color: var(--light-secondary);
-}
+} */
 
 a, a:active, a:visited {
 	color: inherit;
@@ -230,37 +266,45 @@ a, a:active, a:visited {
 nav > a {
 	font-size: 1.25rem;
 	padding: 0.75rem max(0.75rem, 2vw);
-	transition: color 0.35s, text-shadow 0.35s, opacity 0.35s;
+	/* transition: color 0.35s, text-shadow 0.35s, opacity 0.35s; */
 }
 
 nav:hover > a {
-	opacity: 0.35;
+	opacity: 0.5;
 }
 
 nav > a:hover {
 	opacity: 1;
 }
 
-.dark nav > a:hover {
+/* .dark nav > a:hover {
 	color: var(--dark-secondary-alt);
-	text-shadow: 0 0 2.5rem var(--dark-secondary);
+	text-shadow: 0 0 2.5rem var(--dark-primary);
 }
 
 .light nav > a:hover {
 	color: var(--light-secondary-alt);
 	text-shadow: 0 0 2.5rem var(--light-primary); 
-}
+} */
 
 #menu-button {
 	display: none;
 }
 
 .dark .menu-button-parts {
-	background-color: var(--dark-secondary);
+	background-color: var(--dark-front-secondary);
+}
+
+.dark #menu-button:hover .menu-button-parts {
+	background-color: var(--dark-front-tertiary);
 }
 
 .light .menu-button-parts {
-	background-color: var(--light-secondary);
+	background-color: var(--light-front-tertiary);
+}
+
+.light #menu-button:hover .menu-button-parts {
+	background-color: var(--light-front-primary);
 }
 
 #gear {
@@ -270,6 +314,22 @@ nav > a:hover {
 	top: 0.5rem;
 	height: 2.5rem;
 	z-index: 5;
+}
+
+.dark #gear {
+	stroke: var(--dark-front-secondary);
+}
+
+.dark #gear:hover {
+	stroke: var(--dark-front-tertiary);
+}
+
+.light #gear {
+	stroke: var(--light-front-tertiary);
+}
+
+.light #gear:hover {
+	stroke: var(--light-front-primary);
 }
 
 #side-contacts {
@@ -329,27 +389,27 @@ nav > a:hover {
 }
 
 .dark .side-contact {
-	background-color: var(--dark-secondary);
+	background-color: var(--dark-front-primary);
 }
 
 .dark .side-contact > svg {
-	fill: var(--dark-primary);
+	fill: var(--dark-back-primary);
 }
 
 .dark .side-contact:hover {
-	background-color: var(--dark-secondary-alt);
+	background-color: var(--dark-front-secondary);
 }
 
 .light .side-contact {
-	background-color: var(--light-secondary);
+	background-color: var(--light-front-primary);
 }
 
 .light .side-contact > svg {
-	fill: var(--light-primary);
+	fill: var(--light-back-primary);
 }
 
 .light .side-contact:hover {
-	background-color: var(--light-secondary-alt);
+	background-color: var(--light-front-secondary);
 }
 
 #back-to-top {
@@ -365,19 +425,21 @@ nav > a:hover {
 }
 
 .dark .svg-fill {
-	fill: var(--dark-secondary);
+	fill: var(--dark-front-primary);
 }
 
 .dark .svg-fill:hover {
-	fill: var(--dark-secondary-alt);
+	fill: var(--dark-front-secondary);
+	color: var(--dark-front-secondary);
 }
 
 .light .svg-fill {
-	fill: var(--light-secondary);
+	fill: var(--light-front-primary);
 }
 
 .light .svg-fill:hover {
-	fill: var(--light-secondary-alt);
+	fill: var(--light-front-secondary);
+	color: var(--light-front-secondary);
 }
 
 .svg-stroke {
@@ -385,29 +447,29 @@ nav > a:hover {
 }
 
 .dark .svg-stroke {
-	stroke: var(--dark-secondary);
-	fill: var(--dark-primary);
+	stroke: var(--dark-front-primary);
+	fill: var(--dark-back-primary);
 }
 
 .dark .svg-stroke:hover {
-	stroke: var(--dark-secondary-alt);
+	stroke: var(--dark-front-secondary);
 }
 
 .light .svg-stroke {
-	stroke: var(--light-secondary);
-	fill: var(--light-primary);
+	stroke: var(--light-front-primary);
+	fill: var(--light-back-primary);
 }
 
 .light .svg-stroke:hover {
-	stroke: var(--light-secondary-alt);
+	stroke: var(--light-front-secondary);
 }
 
 .dark main {
-	color:var(--dark-secondary);
+	color:var(--dark-front-primary);
 }
 
 .light main {
-	color:var(--light-secondary);
+	color:var(--light-front-primary);
 }
 
 section {
@@ -466,11 +528,11 @@ li {
 }
 
 .dark .avatar-image {
-	background-color: var(--dark-secondary);
+	background-color: var(--dark-front-primary);
 }
 
 .light .avatar-image {
-	background-color: var(--light-secondary);
+	background-color: var(--light-front-primary);
 }
 
 #skills {
@@ -505,6 +567,16 @@ li {
 	transform: translateY(25%) translateX(calc(-50% + 1.25rem));
 }
 
+.dark .icon-tooltip {
+	background-color: var(--dark-front-secondary);
+	color: var(--dark-back-primary);
+}
+
+.light .icon-tooltip {
+	background-color: var(--light-front-secondary);
+	color: var(--light-back-primary);
+}
+
 .icon-tooltip-arrow {
 	display: block;
     fill: #0f0f0f;
@@ -516,21 +588,11 @@ li {
 }
 
 .dark .icon-tooltip-arrow {
-	fill: var(--dark-secondary-alt);
+	fill: var(--dark-front-secondary);
 }
 
 .light .icon-tooltip-arrow {
-	fill: var(--light-secondary-alt);
-}
-
-.dark .icon-tooltip {
-	background-color: var(--dark-secondary-alt);
-	color: var(--dark-primary);
-}
-
-.light .icon-tooltip {
-	background-color: var(--light-secondary-alt);
-	color: var(--light-primary);
+	fill: var(--light-front-secondary);
 }
 
 #projects {
@@ -571,15 +633,15 @@ li {
 	height: 31.5rem;
 	padding: 1rem;
 	border-radius: 0.75rem;
-	backdrop-filter: blur(7.5px);
+	backdrop-filter: blur(10px);
 }
 
 .dark .project-box {
-	background-color: var(--dark-primary-alt);
+	background-color: var(--dark-back-tertiary);
 }
 
 .light .project-box {
-	background-color: var(--light-primary-alt);
+	background-color: var(--light-back-tertiary);
 }
 
 .project-title {
@@ -607,11 +669,11 @@ li {
 }
 
 .dark .project-img {
-	border: 1px solid var(--dark-secondary);;
+	border: 1px solid var(--dark-front-primary);;
 }
 
 .light .project-img {
-	border: 1px solid var(--light-secondary);
+	border: 1px solid var(--light-front-primary);
 }
 
 .project-description {
@@ -630,25 +692,25 @@ li {
 }
 
 .dark .project-button {
-	background-color: var(--dark-primary);
-	color: var(--dark-secondary);
-	border: 2px solid var(--dark-secondary);
+	background-color: var(--dark-back-primary);
+	color: var(--dark-front-primary);
+	border: 2px solid var(--dark-front-primary);
 }
 
 .dark .project-button:hover {
-	background-color: var(--dark-secondary);
-	color: var(--dark-primary);
+	background-color: var(--dark-front-primary);
+	color: var(--dark-back-primary);
 }
 
 .light .project-button {
-	background-color: var(--light-primary);
-	color: var(--light-secondary);
-	border: 2px solid var(--light-secondary);
+	background-color: var(--light-back-primary);
+	color: var(--light-front-primary);
+	border: 2px solid var(--light-front-primary);
 }
 
 .light .project-button:hover {
-	background-color: var(--light-secondary);
-	color: var(--light-primary);
+	background-color: var(--light-front-primary);
+	color: var(--light-back-primary);
 }
 
 .project-demo-button {
@@ -722,15 +784,15 @@ li {
 		top: 2.75rem;
 		right: 0;
 		width: auto;
-		backdrop-filter: blur(7.5px);
+		backdrop-filter: blur(10px);
 	}
 
 	.dark nav {
-		background-color: var(--dark-primary-alt);
+		background-color: var(--dark-back-secondary);
 	}
 
 	.light nav {
-		background-color: var(--light-primary-alt);
+		background-color: var(--light-back-secondary);
 	}
 
 	nav > a {
