@@ -5,25 +5,30 @@ import Project from './Project';
 const NUMBER_OF_PROJECTS = 6;
 
 const ProjectsContainer: React.FC = () => {
-    const [bodyWidth, setBodyWidth] = useState(23.75); //rem values
-    const [projectIndex, setProjectIndex] = useState(1);
+    const [bodyWidth, setBodyWidth] = useState(23.75); //rem value
+    const [projectIndex, setProjectIndex] = useState(0);
     const [visibleProjects, setVisibleProjects] = useState(1);
-    const [touchPosX, setTouchPosX] = useState(0);
+    const [touchPositionX, setTouchPositionX] = useState(0);
     const [swiped, setSwiped] = useState(false);
 
     useEffect(() => {
-        setBodyWidth(document.body.offsetWidth / parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size')));
+        let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
+
+        setBodyWidth(document.body.offsetWidth / remValue);
     }, []);
 
     useEffect(() => {
         window.addEventListener("resize", () => {
-            setBodyWidth(document.body.offsetWidth / parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size')));
+            let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
+
+            setBodyWidth(document.body.offsetWidth / remValue);
         });
         return () => window.removeEventListener("resize", () => { });
     }, []);
 
     useEffect(() => {
-        setProjectIndex(1);
+        setProjectIndex(0);
+
         if (bodyWidth < 83 && bodyWidth >= 64.5) setVisibleProjects(3);
         else if (bodyWidth < 64.5 && bodyWidth >= 46) setVisibleProjects(2);
         else if (bodyWidth < 46) setVisibleProjects(1);
@@ -31,29 +36,29 @@ const ProjectsContainer: React.FC = () => {
     }, [bodyWidth]);
 
     const handlePrev = () => {
-        if (projectIndex > 1) setProjectIndex((prevValue) => prevValue - 1);
+        if (projectIndex > 0) setProjectIndex((prevValue) => prevValue - 1);
     }
 
     const handleNext = () => {
-        if (projectIndex <= NUMBER_OF_PROJECTS - visibleProjects) setProjectIndex((prevValue) => prevValue + 1);
+        if (projectIndex <= NUMBER_OF_PROJECTS - visibleProjects - 1) setProjectIndex((prevValue) => prevValue + 1);
     }
 
     const projectVisibility = (projectNumber: number) => {
-        if (projectNumber >= projectIndex && ((projectIndex + visibleProjects) > projectNumber)) {
+        if (projectNumber >= projectIndex && ((projectIndex + visibleProjects + 1) > projectNumber)) {
             return "visible"
         } else return "invisible";
     }
 
     const handleTouchStart = (event: React.TouchEvent) => {
-        setTouchPosX(event.touches[0].clientX);
+        setTouchPositionX(event.touches[0].clientX);
         setSwiped(true);
     }
 
     const handleTouchMove = (event: React.TouchEvent) => {
-        if (swiped && (touchPosX + 80 < event.touches[0].clientX)) {
+        if (swiped && (touchPositionX + 80 < event.touches[0].clientX)) {
             setSwiped(false);
             handlePrev();
-        } else if (swiped && (touchPosX - 80 > event.touches[0].clientX)) {
+        } else if (swiped && (touchPositionX - 80 > event.touches[0].clientX)) {
             setSwiped(false);
             handleNext();
         }
@@ -61,21 +66,22 @@ const ProjectsContainer: React.FC = () => {
 
     const projectsGap = bodyWidth > 40.5 ? 3 : 2.5;
     const projectWidth = bodyWidth > 40.5 ? 15.5 : 13;
-    const arrowPosition = bodyWidth > 23.75 ? ((visibleProjects) * projectsGap + visibleProjects * projectWidth) / 2 : 1;
-    const containerWidth = bodyWidth > 23.75 ? (visibleProjects + 1) * projectsGap + visibleProjects * projectWidth : 13;
-    const sliderPosition = bodyWidth > 23.75 ? projectsGap * (2 - projectIndex) - projectWidth * (projectIndex - 1) : (1 - projectIndex) * 15.5;
+    const projectSegment = projectsGap + projectWidth;
+    const arrowPosition = bodyWidth > 23.75 ? visibleProjects * projectSegment / 2 : 1;
+    const containerWidth = bodyWidth > 23.75 ? projectsGap + visibleProjects * projectSegment : 13;
+    const sliderPosition = bodyWidth > 23.75 ? projectsGap - projectIndex * projectSegment : - projectIndex * projectSegment;
 
     return (
         <>
             <div id="project-index-buttons">
                 <Arrow
-                    visibilityClass={projectIndex > 1 ? "visible" : "invisible"}
+                    visibilityClass={projectIndex > 0 ? "visible" : "invisible"}
                     left={arrowPosition * (-1)}
                     mirrored={true}
                     clickHandler={handlePrev}
                 />
                 <Arrow
-                    visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
+                    visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects - 1 ? "visible" : "invisible"}
                     left={arrowPosition}
                     mirrored={false}
                     clickHandler={handleNext}
