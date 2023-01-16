@@ -8,7 +8,7 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
 
     const generateBackground = (contentWidth: number, contentHeight: number) => {
         let pictures = [];
-        let blockSide = contentWidth > 650 ? 200 : contentWidth > 300 ? 200 : 100; // 1 figure inside every (blockSide x blockSide) block
+        let blockSide = contentWidth > 40.5 ? 12.5 : contentWidth > 18.75 ? 9.25 : 6.25; // 1 figure inside every (blockSide x blockSide) block
 
         const figurePosition = (position: number, contentWidthOrHeight: number) => {
             return contentWidthOrHeight / Math.floor(contentWidthOrHeight / blockSide) * (position + Math.random());
@@ -28,11 +28,13 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
     }
 
     const updateBackground = () => {
+        let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
+
         clearTimeout(delayTimer.current);
 
         delayTimer.current = setTimeout(() => {
             if (contentRef.current)
-                generateBackground(contentRef.current.offsetWidth, contentRef.current.offsetHeight);
+                generateBackground(contentRef.current.offsetWidth / remValue, contentRef.current.offsetHeight / remValue);
         }, 500);
     }
 
@@ -68,8 +70,8 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
                     className="pictures"
                     viewBox="0 0 16 16"
                     style={{
-                        left: item.left,
-                        top: item.top
+                        left: `${item.left}rem`,
+                        top: `${item.top}rem`
                     }}
                 >
                     {pictures[item.picture]}
