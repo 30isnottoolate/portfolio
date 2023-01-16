@@ -21,7 +21,7 @@ const SideContacts: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = 
             <a
                 id="side-contact-1"
                 className="side-contact"
-                style={{ left: (scrollPos > 1410 ? "-80px" : "") }}
+                style={{ left: (scrollPos > 1410 ? "-5rem" : "") }}
                 href={contacts["linkedin"].href}
                 target="_blank"
                 rel="noreferrer"
@@ -33,7 +33,7 @@ const SideContacts: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = 
             <a
                 id="side-contact-2"
                 className="side-contact"
-                style={{ left: (scrollPos > 1350 ? "-80px" : "") }}
+                style={{ left: (scrollPos > 1350 ? "-5rem" : "") }}
                 href={contacts["email"].href}
                 target="_blank"
                 rel="noreferrer"
@@ -45,7 +45,7 @@ const SideContacts: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = 
             <a
                 id="side-contact-3"
                 className="side-contact"
-                style={{ left: (scrollPos > 1300 ? "-80px" : "") }}
+                style={{ left: (scrollPos > 1300 ? "-5rem" : "") }}
                 href={contacts["github"].href}
                 target="_blank"
                 rel="noreferrer"
