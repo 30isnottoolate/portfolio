@@ -70,13 +70,13 @@ const ProjectsContainer: React.FC = () => {
             <div id="project-index-buttons">
                 <Arrow
                     visibilityClass={projectIndex > 1 ? "visible" : "invisible"}
-                    posX={arrowPosition * (-1)}
+                    left={arrowPosition * (-1)}
                     mirrored={true}
                     clickHandler={handlePrev}
                 />
                 <Arrow
                     visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
-                    posX={arrowPosition}
+                    left={arrowPosition}
                     mirrored={false}
                     clickHandler={handleNext}
                 />

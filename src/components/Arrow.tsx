@@ -1,16 +1,16 @@
 interface ArrowProps {
     visibilityClass: string;
-    posX: number;
+    left: number;
     mirrored: boolean;
     clickHandler: () => void;
 }
 
-const Arrow: React.FC<ArrowProps> = ({ visibilityClass, posX, mirrored, clickHandler }: ArrowProps) => {
+const Arrow: React.FC<ArrowProps> = ({ visibilityClass, left, mirrored, clickHandler }: ArrowProps) => {
     return (
         <svg
             className={`arrow-button ${visibilityClass}`}
             style={{
-                left: `${posX}rem`,
+                left: `${left}rem`,
                 transform: mirrored ? "scaleX(-1)" : "scaleX(1)",
                 pointerEvents: visibilityClass === "visible" ? "initial" : "none"
             }}
