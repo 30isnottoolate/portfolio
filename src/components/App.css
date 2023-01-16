@@ -508,9 +508,11 @@ li {
 .icon-tooltip-arrow {
 	display: block;
     fill: #0f0f0f;
+	width: 1rem; 
+	height: 0.5rem;
 	position: absolute;
     opacity: 0;
-    transform: translateX(1rem) translateY(0.125rem);
+    transform: translateX(0.75rem) translateY(0rem);
 }
 
 .dark .icon-tooltip-arrow {
@@ -811,7 +813,9 @@ li {
 	}
 
 	.icon-tooltip-arrow {
-		transform: translateX(0.75rem) translateY(0.125rem);
+		width: 0.75rem; 
+		height: 0.375rem;
+		transform: translateX(0.625rem) translateY(0.05rem);
 	}
 
 	.arrow-button {
