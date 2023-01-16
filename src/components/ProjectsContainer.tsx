@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Arrow from './Arrow';
 import Project from './Project';
 
@@ -6,58 +6,58 @@ const NUMBER_OF_PROJECTS = 6;
 
 const ProjectsContainer: React.FC = () => {
     const [bodyWidth, setBodyWidth] = useState(23.75); //rem values
-	const [projectIndex, setProjectIndex] = useState(1);
-	const [visibleProjects, setVisibleProjects] = useState(1);
-	const [touchPosX, setTouchPosX] = useState(0);
-	const [swiped, setSwiped] = useState(false);
+    const [projectIndex, setProjectIndex] = useState(1);
+    const [visibleProjects, setVisibleProjects] = useState(1);
+    const [touchPosX, setTouchPosX] = useState(0);
+    const [swiped, setSwiped] = useState(false);
 
     useEffect(() => {
         setBodyWidth(document.body.offsetWidth / parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size')));
     }, []);
 
     useEffect(() => {
-		window.addEventListener("resize", () => {
-			setBodyWidth(document.body.offsetWidth / parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size')));
-		});
-		return () => window.removeEventListener("resize", () => { });
-	}, []);
+        window.addEventListener("resize", () => {
+            setBodyWidth(document.body.offsetWidth / parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size')));
+        });
+        return () => window.removeEventListener("resize", () => { });
+    }, []);
 
     useEffect(() => {
-		setProjectIndex(1);
-		if (bodyWidth < 83 && bodyWidth >= 64.5) setVisibleProjects(3);
-		else if (bodyWidth < 64.5 && bodyWidth >= 46) setVisibleProjects(2);
-		else if (bodyWidth < 46) setVisibleProjects(1);
-		else setVisibleProjects(4);
-	}, [bodyWidth]);
+        setProjectIndex(1);
+        if (bodyWidth < 83 && bodyWidth >= 64.5) setVisibleProjects(3);
+        else if (bodyWidth < 64.5 && bodyWidth >= 46) setVisibleProjects(2);
+        else if (bodyWidth < 46) setVisibleProjects(1);
+        else setVisibleProjects(4);
+    }, [bodyWidth]);
 
     const handlePrev = () => {
-		if (projectIndex > 1) setProjectIndex((prevValue) => prevValue - 1);
-	}
+        if (projectIndex > 1) setProjectIndex((prevValue) => prevValue - 1);
+    }
 
-	const handleNext = () => {
-		if (projectIndex <= NUMBER_OF_PROJECTS - visibleProjects) setProjectIndex((prevValue) => prevValue + 1);
-	}
+    const handleNext = () => {
+        if (projectIndex <= NUMBER_OF_PROJECTS - visibleProjects) setProjectIndex((prevValue) => prevValue + 1);
+    }
 
-	const projectVisibility = (projectNumber: number) => {
-		if (projectNumber >= projectIndex && ((projectIndex + visibleProjects) > projectNumber)) {
-			return "visible"
-		} else return "invisible";
-	}
+    const projectVisibility = (projectNumber: number) => {
+        if (projectNumber >= projectIndex && ((projectIndex + visibleProjects) > projectNumber)) {
+            return "visible"
+        } else return "invisible";
+    }
 
-	const handleTouchStart = (event: React.TouchEvent) => {
-		setTouchPosX(event.touches[0].clientX);
-		setSwiped(true);
-	}
+    const handleTouchStart = (event: React.TouchEvent) => {
+        setTouchPosX(event.touches[0].clientX);
+        setSwiped(true);
+    }
 
-	const handleTouchMove = (event: React.TouchEvent) => {
-		if (swiped && (touchPosX + 80 < event.touches[0].clientX)) {
-			setSwiped(false);
-			handlePrev();
-		} else if (swiped && (touchPosX - 80 > event.touches[0].clientX)) {
-			setSwiped(false);
-			handleNext();
-		}
-	}
+    const handleTouchMove = (event: React.TouchEvent) => {
+        if (swiped && (touchPosX + 80 < event.touches[0].clientX)) {
+            setSwiped(false);
+            handlePrev();
+        } else if (swiped && (touchPosX - 80 > event.touches[0].clientX)) {
+            setSwiped(false);
+            handleNext();
+        }
+    }
 
     return (
         <>
