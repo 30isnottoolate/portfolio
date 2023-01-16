@@ -5,28 +5,28 @@ import Project from './Project';
 const NUMBER_OF_PROJECTS = 6;
 
 const ProjectsContainer: React.FC = () => {
-    const [bodyWidth, setBodyWidth] = useState(380);
+    const [bodyWidth, setBodyWidth] = useState(23.75); //rem values
 	const [projectIndex, setProjectIndex] = useState(1);
 	const [visibleProjects, setVisibleProjects] = useState(1);
 	const [touchPosX, setTouchPosX] = useState(0);
 	const [swiped, setSwiped] = useState(false);
 
     useEffect(() => {
-        setBodyWidth(document.body.offsetWidth);
+        setBodyWidth(document.body.offsetWidth / parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size')));
     }, []);
 
     useEffect(() => {
 		window.addEventListener("resize", () => {
-			setBodyWidth(document.body.offsetWidth);
+			setBodyWidth(document.body.offsetWidth / parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size')));
 		});
 		return () => window.removeEventListener("resize", () => { });
 	}, []);
 
     useEffect(() => {
 		setProjectIndex(1);
-		if (bodyWidth < 1400 && bodyWidth >= 1100) setVisibleProjects(3);
-		else if (bodyWidth < 1100 && bodyWidth >= 750) setVisibleProjects(2);
-		else if (bodyWidth < 750) setVisibleProjects(1);
+		if (bodyWidth < 83 && bodyWidth >= 64.5) setVisibleProjects(3);
+		else if (bodyWidth < 64.5 && bodyWidth >= 46) setVisibleProjects(2);
+		else if (bodyWidth < 46) setVisibleProjects(1);
 		else setVisibleProjects(4);
 	}, [bodyWidth]);
 
@@ -61,16 +61,16 @@ const ProjectsContainer: React.FC = () => {
 
     return (
         <>
-            <div id="project-index-buttons" style={{ height: (bodyWidth > 650 ? 32 : 25) }}>
+            <div id="project-index-buttons">
                 <Arrow
                     visibilityClass={projectIndex > 1 ? "visible" : "invisible"}
-                    posX={bodyWidth > 380 ? (-visibleProjects * (bodyWidth > 650 ? 300 : 230) / 2) : -15}
+                    posX={bodyWidth > 23.75 ? ((visibleProjects) * (bodyWidth > 40.5 ? 3 : 2.5) + visibleProjects * (bodyWidth > 40.5 ? 15.5 : 13)) / (-2) : -1}
                     mirrored={true}
                     clickHandler={handlePrev}
                 />
                 <Arrow
                     visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
-                    posX={bodyWidth > 380 ? (visibleProjects * (bodyWidth > 650 ? 300 : 230) / 2) : 15}
+                    posX={bodyWidth > 23.75 ? ((visibleProjects) * (bodyWidth > 40.5 ? 3 : 2.5) + visibleProjects * (bodyWidth > 40.5 ? 15.5 : 13)) / 2 : 1}
                     mirrored={false}
                     clickHandler={handleNext}
                 />
@@ -78,7 +78,7 @@ const ProjectsContainer: React.FC = () => {
             <div
                 id="projects-container"
                 style={{
-                    width: (visibleProjects * (bodyWidth > 650 ? 300 : 240) + (bodyWidth > 650 ? 100 : bodyWidth > 380 ? 60 : 0))
+                    width: `${bodyWidth > 23.75 ? (visibleProjects + 1) * (bodyWidth > 40.5 ? 3 : 2.5) + visibleProjects * (bodyWidth > 40.5 ? 15.5 : 13) : 13}rem`
                 }}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
@@ -86,7 +86,7 @@ const ProjectsContainer: React.FC = () => {
                 <div
                     id="project-slider"
                     style={{
-                        left: ((projectIndex - 1) * (-(bodyWidth > 650 ? 300 : 240))) + (bodyWidth > 650 ? 75 : bodyWidth > 380 ? 50 : 20)
+                        left: `${bodyWidth > 23.75 ? (bodyWidth > 40.5 ? 3 : 2.5) * (2 - projectIndex) - (bodyWidth > 40.5 ? 15.5 : 13) * (projectIndex - 1) : (1 - projectIndex) * 15.5}rem`
                     }}>
                     <Project
                         visibilityClass={projectVisibility(1)}

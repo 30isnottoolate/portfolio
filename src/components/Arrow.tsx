@@ -10,7 +10,7 @@ const Arrow: React.FC<ArrowProps> = ({ visibilityClass, posX, mirrored, clickHan
         <svg
             className={`arrow-button ${visibilityClass}`}
             style={{
-                left: posX,
+                left: `${posX}rem`,
                 transform: mirrored ? "scaleX(-1)" : "scaleX(1)",
                 pointerEvents: visibilityClass === "visible" ? "initial" : "none"
             }}

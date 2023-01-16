@@ -287,7 +287,7 @@ nav > a:hover {
 	height: auto;
 	left: 0;
 	transform: translateX(-5rem);
-	padding: 0.25rem;
+	padding: 0.3rem;
 	border-radius: 0 0.35rem 0.35rem 0;
 	margin-bottom: 0.35rem;
 }
@@ -320,12 +320,12 @@ nav > a:hover {
 	}
 	
 	to {
-		transform: translateX(-2rem);
+		transform: translateX(-1.5rem);
 	}
 }
 
 .side-contact-image {
-	width: 2rem;
+	width: 1.875rem;
 }
 
 .dark .side-contact {
@@ -536,9 +536,13 @@ li {
 	padding: 100px 0 100px 0;
 }
 
+#project-index-buttons {
+	height: 0;
+}
+
 .arrow-button {
 	position: relative;
-	top: 15.5rem;
+	top: 13.5rem;
 	height: 4.5rem;
 	cursor: pointer;
 	z-index: 3;
@@ -554,7 +558,6 @@ li {
 	grid-template-columns: repeat(6, auto);
 	gap: 3rem;
 	position: relative;
-	top: 0;
 	transition: left 0.5s;
 }
 
@@ -812,8 +815,8 @@ li {
 	}
 
 	.arrow-button {
-		top: 13rem;
-		height: 3.75rem;
+		top: 11.5rem;
+		height: 3.5rem;
 	}
 
 	#projects-container {
@@ -894,6 +897,6 @@ li {
 	}
 
 	.arrow-button {
-		top: 500px;
+		top: 28.25rem;
 	}
 }
