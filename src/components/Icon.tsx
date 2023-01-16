@@ -40,7 +40,7 @@ const Icon: React.FC<{ href: string, iconType: string }> = ({ href, iconType }) 
             <svg
                 ref={tooltipArrowRef}
                 className="icon-tooltip-arrow"
-                width="10" height="10">
+                viewBox="0 0 10 5">
                 <polygon points="5,0 10,5 0,5" />
             </svg>
         </div>
