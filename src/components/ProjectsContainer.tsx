@@ -59,18 +59,24 @@ const ProjectsContainer: React.FC = () => {
         }
     }
 
+    const projectsGap = bodyWidth > 40.5 ? 3 : 2.5;
+    const projectWidth = bodyWidth > 40.5 ? 15.5 : 13;
+    const arrowPosition = bodyWidth > 23.75 ? ((visibleProjects) * projectsGap + visibleProjects * projectWidth) / 2 : 1;
+    const containerWidth = bodyWidth > 23.75 ? (visibleProjects + 1) * projectsGap + visibleProjects * projectWidth : 13;
+    const sliderPosition = bodyWidth > 23.75 ? projectsGap * (2 - projectIndex) - projectWidth * (projectIndex - 1) : (1 - projectIndex) * 15.5;
+
     return (
         <>
             <div id="project-index-buttons">
                 <Arrow
                     visibilityClass={projectIndex > 1 ? "visible" : "invisible"}
-                    posX={bodyWidth > 23.75 ? ((visibleProjects) * (bodyWidth > 40.5 ? 3 : 2.5) + visibleProjects * (bodyWidth > 40.5 ? 15.5 : 13)) / (-2) : -1}
+                    posX={arrowPosition * (-1)}
                     mirrored={true}
                     clickHandler={handlePrev}
                 />
                 <Arrow
                     visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects ? "visible" : "invisible"}
-                    posX={bodyWidth > 23.75 ? ((visibleProjects) * (bodyWidth > 40.5 ? 3 : 2.5) + visibleProjects * (bodyWidth > 40.5 ? 15.5 : 13)) / 2 : 1}
+                    posX={arrowPosition}
                     mirrored={false}
                     clickHandler={handleNext}
                 />
@@ -78,7 +84,7 @@ const ProjectsContainer: React.FC = () => {
             <div
                 id="projects-container"
                 style={{
-                    width: `${bodyWidth > 23.75 ? (visibleProjects + 1) * (bodyWidth > 40.5 ? 3 : 2.5) + visibleProjects * (bodyWidth > 40.5 ? 15.5 : 13) : 13}rem`
+                    width: `${containerWidth}rem`
                 }}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
@@ -86,7 +92,7 @@ const ProjectsContainer: React.FC = () => {
                 <div
                     id="project-slider"
                     style={{
-                        left: `${bodyWidth > 23.75 ? (bodyWidth > 40.5 ? 3 : 2.5) * (2 - projectIndex) - (bodyWidth > 40.5 ? 15.5 : 13) * (projectIndex - 1) : (1 - projectIndex) * 15.5}rem`
+                        left: `${sliderPosition}rem`
                     }}>
                     <Project
                         visibilityClass={projectVisibility(1)}
