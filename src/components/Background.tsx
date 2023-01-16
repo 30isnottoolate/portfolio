@@ -62,14 +62,14 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
                 height: contentRef.current ? contentRef.current.offsetHeight * 0.75 : 0
             }}
         >
-            {wallpaper.map(item => (
+            {wallpaper.map((item, index) => (
                 <svg
-                    key={wallpaper.indexOf(item)}
+                    key={index}
                     className="pictures"
                     viewBox="0 0 16 16"
                     style={{
-                        left: wallpaper[wallpaper.indexOf(item)].left,
-                        top: wallpaper[wallpaper.indexOf(item)].top
+                        left: item.left,
+                        top: item.top
                     }}
                 >
                     {pictures[item.picture]}
