@@ -941,6 +941,23 @@ li {
 		width: 2.75rem;
 	}
 
+	.slider-dots-container {
+		margin-top: 2rem;
+	}
+	
+	.slider-dot {
+		display: inline-block;
+		width: 0.75rem;
+		height: 0.75rem;
+		border-radius: 50%;
+		margin-right: 0.375rem;
+	}
+	
+	.marker-dot {
+		width: 0.75rem;
+		height: 0.75rem;
+	}
+
 	#contacts > a {
 		font-size: 0.875rem;
 		margin-bottom: 0.5rem;
