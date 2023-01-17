@@ -10,7 +10,7 @@ const Contact: React.FC<ContactProps> = ({ contactType }: ContactProps) => {
             <svg className="contact-image" viewBox="0 0 16 16">
                 <path d={contacts[contactType as keyof typeof contacts].path} />
             </svg>
-            <span className="contact-text" >{contacts[contactType as keyof typeof contacts].displayText}</span>
+            {contacts[contactType as keyof typeof contacts].displayText}
         </a>
     );
 }
