@@ -29,8 +29,8 @@ const ProjectsContainer: React.FC = () => {
     useEffect(() => {
         setProjectIndex(0);
 
-        if (bodyWidth < 83 && bodyWidth >= 64.5) setVisibleProjects(3);
-        else if (bodyWidth < 64.5 && bodyWidth >= 46) setVisibleProjects(2);
+        if (83 > bodyWidth && bodyWidth >= 64.5) setVisibleProjects(3);
+        else if (64.5 > bodyWidth && bodyWidth >= 46) setVisibleProjects(2);
         else if (bodyWidth < 46) setVisibleProjects(1);
         else setVisibleProjects(4);
     }, [bodyWidth]);
@@ -64,12 +64,19 @@ const ProjectsContainer: React.FC = () => {
         }
     }
 
-    const projectsGap = bodyWidth > 40.5 ? 3 : 2.5;
-    const projectWidth = bodyWidth > 40.5 ? 15.5 : 13;
-    const projectSegment = projectsGap + projectWidth;
-    const arrowPosition = bodyWidth > 23.75 ? visibleProjects * projectSegment / 2 : 1;
-    const containerWidth = bodyWidth > 23.75 ? projectsGap + visibleProjects * projectSegment : 13;
-    const sliderPosition = bodyWidth > 23.75 ? projectsGap - projectIndex * projectSegment : - projectIndex * projectSegment;
+    const projectsGap = bodyWidth > 38 ? 3 : 2.5;
+    const projectWidth = bodyWidth > 38 ? 15.5 : 13;
+    const arrowPosition = bodyWidth > 23.75
+        ? visibleProjects * (projectsGap + projectWidth) / 2
+        : 1;
+        
+    const containerWidth = bodyWidth > 23.75
+        ? projectsGap + visibleProjects * (projectsGap + projectWidth)
+        : projectWidth;
+
+    const sliderPosition = bodyWidth > 23.75
+        ? projectsGap - projectIndex * (projectsGap + projectWidth)
+        : - projectIndex * (projectsGap + projectWidth);
 
     return (
         <>
