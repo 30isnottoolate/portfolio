@@ -69,7 +69,7 @@ const ProjectsContainer: React.FC = () => {
     const arrowPosition = bodyWidth > 23.75
         ? visibleProjects * (projectsGap + projectWidth) / 2
         : 1;
-        
+
     const containerWidth = bodyWidth > 23.75
         ? projectsGap + visibleProjects * (projectsGap + projectWidth)
         : projectWidth;
@@ -162,6 +162,12 @@ const ProjectsContainer: React.FC = () => {
                         codeHref="https://www.solidbackgrounds.com"
                     />
                 </div>
+            </div>
+            <div className="slider-dots-container">
+                {[...Array(NUMBER_OF_PROJECTS - visibleProjects + 1)].map((item, index) => index).map((item, index) =>
+                    <div key={index} className="slider-dot" onClick={() => setProjectIndex(index)} />
+                )}
+                <div className="marker-dot" style={{transform: `translateX(${projectIndex * 1.5}rem) translateY(-1.25rem)`}} />
             </div>
         </>
     );
