@@ -68,7 +68,7 @@ const ProjectsContainer: React.FC = () => {
     const projectWidth = bodyWidth > 38 ? 15.5 : 13;
     const arrowPosition = bodyWidth > 23.75
         ? visibleProjects * (projectsGap + projectWidth) / 2
-        : 1;
+        : 20;
 
     const containerWidth = bodyWidth > 23.75
         ? projectsGap + visibleProjects * (projectsGap + projectWidth)
@@ -173,7 +173,10 @@ const ProjectsContainer: React.FC = () => {
                 )}
                 <div
                     className="marker-dot"
-                    style={{ transform: `translateX(${projectIndex * 1.5}rem) translateY(-1.25rem)` }}
+                    style={{
+                        transform: `translateX(${projectIndex * (bodyWidth > 38 ? 1.5 : 1.125)}rem) 
+                        translateY(-${bodyWidth > 38 ? 1.25 : 1}rem)`
+                    }}
                 />
             </div>
         </>
