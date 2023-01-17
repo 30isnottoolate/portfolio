@@ -66,15 +66,15 @@ const Portfolio: React.FC = () => {
 								src="./images/avatar.png"
 								alt="Akos Varga"
 							/>
-							<h1 style={{ fontFamily: "'Roboto Condensed', Arial, Helvetica, sans-serif" }}>
-								Hi! My name is <span>Akos Varga</span>.
+							<h1>
+								Welcome to my portfolio!
 							</h1>
-							<h2 style={{ fontFamily: "'Poppins', Arial, Helvetica, sans-serif" }}>
-								Welcome to my portfolio page!
-							</h2>
 							<h2>
-								I'm an aspiring <span>front-end developer</span>, constantly improving.
+								My name is <span>Akos Varga</span>.
 							</h2>
+							<h3>
+								I'm a <span>front-end developer</span>, creating interesting web apps.
+							</h3>
 						</section>
 						<section id="bio">
 							<h1>About me</h1>
