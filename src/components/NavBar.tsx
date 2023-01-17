@@ -30,6 +30,10 @@ const NavBar: React.FC = () => {
                     href="#welcome" >
                     30isnottoolate
                 </a>
+                <MenuButton
+                    clickHandler={handleMenuClick}
+                    isMenuVisible={isMenuVisible}
+                />
             </header>
             <nav
                 style={{
@@ -49,10 +53,6 @@ const NavBar: React.FC = () => {
                     Contact
                 </a>
             </nav>
-            <MenuButton
-                clickHandler={handleMenuClick}
-                isMenuVisible={isMenuVisible}
-            />
         </>
     );
 }
