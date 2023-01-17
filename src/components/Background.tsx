@@ -8,7 +8,7 @@ const Background: React.FC<{ givenID: string, contentRef: RefObject<HTMLDivEleme
 
     const generateBackground = (contentWidth: number, contentHeight: number) => {
         let pictures = [];
-        let blockSide = contentWidth > 40.5 ? 12.5 : contentWidth > 18.75 ? 9.25 : 6.25; // 1 figure inside every (blockSide x blockSide) block
+        let blockSide = contentWidth > 38 ? 12.5 : contentWidth > 18.75 ? 9.25 : 6.25; // 1 figure inside every (blockSide x blockSide) block
 
         const figurePosition = (position: number, contentWidthOrHeight: number) => {
             return contentWidthOrHeight / Math.floor(contentWidthOrHeight / blockSide) * (position + Math.random());
