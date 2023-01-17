@@ -502,6 +502,10 @@ li {
 	margin-bottom: 2.5rem;
 }
 
+.icon-collection:last-child {
+	margin-bottom: 0;
+}
+
 .icon-container {
 	display: inline-block;
 	height: 2.5rem;
