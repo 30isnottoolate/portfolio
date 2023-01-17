@@ -164,10 +164,17 @@ const ProjectsContainer: React.FC = () => {
                 </div>
             </div>
             <div className="slider-dots-container">
-                {[...Array(NUMBER_OF_PROJECTS - visibleProjects + 1)].map((item, index) => index).map((item, index) =>
-                    <div key={index} className="slider-dot" onClick={() => setProjectIndex(index)} />
+                {[...Array(NUMBER_OF_PROJECTS - visibleProjects + 1)].map((item, index) => index).map(item =>
+                    <div
+                        key={item}
+                        className="slider-dot"
+                        onClick={() => setProjectIndex(item)}
+                    />
                 )}
-                <div className="marker-dot" style={{transform: `translateX(${projectIndex * 1.5}rem) translateY(-1.25rem)`}} />
+                <div
+                    className="marker-dot"
+                    style={{ transform: `translateX(${projectIndex * 1.5}rem) translateY(-1.25rem)` }}
+                />
             </div>
         </>
     );
