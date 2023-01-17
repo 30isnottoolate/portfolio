@@ -7,14 +7,14 @@ const NavBar: React.FC = () => {
     useEffect(() => {
         let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
 
-        setIsMenuVisible(document.body.offsetWidth / remValue <= 40.5 ? false : true);
+        setIsMenuVisible(document.body.offsetWidth / remValue <= 38 ? false : true);
     }, [])
 
     useEffect(() => {
         window.addEventListener("resize", () => {
             let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
 
-            setIsMenuVisible(document.body.offsetWidth / remValue <= 40.5 ? false : true);
+            setIsMenuVisible(document.body.offsetWidth / remValue <= 38 ? false : true);
         });
         return () => window.removeEventListener("resize", () => { });
     }, []);
