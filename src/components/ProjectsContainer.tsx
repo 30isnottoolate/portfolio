@@ -68,7 +68,7 @@ const ProjectsContainer: React.FC = () => {
     const projectWidth = bodyWidth > 38 ? 15.5 : 13;
     const arrowPosition = bodyWidth > 23.75
         ? visibleProjects * (projectsGap + projectWidth) / 2
-        : 20;
+        : 0;
 
     const containerWidth = bodyWidth > 23.75
         ? projectsGap + visibleProjects * (projectsGap + projectWidth)
@@ -80,20 +80,6 @@ const ProjectsContainer: React.FC = () => {
 
     return (
         <>
-            <div id="project-index-buttons">
-                <Arrow
-                    visibilityClass={projectIndex > 0 ? "visible" : "invisible"}
-                    left={arrowPosition * (-1)}
-                    mirrored={true}
-                    clickHandler={handlePrev}
-                />
-                <Arrow
-                    visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects - 1 ? "visible" : "invisible"}
-                    left={arrowPosition}
-                    mirrored={false}
-                    clickHandler={handleNext}
-                />
-            </div>
             <div
                 id="projects-container"
                 style={{
@@ -162,6 +148,20 @@ const ProjectsContainer: React.FC = () => {
                         codeHref="https://www.solidbackgrounds.com"
                     />
                 </div>
+            </div>
+            <div className="navigation-arrows" style={{display: `${bodyWidth > 23.75 ? "initial": "none"}`}}>
+                <Arrow
+                    visibilityClass={projectIndex > 0 ? "visible" : "invisible"}
+                    left={arrowPosition * (-1)}
+                    mirrored={true}
+                    clickHandler={handlePrev}
+                />
+                <Arrow
+                    visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects - 1 ? "visible" : "invisible"}
+                    left={arrowPosition}
+                    mirrored={false}
+                    clickHandler={handleNext}
+                />
             </div>
             <div className="slider-dots-container">
                 <div

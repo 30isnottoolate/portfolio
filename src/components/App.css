@@ -571,18 +571,6 @@ li {
 	padding: 3rem 1.5rem 6rem 1.5rem;
 }
 
-#project-index-buttons {
-	height: 0;
-}
-
-.arrow-button {
-	position: relative;
-	top: 13.5rem;
-	height: 4.5rem;
-	cursor: pointer;
-	z-index: 5;
-}
-
 #projects-container {
 	height: 31.5rem;
 	overflow: hidden;
@@ -689,6 +677,18 @@ li {
 	right: 1rem;
 	bottom: 1rem;
 	width: 3rem;
+}
+
+.navigation-arrows {
+	height: 0;
+}
+
+.arrow-button {
+	position: relative;
+	top: -18rem;
+	height: 4.5rem;
+	cursor: pointer;
+	z-index: 5;
 }
 
 .slider-dots-container {
@@ -902,11 +902,6 @@ li {
 		transform: translateX(0.625rem) translateY(0.05rem);
 	}
 
-	.arrow-button {
-		top: 11.5rem;
-		height: 3.5rem;
-	}
-
 	#projects {
 		padding: 2.5rem 1.25rem 5rem 1.25rem;
 	}
@@ -961,6 +956,11 @@ li {
 		width: 2.75rem;
 	}
 
+	.arrow-button {
+		top: -15rem;
+		height: 3.5rem;
+	}
+
 	.slider-dots-container {
 		height: 0.75rem;
 		margin-top: 2rem;
@@ -1010,6 +1010,6 @@ li {
 	}
 
 	.arrow-button {
-		top: 28.25rem;
+		top: 3.5rem;
 	}
 }
