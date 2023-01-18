@@ -149,7 +149,7 @@ const ProjectsContainer: React.FC = () => {
                     />
                 </div>
             </div>
-            <div className="navigation-arrows" style={{display: `${bodyWidth > 23.75 ? "initial": "none"}`}}>
+            <div className="navigation-arrows" style={{display: `${bodyWidth > 23.75 ? "initial": "none"}`}}> 
                 <Arrow
                     visibilityClass={projectIndex > 0 ? "visible" : "invisible"}
                     left={arrowPosition * (-1)}
