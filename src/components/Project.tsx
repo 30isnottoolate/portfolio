@@ -34,7 +34,6 @@ const Project: React.FC<ProjectProps> = ({
             <p className="project-description">{description} </p>
             <a
                 className="project-button project-demo-button"
-                style={{ display: `${visibilityClass === "invisible" ? "none" : ""}` }}
                 href={demoHref}
                 target="_blank"
                 rel="noreferrer" >
@@ -42,7 +41,6 @@ const Project: React.FC<ProjectProps> = ({
             </a>
             <a
                 className="project-button project-code-button"
-                style={{ display: `${visibilityClass === "invisible" ? "none" : ""}` }}
                 href={codeHref}
                 target="_blank"
                 rel="noreferrer" >
