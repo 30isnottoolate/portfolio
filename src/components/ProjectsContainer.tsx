@@ -44,9 +44,9 @@ const ProjectsContainer: React.FC = () => {
     }
 
     const projectVisibility = (projectNumber: number) => {
-        if (projectNumber >= projectIndex && ((projectIndex + visibleProjects + 1) > projectNumber)) {
-            return "visible"
-        } else return "invisible";
+        if (projectNumber < projectIndex || projectNumber > projectIndex + visibleProjects - 1) {
+            return "invisible"
+        } else return "visible";
     }
 
     const handleTouchStart = (event: React.TouchEvent) => {
@@ -94,7 +94,7 @@ const ProjectsContainer: React.FC = () => {
                         left: `${sliderPosition}rem`
                     }}>
                     <Project
-                        visibilityClass={projectVisibility(1)}
+                        visibilityClass={projectVisibility(0)}
                         title={"Stage Teleprompter"}
                         techs={["react", "ts", "css", "html"]}
                         src="./images/project_screenshots/stage-teleprompter-screenshot.png"
@@ -103,7 +103,7 @@ const ProjectsContainer: React.FC = () => {
                         codeHref="https://github.com/30isnottoolate/stage-teleprompter-hooked-ts"
                     />
                     <Project
-                        visibilityClass={projectVisibility(2)}
+                        visibilityClass={projectVisibility(1)}
                         title={"Library Manager"}
                         techs={["react", "ts", "css", "html"]}
                         src="./images/project_screenshots/teleprompter-library-manager-screenshot.png"
@@ -112,7 +112,7 @@ const ProjectsContainer: React.FC = () => {
                         codeHref="https://github.com/30isnottoolate/teleprompter-library-manager"
                     />
                     <Project
-                        visibilityClass={projectVisibility(3)}
+                        visibilityClass={projectVisibility(2)}
                         title={"Portfolio Page"}
                         techs={["react", "ts", "css", "html"]}
                         src="./images/project_screenshots/portfolio-screenshot.png"
@@ -121,7 +121,7 @@ const ProjectsContainer: React.FC = () => {
                         codeHref="https://github.com/30isnottoolate/portfolio"
                     />
                     <Project
-                        visibilityClass={projectVisibility(4)}
+                        visibilityClass={projectVisibility(3)}
                         title={"Online Teleprompter"}
                         techs={["react", "ts", "css", "html"]}
                         src="./images/project_screenshots/online-teleprompter-screenshot.png"
@@ -130,7 +130,7 @@ const ProjectsContainer: React.FC = () => {
                         codeHref="https://github.com/30isnottoolate/online-teleprompter-ts"
                     />
                     <Project
-                        visibilityClass={projectVisibility(5)}
+                        visibilityClass={projectVisibility(4)}
                         title={"Coming soon..."}
                         techs={["js", "ts", "react"]}
                         src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
@@ -139,7 +139,7 @@ const ProjectsContainer: React.FC = () => {
                         codeHref="https://www.solidbackgrounds.com"
                     />
                     <Project
-                        visibilityClass={projectVisibility(6)}
+                        visibilityClass={projectVisibility(5)}
                         title={"Coming soon..."}
                         techs={["js", "ts", "react"]}
                         src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
