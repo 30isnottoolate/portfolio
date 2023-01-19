@@ -1,3 +1,4 @@
+import { JsxElement, JsxFragment } from 'typescript';
 import icons from '../utilities/icons';
 
 const codeLabel = "</>";
@@ -7,7 +8,7 @@ interface ProjectProps {
     title: string;
     techs: string[];
     src: string;
-    description: string;
+    description: React.ReactElement;
     demoHref: string;
     codeHref: string;
 }
@@ -20,9 +21,9 @@ const Project: React.FC<ProjectProps> = ({
         <div className={`project-box ${visibilityClass}`} >
             <h3 className="project-title">{title}</h3>
             <div className="project-techs">
-                {techs.map(item => (
+                {techs.map((item, index) => (
                     <svg
-                        key={`${item}${title.charCodeAt(0) * description.charCodeAt(0)}`}
+                        key={index}
                         className="svg-fill"
                         viewBox="0 0 128 128"
                     >
