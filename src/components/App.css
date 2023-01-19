@@ -750,12 +750,12 @@ li {
 
 .visible {
 	opacity: 1;
-	transition: opacity 0.5s;
+	transition: opacity 0.75s ease-in-out;
 }
 
 .invisible {
 	opacity: 0;
-	transition: opacity 0.5s;
+	transition: opacity 0.5s ease-in-out;
 }
 
 @media only screen and (max-width: 38rem) {
