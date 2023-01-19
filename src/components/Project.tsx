@@ -1,4 +1,3 @@
-import { JsxElement, JsxFragment } from 'typescript';
 import icons from '../utilities/icons';
 
 const codeLabel = "</>";
