@@ -3,19 +3,7 @@ import React, { useState, useEffect, RefObject } from 'react';
 const ANGLE_VELOCITY = 36; // For a pixelperfect but ugly result use 360
 
 const Gear: React.FC<{ changeTheme: () => void, paraContainerRef: RefObject<HTMLDivElement> }> = ({ changeTheme, paraContainerRef }) => {
-    const [bodyWidth, setBodyWidth] = useState(380);
     const [scrollPos, setScrollPos] = useState(0);
-
-    useEffect(() => {
-        setBodyWidth(document.body.offsetWidth);
-    }, [])
-
-    useEffect(() => {
-		window.addEventListener("resize", () => {
-			setBodyWidth(document.body.offsetWidth);
-		});
-		return () => window.removeEventListener("resize", () => { });
-	}, []);
 
     useEffect(() => {
         let refHolder = paraContainerRef.current;
@@ -29,13 +17,19 @@ const Gear: React.FC<{ changeTheme: () => void, paraContainerRef: RefObject<HTML
         return () => refHolder?.removeEventListener("scroll", () => { });
     }, [paraContainerRef]);
 
+    const gearRotationDegree = () => {
+        let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
+
+        return scrollPos / (2.25 * remValue * Math.PI / ANGLE_VELOCITY);
+    }
+
     return (
         <svg
             id="gear"
             className="svg-stroke"
             onClick={changeTheme}
             style={{
-                transform: `rotate(${scrollPos / ((bodyWidth <= 650 ? 36 : 45) * Math.PI / ANGLE_VELOCITY)}deg)`
+                transform: `rotate(${gearRotationDegree()}deg)`
             }}
             viewBox="0 0 1000 1000">
             <path
