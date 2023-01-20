@@ -1,8 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, RefObject } from 'react';
+import Gear from './Gear';
 import MenuButton from './MenuButton';
 
-const NavBar: React.FC = () => {
+const NavBar: React.FC<{paraContainerRef: RefObject<HTMLDivElement>}> = ({paraContainerRef}) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
+	const [isItDark, setIsItDark] = useState(() => {
+		if (localStorage.getItem("isItDark")) {
+			if (localStorage.getItem("isItDark") === "true") {
+				return true;
+			} else return false;
+		} else {
+			return true;
+		}
+	});
 
     useEffect(() => {
         let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
@@ -19,11 +29,20 @@ const NavBar: React.FC = () => {
         return () => window.removeEventListener("resize", () => { });
     }, []);
 
+	useEffect(() => {
+		document.body.className = isItDark ? "dark" : "light";
+		localStorage.setItem("isItDark", isItDark.toString());
+	}, [isItDark]);
+
     const handleMenuClick = () => setIsMenuVisible((prevValue) => !prevValue);
 
     return (
         <>
             <header className="header-footer" >
+			<Gear
+				changeTheme={() => setIsItDark((prevValue) => !prevValue)}
+				paraContainerRef={paraContainerRef}
+			/>
                 <a
                     id="logo"
                     className="header-link"

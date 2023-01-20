@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 import NavBar from './NavBar';
-import Gear from './Gear';
 import SideContacts from './SideContacts';
 import BackToTop from './BackToTop';
 import Background from './Background';
@@ -12,31 +11,13 @@ import ProjectsContainer from './ProjectsContainer';
 import Contact from './Contact';
 
 const Portfolio: React.FC = () => {
-	const [isItDark, setIsItDark] = useState(() => {
-		if (localStorage.getItem("isItDark")) {
-			if (localStorage.getItem("isItDark") === "true") {
-				return true;
-			} else return false;
-		} else {
-			return true;
-		}
-	});
 
 	const paraContainerRef = useRef<HTMLDivElement>(null);
 	const contentRef = useRef<HTMLDivElement>(null);
 
-	useEffect(() => {
-		document.body.className = isItDark ? "dark" : "light";
-		localStorage.setItem("isItDark", isItDark.toString());
-	}, [isItDark]);
-
 	return (
 		<>
-			<NavBar />
-			<Gear
-				changeTheme={() => setIsItDark((prevValue) => !prevValue)}
-				paraContainerRef={paraContainerRef}
-			/>
+			<NavBar paraContainerRef={paraContainerRef} />
 			<SideContacts
 				paraContainerRef={paraContainerRef}
 			/>
