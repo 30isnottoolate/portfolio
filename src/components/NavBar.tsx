@@ -54,7 +54,6 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
             <Gear
                 scrollPos={scrollPos}
                 changeTheme={() => setIsItDark((prevValue) => !prevValue)}
-                paraContainerRef={paraContainerRef}
             />
             <header className="header-footer" >
                 <a
