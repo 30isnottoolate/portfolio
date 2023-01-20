@@ -2,20 +2,7 @@ import React, { useState, useEffect, RefObject } from 'react';
 
 const ANGLE_VELOCITY = 36; // For a pixelperfect but ugly result use 360
 
-const Gear: React.FC<{ changeTheme: () => void, paraContainerRef: RefObject<HTMLDivElement> }> = ({ changeTheme, paraContainerRef }) => {
-    const [scrollPos, setScrollPos] = useState(0);
-
-    useEffect(() => {
-        let refHolder = paraContainerRef.current;
-
-        if (refHolder) {
-            refHolder.addEventListener("scroll", () => {
-                if (refHolder) setScrollPos(refHolder.scrollTop);
-            });
-        }
-
-        return () => {refHolder && refHolder.removeEventListener("scroll", () => { })};
-    }, [paraContainerRef]);
+const Gear: React.FC<{ scrollPos: number, changeTheme: () => void, paraContainerRef: RefObject<HTMLDivElement> }> = ({ scrollPos, changeTheme, paraContainerRef }) => {
 
     const gearRotationDegree = () => {
         let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
