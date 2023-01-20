@@ -13,6 +13,19 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
             return true;
         }
     });
+    const [scrollPos, setScrollPos] = useState(0);
+
+    useEffect(() => {
+        let refHolder = paraContainerRef.current;
+
+        if (refHolder) {
+            refHolder.addEventListener("scroll", () => {
+                if (refHolder) setScrollPos(refHolder.scrollTop);
+            });
+        }
+
+        return () => { refHolder && refHolder.removeEventListener("scroll", () => { }) };
+    }, [paraContainerRef]);
 
     useEffect(() => {
         let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
@@ -39,6 +52,7 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
     return (
         <>
             <Gear
+                scrollPos={scrollPos}
                 changeTheme={() => setIsItDark((prevValue) => !prevValue)}
                 paraContainerRef={paraContainerRef}
             />
