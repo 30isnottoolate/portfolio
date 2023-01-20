@@ -14,7 +14,7 @@ const Gear: React.FC<{ changeTheme: () => void, paraContainerRef: RefObject<HTML
             });
         }
 
-        return () => refHolder?.removeEventListener("scroll", () => { });
+        return () => {refHolder && refHolder.removeEventListener("scroll", () => { })};
     }, [paraContainerRef]);
 
     const gearRotationDegree = () => {
