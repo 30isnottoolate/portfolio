@@ -56,13 +56,23 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
 
     const handleMenuClick = () => setIsMenuVisible((prevValue) => !prevValue);
 
+    const navBarVisibility = () => {
+        let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
+
+        if (scrollPos / remValue > 50 && scrollDirection === "down") {
+            return false;
+        } else if (scrollDirection === "up") {
+            return true;
+        } else return true;
+    }
+
     return (
         <>
             <Gear
                 scrollPos={scrollPos}
                 changeTheme={() => setIsItDark((prevValue) => !prevValue)}
             />
-            <header className="header-footer" >
+            <header className="header-footer" style={{opacity: navBarVisibility() ? "1" : "0"}} >
                 <a
                     id="logo"
                     className="header-link"
@@ -76,7 +86,8 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
             </header>
             <nav
                 style={{
-                    display: (isMenuVisible ? "grid" : "none")
+                    display: isMenuVisible ? "grid" : "none",
+                    opacity: navBarVisibility() ? "1" : "0"
                 }}
             >
                 <a className="header-link" href="#bio">
