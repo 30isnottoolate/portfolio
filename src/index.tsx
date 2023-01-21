@@ -6,7 +6,5 @@ const root = ReactDOM.createRoot(
 	document.getElementById('app-container') as HTMLElement
 );
 root.render(
-	<React.StrictMode>
-		<Portfolio />
-	</React.StrictMode>
+	<Portfolio />
 );
