@@ -4,6 +4,7 @@ import MenuButton from './MenuButton';
 
 const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ paraContainerRef }) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
+    const [scrollDirection, setScrollDirection] = useState("down");
     const [scrollPos, setScrollPos] = useState(0);
     const [isItDark, setIsItDark] = useState(() => {
         if (localStorage.getItem("isItDark")) {
@@ -27,21 +28,26 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
 
             setIsMenuVisible(document.body.offsetWidth / remValue <= 38 ? false : true);
         });
-        
+
         return () => window.removeEventListener("resize", () => { });
     }, []);
 
     useEffect(() => {
         let refHolder = paraContainerRef.current;
 
-        if (refHolder) {
-            refHolder.addEventListener("scroll", () => {
-                if (refHolder) setScrollPos(refHolder.scrollTop);
+        refHolder && refHolder.addEventListener("scroll", () => {
+            const scrollTop = refHolder ? refHolder.scrollTop : 0;
+
+            setScrollPos(prevState => {
+                setScrollDirection(scrollTop > prevState ? "down" : "up");
+                return scrollTop;
             });
-        }
+
+            setScrollPos(scrollTop);
+        });
 
         return () => { refHolder && refHolder.removeEventListener("scroll", () => { }) };
-    }, [paraContainerRef]);
+    }, []);
 
     useEffect(() => {
         document.body.className = isItDark ? "dark" : "light";
