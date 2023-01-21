@@ -4,6 +4,7 @@ import MenuButton from './MenuButton';
 
 const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ paraContainerRef }) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
+    const [scrollPos, setScrollPos] = useState(0);
     const [isItDark, setIsItDark] = useState(() => {
         if (localStorage.getItem("isItDark")) {
             if (localStorage.getItem("isItDark") === "true") {
@@ -13,7 +14,22 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
             return true;
         }
     });
-    const [scrollPos, setScrollPos] = useState(0);
+
+    useEffect(() => {
+        let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
+
+        setIsMenuVisible(document.body.offsetWidth / remValue <= 38 ? false : true);
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
+
+            setIsMenuVisible(document.body.offsetWidth / remValue <= 38 ? false : true);
+        });
+        
+        return () => window.removeEventListener("resize", () => { });
+    }, []);
 
     useEffect(() => {
         let refHolder = paraContainerRef.current;
@@ -26,21 +42,6 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
 
         return () => { refHolder && refHolder.removeEventListener("scroll", () => { }) };
     }, [paraContainerRef]);
-
-    useEffect(() => {
-        let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
-
-        setIsMenuVisible(document.body.offsetWidth / remValue <= 38 ? false : true);
-    }, [])
-
-    useEffect(() => {
-        window.addEventListener("resize", () => {
-            let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
-
-            setIsMenuVisible(document.body.offsetWidth / remValue <= 38 ? false : true);
-        });
-        return () => window.removeEventListener("resize", () => { });
-    }, []);
 
     useEffect(() => {
         document.body.className = isItDark ? "dark" : "light";
