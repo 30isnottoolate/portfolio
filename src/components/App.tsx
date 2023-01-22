@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import './App.css';
 import NavBar from './NavBar';
 import SideContacts from './SideContacts';
@@ -14,6 +14,14 @@ const Portfolio: React.FC = () => {
 
 	const paraContainerRef = useRef<HTMLDivElement>(null);
 	const contentRef = useRef<HTMLDivElement>(null);
+	const projectsRef = useRef<HTMLElement>(null);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(entries => {console.log(entries)}, {threshold: 0.1})
+		projectsRef.current && observer.observe(projectsRef.current);
+
+		return () => {projectsRef.current && observer.unobserve(projectsRef.current)}
+	}, []);
 
 	return (
 		<>
@@ -108,7 +116,7 @@ const Portfolio: React.FC = () => {
 								</div>
 							</>
 						</section>
-						<section id="projects">
+						<section id="projects" ref={projectsRef}>
 							<h1>Projects</h1>
 							<ProjectsContainer />
 						</section>
