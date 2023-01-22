@@ -3,8 +3,6 @@ import Arrow from './Arrow';
 import Project from './Project';
 import projects from '../utilities/projects';
 
-const NUMBER_OF_PROJECTS = 6;
-
 const ProjectsContainer: React.FC = () => {
     const [bodyWidth, setBodyWidth] = useState(23.75); //rem value
     const [projectIndex, setProjectIndex] = useState(0);
@@ -29,7 +27,7 @@ const ProjectsContainer: React.FC = () => {
 
     useEffect(() => {
         setProjectIndex(0);
-        setVisibleProjects(Math.floor(bodyWidth / 21) <= NUMBER_OF_PROJECTS ? Math.floor(bodyWidth / 21) : NUMBER_OF_PROJECTS);
+        setVisibleProjects(Math.floor(bodyWidth / 21) <= projects.length ? Math.floor(bodyWidth / 21) : projects.length);
     }, [bodyWidth]);
 
     const handlePrev = () => {
@@ -37,7 +35,7 @@ const ProjectsContainer: React.FC = () => {
     }
 
     const handleNext = () => {
-        if (projectIndex <= NUMBER_OF_PROJECTS - visibleProjects - 1) setProjectIndex((prevValue) => prevValue + 1);
+        if (projectIndex <= projects.length - visibleProjects - 1) setProjectIndex((prevValue) => prevValue + 1);
     }
 
     const projectVisibility = (projectNumber: number) => {
@@ -112,7 +110,7 @@ const ProjectsContainer: React.FC = () => {
                     clickHandler={handlePrev}
                 />
                 <Arrow
-                    visibilityClass={projectIndex <= NUMBER_OF_PROJECTS - visibleProjects - 1 ? "visible" : "invisible"}
+                    visibilityClass={projectIndex <= projects.length - visibleProjects - 1 ? "visible" : "invisible"}
                     left={arrowPosition}
                     mirrored={false}
                     clickHandler={handleNext}
@@ -125,7 +123,7 @@ const ProjectsContainer: React.FC = () => {
                         transform: `translateX(${projectIndex * (bodyWidth > 38 ? 1.5 : 1.125)}rem)`
                     }}
                 />
-                {[...Array(NUMBER_OF_PROJECTS - visibleProjects + 1)].map((item, index) => index).map(item =>
+                {[...Array(projects.length - visibleProjects + 1)].map((item, index) => index).map(item =>
                     <div
                         key={item}
                         className="slider-dot"
