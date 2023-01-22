@@ -14,7 +14,11 @@ const Portfolio: React.FC = () => {
 
 	const paraContainerRef = useRef<HTMLDivElement>(null);
 	const contentRef = useRef<HTMLDivElement>(null);
+	const welcomeRef = useRef<HTMLElement>(null);
+	const bioRef = useRef<HTMLElement>(null);
+	const skillsRef = useRef<HTMLElement>(null);
 	const projectsRef = useRef<HTMLElement>(null);
+	const contactRef = useRef<HTMLElement>(null);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(entries => {console.log(entries)}, {threshold: 0.1})
@@ -49,7 +53,7 @@ const Portfolio: React.FC = () => {
 					ref={contentRef}
 				>
 					<main>
-						<section id="welcome">
+						<section id="welcome" ref={welcomeRef}>
 							<LazyImage
 								className="avatar-image"
 								src="./images/avatar.png"
@@ -65,7 +69,7 @@ const Portfolio: React.FC = () => {
 								I'm a <span>front-end developer</span>, creating interesting web apps.
 							</h3>
 						</section>
-						<section id="bio">
+						<section id="bio" ref={bioRef}>
 							<h1>About me</h1>
 							<ul>
 								<li>born and living in Serbia</li>
@@ -77,7 +81,7 @@ const Portfolio: React.FC = () => {
 								<li>bedroom guitar player</li>
 							</ul>
 						</section>
-						<section id="skills">
+						<section id="skills" ref={skillsRef}>
 							<h1>My Skills</h1>
 							<>
 								<h2>Languages</h2>
@@ -120,7 +124,7 @@ const Portfolio: React.FC = () => {
 							<h1>Projects</h1>
 							<ProjectsContainer />
 						</section>
-						<section id="contact">
+						<section id="contact" ref={contactRef}>
 							<h1>Get in touch</h1>
 							<div id="contacts">
 								<Contact
