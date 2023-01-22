@@ -28,11 +28,7 @@ const ProjectsContainer: React.FC = () => {
 
     useEffect(() => {
         setProjectIndex(0);
-
-        if (83 > bodyWidth && bodyWidth >= 64.5) setVisibleProjects(3);
-        else if (64.5 > bodyWidth && bodyWidth >= 46) setVisibleProjects(2);
-        else if (bodyWidth < 46) setVisibleProjects(1);
-        else setVisibleProjects(4);
+        setVisibleProjects(Math.floor(bodyWidth / 21) <= NUMBER_OF_PROJECTS ? Math.floor(bodyWidth / 21) : NUMBER_OF_PROJECTS);
     }, [bodyWidth]);
 
     const handlePrev = () => {
