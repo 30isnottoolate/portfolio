@@ -72,7 +72,9 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
                 scrollPos={scrollPos}
                 changeTheme={() => setIsItDark((prevValue) => !prevValue)}
             />
-            <header className="header-footer" style={{opacity: navBarVisibility() ? "1" : "0"}} >
+            <header
+                className="header-footer"
+                style={{ top: `${navBarVisibility() ? "0" : "-3.5rem"}` }} >
                 <a
                     id="logo"
                     className="header-link"
@@ -87,7 +89,7 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
             <nav
                 style={{
                     display: isMenuVisible ? "grid" : "none",
-                    opacity: navBarVisibility() ? "1" : "0"
+                    transform: `translateY(${navBarVisibility() ? "0" : "-3.5rem"})`
                 }}
             >
                 <a className="header-link" href="#bio">
