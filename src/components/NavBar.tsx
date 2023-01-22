@@ -37,6 +37,7 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
 
         refHolder && refHolder.addEventListener("scroll", () => {
             const scrollTop = refHolder ? refHolder.scrollTop : 0;
+            let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
 
             setScrollPos(prevState => {
                 setScrollDirection(scrollTop > prevState ? "down" : "up");
@@ -44,7 +45,7 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
             });
 
             setScrollPos(scrollTop);
-            setIsMenuVisible(false);
+            document.body.offsetWidth / remValue <= 38 && setIsMenuVisible(false);
         });
 
         return () => { refHolder && refHolder.removeEventListener("scroll", () => { }) };
