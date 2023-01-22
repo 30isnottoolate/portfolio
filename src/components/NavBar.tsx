@@ -44,6 +44,7 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
             });
 
             setScrollPos(scrollTop);
+            setIsMenuVisible(false);
         });
 
         return () => { refHolder && refHolder.removeEventListener("scroll", () => { }) };
