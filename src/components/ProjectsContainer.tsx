@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Arrow from './Arrow';
 import Project from './Project';
+import projects from '../utilities/projects';
 
 const NUMBER_OF_PROJECTS = 6;
 
@@ -89,63 +90,21 @@ const ProjectsContainer: React.FC = () => {
                     style={{
                         left: `${sliderPosition}rem`
                     }}>
-                    <Project
-                        visibilityClass={projectVisibility(0)}
-                        title={"Stage Teleprompter"}
-                        techs={["react", "ts", "css", "html"]}
-                        src="./images/project_screenshots/stage-teleprompter-screenshot.png"
-                        description={<>A musician friend of mine commissioned me to make this app, which will be used in a stage teleprompter for musicians and public speakers. My first project that is actually being used IRL. Originally made with class components, now rewritten with React hooks.</>}
-                        demoHref="https://30isnottoolate.github.io/stage-teleprompter-hooked-ts"
-                        codeHref="https://github.com/30isnottoolate/stage-teleprompter-hooked-ts"
-                    />
-                    <Project
-                        visibilityClass={projectVisibility(1)}
-                        title={"Library Manager"}
-                        techs={["react", "ts", "css", "html"]}
-                        src="./images/project_screenshots/teleprompter-library-manager-screenshot.png"
-                        description={<>This is a utility application for the Stage Teleprompter project. You can create texts, format them, highlight selected parts with various colors, and change their order to your liking. <br/>It will eventually be turned into a multiplatform application with Electron.</>}
-                        demoHref="https://30isnottoolate.github.io/teleprompter-library-manager"
-                        codeHref="https://github.com/30isnottoolate/teleprompter-library-manager"
-                    />
-                    <Project
-                        visibilityClass={projectVisibility(2)}
-                        title={"Portfolio Page"}
-                        techs={["react", "ts", "css", "html"]}
-                        src="./images/project_screenshots/portfolio-screenshot.png"
-                        description={<>The title says it all. It's my porfolio page. You are looking at it. A visual portrayal of my work, full of SVG images, animations, daring color schemes and a swipeable projects section. It's made with React hooks and functional components in TypeScript.</>}
-                        demoHref="https://30isnottoolate.github.io/portfolio"
-                        codeHref="https://github.com/30isnottoolate/portfolio"
-                    />
-                    <Project
-                        visibilityClass={projectVisibility(3)}
-                        title={"Online Teleprompter"}
-                        techs={["react", "ts", "css", "html"]}
-                        src="./images/project_screenshots/online-teleprompter-screenshot.png"
-                        description={<>The idea has come from the Stage Teleprompter project, but this one has less features. It is the first app I've made with React hooks and TypeScript. It has a simple, easy-to-use UI. <br/>A formula was developed for the ideal text sliding speed after a lot of experiments.</>}
-                        demoHref="https://30isnottoolate.github.io/online-teleprompter-ts"
-                        codeHref="https://github.com/30isnottoolate/online-teleprompter-ts"
-                    />
-                    <Project
-                        visibilityClass={projectVisibility(4)}
-                        title={"Coming soon..."}
-                        techs={["js", "ts", "react"]}
-                        src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
-                        description={<>Some text here...</>}
-                        demoHref="https://www.solidbackgrounds.com"
-                        codeHref="https://www.solidbackgrounds.com"
-                    />
-                    <Project
-                        visibilityClass={projectVisibility(5)}
-                        title={"Coming soon..."}
-                        techs={["js", "ts", "react"]}
-                        src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg"
-                        description={<>Some text here...</>}
-                        demoHref="https://www.solidbackgrounds.com"
-                        codeHref="https://www.solidbackgrounds.com"
-                    />
+                    {projects.map((item, index) =>
+                        <Project
+                            key={index}
+                            visibilityClass={projectVisibility(index)}
+                            title={item.title}
+                            techs={item.techs}
+                            src={item.src}
+                            description={item.description}
+                            demoHref={item.demoHref}
+                            codeHref={item.codeHref}
+                        />
+                    )}
                 </div>
             </div>
-            <div className="navigation-arrows" style={{display: `${bodyWidth > 23.75 ? "initial": "none"}`}}> 
+            <div className="navigation-arrows" style={{ display: `${bodyWidth > 23.75 ? "initial" : "none"}` }}>
                 <Arrow
                     visibilityClass={projectIndex > 0 ? "visible" : "invisible"}
                     left={arrowPosition * (-1)}
