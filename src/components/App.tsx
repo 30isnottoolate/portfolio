@@ -11,7 +11,7 @@ import ProjectsContainer from './ProjectsContainer';
 import Contact from './Contact';
 
 const Portfolio: React.FC = () => {
-	const [intersectionEntry, setIntersectionEntry] = useState<IntersectionObserverEntry>();
+	const [intersectionEntries, setIntersectionEntries] = useState<IntersectionObserverEntry[]>();
 
 	const paraContainerRef = useRef<HTMLDivElement>(null);
 	const contentRef = useRef<HTMLDivElement>(null);
@@ -23,8 +23,8 @@ const Portfolio: React.FC = () => {
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(entries => {
-			setIntersectionEntry(entries[0]);
-		}, { threshold: 0.1 })
+			setIntersectionEntries(entries);
+		}, { threshold: 0.1 });
 
 		welcomeRef.current && observer.observe(welcomeRef.current);
 		bioRef.current && observer.observe(bioRef.current);
@@ -42,13 +42,20 @@ const Portfolio: React.FC = () => {
 	}, []);
 
 	const handleIntersectionClassName = (target: React.RefObject<HTMLElement>) => {
-		if (intersectionEntry && target.current &&
-			intersectionEntry.isIntersecting && intersectionEntry.target === target.current) {
-			return "focused";
-		} else if (intersectionEntry && target.current &&
-			!intersectionEntry.isIntersecting && intersectionEntry.target === target.current) {
-			return "unfocused";
-		} else return target.current && target.current.className || "unfocused";
+		let className = "";
+		let targetNodeFound = false;
+
+		intersectionEntries && !targetNodeFound && intersectionEntries.forEach((item, index) => {
+			if (item.isIntersecting && item.target === target.current) {
+				className = "focused";
+				targetNodeFound = true;
+			} else if (!item.isIntersecting && item.target === target.current) {
+				className = "unfocused";
+				targetNodeFound = true;
+			};
+		});
+
+		return targetNodeFound ? className : (target.current && target.current.className && target.current.className || "");
 	}
 
 	return (
