@@ -61,7 +61,7 @@ const NavBar: React.FC<{ paraContainerRef: RefObject<HTMLDivElement> }> = ({ par
     const navBarVisibility = () => {
         let remValue = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
 
-        if (scrollPos / remValue > 50 && scrollDirection === "down") {
+        if (scrollPos / remValue > 25 && scrollDirection === "down") {
             return false;
         } else if (scrollDirection === "up") {
             return true;
