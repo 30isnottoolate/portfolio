@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 import NavBar from './NavBar';
 import SideContacts from './SideContacts';
@@ -11,6 +11,7 @@ import ProjectsContainer from './ProjectsContainer';
 import Contact from './Contact';
 
 const Portfolio: React.FC = () => {
+	const [intersectionEntry, setIntersectionEntry] = useState<IntersectionObserverEntry>();
 
 	const paraContainerRef = useRef<HTMLDivElement>(null);
 	const contentRef = useRef<HTMLDivElement>(null);
@@ -21,10 +22,23 @@ const Portfolio: React.FC = () => {
 	const contactRef = useRef<HTMLElement>(null);
 
 	useEffect(() => {
-		const observer = new IntersectionObserver(entries => {console.log(entries)}, {threshold: 0.1})
-		projectsRef.current && observer.observe(projectsRef.current);
+		const observer = new IntersectionObserver(entries => {
+			setIntersectionEntry(entries[0]);
+		}, { threshold: 0.1 })
 
-		return () => {projectsRef.current && observer.unobserve(projectsRef.current)}
+		welcomeRef.current && observer.observe(welcomeRef.current);
+		bioRef.current && observer.observe(bioRef.current);
+		skillsRef.current && observer.observe(skillsRef.current);
+		projectsRef.current && observer.observe(projectsRef.current);
+		contactRef.current && observer.observe(contactRef.current);
+
+		return () => {
+			welcomeRef.current && observer.unobserve(welcomeRef.current);
+			bioRef.current && observer.unobserve(bioRef.current);
+			skillsRef.current && observer.unobserve(skillsRef.current);
+			projectsRef.current && observer.unobserve(projectsRef.current);
+			contactRef.current && observer.unobserve(contactRef.current);
+		}
 	}, []);
 
 	return (
