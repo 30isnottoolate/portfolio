@@ -24,7 +24,7 @@ const Portfolio: React.FC = () => {
 	useEffect(() => {
 		const observer = new IntersectionObserver(entries => {
 			setIntersectionEntries(entries);
-		}, { threshold: 0.1 });
+		}, { threshold: 0.25 });
 
 		welcomeRef.current && observer.observe(welcomeRef.current);
 		bioRef.current && observer.observe(bioRef.current);
@@ -41,21 +41,15 @@ const Portfolio: React.FC = () => {
 		}
 	}, []);
 
-	const handleIntersectionClassName = (target: React.RefObject<HTMLElement>) => {
-		let className = "";
-		let targetNodeFound = false;
+	const handleIOClassName = (target: React.RefObject<HTMLElement>) => {
+		let targetIOEntry: IntersectionObserverEntry | undefined;
 
-		intersectionEntries && !targetNodeFound && intersectionEntries.forEach((item, index) => {
-			if (item.isIntersecting && item.target === target.current) {
-				className = "focused";
-				targetNodeFound = true;
-			} else if (!item.isIntersecting && item.target === target.current) {
-				className = "unfocused";
-				targetNodeFound = true;
-			};
+		targetIOEntry = intersectionEntries && intersectionEntries.find(item => {
+			return item.target === target.current;
 		});
 
-		return targetNodeFound ? className : (target.current && target.current.className && target.current.className || "");
+		return targetIOEntry ? (targetIOEntry.isIntersecting ? "focused" : "unfocused") :
+			target.current ? target.current.className : "";
 	}
 
 	return (
@@ -84,7 +78,7 @@ const Portfolio: React.FC = () => {
 					ref={contentRef}
 				>
 					<main>
-						<section id="welcome" ref={welcomeRef} className={handleIntersectionClassName(welcomeRef)}>
+						<section id="welcome" ref={welcomeRef} className={handleIOClassName(welcomeRef)}>
 							<LazyImage
 								className="avatar-image"
 								src="./images/avatar.png"
@@ -100,7 +94,7 @@ const Portfolio: React.FC = () => {
 								I'm a <span>front-end developer</span>, creating interesting web apps.
 							</h3>
 						</section>
-						<section id="bio" ref={bioRef} className={handleIntersectionClassName(bioRef)}>
+						<section id="bio" ref={bioRef} className={handleIOClassName(bioRef)}>
 							<h1>About me</h1>
 							<ul>
 								<li>born and living in Serbia</li>
@@ -112,7 +106,7 @@ const Portfolio: React.FC = () => {
 								<li>bedroom guitar player</li>
 							</ul>
 						</section>
-						<section id="skills" ref={skillsRef} className={handleIntersectionClassName(skillsRef)}>
+						<section id="skills" ref={skillsRef} className={handleIOClassName(skillsRef)}>
 							<h1>My Skills</h1>
 							<>
 								<h2>Languages</h2>
@@ -151,11 +145,11 @@ const Portfolio: React.FC = () => {
 								</div>
 							</>
 						</section>
-						<section id="projects" ref={projectsRef} className={handleIntersectionClassName(projectsRef)}>
+						<section id="projects" ref={projectsRef} className={handleIOClassName(projectsRef)}>
 							<h1>Projects</h1>
 							<ProjectsContainer />
 						</section>
-						<section id="contact" ref={contactRef} className={handleIntersectionClassName(contactRef)}>
+						<section id="contact" ref={contactRef} className={handleIOClassName(contactRef)}>
 							<h1>Get in touch</h1>
 							<div id="contacts">
 								<Contact
