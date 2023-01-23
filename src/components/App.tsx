@@ -41,6 +41,16 @@ const Portfolio: React.FC = () => {
 		}
 	}, []);
 
+	const handleIntersectionClassName = (target: React.RefObject<HTMLElement>) => {
+		if (intersectionEntry && target.current &&
+			intersectionEntry.isIntersecting && intersectionEntry.target === target.current) {
+			return "focused";
+		} else if (intersectionEntry && target.current &&
+			!intersectionEntry.isIntersecting && intersectionEntry.target === target.current) {
+			return "unfocused";
+		} else return target.current && target.current.className || "unfocused";
+	}
+
 	return (
 		<>
 			<NavBar paraContainerRef={paraContainerRef} />
@@ -67,7 +77,7 @@ const Portfolio: React.FC = () => {
 					ref={contentRef}
 				>
 					<main>
-						<section id="welcome" ref={welcomeRef}>
+						<section id="welcome" ref={welcomeRef} className={handleIntersectionClassName(welcomeRef)}>
 							<LazyImage
 								className="avatar-image"
 								src="./images/avatar.png"
@@ -83,7 +93,7 @@ const Portfolio: React.FC = () => {
 								I'm a <span>front-end developer</span>, creating interesting web apps.
 							</h3>
 						</section>
-						<section id="bio" ref={bioRef}>
+						<section id="bio" ref={bioRef} className={handleIntersectionClassName(bioRef)}>
 							<h1>About me</h1>
 							<ul>
 								<li>born and living in Serbia</li>
@@ -95,7 +105,7 @@ const Portfolio: React.FC = () => {
 								<li>bedroom guitar player</li>
 							</ul>
 						</section>
-						<section id="skills" ref={skillsRef}>
+						<section id="skills" ref={skillsRef} className={handleIntersectionClassName(skillsRef)}>
 							<h1>My Skills</h1>
 							<>
 								<h2>Languages</h2>
@@ -134,11 +144,11 @@ const Portfolio: React.FC = () => {
 								</div>
 							</>
 						</section>
-						<section id="projects" ref={projectsRef}>
+						<section id="projects" ref={projectsRef} className={handleIntersectionClassName(projectsRef)}>
 							<h1>Projects</h1>
 							<ProjectsContainer />
 						</section>
-						<section id="contact" ref={contactRef}>
+						<section id="contact" ref={contactRef} className={handleIntersectionClassName(contactRef)}>
 							<h1>Get in touch</h1>
 							<div id="contacts">
 								<Contact
