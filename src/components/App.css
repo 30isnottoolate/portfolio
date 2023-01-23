@@ -440,16 +440,16 @@ section {
 	align-content: center;
     justify-items: center;
 	padding: 3rem 1.5rem;
-	filter: blur(50px);
-	transition: filter 0.5s ease-in-out;
+	opacity: 0;
+	transition: opacity 0.75s ease-in-out;
 }
 
 .unfocused {
-	filter: blur(50px);
+	opacity: 0;
 }
 
 .focused {
-	filter: blur(0);
+	opacity: 1;
 }
 
 #welcome {
