@@ -27,7 +27,9 @@ const ProjectsContainer: React.FC = () => {
 
     useEffect(() => {
         setProjectIndex(0);
-        setVisibleProjects(Math.floor(bodyWidth / 21) <= projects.length ? Math.floor(bodyWidth / 21) : projects.length);
+        setVisibleProjects(Math.floor(bodyWidth / 21) <= projects.length ?
+            (Math.floor(bodyWidth / 21) === 0 ? 1 : Math.floor(bodyWidth / 21)) : projects.length);
+
     }, [bodyWidth]);
 
     const handlePrev = () => {
