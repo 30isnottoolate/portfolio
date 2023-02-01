@@ -1,5 +1,13 @@
 const projects = [
     {
+        title: "WYSIWYG Editor",
+        techs: ["react", "ts", "css", "html"],
+        src: "./images/project_screenshots/wysiwyg-editor-screenshot.png",
+        description: <>This is a "What You See Is What You Get" text editor made in ReactJS with TypeScript. Also known as a "Rich Text" editor. Although this project does not adhere to the principles of ReactJS (because it contains direct DOM manipulation) it still was a challenging experiment.</>,
+        demoHref: "https://30isnottoolate.github.io/wysiwyg-editor/",
+        codeHref: "https://github.com/30isnottoolate/wysiwyg-editor"
+    },
+    {
         title: "Stage Teleprompter",
         techs: ["react", "ts", "css", "html"],
         src: "./images/project_screenshots/stage-teleprompter-screenshot.png",
@@ -35,18 +43,10 @@ const projects = [
         title: "Coming soon...",
         techs: ["js", "ts", "react"],
         src: "https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg",
-        description: <>Some text here...</>,
-        demoHref: "https://www.solidbackgrounds.com",
-        codeHref: "https://www.solidbackgrounds.com"
-    },
-    {
-        title: "",
-        techs: ["js", "ts", "react"],
-        src: "https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg",
-        description: <>Some text here...</>,
-        demoHref: "https://www.solidbackgrounds.com",
-        codeHref: "https://www.solidbackgrounds.com"
-    },
+        description: <>It's not ready yet...</>,
+        demoHref: "https://github.com/30isnottoolate",
+        codeHref: "https://github.com/30isnottoolate"
+    }
 ]
 
 export default projects;
