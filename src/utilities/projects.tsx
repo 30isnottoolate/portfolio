@@ -3,7 +3,7 @@ const projects = [
         title: "Typing Trainer",
         techs: ["react", "ts", "css", "html"],
         src: "./images/project_screenshots/typing-trainer-screenshot.png",
-        description: <>Click to links to find out more...</>,
+        description: <>Click the links to find out more...</>,
         demoHref: "https://30isnottoolate.github.io/typing-trainer/",
         codeHref: "https://github.com/30isnottoolate/typing-trainer"
     },
