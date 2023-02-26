@@ -40,12 +40,12 @@ const projects = [
         codeHref: "https://github.com/30isnottoolate/online-teleprompter-ts"
     },
     {
-        title: "Coming soon...",
-        techs: ["js", "ts", "react"],
-        src: "https://www.solidbackgrounds.com/images/1920x1080/1920x1080-red-ncs-solid-color-background.jpg",
-        description: <>It's not ready yet...</>,
-        demoHref: "https://github.com/30isnottoolate",
-        codeHref: "https://github.com/30isnottoolate"
+        title: "Typing Trainer",
+        techs: ["react", "ts", "css", "html"],
+        src: "./images/project_screenshots/typing-trainer-screenshot.png",
+        description: <>Click to links to find out more...</>,
+        demoHref: "https://30isnottoolate.github.io/typing-trainer/",
+        codeHref: "https://github.com/30isnottoolate/typing-trainer"
     }
 ]
 
