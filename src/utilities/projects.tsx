@@ -1,19 +1,19 @@
 const projects = [
     {
+        title: "Typing Trainer",
+        techs: ["react", "ts", "css", "html"],
+        src: "./images/project_screenshots/typing-trainer-screenshot.png",
+        description: <>Click to links to find out more...</>,
+        demoHref: "https://30isnottoolate.github.io/typing-trainer/",
+        codeHref: "https://github.com/30isnottoolate/typing-trainer"
+    },
+    {
         title: "WYSIWYG Editor",
         techs: ["react", "ts", "css", "html"],
         src: "./images/project_screenshots/wysiwyg-editor-screenshot.png",
         description: <>This is a "What You See Is What You Get" text editor made in ReactJS with TypeScript. Also known as a "Rich Text" editor. Although this project does not adhere to the principles of ReactJS (because it contains direct DOM manipulation) it still was a challenging experiment.</>,
         demoHref: "https://30isnottoolate.github.io/wysiwyg-editor/",
         codeHref: "https://github.com/30isnottoolate/wysiwyg-editor"
-    },
-    {
-        title: "Stage Teleprompter",
-        techs: ["react", "ts", "css", "html"],
-        src: "./images/project_screenshots/stage-teleprompter-screenshot.png",
-        description: <>A musician friend of mine commissioned me to make this app, which will be used in a stage teleprompter for musicians and public speakers. My first project that is actually being used IRL. Originally made with class components, now rewritten with React hooks.</>,
-        demoHref: "https://30isnottoolate.github.io/stage-teleprompter-hooked-ts",
-        codeHref: "https://github.com/30isnottoolate/stage-teleprompter-hooked-ts"
     },
     {
         title: "Library Manager",
@@ -40,12 +40,12 @@ const projects = [
         codeHref: "https://github.com/30isnottoolate/online-teleprompter-ts"
     },
     {
-        title: "Typing Trainer",
+        title: "Stage Teleprompter",
         techs: ["react", "ts", "css", "html"],
-        src: "./images/project_screenshots/typing-trainer-screenshot.png",
-        description: <>Click to links to find out more...</>,
-        demoHref: "https://30isnottoolate.github.io/typing-trainer/",
-        codeHref: "https://github.com/30isnottoolate/typing-trainer"
+        src: "./images/project_screenshots/stage-teleprompter-screenshot.png",
+        description: <>A musician friend of mine commissioned me to make this app, which will be used in a stage teleprompter for musicians and public speakers. My first project that is actually being used IRL. Originally made with class components, now rewritten with React hooks.</>,
+        demoHref: "https://30isnottoolate.github.io/stage-teleprompter-hooked-ts",
+        codeHref: "https://github.com/30isnottoolate/stage-teleprompter-hooked-ts"
     }
 ]
 
