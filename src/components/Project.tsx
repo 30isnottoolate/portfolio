@@ -1,7 +1,5 @@
 import icons from '../utilities/icons';
 
-const codeLabel = "</>";
-
 interface ProjectProps {
     visibilityClass: string;
     title: string;
@@ -44,7 +42,7 @@ const Project: React.FC<ProjectProps> = ({
                 href={codeHref}
                 target="_blank"
                 rel="noreferrer" >
-                {codeLabel}
+                {`</>`}
             </a>
         </div>
     );
