@@ -3,7 +3,7 @@ const projects = [
         title: "Typing Trainer",
         techs: ["react", "ts", "css", "html"],
         src: "./images/project_screenshots/typing-trainer-screenshot.png",
-        description: <>Click the links to find out more...</>,
+        description: <>I made this app to practice ten finger touch typing. It has 10+ difficulty levels, so even absolute beginners can learn the skill progressively. The texts for the training levels are always randomly generated. The UI shows a keyboard for displaying correct finger placement.</>,
         demoHref: "https://30isnottoolate.github.io/typing-trainer/",
         codeHref: "https://github.com/30isnottoolate/typing-trainer"
     },
